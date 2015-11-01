@@ -39,7 +39,21 @@ module SQLite3
       while SQLite::SQLITE_ROW == status
         row = []
         (0...col_count).each do |index|
-          row.push SQLite.sqlite3_column_text(stmt, index)
+          case SQLite.sqlite3_column_type(stmt, index)
+          when SQLite::SQLITE_INTEGER
+            # TODO: Use 64-bit integers?
+            row.push(SQLite.sqlite3_column_int(stmt, index))
+          when SQLite::SQLITE_FLOAT
+            row.push(SQLite.sqlite3_column_double(stmt, index))
+          when SQLite::SQLITE_BLOB
+            row.push(SQLite.sqlite3_column_blob(stmt, index))
+          when SQLite::SQLITE_NULL
+            row.push(nil)
+          when SQLite::SQLITE_TEXT
+            row.push(SQLite.sqlite3_column_text(stmt, index))
+          else
+            row.push(SQLite.sqlite3_column_text(stmt, index))
+          end
         end
 
         if block_given?

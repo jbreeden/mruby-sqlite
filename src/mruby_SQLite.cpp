@@ -2057,14 +2057,14 @@ mrb_SQLite_sqlite3_column_blob(mrb_state* mrb, mrb_value self) {
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
-
   int native_iCol = mrb_fixnum(iCol);
 
   /* Invocation */
   const void * result = sqlite3_column_blob(native_arg1, native_iCol);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_void_PTR(mrb, result);
+  int num_bytes = sqlite3_column_bytes(native_arg1, native_iCol);
+  mrb_value return_value = mrb_str_new(mrb, (char*)result, num_bytes);
 
   return return_value;
 }
@@ -2088,7 +2088,6 @@ mrb_SQLite_sqlite3_column_bytes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &arg1, &iCol);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
@@ -2098,7 +2097,6 @@ mrb_SQLite_sqlite3_column_bytes(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -2407,7 +2405,6 @@ mrb_SQLite_sqlite3_column_double(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &arg1, &iCol);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
@@ -2417,7 +2414,6 @@ mrb_SQLite_sqlite3_column_double(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -2816,7 +2812,6 @@ mrb_SQLite_sqlite3_column_text(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &arg1, &iCol);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
@@ -2827,10 +2822,8 @@ mrb_SQLite_sqlite3_column_text(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
-
   int native_iCol = mrb_fixnum(iCol);
 
   /* Invocation */
