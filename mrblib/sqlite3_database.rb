@@ -1,7 +1,7 @@
 module SQLite3
   class Database
     ## TODO: Implement results_as_hash
-    # attr_accessor :results_as_hash
+    attr_accessor :results_as_hash
 
     class << self
       alias open new
@@ -12,6 +12,7 @@ module SQLite3
     end
 
     def initialize(filename, &block)
+      @results_as_hash = false
       status, db = SQLite.sqlite3_open(filename)
       if status == SQLite::SQLITE_OK
         @native_db = db
@@ -36,23 +37,35 @@ module SQLite3
 
       col_count = SQLite.sqlite3_column_count(stmt)
       rows = []
+      as_hash = @results_as_hash
       while SQLite::SQLITE_ROW == status
-        row = []
+        if as_hash
+          row = {}
+        else
+          row = []
+        end
         (0...col_count).each do |index|
+          val = nil
           case SQLite.sqlite3_column_type(stmt, index)
           when SQLite::SQLITE_INTEGER
             # TODO: Use 64-bit integers?
-            row.push(SQLite.sqlite3_column_int(stmt, index))
+            val = SQLite.sqlite3_column_int(stmt, index)
           when SQLite::SQLITE_FLOAT
-            row.push(SQLite.sqlite3_column_double(stmt, index))
+            val = SQLite.sqlite3_column_double(stmt, index)
           when SQLite::SQLITE_BLOB
-            row.push(SQLite.sqlite3_column_blob(stmt, index))
+            val = SQLite.sqlite3_column_blob(stmt, index)
           when SQLite::SQLITE_NULL
-            row.push(nil)
+            val = nil
           when SQLite::SQLITE_TEXT
-            row.push(SQLite.sqlite3_column_text(stmt, index))
+            val = SQLite.sqlite3_column_text(stmt, index)
           else
-            row.push(SQLite.sqlite3_column_text(stmt, index))
+            val = SQLite.sqlite3_column_text(stmt, index)
+          end
+
+          if as_hash
+            row[SQLite::sqlite3_column_origin_name(stmt, index)] = val
+          else
+            row.push(val)
           end
         end
 

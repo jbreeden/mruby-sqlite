@@ -15,3 +15,4 @@ What's in the Box?
   + `SQLite3::Database#transaction(&block)`
   + `SQLite3::Database#rollback`
   + `SQLite3::Database#commit`
+  + `SQLite3::Database#results_as_hash` & `SQLite3::Database#results_as_hash=`
