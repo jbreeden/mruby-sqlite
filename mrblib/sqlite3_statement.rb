@@ -24,7 +24,13 @@ module SQLite3
       status = SQLite::SQLITE_OK
 
       unless which.kind_of?(Fixnum)
-        which = SQLite.sqlite3_bind_parameter_index(@native_stmt, which.to_s)
+        which = which.to_s
+
+        unless which[0] == ':' || which[0] == '@' || which[0] == '?'
+          which = ":#{which}"
+        end
+
+        which = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
         if which == 0
           raise SQLite3::Exception.new("No such bind parameter #{which}")
         end
