@@ -322,7 +322,7 @@
 #define BIND_sqlite3_busy_handler_FUNCTION FALSE
 #define BIND_sqlite3_busy_timeout_FUNCTION FALSE
 #define BIND_sqlite3_cancel_auto_extension_FUNCTION FALSE
-#define BIND_sqlite3_changes_FUNCTION FALSE
+#define BIND_sqlite3_changes_FUNCTION TRUE
 #define BIND_sqlite3_clear_bindings_FUNCTION FALSE
 #define BIND_sqlite3_close_FUNCTION TRUE
 #define BIND_sqlite3_close_v2_FUNCTION FALSE

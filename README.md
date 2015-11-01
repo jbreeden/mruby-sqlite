@@ -10,4 +10,8 @@ What's in the Box?
 - Low level bindings to the sqlite3 c functions in the `SQLite` module
 - Hight level bindings in the `SQLite3` module, which should be compatible with the sqlite3-ruby gem for MRI
   + `SQLite3::Database::new(path_to_db, &block)`, `SQLite3::Database::open(path_to_file, &block)`, `SQLite3::Database#close`
+  + `SQLite3::Database#changes`
   + `SQLite3::Database#execute(sqlString, &block)`
+  + `SQLite3::Database#transaction(&block)`
+  + `SQLite3::Database#rollback`
+  + `SQLite3::Database#commit`

@@ -1698,13 +1698,11 @@ mrb_SQLite_sqlite3_changes(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &arg1);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3 expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3 * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3(arg1));
@@ -1713,13 +1711,7 @@ mrb_SQLite_sqlite3_changes(mrb_state* mrb, mrb_value self) {
   int result = sqlite3_changes(native_arg1);
 
   /* Box the return value */
-  if (result > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value return_value = mrb_fixnum_value(result);
-
-  return return_value;
+  return mrb_fixnum_value(result);
 }
 #endif
 

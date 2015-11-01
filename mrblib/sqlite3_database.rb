@@ -79,6 +79,31 @@ module SQLite3
       SQLite::Sqlite3Stmt.disown(stmt)
     end
 
+    def changes
+      SQLite.sqlite3_changes(@native_db)
+    end
+
+    def transaction(&block)
+      self.execute('begin')
+      if block_given?
+        begin
+          block[self]
+        rescue Exception => ex
+          self.execute('rollback')
+        else
+          self.execute('commit')
+        end
+      end
+    end
+
+    def rollback
+      self.execute('rollback')
+    end
+
+    def commit
+      self.execute('commit')
+    end
+
     def close
       SQLite.sqlite3_close(@native_db)
       # Use disown to prevent destruction attempt
