@@ -13,11 +13,14 @@ module SQLite3
 
     def initialize(filename, &block)
       @results_as_hash = false
+      @closed = false
+      @transaction_active = false
+
       status, db = SQLite.sqlite3_open(filename)
       if status == SQLite::SQLITE_OK
         @native_db = db
       else
-        raise SQLite3::Exception.new("Error opening database #{filename}")
+        SQLite3.raise_sqlite_error(@native_db, status)
       end
 
       if block_given?
@@ -27,69 +30,27 @@ module SQLite3
     end
 
     def execute(sql, &block)
-      status, stmt, rest = SQLite.sqlite3_prepare_v2(@native_db, sql, -1)
-      SQLite3.raise_sqlite_error(@native_db, status)
+      stmt = SQLite3::Statement.new(self, sql)
 
-      status = SQLite.sqlite3_step(stmt)
-      if status == SQLite::SQLITE_DONE
-        return nil
+      stmt.step
+      if stmt.done?
+        return block_given? ? stmt : []
       end
 
-      col_count = SQLite.sqlite3_column_count(stmt)
       rows = []
-      as_hash = @results_as_hash
-      while SQLite::SQLITE_ROW == status
-        if as_hash
-          row = {}
-        else
-          row = []
+      if block_given?
+        stmt.each(&block)
+      else
+        stmt.each do |row|
+          rows.push(row)
         end
-        (0...col_count).each do |index|
-          val = nil
-          case SQLite.sqlite3_column_type(stmt, index)
-          when SQLite::SQLITE_INTEGER
-            # TODO: Use 64-bit integers?
-            val = SQLite.sqlite3_column_int(stmt, index)
-          when SQLite::SQLITE_FLOAT
-            val = SQLite.sqlite3_column_double(stmt, index)
-          when SQLite::SQLITE_BLOB
-            val = SQLite.sqlite3_column_blob(stmt, index)
-          when SQLite::SQLITE_NULL
-            val = nil
-          when SQLite::SQLITE_TEXT
-            val = SQLite.sqlite3_column_text(stmt, index)
-          else
-            val = SQLite.sqlite3_column_text(stmt, index)
-          end
-
-          if as_hash
-            row[SQLite::sqlite3_column_origin_name(stmt, index)] = val
-          else
-            row.push(val)
-          end
-        end
-
-        if block_given?
-          block[row]
-        else
-          rows.push row
-        end
-
-        status = SQLite.sqlite3_step(stmt)
-      end
-
-      unless status == SQLite::SQLITE_DONE
-        SQLite3.raise_sqlite_error(@native_db, status)
       end
 
       if block_given?
-        nil
+        stmt
       else
         rows
       end
-    ensure
-      SQLite.sqlite3_finalize(stmt)
-      SQLite::Sqlite3Stmt.disown(stmt)
     end
 
     def changes
@@ -97,6 +58,7 @@ module SQLite3
     end
 
     def transaction(&block)
+      @transaction_active = true
       self.execute('begin')
       if block_given?
         begin
@@ -105,15 +67,23 @@ module SQLite3
           self.execute('rollback')
         else
           self.execute('commit')
+        ensure
+          @transaction_active = false
         end
       end
     end
 
+    def transaction_active?
+      @transaction_active
+    end
+
     def rollback
+      @transaction_active = false
       self.execute('rollback')
     end
 
     def commit
+      @transaction_active = false
       self.execute('commit')
     end
 
@@ -122,6 +92,19 @@ module SQLite3
       # Use disown to prevent destruction attempt
       # when the object is GC'ed
       SQLite::Sqlite3.disown(@native_db)
+      @closed = true
+    end
+
+    def closed?
+      @closed
+    end
+
+    def complete?(sql)
+      SQLite.sqlite3_complete(sql) == 0
+    end
+
+    def prepare(sql)
+      SQLite3::Statement.new(self, sql)
     end
   end
 end

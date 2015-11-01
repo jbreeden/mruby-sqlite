@@ -1,4 +1,16 @@
 module SQLite3
+  # Same as string, but gets saved as a blob in SQLite,
+  # rather than as TEXT
+  class Blob < String; end
+
+  module ColumnType
+    INTEGER = SQLite::SQLITE_INTEGER
+    FLOAT = SQLite::SQLITE_FLOAT
+    BLOB = SQLite::SQLITE_BLOB
+    NULL = SQLite::SQLITE_NULL
+    TEXT = SQLite::SQLITE_TEXT
+  end
+
   class Exception < StandardError; end
   class SQLException < Exception; end
   class InternalException < Exception; end
@@ -29,6 +41,7 @@ module SQLite3
 
   def self.raise_sqlite_error(db, errno)
     klass = SQLite3::Exception
+    db = db.instance_variable_get(:@native_db) if db.kind_of?(SQLite3::Database)
 
     case errno
     when SQLite::SQLITE_OK

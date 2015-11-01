@@ -366,7 +366,7 @@ mrb_SQLite_sqlite3_backup_step(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_sqlite3_bind_blob_FUNCTION
-#define sqlite3_bind_blob_REQUIRED_ARGC 6
+#define sqlite3_bind_blob_REQUIRED_ARGC 4
 #define sqlite3_bind_blob_OPTIONAL_ARGC 0
 /* sqlite3_bind_blob
  *
@@ -375,8 +375,10 @@ mrb_SQLite_sqlite3_backup_step(mrb_state* mrb, mrb_value self) {
  * - arg2: int
  * - arg3: const void *
  * - n: int
- * - arg5: void (*)(void *)
- * - arg6: void *
+ * NOT USED -----------------
+ * | - arg5: void (*)(void *)
+ * | - arg6: void *
+ * |_________________________
  * Return Type: int
  */
 mrb_value
@@ -385,11 +387,9 @@ mrb_SQLite_sqlite3_bind_blob(mrb_state* mrb, mrb_value self) {
   mrb_value arg2;
   mrb_value arg3;
   mrb_value n;
-  mrb_value arg5;
-  mrb_value arg6;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooooo", &arg1, &arg2, &arg3, &n, &arg5, &arg6);
+  mrb_get_args(mrb, "oooo", &arg1, &arg2, &arg3, &n);
 
 
   /* Type checking */
@@ -401,36 +401,26 @@ mrb_SQLite_sqlite3_bind_blob(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_PTR(arg3);
+  if (!mrb_obj_is_kind_of(mrb, arg3, mrb->string_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "String or Blob expected");
+    return mrb_nil_value();
+  }
+
   if (!mrb_obj_is_kind_of(mrb, n, mrb->fixnum_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(arg5);
-  TODO_type_check_void_PTR(arg6);
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
-
   int native_arg2 = mrb_fixnum(arg2);
-
-  const void * native_arg3 = TODO_mruby_unbox_void_PTR(arg3);
-
+  const void * native_arg3 = mrb_string_value_ptr(mrb, arg3);
   int native_n = mrb_fixnum(n);
 
-  void (*native_arg5)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(arg5);
-
-  void * native_arg6 = TODO_mruby_unbox_void_PTR(arg6);
-
   /* Invocation */
-  int result = sqlite3_bind_blob(native_arg1, native_arg2, native_arg3, native_n, native_arg5, native_arg6);
+  int result = sqlite3_bind_blob(native_arg1, native_arg2, native_arg3, native_n, SQLITE_TRANSIENT);
 
   /* Box the return value */
-  if (result > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(result);
 
   return return_value;
@@ -739,13 +729,11 @@ mrb_SQLite_sqlite3_bind_parameter_count(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &arg1);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -782,7 +770,6 @@ mrb_SQLite_sqlite3_bind_parameter_index(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &arg1, &zName);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
@@ -792,7 +779,6 @@ mrb_SQLite_sqlite3_bind_parameter_index(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -831,7 +817,6 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "oo", &arg1, &arg2);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
@@ -841,7 +826,6 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -859,7 +843,7 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_sqlite3_bind_text_FUNCTION
-#define sqlite3_bind_text_REQUIRED_ARGC 6
+#define sqlite3_bind_text_REQUIRED_ARGC 4
 #define sqlite3_bind_text_OPTIONAL_ARGC 0
 /* sqlite3_bind_text
  *
@@ -868,8 +852,6 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
  * - arg2: int
  * - arg3: const char *
  * - arg4: int
- * - arg5: void (*)(void *)
- * - arg6: void *
  * Return Type: int
  */
 mrb_value
@@ -878,12 +860,9 @@ mrb_SQLite_sqlite3_bind_text(mrb_state* mrb, mrb_value self) {
   mrb_value arg2;
   mrb_value arg3;
   mrb_value arg4;
-  mrb_value arg5;
-  mrb_value arg6;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oooooo", &arg1, &arg2, &arg3, &arg4, &arg5, &arg6);
-
+  mrb_get_args(mrb, "oooo", &arg1, &arg2, &arg3, &arg4);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
@@ -902,31 +881,17 @@ mrb_SQLite_sqlite3_bind_text(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(arg5);
-  TODO_type_check_void_PTR(arg6);
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
-
   int native_arg2 = mrb_fixnum(arg2);
-
   const char * native_arg3 = mrb_string_value_cstr(mrb, &arg3);
-
   int native_arg4 = mrb_fixnum(arg4);
 
-  void (*native_arg5)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(arg5);
-
-  void * native_arg6 = TODO_mruby_unbox_void_PTR(arg6);
-
   /* Invocation */
-  int result = sqlite3_bind_text(native_arg1, native_arg2, native_arg3, native_arg4, native_arg5, native_arg6);
+  int result = sqlite3_bind_text(native_arg1, native_arg2, native_arg3, native_arg4, SQLITE_TRANSIENT);
 
   /* Box the return value */
-  if (result > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
   mrb_value return_value = mrb_fixnum_value(result);
 
   return return_value;
@@ -1731,13 +1696,11 @@ mrb_SQLite_sqlite3_clear_bindings(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &arg1);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
@@ -3110,13 +3073,11 @@ mrb_SQLite_sqlite3_complete(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &sql);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, sql, mrb->string_class)) {
     mrb_raise(mrb, E_TYPE_ERROR, "String expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   const char * native_sql = mrb_string_value_cstr(mrb, &sql);
@@ -7818,13 +7779,11 @@ mrb_SQLite_sqlite3_reset(mrb_state* mrb, mrb_value self) {
   /* Fetch the args */
   mrb_get_args(mrb, "o", &pStmt);
 
-
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, pStmt, Sqlite3Stmt_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
     return mrb_nil_value();
   }
-
 
   /* Unbox parameters */
   struct sqlite3_stmt * native_pStmt = (mrb_nil_p(pStmt) ? NULL : mruby_unbox_sqlite3_stmt(pStmt));
