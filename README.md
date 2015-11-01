@@ -8,7 +8,7 @@ What's in the Box?
 
 - SQLite itself is included, and will be compiled along with this gem.
 - Low level bindings to the sqlite3 C functions in the `SQLite` module.
-- High level, object oriented bindings in the `SQLite3` module, which should be compatible with the sqlite3-ruby gem for MRI.
+- High level, object oriented bindings in the `SQLite3` module, which should be compatible with the [sqlite3](http://www.rubydoc.info/gems/sqlite3/frames) gem for MRI.
 
 ### SQLite3 Module Classes & Methods
 
