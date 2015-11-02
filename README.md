@@ -25,17 +25,21 @@ What's in the Box?
 - Class: `Database`
   + `::open`
   + `::quote`
+  + `#busy_timeout`
+  + `#busy_timeout=`
   + `#changes`
   + `#close`
   + `#closed?`
   + `#commit`
   + `#complete?`
   + `#execute`
+  + `#execute_batch`
   + `#initialize`
   + `#prepare`
   + `#results_as_hash`
   + `#results_as_hash=`
   + `#rollback`
+  + `#total_changes`
   + `#transaction`
   + `#transaction_active?`
 - Class: `EmptyException`
