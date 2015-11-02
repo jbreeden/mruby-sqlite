@@ -1589,7 +1589,6 @@ mrb_SQLite_sqlite3_busy_timeout(mrb_state* mrb, mrb_value self) {
     return mrb_nil_value();
   }
 
-
   /* Unbox parameters */
   struct sqlite3 * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3(arg1));
 

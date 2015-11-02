@@ -7,12 +7,13 @@ module SQLite3
       status, @native_stmt, @remainder = SQLite.sqlite3_prepare_v2(@db.instance_variable_get(:@native_db), sql, -1)
       SQLite3.raise_sqlite_error(@db, status)
       @done = false
-      @closed = false
+      # Statement may come back nil if it's whitespace, or a comment, though no error is returned
+      @closed = @native_stmt.nil?
       @results_as_hash = @db.results_as_hash
     end
 
     def assert_open
-      raise SQLite3::Exception.new('Attempted to use a closed statement')
+      raise SQLite3::Exception.new('Attempted to use a closed statement') if @closed
     end
 
     # Returns true if the statement is currently active, meaning it has an open result set
@@ -21,6 +22,7 @@ module SQLite3
     end
 
     def bind_param(which, value)
+      assert_open
       status = SQLite::SQLITE_OK
 
       unless which.kind_of?(Fixnum)
@@ -59,10 +61,13 @@ module SQLite3
     end
 
     def bind_parameter_count
+      assert_open
       SQLite.sqlite3_bind_parameter_count(@native_stmt)
     end
 
     def bind_params(*varbinds)
+      assert_open
+      varbinds = varbinds.flatten
       index = 1
       varbinds.flatten.each do |var|
         if var.kind_of?(Hash)
@@ -75,15 +80,16 @@ module SQLite3
     end
 
     def clear_bindings!
+      assert_open
       SQLite.sqlite3_clear_bindings(@native_stmt)
     end
 
     def close
-      unless closed?
-        @closed = true
-        # Ignore the status returned. Step would have raised it already.
-        SQLite::sqlite3_finalize(@native_stmt)
-      end
+      assert_open
+      @closed = true
+      # Ignore the status returned. Step would have raised it already.
+      SQLite::sqlite3_finalize(@native_stmt)
+      SQLite::Sqlite3Stmt.disown(@native_stmt)
     end
 
     def closed?
@@ -91,18 +97,22 @@ module SQLite3
     end
 
     def column_count
+      assert_open
       SQLite.sqlite3_column_count(@native_stmt)
     end
 
     def column_decltype(index)
+      assert_open
       SQLite::sqlite3_column_decltype(@native_stmt, index)
     end
 
     def column_name(index)
+      assert_open
       SQLite::sqlite3_column_origin_name(@native_stmt, index)
     end
 
     def columns
+      assert_open
       unless @columns
         @columns = []
         (0...(self.column_count)).each do |index|
@@ -117,6 +127,7 @@ module SQLite3
     end
 
     def each(&block)
+      assert_open
       if block_given?
         until self.done?
           row = self.step
@@ -128,9 +139,11 @@ module SQLite3
     end
 
     # def execute
+    #   assert_open
     # end
     #
     # def execute!
+    #   assert_open
     # end
 
     def remainder
@@ -138,7 +151,7 @@ module SQLite3
     end
 
     def reset!
-      @closed = false
+      assert_open
       @columns = nil
       @types = nil
       @done = false
@@ -146,6 +159,7 @@ module SQLite3
     end
 
     def step
+      assert_open
       status = SQLite.sqlite3_step(@native_stmt)
 
       @done = (status == SQLite::SQLITE_DONE)
@@ -184,6 +198,7 @@ module SQLite3
     end
 
     def types
+      assert_open
       unless @types
         @types = []
         (0...(self.column_count)).each do |index|
