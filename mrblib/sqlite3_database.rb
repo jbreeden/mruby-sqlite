@@ -111,12 +111,12 @@ module SQLite3
       end
     end
 
-    def execute2(sql, varbinds=[])
+    def execute2(sql, varbinds=[], &block)
       prepare(sql) do |stmt|
         result_set = stmt.execute(*varbinds)
         if block_given?
-          yield stmt.columns
-          result_set.each { |row| yield row }
+          block[stmt.columns]
+          result_set.each { |row| block[row] }
         else
           result = result_set.to_a
           result.unshift(stmt.columns)
@@ -142,12 +142,15 @@ module SQLite3
       nil
     end
 
-    # def get_first_row
-    # end
-    #
-    # def get_first_value
-    # end
-    #
+    def get_first_row(sql, *varbinds)
+      execute(sql, varbinds).first
+    end
+
+    def get_first_value(sql, *varbinds)
+      execute(sql, varbinds) { |row| return row[0] }
+      nil
+    end
+
     # def interrupt
     # end
     #
