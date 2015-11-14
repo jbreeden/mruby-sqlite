@@ -90,49 +90,54 @@ module SQLite3
     #
     # def encoding
     # end
-    #
-    # def errcode
-    # end
-    #
-    # def errmsg
-    # end
 
-    def execute(sql, &block)
-      stmt = SQLite3::Statement.new(self, sql)
+    def errcode
+      SQLite::sqlite3_errcode(@native_db)
+    end
 
-      rows = []
-      if block_given?
-        stmt.each(&block)
-      else
-        stmt.each do |row|
-          rows.push(row)
+    def errmsg
+      SQLite.sqlite3_errmsg(@native_db)
+    end
+
+    def execute(sql, varbinds=[], &block)
+      prepare(sql) do |stmt|
+        stmt.bind_params(varbinds)
+
+        if block_given?
+          stmt.each(&block)
+        else
+          return stmt.to_a
         end
-      end
-
-      if block_given?
-        stmt
-      else
-        rows
       end
     end
 
-    # def execute2
-    # end
+    def execute2(sql, varbinds=[])
+      prepare(sql) do |stmt|
+        result_set = stmt.execute(*varbinds)
+        if block_given?
+          yield stmt.columns
+          result_set.each { |row| yield row }
+        else
+          result = result_set.to_a
+          result.unshift(stmt.columns)
+          return result
+        end
+      end
+    end
 
     def execute_batch(sql, varbinds=[])
       sql = sql.strip
       until sql.empty?
-        puts sql
-        stmt = SQLite3::Statement.new(self, sql)
-        # whitespace/comment only "statements" will be closed
-        unless stmt.closed?
-          if varbinds.length > 0 && (varbinds.length == stmt.bind_parameter_count)
-            stmt.bind_params(varbinds)
+        prepare(sql) do |stmt|
+          # whitespace/comment only "statements" will be closed
+          unless stmt.closed?
+            if varbinds.length > 0 && (varbinds.length == stmt.bind_parameter_count)
+              stmt.bind_params(varbinds)
+            end
+            stmt.step
           end
-          stmt.step
+          sql = stmt.remainder.strip
         end
-        sql = stmt.remainder.strip
-        stmt.close
       end
       nil
     end
@@ -149,13 +154,30 @@ module SQLite3
     # def last_insert_row_id
     # end
 
-    def prepare(sql)
-      SQLite3::Statement.new(self, sql)
+    def prepare(sql, &block)
+      stmt = SQLite3::Statement.new( self, sql )
+      return stmt unless block_given?
+
+      begin
+        block[stmt]
+      ensure
+        stmt.close unless stmt.closed?
+      end
     end
 
-    # def query
-    # end
-    #
+    def query(sql, varbinds=[])
+      result = prepare(sql).execute(varbinds)
+      if block_given?
+        begin
+          yield result
+        ensure
+          result.close
+        end
+      else
+        return result
+      end
+    end
+
     # def readonly?
     # end
 

@@ -375,7 +375,7 @@
 #define BIND_sqlite3_declare_vtab_FUNCTION FALSE
 #define BIND_sqlite3_enable_load_extension_FUNCTION FALSE
 #define BIND_sqlite3_enable_shared_cache_FUNCTION FALSE
-#define BIND_sqlite3_errcode_FUNCTION FALSE
+#define BIND_sqlite3_errcode_FUNCTION TRUE
 #define BIND_sqlite3_errmsg_FUNCTION TRUE
 #define BIND_sqlite3_errmsg16_FUNCTION FALSE
 #define BIND_sqlite3_errstr_FUNCTION FALSE

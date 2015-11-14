@@ -24,34 +24,35 @@ module SQLite3
       assert_open
       status = SQLite::SQLITE_OK
 
+      param_index = 0
       unless which.kind_of?(Fixnum)
         which = which.to_s
 
-        unless which[0] == ':' || which[0] == '@' || which[0] == '?'
+        unless %w[: @ $].include?(which[0])
           which = ":#{which}"
         end
 
-        which = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
-        if which == 0
+        param_index = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
+        if param_index == 0
           raise SQLite3::Exception.new("No such bind parameter #{which}")
         end
       end
 
       case value
       when Fixnum
-        status = SQLite.sqlite3_bind_int(@native_stmt, which, value)
+        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, value)
       when Float
-        status = SQLite.sqlite3_bind_double(@native_stmt, which, value)
+        status = SQLite.sqlite3_bind_double(@native_stmt, param_index, value)
       when TrueClass
-        status = SQLite.sqlite3_bind_int(@native_stmt, which, 1)
+        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, 1)
       when FalseClass
-        status = SQLite.sqlite3_bind_int(@native_stmt, which, 0)
+        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, 0)
       when SQLite3::Blob
-        status = SQLite.sqlite3_bind_blob(@native_stmt, which, value, value.length)
+        status = SQLite.sqlite3_bind_blob(@native_stmt, param_index, value, value.length)
       when String
-        status = SQLite.sqlite3_bind_text(@native_stmt, which, value, value.length)
+        status = SQLite.sqlite3_bind_text(@native_stmt, param_index, value, value.length)
       when NilClass
-        status = SQLite.sqlite3_bind_null(@native_stmt, which)
+        status = SQLite.sqlite3_bind_null(@native_stmt, param_index)
       else
         raise SQLite3::Exception.new("Can't prepare #{value.type}")
       end
@@ -66,14 +67,11 @@ module SQLite3
 
     def bind_params(*varbinds)
       assert_open
-      varbinds = varbinds.flatten
-      index = 1
-      varbinds.flatten.each do |var|
+      varbinds.flatten.each_with_index do |var, index|
         if var.kind_of?(Hash)
           var.each { |key, val| bind_param key, val }
         else
-          bind_param index, var
-          index += 1
+          bind_param (index + 1), var
         end
       end
     end
@@ -89,6 +87,7 @@ module SQLite3
       # Ignore the status returned. Step would have raised it already.
       SQLite::sqlite3_finalize(@native_stmt)
       SQLite::Sqlite3Stmt.disown(@native_stmt)
+      self
     end
 
     def closed?
@@ -131,6 +130,7 @@ module SQLite3
         while row = self.step
           block[row] unless row.nil?
         end
+        self # For API compatability with sqlite3-ruby gem
       else
         self.enum_for(:each)
       end

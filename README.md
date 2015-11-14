@@ -9,8 +9,11 @@ What's in the Box?
 - SQLite itself is included, and will be compiled along with this gem.
 - Low level bindings to the sqlite3 C functions in the `SQLite` module.
 - High level, object oriented bindings in the `SQLite3` module, which should be compatible with the [sqlite3](http://www.rubydoc.info/gems/sqlite3/frames) gem for MRI.
-  + The `SQLite3` module does not implement the full API of the sqlite3 gem. However,
-     any differences in behavior should be considered a bug, and filed in the [issue tracker](https://github.com/jbreeden/mruby-sqlite/issues). (PRs are gladly accepted as well.)
+  + Any derivation from sqlite3's behavior should be considered a bug, unless
+    it's a bug in sqlite3 to begin with, or they have deprecated the behavior.
+  + Note that the `Backup` class and `Pragmas` module have not yet been ported,
+    and `Database` is still missing a few methods found in sqlite3.
+
 
 ### SQLite3 Module Classes & Methods
 
@@ -32,10 +35,14 @@ What's in the Box?
   + `#closed?`
   + `#commit`
   + `#complete?`
+  + `#errcode`
+  + `#errmsg`
   + `#execute`
+  + `#execute2`
   + `#execute_batch`
   + `#initialize`
   + `#prepare`
+  + `#query`
   + `#results_as_hash`
   + `#results_as_hash=`
   + `#rollback`
@@ -108,6 +115,7 @@ What's in the Box?
 - `SQLite::sqlite3_bind_parameter_index`
 - `SQLite::sqlite3_bind_parameter_name`
 - `SQLite::sqlite3_bind_text`
+- `SQLite::sqlite3_busy_timeout`
 - `SQLite::sqlite3_changes`
 - `SQLite::sqlite3_clear_bindings`
 - `SQLite::sqlite3_close`
@@ -125,9 +133,11 @@ What's in the Box?
 - `SQLite::sqlite3_column_text`
 - `SQLite::sqlite3_column_type`
 - `SQLite::sqlite3_complete`
+- `SQLite::sqlite3_errcode`
 - `SQLite::sqlite3_errmsg`
 - `SQLite::sqlite3_finalize`
 - `SQLite::sqlite3_open`
 - `SQLite::sqlite3_prepare_v2`
 - `SQLite::sqlite3_reset`
 - `SQLite::sqlite3_step`
+- `SQLite::sqlite3_total_changes`
