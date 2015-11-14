@@ -9,7 +9,6 @@ module SQLite3
       @done = false
       # Statement may come back nil if it's whitespace, or a comment, though no error is returned
       @closed = @native_stmt.nil?
-      @results_as_hash = @db.results_as_hash
     end
 
     def assert_open
@@ -129,8 +128,7 @@ module SQLite3
     def each(&block)
       assert_open
       if block_given?
-        until self.done?
-          row = self.step
+        while row = self.step
           block[row] unless row.nil?
         end
       else
@@ -138,13 +136,24 @@ module SQLite3
       end
     end
 
-    # def execute
-    #   assert_open
-    # end
-    #
-    # def execute!
-    #   assert_open
-    # end
+    def execute(*varbinds, &block)
+      assert_open
+      reset! if active? || done?
+      bind_params(*varbinds) unless varbinds.empty?
+      results = ResultSet.new(@connection, self)
+
+      # If this query doesn't return any results,
+      # step once to make sure we're done.
+      step if 0 == column_count
+
+      block[results] if block_given?
+      results
+    end
+
+    def execute!(*varbinds, &block)
+      execute(*varbinds)
+      block_given? ? each(&block) : to_a
+    end
 
     def remainder
       @remainder
@@ -160,6 +169,8 @@ module SQLite3
 
     def step
       assert_open
+      return nil if @done
+
       status = SQLite.sqlite3_step(@native_stmt)
 
       @done = (status == SQLite::SQLITE_DONE)
@@ -169,12 +180,11 @@ module SQLite3
         SQLite3.raise_sqlite_error(@db, status)
       end
 
-      row = @results_as_hash ? {} : []
+      row = @db.results_as_hash ? {} : []
       (0...(self.column_count)).each do |index|
         val = nil
         case SQLite.sqlite3_column_type(@native_stmt, index)
         when SQLite3::ColumnType::INTEGER
-          # TODO: Use 64-bit integers?
           val = SQLite.sqlite3_column_int(@native_stmt, index)
         when SQLite3::ColumnType::FLOAT
           val = SQLite.sqlite3_column_double(@native_stmt, index)
@@ -188,7 +198,7 @@ module SQLite3
           val = SQLite.sqlite3_column_text(@native_stmt, index)
         end
 
-        if @results_as_hash
+        if @db.results_as_hash
           row[self.column_name(index)] = val
         else
           row.push(val)

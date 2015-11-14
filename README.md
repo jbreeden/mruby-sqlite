@@ -59,6 +59,18 @@ What's in the Box?
 - Class: `ProtocolException`
 - Class: `RangeException`
 - Class: `ReadOnlyException`
+- Class: `ResultSet`
+  + `#close`
+  + `#closed?`
+  + `#columns`
+  + `#each`
+  + `#each_hash`
+  + `#eof?`
+  + `#initialize`
+  + `#next`
+  + `#next_hash`
+  + `#reset`
+  + `#types`
 - Class: `SQLException`
 - Class: `SchemaChangedException`
 - Class: `Statement`
@@ -76,6 +88,8 @@ What's in the Box?
   + `#columns`
   + `#done?`
   + `#each`
+  + `#execute`
+  + `#execute!`
   + `#initialize`
   + `#remainder`
   + `#reset!`
