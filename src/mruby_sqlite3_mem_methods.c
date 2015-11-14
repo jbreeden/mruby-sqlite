@@ -374,7 +374,7 @@ mrb_SQLite_Sqlite3MemMethods_set_pAppData(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3MemMethods_init(mrb_state* mrb) {
-  RClass* Sqlite3MemMethods_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3MemMethods", mrb->object_class);
+  struct RClass* Sqlite3MemMethods_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3MemMethods", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3MemMethods_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3MemMethods_INITIALIZE

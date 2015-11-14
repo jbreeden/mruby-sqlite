@@ -104,7 +104,7 @@ mrb_SQLite_Sqlite3File_set_pMethods(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3File_init(mrb_state* mrb) {
-  RClass* Sqlite3File_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3File", mrb->object_class);
+  struct RClass* Sqlite3File_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3File", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3File_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3File_INITIALIZE

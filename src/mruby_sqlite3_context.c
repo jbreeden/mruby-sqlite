@@ -58,7 +58,7 @@ mrb_SQLite_Sqlite3Context_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Context_init(mrb_state* mrb) {
-  RClass* Sqlite3Context_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Context", mrb->object_class);
+  struct RClass* Sqlite3Context_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Context", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Context_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3Context_INITIALIZE

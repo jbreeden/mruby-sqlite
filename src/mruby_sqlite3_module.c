@@ -966,7 +966,7 @@ mrb_SQLite_Sqlite3Module_set_xRollbackTo(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Module_init(mrb_state* mrb) {
-  RClass* Sqlite3Module_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Module", mrb->object_class);
+  struct RClass* Sqlite3Module_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Module", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Module_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3Module_INITIALIZE

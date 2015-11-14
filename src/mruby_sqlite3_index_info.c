@@ -546,7 +546,7 @@ mrb_SQLite_Sqlite3IndexInfo_set_estimatedRows(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3IndexInfo_init(mrb_state* mrb) {
-  RClass* Sqlite3IndexInfo_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3IndexInfo", mrb->object_class);
+  struct RClass* Sqlite3IndexInfo_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3IndexInfo", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3IndexInfo_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3IndexInfo_INITIALIZE

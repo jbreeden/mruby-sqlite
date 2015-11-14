@@ -197,7 +197,7 @@ mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
-  RClass* Sqlite3Vtab_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Vtab", mrb->object_class);
+  struct RClass* Sqlite3Vtab_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Vtab", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Vtab_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3Vtab_INITIALIZE

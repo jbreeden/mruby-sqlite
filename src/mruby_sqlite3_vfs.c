@@ -947,7 +947,7 @@ mrb_SQLite_Sqlite3Vfs_set_xNextSystemCall(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Vfs_init(mrb_state* mrb) {
-  RClass* Sqlite3Vfs_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Vfs", mrb->object_class);
+  struct RClass* Sqlite3Vfs_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Vfs", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Vfs_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3Vfs_INITIALIZE

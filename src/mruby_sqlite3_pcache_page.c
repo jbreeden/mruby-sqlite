@@ -140,7 +140,7 @@ mrb_SQLite_Sqlite3PcachePage_set_pExtra(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3PcachePage_init(mrb_state* mrb) {
-  RClass* Sqlite3PcachePage_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3PcachePage", mrb->object_class);
+  struct RClass* Sqlite3PcachePage_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3PcachePage", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3PcachePage_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3PcachePage_INITIALIZE

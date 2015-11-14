@@ -413,7 +413,7 @@ mrb_SQLite_Sqlite3MutexMethods_set_xMutexNotheld(mrb_state* mrb, mrb_value self)
 
 
 void mrb_SQLite_Sqlite3MutexMethods_init(mrb_state* mrb) {
-  RClass* Sqlite3MutexMethods_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3MutexMethods", mrb->object_class);
+  struct RClass* Sqlite3MutexMethods_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3MutexMethods", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3MutexMethods_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3MutexMethods_INITIALIZE

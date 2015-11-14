@@ -58,7 +58,7 @@ mrb_SQLite_Sqlite3Backup_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Backup_init(mrb_state* mrb) {
-  RClass* Sqlite3Backup_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Backup", mrb->object_class);
+  struct RClass* Sqlite3Backup_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Backup", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Backup_class, MRB_TT_DATA);
 
 #if BIND_Sqlite3Backup_INITIALIZE

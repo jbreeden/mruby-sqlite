@@ -58,7 +58,7 @@ mrb_SQLite_Mem_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Mem_init(mrb_state* mrb) {
-  RClass* Mem_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Mem", mrb->object_class);
+  struct RClass* Mem_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Mem", mrb->object_class);
   MRB_SET_INSTANCE_TT(Mem_class, MRB_TT_DATA);
 
 #if BIND_Mem_INITIALIZE

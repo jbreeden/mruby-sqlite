@@ -10112,7 +10112,7 @@ mrb_SQLite_sqlite3_wal_hook(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
-  RClass* SQLite_module = mrb_define_module(mrb, "SQLite");
+  struct RClass* SQLite_module = mrb_define_module(mrb, "SQLite");
   mruby_SQLite_define_macro_constants(mrb);
 
   /*
