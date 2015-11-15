@@ -3,6 +3,20 @@ mruby-sqlite
 
 MRuby bindings to SQLite3. Generate by [mruby-bindings](http://github.com/jbreeden/mruby-bindings).
 
+Building
+--------
+
+Building `mruby-sqlite` with MRuby is the same whether you're on Windows, MacOS,
+or Linux:
+
+1. Download or clone [MRuby](https://github.com/mruby/mruby)
+2. Add the `mruby-sqlite` gem declaration to MRuby's build_config.rb file.
+   - Use `conf.gem :github => 'jbreeden/mruby-sqlite'`
+     to have MRuby checkout the lasest version automatically before building.
+   - Use `conf.gem 'PATH/TO/mruby-sqlite'` if you've already downloaded
+     this repo.
+3. Run `rake` in MRuby's root directory.
+
 What's in the Box?
 ------------------
 
