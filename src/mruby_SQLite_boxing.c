@@ -20,6 +20,7 @@ static void free_Mem(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type Mem_data_type = {
@@ -80,6 +81,7 @@ static void free_sqlite3(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_data_type = {
@@ -140,6 +142,7 @@ static void free_sqlite3_backup(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_backup_data_type = {
@@ -200,6 +203,7 @@ static void free_sqlite3_blob(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_blob_data_type = {
@@ -260,6 +264,7 @@ static void free_sqlite3_context(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_context_data_type = {
@@ -320,6 +325,7 @@ static void free_sqlite3_file(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_file_data_type = {
@@ -380,6 +386,7 @@ static void free_sqlite3_index_raint(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_index_raint_data_type = {
@@ -440,6 +447,7 @@ static void free_sqlite3_index_raint_usage(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_index_raint_usage_data_type = {
@@ -500,6 +508,7 @@ static void free_sqlite3_index_info(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_index_info_data_type = {
@@ -560,6 +569,7 @@ static void free_sqlite3_index_orderby(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_index_orderby_data_type = {
@@ -620,6 +630,7 @@ static void free_sqlite3_io_methods(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_io_methods_data_type = {
@@ -680,6 +691,7 @@ static void free_sqlite3_mem_methods(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_mem_methods_data_type = {
@@ -740,6 +752,7 @@ static void free_sqlite3_module(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_module_data_type = {
@@ -800,6 +813,7 @@ static void free_sqlite3_mutex(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_mutex_data_type = {
@@ -860,6 +874,7 @@ static void free_sqlite3_mutex_methods(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_mutex_methods_data_type = {
@@ -920,6 +935,7 @@ static void free_sqlite3_pcache(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_pcache_data_type = {
@@ -980,6 +996,7 @@ static void free_sqlite3_pcache_methods(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_pcache_methods_data_type = {
@@ -1040,6 +1057,7 @@ static void free_sqlite3_pcache_methods2(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_pcache_methods2_data_type = {
@@ -1100,6 +1118,7 @@ static void free_sqlite3_pcache_page(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_pcache_page_data_type = {
@@ -1160,6 +1179,7 @@ static void free_sqlite3_rtree_geometry(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_rtree_geometry_data_type = {
@@ -1220,6 +1240,7 @@ static void free_sqlite3_rtree_query_info(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_rtree_query_info_data_type = {
@@ -1280,6 +1301,7 @@ static void free_sqlite3_stmt(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_stmt_data_type = {
@@ -1340,6 +1362,7 @@ static void free_sqlite3_vfs(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_vfs_data_type = {
@@ -1400,6 +1423,7 @@ static void free_sqlite3_vtab(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_vtab_data_type = {
@@ -1460,6 +1484,7 @@ static void free_sqlite3_vtab_cursor(mrb_state* mrb, void* ptr) {
       box->obj = NULL;
     }
   }
+  free(box);
 }
 
 static const mrb_data_type sqlite3_vtab_cursor_data_type = {
