@@ -10,7 +10,7 @@ module SQLite3
       end
     end
 
-    def initialize(filename, &block)
+    def initialize(filename, opt = {}, &block)
       @results_as_hash = false
       @closed = false
       @transaction_active = false
@@ -21,10 +21,14 @@ module SQLite3
       else
         SQLite3.raise_sqlite_error(@native_db, status)
       end
+      
+      if opt[:results_as_hash]
+        self.results_as_hash = opt[:results_as_hash]
+      end
 
       if block_given?
         block[self]
-        SQLite.sqlite3_close(@native_db)
+        self.close
       end
     end
 

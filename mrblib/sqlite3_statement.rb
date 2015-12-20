@@ -34,6 +34,7 @@ module SQLite3
         end
         
         param_index = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
+        
         if param_index == 0
           raise SQLite3::Exception.new("No such bind parameter #{which}")
         end

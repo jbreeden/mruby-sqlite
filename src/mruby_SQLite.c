@@ -665,7 +665,7 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
 #endif
 
 #if BIND_sqlite3_bind_text_FUNCTION
-#define sqlite3_bind_text_REQUIRED_ARGC 5
+#define sqlite3_bind_text_REQUIRED_ARGC 4
 #define sqlite3_bind_text_OPTIONAL_ARGC 0
 /* sqlite3_bind_text
  *
@@ -674,7 +674,6 @@ mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
  * - arg2: int
  * - arg3: const char *
  * - arg4: int
- * - arg5: void (*)(void *)
  * Return Type: int
  */
 mrb_value
@@ -683,10 +682,9 @@ mrb_SQLite_sqlite3_bind_text(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg2;
   char * native_arg3 = NULL;
   mrb_int native_arg4;
-  mrb_value arg5;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oiz!io", &arg1, &native_arg2, &native_arg3, &native_arg4, &arg5);
+  mrb_get_args(mrb, "oiz!i", &arg1, &native_arg2, &native_arg3, &native_arg4);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Stmt_class(mrb))) {

@@ -28,6 +28,7 @@ What's in the Box?
     it's a bug in sqlite3 to begin with, or they have deprecated the behavior.
   + Note that the `Backup` class and `Pragmas` module have not yet been ported,
     and `Database` is still missing a few methods found in sqlite3.
+  + In the process of porting the CRuby unit tests for this gem. See [test_results.md]
 - Low level bindings to the sqlite3 C functions in the `SQLite` module.
 
 
@@ -120,40 +121,3 @@ What's in the Box?
   + `#types`
 - Class: `TooBigException`
 - Class: `UnsupportedException`
-
-### SQLite Module Functions
-
-- `SQLite::sqlite3_bind_blob`
-- `SQLite::sqlite3_bind_double`
-- `SQLite::sqlite3_bind_int`
-- `SQLite::sqlite3_bind_null`
-- `SQLite::sqlite3_bind_parameter_count`
-- `SQLite::sqlite3_bind_parameter_index`
-- `SQLite::sqlite3_bind_parameter_name`
-- `SQLite::sqlite3_bind_text`
-- `SQLite::sqlite3_busy_timeout`
-- `SQLite::sqlite3_changes`
-- `SQLite::sqlite3_clear_bindings`
-- `SQLite::sqlite3_close`
-- `SQLite::sqlite3_column_blob`
-- `SQLite::sqlite3_column_bytes`
-- `SQLite::sqlite3_column_bytes16`
-- `SQLite::sqlite3_column_count`
-- `SQLite::sqlite3_column_database_name`
-- `SQLite::sqlite3_column_decltype`
-- `SQLite::sqlite3_column_double`
-- `SQLite::sqlite3_column_int`
-- `SQLite::sqlite3_column_name`
-- `SQLite::sqlite3_column_origin_name`
-- `SQLite::sqlite3_column_table_name`
-- `SQLite::sqlite3_column_text`
-- `SQLite::sqlite3_column_type`
-- `SQLite::sqlite3_complete`
-- `SQLite::sqlite3_errcode`
-- `SQLite::sqlite3_errmsg`
-- `SQLite::sqlite3_finalize`
-- `SQLite::sqlite3_open`
-- `SQLite::sqlite3_prepare_v2`
-- `SQLite::sqlite3_reset`
-- `SQLite::sqlite3_step`
-- `SQLite::sqlite3_total_changes`
