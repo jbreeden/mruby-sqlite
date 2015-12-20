@@ -1525,7 +1525,7 @@ mrb_SQLite_sqlite3_column_blob(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   int num_bytes = sqlite3_column_bytes(native_arg1, native_iCol);
-  mrb_value return_value = mrb_str_new(mrb, (char*)result, num_bytes);
+  mrb_value return_value = mrb_str_new(mrb, (char*)native_return_value, num_bytes);
   
   return return_value;
 }

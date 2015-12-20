@@ -38,7 +38,7 @@
 #define BIND_sqlite3_close_v2_FUNCTION TRUE
 #define BIND_sqlite3_collation_needed_FUNCTION FALSE
 #define BIND_sqlite3_collation_needed16_FUNCTION FALSE
-#define BIND_sqlite3_column_blob_FUNCTION FALSE
+#define BIND_sqlite3_column_blob_FUNCTION TRUE
 #define BIND_sqlite3_column_bytes_FUNCTION TRUE
 #define BIND_sqlite3_column_bytes16_FUNCTION TRUE
 #define BIND_sqlite3_column_count_FUNCTION TRUE
