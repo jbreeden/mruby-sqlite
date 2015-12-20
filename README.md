@@ -28,7 +28,7 @@ What's in the Box?
     it's a bug in sqlite3 to begin with, or they have deprecated the behavior.
   + Note that the `Backup` class and `Pragmas` module have not yet been ported,
     and `Database` is still missing a few methods found in sqlite3.
-  + In the process of porting the CRuby unit tests for this gem. See [test_results.md]
+  + In the process of porting the CRuby unit tests for this gem. See [test_results.md](test_results.md)
 - Low level bindings to the sqlite3 C functions in the `SQLite` module.
 
 
