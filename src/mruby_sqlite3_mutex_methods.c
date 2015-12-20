@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 6202
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3MutexMethods_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3MutexMethods_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods* native_object = (struct sqlite3_mutex_methods*)malloc(sizeof(struct sqlite3_mutex_methods));
-  mruby_gift_struct sqlite3_mutex_methods_data_ptr(self, native_object);
+  struct sqlite3_mutex_methods* native_object = (struct sqlite3_mutex_methods*)calloc(1, sizeof(struct sqlite3_mutex_methods));
+  mruby_giftwrap_sqlite3_mutex_methods_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -60,22 +56,24 @@ mrb_SQLite_Sqlite3MutexMethods_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD_READER
 /* get_xMutexInit
  *
  * Return Type: int (*)(void)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexInit(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  int (*)(void) native_field = native_self->xMutexInit;
+  int (*)(void) native_xMutexInit = native_self->xMutexInit;
 
-  mrb_value ruby_field = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(mrb, native_field);
+  mrb_value xMutexInit = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(mrb, native_xMutexInit);
 
-  return ruby_field;
+  return xMutexInit;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD_WRITER
 /* set_xMutexInit
  *
  * Parameters:
@@ -83,38 +81,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexInit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexInit(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexInit;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexInit);
 
   /* type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(ruby_field);
+  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(xMutexInit);
 
-  int (*native_field)(void) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(ruby_field);
+  int (*native_xMutexInit)(void) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(xMutexInit);
 
-  native_self->xMutexInit = native_field;
-
-  return ruby_field;
+  native_self->xMutexInit = native_xMutexInit;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_READER
 /* get_xMutexEnd
  *
  * Return Type: int (*)(void)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnd(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  int (*)(void) native_field = native_self->xMutexEnd;
+  int (*)(void) native_xMutexEnd = native_self->xMutexEnd;
 
-  mrb_value ruby_field = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(mrb, native_field);
+  mrb_value xMutexEnd = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(mrb, native_xMutexEnd);
 
-  return ruby_field;
+  return xMutexEnd;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_WRITER
 /* set_xMutexEnd
  *
  * Parameters:
@@ -122,38 +124,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnd(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexEnd(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexEnd;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexEnd);
 
   /* type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(ruby_field);
+  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(xMutexEnd);
 
-  int (*native_field)(void) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(ruby_field);
+  int (*native_xMutexEnd)(void) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_RPAREN(xMutexEnd);
 
-  native_self->xMutexEnd = native_field;
-
-  return ruby_field;
+  native_self->xMutexEnd = native_xMutexEnd;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_READER
 /* get_xMutexAlloc
  *
  * Return Type: sqlite3_mutex *(*)(int)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexAlloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  sqlite3_mutex *(*)(int) native_field = native_self->xMutexAlloc;
+  sqlite3_mutex *(*)(int) native_xMutexAlloc = native_self->xMutexAlloc;
 
-  mrb_value ruby_field = TODO_mruby_box_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(mrb, native_field);
+  mrb_value xMutexAlloc = TODO_mruby_box_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(mrb, native_xMutexAlloc);
 
-  return ruby_field;
+  return xMutexAlloc;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_WRITER
 /* set_xMutexAlloc
  *
  * Parameters:
@@ -161,38 +167,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexAlloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexAlloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexAlloc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexAlloc);
 
   /* type checking */
-  TODO_type_check_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(ruby_field);
+  TODO_type_check_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(xMutexAlloc);
 
-  sqlite3_mutex *(*native_field)(int) = TODO_mruby_unbox_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(ruby_field);
+  sqlite3_mutex *(*native_xMutexAlloc)(int) = TODO_mruby_unbox_sqlite3_mutex_PTR_LPAREN_PTR_RPAREN_LPAREN_int_RPAREN(xMutexAlloc);
 
-  native_self->xMutexAlloc = native_field;
-
-  return ruby_field;
+  native_self->xMutexAlloc = native_xMutexAlloc;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD_READER
 /* get_xMutexFree
  *
  * Return Type: void (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexFree(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  void (*)(sqlite3_mutex *) native_field = native_self->xMutexFree;
+  void (*)(sqlite3_mutex *) native_xMutexFree = native_self->xMutexFree;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexFree = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexFree);
 
-  return ruby_field;
+  return xMutexFree;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD_WRITER
 /* set_xMutexFree
  *
  * Parameters:
@@ -200,38 +210,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexFree(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexFree(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexFree;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexFree);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexFree);
 
-  void (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  void (*native_xMutexFree)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexFree);
 
-  native_self->xMutexFree = native_field;
-
-  return ruby_field;
+  native_self->xMutexFree = native_xMutexFree;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_READER
 /* get_xMutexEnter
  *
  * Return Type: void (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnter(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  void (*)(sqlite3_mutex *) native_field = native_self->xMutexEnter;
+  void (*)(sqlite3_mutex *) native_xMutexEnter = native_self->xMutexEnter;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexEnter = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexEnter);
 
-  return ruby_field;
+  return xMutexEnter;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_WRITER
 /* set_xMutexEnter
  *
  * Parameters:
@@ -239,38 +253,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnter(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexEnter(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexEnter;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexEnter);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexEnter);
 
-  void (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  void (*native_xMutexEnter)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexEnter);
 
-  native_self->xMutexEnter = native_field;
-
-  return ruby_field;
+  native_self->xMutexEnter = native_xMutexEnter;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD_READER
 /* get_xMutexTry
  *
  * Return Type: int (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexTry(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  int (*)(sqlite3_mutex *) native_field = native_self->xMutexTry;
+  int (*)(sqlite3_mutex *) native_xMutexTry = native_self->xMutexTry;
 
-  mrb_value ruby_field = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexTry = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexTry);
 
-  return ruby_field;
+  return xMutexTry;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD_WRITER
 /* set_xMutexTry
  *
  * Parameters:
@@ -278,38 +296,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexTry(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexTry(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexTry;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexTry);
 
   /* type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexTry);
 
-  int (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  int (*native_xMutexTry)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexTry);
 
-  native_self->xMutexTry = native_field;
-
-  return ruby_field;
+  native_self->xMutexTry = native_xMutexTry;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_READER
 /* get_xMutexLeave
  *
  * Return Type: void (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexLeave(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  void (*)(sqlite3_mutex *) native_field = native_self->xMutexLeave;
+  void (*)(sqlite3_mutex *) native_xMutexLeave = native_self->xMutexLeave;
 
-  mrb_value ruby_field = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexLeave = TODO_mruby_box_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexLeave);
 
-  return ruby_field;
+  return xMutexLeave;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_WRITER
 /* set_xMutexLeave
  *
  * Parameters:
@@ -317,38 +339,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexLeave(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexLeave(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexLeave;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexLeave);
 
   /* type checking */
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexLeave);
 
-  void (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  void (*native_xMutexLeave)(sqlite3_mutex *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexLeave);
 
-  native_self->xMutexLeave = native_field;
-
-  return ruby_field;
+  native_self->xMutexLeave = native_xMutexLeave;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_READER
 /* get_xMutexHeld
  *
  * Return Type: int (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexHeld(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  int (*)(sqlite3_mutex *) native_field = native_self->xMutexHeld;
+  int (*)(sqlite3_mutex *) native_xMutexHeld = native_self->xMutexHeld;
 
-  mrb_value ruby_field = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexHeld = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexHeld);
 
-  return ruby_field;
+  return xMutexHeld;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_WRITER
 /* set_xMutexHeld
  *
  * Parameters:
@@ -356,38 +382,42 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexHeld(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexHeld(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexHeld;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexHeld);
 
   /* type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexHeld);
 
-  int (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  int (*native_xMutexHeld)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexHeld);
 
-  native_self->xMutexHeld = native_field;
-
-  return ruby_field;
+  native_self->xMutexHeld = native_xMutexHeld;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_READER
 /* get_xMutexNotheld
  *
  * Return Type: int (*)(sqlite3_mutex *)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_get_xMutexNotheld(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
 
-  int (*)(sqlite3_mutex *) native_field = native_self->xMutexNotheld;
+  int (*)(sqlite3_mutex *) native_xMutexNotheld = native_self->xMutexNotheld;
 
-  mrb_value ruby_field = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_field);
+  mrb_value xMutexNotheld = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(mrb, native_xMutexNotheld);
 
-  return ruby_field;
+  return xMutexNotheld;
 }
+#endif
 
+#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_WRITER
 /* set_xMutexNotheld
  *
  * Parameters:
@@ -395,19 +425,21 @@ mrb_SQLite_Sqlite3MutexMethods_get_xMutexNotheld(mrb_state* mrb, mrb_value self)
  */
 mrb_value
 mrb_SQLite_Sqlite3MutexMethods_set_xMutexNotheld(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex_methods * native_self = mruby_unbox_struct sqlite3_mutex_methods(self);
-  mrb_value ruby_field;
+  struct sqlite3_mutex_methods * native_self = mruby_unbox_sqlite3_mutex_methods(self);
+  mrb_value xMutexNotheld;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &xMutexNotheld);
 
   /* type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexNotheld);
 
-  int (*native_field)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(ruby_field);
+  int (*native_xMutexNotheld)(sqlite3_mutex *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_sqlite3_mutex_PTR_RPAREN(xMutexNotheld);
 
-  native_self->xMutexNotheld = native_field;
-
-  return ruby_field;
+  native_self->xMutexNotheld = native_xMutexNotheld;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -425,40 +457,58 @@ void mrb_SQLite_Sqlite3MutexMethods_init(mrb_state* mrb) {
   /*
    * Fields
    */
-#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexInit", mrb_SQLite_Sqlite3MutexMethods_get_xMutexInit, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexInit_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexInit=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexInit, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexEnd", mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnd, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexEnd=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexEnd, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexAlloc", mrb_SQLite_Sqlite3MutexMethods_get_xMutexAlloc, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexAlloc=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexAlloc, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexFree", mrb_SQLite_Sqlite3MutexMethods_get_xMutexFree, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexFree_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexFree=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexFree, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexEnter", mrb_SQLite_Sqlite3MutexMethods_get_xMutexEnter, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexEnter=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexEnter, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexTry", mrb_SQLite_Sqlite3MutexMethods_get_xMutexTry, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexTry_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexTry=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexTry, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexLeave", mrb_SQLite_Sqlite3MutexMethods_get_xMutexLeave, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexLeave=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexLeave, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexHeld", mrb_SQLite_Sqlite3MutexMethods_get_xMutexHeld, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexHeld=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexHeld, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD
+#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_READER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexNotheld", mrb_SQLite_Sqlite3MutexMethods_get_xMutexNotheld, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3MutexMethods_class, "xMutexNotheld=", mrb_SQLite_Sqlite3MutexMethods_set_xMutexNotheld, MRB_ARGS_ARG(1, 0));
 #endif
 

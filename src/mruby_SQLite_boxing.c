@@ -1,5 +1,36 @@
 /*
- * TODO: Update includes
+ * Boxing Code (Generated)
+ * =======================
+ *
+ * The code generator learns the data types declared in the C/C++ source files
+ * it is run against, and generates this boxing, unboxing, and GC code.
+ * 
+ * Terms
+ * ------
+ *
+ * ### Boxing
+ * In general refers to wrapping a native object in an mrb_value.
+ * 
+ * ### Gift Wrapping
+ * A specific type of boxing, indicating that the object belongs
+ * to Ruby and should be free'd when the mrb_value is GC'ed.
+ * 
+ * ### Unboxing
+ * Retrieving the wrapped native object from an mrb_value.
+ *
+ * Customizing
+ * -----------
+ * 
+ * By default, all data types are assumed to be destructable by the `free`
+ * function. To use a custom destructor for your type, tell CTypes with
+ * `CTypes.set_destructor`.
+ *
+ * Example
+ * ```
+ * // I have `struct GError` objects from glib,
+ * // which should be freed with `g_error_free`
+ * CTypes.set_destructor('struct GError', 'g_error_free')
+ * ```
  */
  #include "mruby_SQLite.h"
 
@@ -12,9 +43,6 @@
 static void free_Mem(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -73,11 +101,8 @@ mruby_unbox_Mem(mrb_value boxed) {
 static void free_sqlite3(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
-      sqlite3_close((sqlite3*)box->obj);
+      sqlite3_close(box->obj);
       box->obj = NULL;
     }
   }
@@ -134,9 +159,6 @@ mruby_unbox_sqlite3(mrb_value boxed) {
 static void free_sqlite3_backup(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -195,9 +217,6 @@ mruby_unbox_sqlite3_backup(mrb_value boxed) {
 static void free_sqlite3_blob(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -256,9 +275,6 @@ mruby_unbox_sqlite3_blob(mrb_value boxed) {
 static void free_sqlite3_context(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -317,9 +333,6 @@ mruby_unbox_sqlite3_context(mrb_value boxed) {
 static void free_sqlite3_file(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -378,9 +391,6 @@ mruby_unbox_sqlite3_file(mrb_value boxed) {
 static void free_sqlite3_index_raint(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -439,9 +449,6 @@ mruby_unbox_sqlite3_index_raint(mrb_value boxed) {
 static void free_sqlite3_index_raint_usage(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -500,9 +507,6 @@ mruby_unbox_sqlite3_index_raint_usage(mrb_value boxed) {
 static void free_sqlite3_index_info(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -561,9 +565,6 @@ mruby_unbox_sqlite3_index_info(mrb_value boxed) {
 static void free_sqlite3_index_orderby(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -622,9 +623,6 @@ mruby_unbox_sqlite3_index_orderby(mrb_value boxed) {
 static void free_sqlite3_io_methods(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -683,9 +681,6 @@ mruby_unbox_sqlite3_io_methods(mrb_value boxed) {
 static void free_sqlite3_mem_methods(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -744,9 +739,6 @@ mruby_unbox_sqlite3_mem_methods(mrb_value boxed) {
 static void free_sqlite3_module(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -797,128 +789,6 @@ mruby_unbox_sqlite3_module(mrb_value boxed) {
 }
 #endif
 
-#if BIND_Sqlite3Mutex_TYPE
-/*
- * Boxing implementation for struct sqlite3_mutex
- */
-
-static void free_sqlite3_mutex(mrb_state* mrb, void* ptr) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
-  if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
-    if (box->obj != NULL) {
-      free(box->obj);
-      box->obj = NULL;
-    }
-  }
-  free(box);
-}
-
-static const mrb_data_type sqlite3_mutex_data_type = {
-   "struct sqlite3_mutex", free_sqlite3_mutex
-};
-
-mrb_value
-mruby_box_sqlite3_mutex(mrb_state* mrb, struct sqlite3_mutex *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = FALSE;
-  box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, Sqlite3Mutex_class(mrb), &sqlite3_mutex_data_type, box));
-}
-
-mrb_value
-mruby_giftwrap_sqlite3_mutex(mrb_state* mrb, struct sqlite3_mutex *unboxed) {
-   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-   box->belongs_to_ruby = TRUE;
-   box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, Sqlite3Mutex_class(mrb), &sqlite3_mutex_data_type, box));
-}
-
-void
-mruby_set_sqlite3_mutex_data_ptr(mrb_value obj, struct sqlite3_mutex *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = FALSE;
-  box->obj = unboxed;
-  mrb_data_init(obj, box, &sqlite3_mutex_data_type);
-}
-
-void
-mruby_gift_sqlite3_mutex_data_ptr(mrb_value obj, struct sqlite3_mutex *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = TRUE;
-  box->obj = unboxed;
-  mrb_data_init(obj, box, &sqlite3_mutex_data_type);
-}
-
-struct sqlite3_mutex *
-mruby_unbox_sqlite3_mutex(mrb_value boxed) {
-  return (struct sqlite3_mutex *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
-}
-#endif
-
-#if BIND_Sqlite3MutexMethods_TYPE
-/*
- * Boxing implementation for struct sqlite3_mutex_methods
- */
-
-static void free_sqlite3_mutex_methods(mrb_state* mrb, void* ptr) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
-  if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
-    if (box->obj != NULL) {
-      free(box->obj);
-      box->obj = NULL;
-    }
-  }
-  free(box);
-}
-
-static const mrb_data_type sqlite3_mutex_methods_data_type = {
-   "struct sqlite3_mutex_methods", free_sqlite3_mutex_methods
-};
-
-mrb_value
-mruby_box_sqlite3_mutex_methods(mrb_state* mrb, struct sqlite3_mutex_methods *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = FALSE;
-  box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, Sqlite3MutexMethods_class(mrb), &sqlite3_mutex_methods_data_type, box));
-}
-
-mrb_value
-mruby_giftwrap_sqlite3_mutex_methods(mrb_state* mrb, struct sqlite3_mutex_methods *unboxed) {
-   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-   box->belongs_to_ruby = TRUE;
-   box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, Sqlite3MutexMethods_class(mrb), &sqlite3_mutex_methods_data_type, box));
-}
-
-void
-mruby_set_sqlite3_mutex_methods_data_ptr(mrb_value obj, struct sqlite3_mutex_methods *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = FALSE;
-  box->obj = unboxed;
-  mrb_data_init(obj, box, &sqlite3_mutex_methods_data_type);
-}
-
-void
-mruby_gift_sqlite3_mutex_methods_data_ptr(mrb_value obj, struct sqlite3_mutex_methods *unboxed) {
-  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
-  box->belongs_to_ruby = TRUE;
-  box->obj = unboxed;
-  mrb_data_init(obj, box, &sqlite3_mutex_methods_data_type);
-}
-
-struct sqlite3_mutex_methods *
-mruby_unbox_sqlite3_mutex_methods(mrb_value boxed) {
-  return (struct sqlite3_mutex_methods *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
-}
-#endif
-
 #if BIND_Sqlite3Pcache_TYPE
 /*
  * Boxing implementation for struct sqlite3_pcache
@@ -927,9 +797,6 @@ mruby_unbox_sqlite3_mutex_methods(mrb_value boxed) {
 static void free_sqlite3_pcache(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -988,9 +855,6 @@ mruby_unbox_sqlite3_pcache(mrb_value boxed) {
 static void free_sqlite3_pcache_methods(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1049,9 +913,6 @@ mruby_unbox_sqlite3_pcache_methods(mrb_value boxed) {
 static void free_sqlite3_pcache_methods2(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1110,9 +971,6 @@ mruby_unbox_sqlite3_pcache_methods2(mrb_value boxed) {
 static void free_sqlite3_pcache_page(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1171,9 +1029,6 @@ mruby_unbox_sqlite3_pcache_page(mrb_value boxed) {
 static void free_sqlite3_rtree_geometry(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1232,9 +1087,6 @@ mruby_unbox_sqlite3_rtree_geometry(mrb_value boxed) {
 static void free_sqlite3_rtree_query_info(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1293,11 +1145,8 @@ mruby_unbox_sqlite3_rtree_query_info(mrb_value boxed) {
 static void free_sqlite3_stmt(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
-      sqlite3_finalize((sqlite3_stmt*)box->obj);
+      sqlite3_finalize(box->obj);
       box->obj = NULL;
     }
   }
@@ -1354,9 +1203,6 @@ mruby_unbox_sqlite3_stmt(mrb_value boxed) {
 static void free_sqlite3_vfs(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1415,9 +1261,6 @@ mruby_unbox_sqlite3_vfs(mrb_value boxed) {
 static void free_sqlite3_vtab(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1476,9 +1319,6 @@ mruby_unbox_sqlite3_vtab(mrb_value boxed) {
 static void free_sqlite3_vtab_cursor(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
-    /* TODO: free is the default. Should be changed if a type-specific
-     *       destructor is provided for this type.
-     */
     if (box->obj != NULL) {
       free(box->obj);
       box->obj = NULL;
@@ -1528,3 +1368,4 @@ mruby_unbox_sqlite3_vtab_cursor(mrb_value boxed) {
   return (struct sqlite3_vtab_cursor *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+

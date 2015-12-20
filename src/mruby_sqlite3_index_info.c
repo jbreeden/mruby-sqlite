@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 5466
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3IndexInfo_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3IndexInfo_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info* native_object = (struct sqlite3_index_info*)malloc(sizeof(struct sqlite3_index_info));
-  mruby_gift_struct sqlite3_index_info_data_ptr(self, native_object);
+  struct sqlite3_index_info* native_object = (struct sqlite3_index_info*)calloc(1, sizeof(struct sqlite3_index_info));
+  mruby_giftwrap_sqlite3_index_info_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -60,26 +56,24 @@ mrb_SQLite_Sqlite3IndexInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-#if BIND_Sqlite3IndexInfo_nConstraint_FIELD
+#if BIND_Sqlite3IndexInfo_nConstraint_FIELD_READER
 /* get_nConstraint
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_nConstraint(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  int native_field = native_self->nConstraint;
+  int native_nConstraint = native_self->nConstraint;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value nConstraint = mrb_fixnum_value(native_nConstraint);
 
-  return ruby_field;
+  return nConstraint;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_nConstraint_FIELD_WRITER
 /* set_nConstraint
  *
  * Parameters:
@@ -87,41 +81,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_nConstraint(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_nConstraint(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_nConstraint;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_nConstraint);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->nConstraint = native_field;
-
-  return ruby_field;
+  native_self->nConstraint = native_nConstraint;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_aConstraint_FIELD
+#if BIND_Sqlite3IndexInfo_aConstraint_FIELD_READER
 /* get_aConstraint
  *
  * Return Type: struct sqlite3_index_constraint *
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_aConstraint(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  struct sqlite3_index_constraint * native_field = native_self->aConstraint;
+  struct sqlite3_index_constraint * native_aConstraint = native_self->aConstraint;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_raint(mrb, native_field));
+  mrb_value aConstraint = (native_aConstraint == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_raint(mrb, native_aConstraint));
 
-  return ruby_field;
+  return aConstraint;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_aConstraint_FIELD_WRITER
 /* set_aConstraint
  *
  * Parameters:
@@ -129,45 +119,45 @@ mrb_SQLite_Sqlite3IndexInfo_get_aConstraint(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_aConstraint(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_value aConstraint;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &aConstraint);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, Sqlite3IndexConstraint_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, aConstraint, Sqlite3IndexConstraint_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3IndexConstraint expected");
     return mrb_nil_value();
   }
 
-  struct sqlite3_index_constraint * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox_sqlite3_index_raint(ruby_field));
+  struct sqlite3_index_constraint * native_aConstraint = (mrb_nil_p(aConstraint) ? NULL : mruby_unbox_sqlite3_index_raint(aConstraint));
 
-  native_self->aConstraint = native_field;
-
-  return ruby_field;
+  native_self->aConstraint = native_aConstraint;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD
+#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD_READER
 /* get_nOrderBy
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_nOrderBy(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  int native_field = native_self->nOrderBy;
+  int native_nOrderBy = native_self->nOrderBy;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value nOrderBy = mrb_fixnum_value(native_nOrderBy);
 
-  return ruby_field;
+  return nOrderBy;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD_WRITER
 /* set_nOrderBy
  *
  * Parameters:
@@ -175,41 +165,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_nOrderBy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_nOrderBy(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_nOrderBy;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_nOrderBy);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->nOrderBy = native_field;
-
-  return ruby_field;
+  native_self->nOrderBy = native_nOrderBy;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD
+#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD_READER
 /* get_aOrderBy
  *
  * Return Type: struct sqlite3_index_orderby *
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_aOrderBy(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  struct sqlite3_index_orderby * native_field = native_self->aOrderBy;
+  struct sqlite3_index_orderby * native_aOrderBy = native_self->aOrderBy;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_orderby(mrb, native_field));
+  mrb_value aOrderBy = (native_aOrderBy == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_orderby(mrb, native_aOrderBy));
 
-  return ruby_field;
+  return aOrderBy;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD_WRITER
 /* set_aOrderBy
  *
  * Parameters:
@@ -217,41 +203,45 @@ mrb_SQLite_Sqlite3IndexInfo_get_aOrderBy(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_aOrderBy(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_value aOrderBy;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &aOrderBy);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, Sqlite3IndexOrderby_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, aOrderBy, Sqlite3IndexOrderby_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3IndexOrderby expected");
     return mrb_nil_value();
   }
 
-  struct sqlite3_index_orderby * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox_sqlite3_index_orderby(ruby_field));
+  struct sqlite3_index_orderby * native_aOrderBy = (mrb_nil_p(aOrderBy) ? NULL : mruby_unbox_sqlite3_index_orderby(aOrderBy));
 
-  native_self->aOrderBy = native_field;
-
-  return ruby_field;
+  native_self->aOrderBy = native_aOrderBy;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD
+#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD_READER
 /* get_aConstraintUsage
  *
  * Return Type: struct sqlite3_index_constraint_usage *
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_aConstraintUsage(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  struct sqlite3_index_constraint_usage * native_field = native_self->aConstraintUsage;
+  struct sqlite3_index_constraint_usage * native_aConstraintUsage = native_self->aConstraintUsage;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_raint_usage(mrb, native_field));
+  mrb_value aConstraintUsage = (native_aConstraintUsage == NULL ? mrb_nil_value() : mruby_box_sqlite3_index_raint_usage(mrb, native_aConstraintUsage));
 
-  return ruby_field;
+  return aConstraintUsage;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD_WRITER
 /* set_aConstraintUsage
  *
  * Parameters:
@@ -259,45 +249,45 @@ mrb_SQLite_Sqlite3IndexInfo_get_aConstraintUsage(mrb_state* mrb, mrb_value self)
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_aConstraintUsage(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_value aConstraintUsage;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &aConstraintUsage);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, Sqlite3IndexConstraintUsage_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, aConstraintUsage, Sqlite3IndexConstraintUsage_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3IndexConstraintUsage expected");
     return mrb_nil_value();
   }
 
-  struct sqlite3_index_constraint_usage * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox_sqlite3_index_raint_usage(ruby_field));
+  struct sqlite3_index_constraint_usage * native_aConstraintUsage = (mrb_nil_p(aConstraintUsage) ? NULL : mruby_unbox_sqlite3_index_raint_usage(aConstraintUsage));
 
-  native_self->aConstraintUsage = native_field;
-
-  return ruby_field;
+  native_self->aConstraintUsage = native_aConstraintUsage;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_idxNum_FIELD
+#if BIND_Sqlite3IndexInfo_idxNum_FIELD_READER
 /* get_idxNum
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_idxNum(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  int native_field = native_self->idxNum;
+  int native_idxNum = native_self->idxNum;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value idxNum = mrb_fixnum_value(native_idxNum);
 
-  return ruby_field;
+  return idxNum;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_idxNum_FIELD_WRITER
 /* set_idxNum
  *
  * Parameters:
@@ -305,41 +295,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_idxNum(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_idxNum(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_idxNum;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_idxNum);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->idxNum = native_field;
-
-  return ruby_field;
+  native_self->idxNum = native_idxNum;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_idxStr_FIELD
+#if BIND_Sqlite3IndexInfo_idxStr_FIELD_READER
 /* get_idxStr
  *
  * Return Type: char *
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_idxStr(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  char * native_field = native_self->idxStr;
+  char * native_idxStr = native_self->idxStr;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value idxStr = mrb_str_new_cstr(mrb, native_idxStr);
 
-  return ruby_field;
+  return idxStr;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_idxStr_FIELD_WRITER
 /* set_idxStr
  *
  * Parameters:
@@ -347,50 +333,41 @@ mrb_SQLite_Sqlite3IndexInfo_get_idxStr(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_idxStr(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  char * idxStr = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &idxStr);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_idxStr = strdup(idxStr);
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(mrb_string_value_cstr(mrb, &ruby_field));
-
-  native_self->idxStr = native_field;
-
-  return ruby_field;
+  if (NULL != native_self->idxStr) free(native_self->idxStr);
+  native_self->idxStr = native_idxStr;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD
+#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_READER
 /* get_needToFreeIdxStr
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_needToFreeIdxStr(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  int native_field = native_self->needToFreeIdxStr;
+  int native_needToFreeIdxStr = native_self->needToFreeIdxStr;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value needToFreeIdxStr = mrb_fixnum_value(native_needToFreeIdxStr);
 
-  return ruby_field;
+  return needToFreeIdxStr;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_WRITER
 /* set_needToFreeIdxStr
  *
  * Parameters:
@@ -398,45 +375,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_needToFreeIdxStr(mrb_state* mrb, mrb_value self)
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_needToFreeIdxStr(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_needToFreeIdxStr;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_needToFreeIdxStr);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->needToFreeIdxStr = native_field;
-
-  return ruby_field;
+  native_self->needToFreeIdxStr = native_needToFreeIdxStr;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD
+#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD_READER
 /* get_orderByConsumed
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_orderByConsumed(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  int native_field = native_self->orderByConsumed;
+  int native_orderByConsumed = native_self->orderByConsumed;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value orderByConsumed = mrb_fixnum_value(native_orderByConsumed);
 
-  return ruby_field;
+  return orderByConsumed;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD_WRITER
 /* set_orderByConsumed
  *
  * Parameters:
@@ -444,41 +413,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_orderByConsumed(mrb_state* mrb, mrb_value self) 
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_orderByConsumed(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_orderByConsumed;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_orderByConsumed);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->orderByConsumed = native_field;
-
-  return ruby_field;
+  native_self->orderByConsumed = native_orderByConsumed;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD
+#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD_READER
 /* get_estimatedCost
  *
  * Return Type: double
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_estimatedCost(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  double native_field = native_self->estimatedCost;
+  double native_estimatedCost = native_self->estimatedCost;
 
-  mrb_value ruby_field = mrb_float_value(native_field);
+  mrb_value estimatedCost = mrb_float_value(mrb, native_estimatedCost);
 
-  return ruby_field;
+  return estimatedCost;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD_WRITER
 /* set_estimatedCost
  *
  * Parameters:
@@ -486,41 +451,37 @@ mrb_SQLite_Sqlite3IndexInfo_get_estimatedCost(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_estimatedCost(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_float native_estimatedCost;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "f", &native_estimatedCost);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->float_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
-    return mrb_nil_value();
-  }
-
-  double native_field = mrb_float(ruby_field);
-
-  native_self->estimatedCost = native_field;
-
-  return ruby_field;
+  native_self->estimatedCost = native_estimatedCost;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD
+#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD_READER
 /* get_estimatedRows
  *
  * Return Type: sqlite3_int64
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_get_estimatedRows(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
 
-  sqlite3_int64 native_field = native_self->estimatedRows;
+  sqlite3_int64 native_estimatedRows = native_self->estimatedRows;
 
-  mrb_value ruby_field = TODO_mruby_box_sqlite3_int64(mrb, native_field);
+  mrb_value estimatedRows = mrb_fixnum_value(native_estimatedRows);
 
-  return ruby_field;
+  return estimatedRows;
 }
+#endif
 
+#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD_WRITER
 /* set_estimatedRows
  *
  * Parameters:
@@ -528,19 +489,16 @@ mrb_SQLite_Sqlite3IndexInfo_get_estimatedRows(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexInfo_set_estimatedRows(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_info * native_self = mruby_unbox_struct sqlite3_index_info(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_info * native_self = mruby_unbox_sqlite3_index_info(self);
+  mrb_int native_estimatedRows;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_estimatedRows);
 
-  /* type checking */
-  TODO_type_check_sqlite3_int64(ruby_field);
-
-  sqlite3_int64 native_field = TODO_mruby_unbox_sqlite3_int64(ruby_field);
-
-  native_self->estimatedRows = native_field;
-
-  return ruby_field;
+  native_self->estimatedRows = native_estimatedRows;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -558,48 +516,70 @@ void mrb_SQLite_Sqlite3IndexInfo_init(mrb_state* mrb) {
   /*
    * Fields
    */
-#if BIND_Sqlite3IndexInfo_nConstraint_FIELD
+#if BIND_Sqlite3IndexInfo_nConstraint_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "nConstraint", mrb_SQLite_Sqlite3IndexInfo_get_nConstraint, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_nConstraint_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "nConstraint=", mrb_SQLite_Sqlite3IndexInfo_set_nConstraint, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_aConstraint_FIELD
+#if BIND_Sqlite3IndexInfo_aConstraint_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aConstraint", mrb_SQLite_Sqlite3IndexInfo_get_aConstraint, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_aConstraint_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aConstraint=", mrb_SQLite_Sqlite3IndexInfo_set_aConstraint, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD
+#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "nOrderBy", mrb_SQLite_Sqlite3IndexInfo_get_nOrderBy, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_nOrderBy_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "nOrderBy=", mrb_SQLite_Sqlite3IndexInfo_set_nOrderBy, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD
+#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aOrderBy", mrb_SQLite_Sqlite3IndexInfo_get_aOrderBy, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_aOrderBy_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aOrderBy=", mrb_SQLite_Sqlite3IndexInfo_set_aOrderBy, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD
+#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aConstraintUsage", mrb_SQLite_Sqlite3IndexInfo_get_aConstraintUsage, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "aConstraintUsage=", mrb_SQLite_Sqlite3IndexInfo_set_aConstraintUsage, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_idxNum_FIELD
+#if BIND_Sqlite3IndexInfo_idxNum_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "idxNum", mrb_SQLite_Sqlite3IndexInfo_get_idxNum, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_idxNum_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "idxNum=", mrb_SQLite_Sqlite3IndexInfo_set_idxNum, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_idxStr_FIELD
+#if BIND_Sqlite3IndexInfo_idxStr_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "idxStr", mrb_SQLite_Sqlite3IndexInfo_get_idxStr, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_idxStr_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "idxStr=", mrb_SQLite_Sqlite3IndexInfo_set_idxStr, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD
+#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "needToFreeIdxStr", mrb_SQLite_Sqlite3IndexInfo_get_needToFreeIdxStr, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "needToFreeIdxStr=", mrb_SQLite_Sqlite3IndexInfo_set_needToFreeIdxStr, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD
+#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "orderByConsumed", mrb_SQLite_Sqlite3IndexInfo_get_orderByConsumed, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_orderByConsumed_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "orderByConsumed=", mrb_SQLite_Sqlite3IndexInfo_set_orderByConsumed, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD
+#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "estimatedCost", mrb_SQLite_Sqlite3IndexInfo_get_estimatedCost, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_estimatedCost_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "estimatedCost=", mrb_SQLite_Sqlite3IndexInfo_set_estimatedCost, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD
+#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "estimatedRows", mrb_SQLite_Sqlite3IndexInfo_get_estimatedRows, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexInfo_estimatedRows_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexInfo_class, "estimatedRows=", mrb_SQLite_Sqlite3IndexInfo_set_estimatedRows, MRB_ARGS_ARG(1, 0));
 #endif
 

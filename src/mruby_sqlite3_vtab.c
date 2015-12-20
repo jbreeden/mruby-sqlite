@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 5465
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3Vtab_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3Vtab_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Vtab_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab* native_object = (struct sqlite3_vtab*)malloc(sizeof(struct sqlite3_vtab));
-  mruby_gift_struct sqlite3_vtab_data_ptr(self, native_object);
+  struct sqlite3_vtab* native_object = (struct sqlite3_vtab*)calloc(1, sizeof(struct sqlite3_vtab));
+  mruby_giftwrap_sqlite3_vtab_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -60,22 +56,24 @@ mrb_SQLite_Sqlite3Vtab_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-#if BIND_Sqlite3Vtab_pModule_FIELD
+#if BIND_Sqlite3Vtab_pModule_FIELD_READER
 /* get_pModule
  *
  * Return Type: const sqlite3_module *
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
-  const sqlite3_module * native_field = native_self->pModule;
+  const sqlite3_module * native_pModule = native_self->pModule;
 
-  mrb_value ruby_field = (native_field == NULL ? mrb_nil_value() : mruby_box_sqlite3_module(mrb, native_field));
+  mrb_value pModule = (native_pModule == NULL ? mrb_nil_value() : mruby_box_sqlite3_module(mrb, native_pModule));
 
-  return ruby_field;
+  return pModule;
 }
+#endif
 
+#if BIND_Sqlite3Vtab_pModule_FIELD_WRITER
 /* set_pModule
  *
  * Parameters:
@@ -83,45 +81,45 @@ mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
-  mrb_value ruby_field;
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  mrb_value pModule;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "o", &pModule);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, Sqlite3Module_class(mrb))) {
+  if (!mrb_obj_is_kind_of(mrb, pModule, Sqlite3Module_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Module expected");
     return mrb_nil_value();
   }
 
-  const sqlite3_module * native_field = (mrb_nil_p(ruby_field) ? NULL : mruby_unbox_sqlite3_module(ruby_field));
+  const sqlite3_module * native_pModule = (mrb_nil_p(pModule) ? NULL : mruby_unbox_sqlite3_module(pModule));
 
-  native_self->pModule = native_field;
-
-  return ruby_field;
+  native_self->pModule = native_pModule;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3Vtab_nRef_FIELD
+#if BIND_Sqlite3Vtab_nRef_FIELD_READER
 /* get_nRef
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
-  int native_field = native_self->nRef;
+  int native_nRef = native_self->nRef;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value nRef = mrb_fixnum_value(native_nRef);
 
-  return ruby_field;
+  return nRef;
 }
+#endif
 
+#if BIND_Sqlite3Vtab_nRef_FIELD_WRITER
 /* set_nRef
  *
  * Parameters:
@@ -129,41 +127,37 @@ mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
-  mrb_value ruby_field;
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  mrb_int native_nRef;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_nRef);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->nRef = native_field;
-
-  return ruby_field;
+  native_self->nRef = native_nRef;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3Vtab_zErrMsg_FIELD
+#if BIND_Sqlite3Vtab_zErrMsg_FIELD_READER
 /* get_zErrMsg
  *
  * Return Type: char *
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
-  char * native_field = native_self->zErrMsg;
+  char * native_zErrMsg = native_self->zErrMsg;
 
-  mrb_value ruby_field = mrb_str_new_cstr(mrb, native_field);
+  mrb_value zErrMsg = mrb_str_new_cstr(mrb, native_zErrMsg);
 
-  return ruby_field;
+  return zErrMsg;
 }
+#endif
 
+#if BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER
 /* set_zErrMsg
  *
  * Parameters:
@@ -171,27 +165,20 @@ mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_struct sqlite3_vtab(self);
-  mrb_value ruby_field;
+  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  char * zErrMsg = NULL;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "z!", &zErrMsg);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->string_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
-    return mrb_nil_value();
-  }
+  /* WARNING: String is strdup'ed to avoid mutable reference to internal MRuby memory */
+  char * native_zErrMsg = strdup(zErrMsg);
 
-  /* WARNING: Allocating new memory to create 'char *' from 'const char *'.
-   *          Please verify that this memory is cleaned up correctly.
-   *
-   *          Has this been verified? [No]
-   */
-  char * native_field = strdup(mrb_string_value_cstr(mrb, &ruby_field));
-
-  native_self->zErrMsg = native_field;
-
-  return ruby_field;
+  if (NULL != native_self->zErrMsg) free(native_self->zErrMsg);
+  native_self->zErrMsg = native_zErrMsg;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -209,16 +196,22 @@ void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
   /*
    * Fields
    */
-#if BIND_Sqlite3Vtab_pModule_FIELD
+#if BIND_Sqlite3Vtab_pModule_FIELD_READER
   mrb_define_method(mrb, Sqlite3Vtab_class, "pModule", mrb_SQLite_Sqlite3Vtab_get_pModule, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3Vtab_pModule_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3Vtab_class, "pModule=", mrb_SQLite_Sqlite3Vtab_set_pModule, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3Vtab_nRef_FIELD
+#if BIND_Sqlite3Vtab_nRef_FIELD_READER
   mrb_define_method(mrb, Sqlite3Vtab_class, "nRef", mrb_SQLite_Sqlite3Vtab_get_nRef, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3Vtab_nRef_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3Vtab_class, "nRef=", mrb_SQLite_Sqlite3Vtab_set_nRef, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3Vtab_zErrMsg_FIELD
+#if BIND_Sqlite3Vtab_zErrMsg_FIELD_READER
   mrb_define_method(mrb, Sqlite3Vtab_class, "zErrMsg", mrb_SQLite_Sqlite3Vtab_get_zErrMsg, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3Vtab_class, "zErrMsg=", mrb_SQLite_Sqlite3Vtab_set_zErrMsg, MRB_ARGS_ARG(1, 0));
 #endif
 

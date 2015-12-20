@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 5589
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3IndexConstraint_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3IndexConstraint_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint* native_object = (struct sqlite3_index_constraint*)malloc(sizeof(struct sqlite3_index_constraint));
-  mruby_gift_struct sqlite3_index_constraint_data_ptr(self, native_object);
+  struct sqlite3_index_constraint* native_object = (struct sqlite3_index_constraint*)calloc(1, sizeof(struct sqlite3_index_constraint));
+  mruby_giftwrap_sqlite3_index_raint_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -60,26 +56,24 @@ mrb_SQLite_Sqlite3IndexConstraint_belongs_to_ruby(mrb_state* mrb, mrb_value self
  * Fields
  */
 
-#if BIND_Sqlite3IndexConstraint_iColumn_FIELD
+#if BIND_Sqlite3IndexConstraint_iColumn_FIELD_READER
 /* get_iColumn
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_iColumn(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
 
-  int native_field = native_self->iColumn;
+  int native_iColumn = native_self->iColumn;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value iColumn = mrb_fixnum_value(native_iColumn);
 
-  return ruby_field;
+  return iColumn;
 }
+#endif
 
+#if BIND_Sqlite3IndexConstraint_iColumn_FIELD_WRITER
 /* set_iColumn
  *
  * Parameters:
@@ -87,41 +81,37 @@ mrb_SQLite_Sqlite3IndexConstraint_get_iColumn(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_iColumn(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
+  mrb_int native_iColumn;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_iColumn);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->iColumn = native_field;
-
-  return ruby_field;
+  native_self->iColumn = native_iColumn;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexConstraint_op_FIELD
+#if BIND_Sqlite3IndexConstraint_op_FIELD_READER
 /* get_op
  *
  * Return Type: unsigned char
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_op(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
 
-  unsigned char native_field = native_self->op;
+  unsigned char native_op = native_self->op;
 
-  mrb_value ruby_field = TODO_mruby_box_unsigned_char(mrb, native_field);
+  mrb_value op = mrb_fixnum_value(native_op);
 
-  return ruby_field;
+  return op;
 }
+#endif
 
+#if BIND_Sqlite3IndexConstraint_op_FIELD_WRITER
 /* set_op
  *
  * Parameters:
@@ -129,38 +119,37 @@ mrb_SQLite_Sqlite3IndexConstraint_get_op(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_op(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
+  mrb_int native_op;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_op);
 
-  /* type checking */
-  TODO_type_check_unsigned_char(ruby_field);
-
-  unsigned char native_field = TODO_mruby_unbox_unsigned_char(ruby_field);
-
-  native_self->op = native_field;
-
-  return ruby_field;
+  native_self->op = native_op;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexConstraint_usable_FIELD
+#if BIND_Sqlite3IndexConstraint_usable_FIELD_READER
 /* get_usable
  *
  * Return Type: unsigned char
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_usable(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
 
-  unsigned char native_field = native_self->usable;
+  unsigned char native_usable = native_self->usable;
 
-  mrb_value ruby_field = TODO_mruby_box_unsigned_char(mrb, native_field);
+  mrb_value usable = mrb_fixnum_value(native_usable);
 
-  return ruby_field;
+  return usable;
 }
+#endif
 
+#if BIND_Sqlite3IndexConstraint_usable_FIELD_WRITER
 /* set_usable
  *
  * Parameters:
@@ -168,42 +157,37 @@ mrb_SQLite_Sqlite3IndexConstraint_get_usable(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_usable(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
+  mrb_int native_usable;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_usable);
 
-  /* type checking */
-  TODO_type_check_unsigned_char(ruby_field);
-
-  unsigned char native_field = TODO_mruby_unbox_unsigned_char(ruby_field);
-
-  native_self->usable = native_field;
-
-  return ruby_field;
+  native_self->usable = native_usable;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD
+#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_READER
 /* get_iTermOffset
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_iTermOffset(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
 
-  int native_field = native_self->iTermOffset;
+  int native_iTermOffset = native_self->iTermOffset;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value iTermOffset = mrb_fixnum_value(native_iTermOffset);
 
-  return ruby_field;
+  return iTermOffset;
 }
+#endif
 
+#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_WRITER
 /* set_iTermOffset
  *
  * Parameters:
@@ -211,22 +195,16 @@ mrb_SQLite_Sqlite3IndexConstraint_get_iTermOffset(mrb_state* mrb, mrb_value self
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_iTermOffset(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_constraint * native_self = mruby_unbox_struct sqlite3_index_constraint(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
+  mrb_int native_iTermOffset;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_iTermOffset);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->iTermOffset = native_field;
-
-  return ruby_field;
+  native_self->iTermOffset = native_iTermOffset;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -244,20 +222,28 @@ void mrb_SQLite_Sqlite3IndexConstraint_init(mrb_state* mrb) {
   /*
    * Fields
    */
-#if BIND_Sqlite3IndexConstraint_iColumn_FIELD
+#if BIND_Sqlite3IndexConstraint_iColumn_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "iColumn", mrb_SQLite_Sqlite3IndexConstraint_get_iColumn, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexConstraint_iColumn_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "iColumn=", mrb_SQLite_Sqlite3IndexConstraint_set_iColumn, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexConstraint_op_FIELD
+#if BIND_Sqlite3IndexConstraint_op_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "op", mrb_SQLite_Sqlite3IndexConstraint_get_op, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexConstraint_op_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "op=", mrb_SQLite_Sqlite3IndexConstraint_set_op, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexConstraint_usable_FIELD
+#if BIND_Sqlite3IndexConstraint_usable_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "usable", mrb_SQLite_Sqlite3IndexConstraint_get_usable, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexConstraint_usable_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "usable=", mrb_SQLite_Sqlite3IndexConstraint_set_usable, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD
+#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "iTermOffset", mrb_SQLite_Sqlite3IndexConstraint_get_iTermOffset, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexConstraint_class, "iTermOffset=", mrb_SQLite_Sqlite3IndexConstraint_set_iTermOffset, MRB_ARGS_ARG(1, 0));
 #endif
 

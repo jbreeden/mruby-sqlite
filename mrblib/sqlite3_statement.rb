@@ -24,14 +24,15 @@ module SQLite3
       assert_open
       status = SQLite::SQLITE_OK
 
-      param_index = 0
-      unless which.kind_of?(Fixnum)
+      if which.kind_of?(Fixnum)
+        param_index = which
+      else
         which = which.to_s
 
         unless %w[: @ $].include?(which[0])
           which = ":#{which}"
         end
-
+        
         param_index = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
         if param_index == 0
           raise SQLite3::Exception.new("No such bind parameter #{which}")

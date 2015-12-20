@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 3431
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3Context_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3Context_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Context_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_context* native_object = (struct sqlite3_context*)malloc(sizeof(struct sqlite3_context));
-  mruby_gift_struct sqlite3_context_data_ptr(self, native_object);
+  struct sqlite3_context* native_object = (struct sqlite3_context*)calloc(1, sizeof(struct sqlite3_context));
+  mruby_giftwrap_sqlite3_context_data_ptr(self, native_object);
   return self;
 }
 #endif

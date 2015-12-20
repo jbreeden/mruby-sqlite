@@ -3,10 +3,6 @@
  * Defined in file sqlite3.h @ line 5596
  */
 
-/*
- * TODO: INCLUDES
- */
-
 #include "mruby_SQLite.h"
 
 #if BIND_Sqlite3IndexOrderby_TYPE
@@ -18,8 +14,8 @@
 #if BIND_Sqlite3IndexOrderby_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_orderby* native_object = (struct sqlite3_index_orderby*)malloc(sizeof(struct sqlite3_index_orderby));
-  mruby_gift_struct sqlite3_index_orderby_data_ptr(self, native_object);
+  struct sqlite3_index_orderby* native_object = (struct sqlite3_index_orderby*)calloc(1, sizeof(struct sqlite3_index_orderby));
+  mruby_giftwrap_sqlite3_index_orderby_data_ptr(self, native_object);
   return self;
 }
 #endif
@@ -60,26 +56,24 @@ mrb_SQLite_Sqlite3IndexOrderby_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-#if BIND_Sqlite3IndexOrderby_iColumn_FIELD
+#if BIND_Sqlite3IndexOrderby_iColumn_FIELD_READER
 /* get_iColumn
  *
  * Return Type: int
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_get_iColumn(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_orderby * native_self = mruby_unbox_struct sqlite3_index_orderby(self);
+  struct sqlite3_index_orderby * native_self = mruby_unbox_sqlite3_index_orderby(self);
 
-  int native_field = native_self->iColumn;
+  int native_iColumn = native_self->iColumn;
 
-  if (native_field > MRB_INT_MAX) {
-    mrb_raise(mrb, mrb->eStandardError_class, "MRuby cannot represent integers greater than MRB_INT_MAX");
-    return mrb_nil_value();
-  }
-  mrb_value ruby_field = mrb_fixnum_value(native_field);
+  mrb_value iColumn = mrb_fixnum_value(native_iColumn);
 
-  return ruby_field;
+  return iColumn;
 }
+#endif
 
+#if BIND_Sqlite3IndexOrderby_iColumn_FIELD_WRITER
 /* set_iColumn
  *
  * Parameters:
@@ -87,41 +81,37 @@ mrb_SQLite_Sqlite3IndexOrderby_get_iColumn(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_set_iColumn(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_orderby * native_self = mruby_unbox_struct sqlite3_index_orderby(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_orderby * native_self = mruby_unbox_sqlite3_index_orderby(self);
+  mrb_int native_iColumn;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_iColumn);
 
-  /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, ruby_field, mrb->fixnum_class)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
-    return mrb_nil_value();
-  }
-
-  int native_field = mrb_fixnum(ruby_field);
-
-  native_self->iColumn = native_field;
-
-  return ruby_field;
+  native_self->iColumn = native_iColumn;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
-#if BIND_Sqlite3IndexOrderby_desc_FIELD
+#if BIND_Sqlite3IndexOrderby_desc_FIELD_READER
 /* get_desc
  *
  * Return Type: unsigned char
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_get_desc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_orderby * native_self = mruby_unbox_struct sqlite3_index_orderby(self);
+  struct sqlite3_index_orderby * native_self = mruby_unbox_sqlite3_index_orderby(self);
 
-  unsigned char native_field = native_self->desc;
+  unsigned char native_desc = native_self->desc;
 
-  mrb_value ruby_field = TODO_mruby_box_unsigned_char(mrb, native_field);
+  mrb_value desc = mrb_fixnum_value(native_desc);
 
-  return ruby_field;
+  return desc;
 }
+#endif
 
+#if BIND_Sqlite3IndexOrderby_desc_FIELD_WRITER
 /* set_desc
  *
  * Parameters:
@@ -129,19 +119,16 @@ mrb_SQLite_Sqlite3IndexOrderby_get_desc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_set_desc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_index_orderby * native_self = mruby_unbox_struct sqlite3_index_orderby(self);
-  mrb_value ruby_field;
+  struct sqlite3_index_orderby * native_self = mruby_unbox_sqlite3_index_orderby(self);
+  mrb_int native_desc;
 
-  mrb_get_args(mrb, "o", &ruby_field);
+  mrb_get_args(mrb, "i", &native_desc);
 
-  /* type checking */
-  TODO_type_check_unsigned_char(ruby_field);
-
-  unsigned char native_field = TODO_mruby_unbox_unsigned_char(ruby_field);
-
-  native_self->desc = native_field;
-
-  return ruby_field;
+  native_self->desc = native_desc;
+  
+  mrb_value value_as_mrb_value;
+  mrb_get_args(mrb, "o", &value_as_mrb_value);
+  return value_as_mrb_value;
 }
 #endif
 
@@ -159,12 +146,16 @@ void mrb_SQLite_Sqlite3IndexOrderby_init(mrb_state* mrb) {
   /*
    * Fields
    */
-#if BIND_Sqlite3IndexOrderby_iColumn_FIELD
+#if BIND_Sqlite3IndexOrderby_iColumn_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexOrderby_class, "iColumn", mrb_SQLite_Sqlite3IndexOrderby_get_iColumn, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexOrderby_iColumn_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexOrderby_class, "iColumn=", mrb_SQLite_Sqlite3IndexOrderby_set_iColumn, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_Sqlite3IndexOrderby_desc_FIELD
+#if BIND_Sqlite3IndexOrderby_desc_FIELD_READER
   mrb_define_method(mrb, Sqlite3IndexOrderby_class, "desc", mrb_SQLite_Sqlite3IndexOrderby_get_desc, MRB_ARGS_ARG(0, 0));
+#endif
+#if BIND_Sqlite3IndexOrderby_desc_FIELD_WRITER
   mrb_define_method(mrb, Sqlite3IndexOrderby_class, "desc=", mrb_SQLite_Sqlite3IndexOrderby_set_desc, MRB_ARGS_ARG(1, 0));
 #endif
 
