@@ -1694,6 +1694,12 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_SOURCE_ID", macro);
   } while (0);
 #endif
+#ifdef SQLITE_STATIC
+  do {
+    mrb_value macro = mrb_fixnum_value(SQLITE_STATIC);
+    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_STATIC", macro);
+  } while (0);
+#endif
 #ifdef SQLITE_STATUS_MALLOC_COUNT
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_STATUS_MALLOC_COUNT);
@@ -1950,6 +1956,12 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_TRANSACTION);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_TRANSACTION", macro);
+  } while (0);
+#endif
+#ifdef SQLITE_TRANSIENT
+  do {
+    mrb_value macro = mrb_fixnum_value(SQLITE_TRANSIENT);
+    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_TRANSIENT", macro);
   } while (0);
 #endif
 #ifdef SQLITE_UPDATE

@@ -113,7 +113,7 @@
 #define BIND_sqlite3_memory_alarm_FUNCTION FALSE
 #define BIND_sqlite3_memory_highwater_FUNCTION TRUE
 #define BIND_sqlite3_memory_used_FUNCTION TRUE
-#define BIND_sqlite3_mprintf_FUNCTION TRUE
+#define BIND_sqlite3_mprintf_FUNCTION FALSE
 #define BIND_sqlite3_msize_FUNCTION FALSE
 #define BIND_sqlite3_next_stmt_FUNCTION TRUE
 #define BIND_sqlite3_open_FUNCTION TRUE
@@ -159,7 +159,7 @@
 #define BIND_sqlite3_set_auxdata_FUNCTION FALSE
 #define BIND_sqlite3_shutdown_FUNCTION TRUE
 #define BIND_sqlite3_sleep_FUNCTION TRUE
-#define BIND_sqlite3_snprintf_FUNCTION TRUE
+#define BIND_sqlite3_snprintf_FUNCTION FALSE
 #define BIND_sqlite3_soft_heap_limit_FUNCTION TRUE
 #define BIND_sqlite3_soft_heap_limit64_FUNCTION TRUE
 #define BIND_sqlite3_sourceid_FUNCTION TRUE
@@ -201,8 +201,8 @@
 #define BIND_sqlite3_vfs_find_FUNCTION TRUE
 #define BIND_sqlite3_vfs_register_FUNCTION TRUE
 #define BIND_sqlite3_vfs_unregister_FUNCTION TRUE
-#define BIND_sqlite3_vmprintf_FUNCTION TRUE
-#define BIND_sqlite3_vsnprintf_FUNCTION TRUE
+#define BIND_sqlite3_vmprintf_FUNCTION FALSE
+#define BIND_sqlite3_vsnprintf_FUNCTION FALSE
 #define BIND_sqlite3_vtab_config_FUNCTION TRUE
 #define BIND_sqlite3_vtab_on_conflict_FUNCTION TRUE
 #define BIND_sqlite3_wal_autocheckpoint_FUNCTION TRUE

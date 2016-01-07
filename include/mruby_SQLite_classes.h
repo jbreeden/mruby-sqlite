@@ -22,8 +22,8 @@
 #define BIND_Sqlite3IndexInfo_aConstraintUsage_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexInfo_idxNum_FIELD_READER TRUE
 #define BIND_Sqlite3IndexInfo_idxNum_FIELD_WRITER TRUE
-#define BIND_Sqlite3IndexInfo_idxStr_FIELD_READER TRUE
-#define BIND_Sqlite3IndexInfo_idxStr_FIELD_WRITER TRUE
+#define BIND_Sqlite3IndexInfo_idxStr_FIELD_READER FALSE
+#define BIND_Sqlite3IndexInfo_idxStr_FIELD_WRITER FALSE
 #define BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_READER TRUE
 #define BIND_Sqlite3IndexInfo_needToFreeIdxStr_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexInfo_orderByConsumed_FIELD_READER TRUE
@@ -303,8 +303,8 @@
 #define BIND_Sqlite3Vtab_pModule_FIELD_WRITER TRUE
 #define BIND_Sqlite3Vtab_nRef_FIELD_READER TRUE
 #define BIND_Sqlite3Vtab_nRef_FIELD_WRITER TRUE
-#define BIND_Sqlite3Vtab_zErrMsg_FIELD_READER TRUE
-#define BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER TRUE
+#define BIND_Sqlite3Vtab_zErrMsg_FIELD_READER FALSE
+#define BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER FALSE
 #define BIND_Sqlite3VtabCursor_TYPE TRUE
 #define BIND_Sqlite3VtabCursor_pVtab_FIELD_READER TRUE
 #define BIND_Sqlite3VtabCursor_pVtab_FIELD_WRITER TRUE

@@ -32,9 +32,11 @@
  * CTypes.set_destructor('struct GError', 'g_error_free')
  * ```
  */
- #include "mruby_SQLite.h"
+#include "mruby_SQLite.h"
 
 
+/* MRUBY_BINDING: Mem_boxing */
+/* sha: 4a4d43935ebe1c1344a91d8a639a77aef62238938c2433d9cbcf6b4cc11114b7 */
 #if BIND_Mem_TYPE
 /*
  * Boxing implementation for struct Mem
@@ -92,7 +94,10 @@ mruby_unbox_Mem(mrb_value boxed) {
   return (struct Mem *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3_boxing */
+/* sha: acddffbd38be77d18c9a734b3504395ab8b770e155ffd51e563d0f4ace0ee05d */
 #if BIND_Sqlite3_TYPE
 /*
  * Boxing implementation for struct sqlite3
@@ -102,7 +107,7 @@ static void free_sqlite3(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      sqlite3_close(box->obj);
+      free(box->obj);
       box->obj = NULL;
     }
   }
@@ -150,7 +155,10 @@ mruby_unbox_sqlite3(mrb_value boxed) {
   return (struct sqlite3 *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Backup_boxing */
+/* sha: 1a4c94db720930e09e6884c884025ad4304501708c767c8db066210a117a41e9 */
 #if BIND_Sqlite3Backup_TYPE
 /*
  * Boxing implementation for struct sqlite3_backup
@@ -208,7 +216,10 @@ mruby_unbox_sqlite3_backup(mrb_value boxed) {
   return (struct sqlite3_backup *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Blob_boxing */
+/* sha: dd9c9108c7292f7e7be742a777bd3eb0dd229b3bf4ab696edd0ca5196080bb5b */
 #if BIND_Sqlite3Blob_TYPE
 /*
  * Boxing implementation for struct sqlite3_blob
@@ -266,7 +277,10 @@ mruby_unbox_sqlite3_blob(mrb_value boxed) {
   return (struct sqlite3_blob *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Context_boxing */
+/* sha: 12222fe089beb50c90cc8fc628baea468a05520f55882363df1de761d857b638 */
 #if BIND_Sqlite3Context_TYPE
 /*
  * Boxing implementation for struct sqlite3_context
@@ -324,7 +338,10 @@ mruby_unbox_sqlite3_context(mrb_value boxed) {
   return (struct sqlite3_context *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3File_boxing */
+/* sha: 07da7b171c20029a09b318009d4b7ea897221ff525d1b6f8370bee6e4e10c565 */
 #if BIND_Sqlite3File_TYPE
 /*
  * Boxing implementation for struct sqlite3_file
@@ -382,7 +399,10 @@ mruby_unbox_sqlite3_file(mrb_value boxed) {
   return (struct sqlite3_file *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexConstraint_boxing */
+/* sha: 540832c67d3de17e03a02c3709021a1a2f25364b226aa02715c0ce58a27e8cd9 */
 #if BIND_Sqlite3IndexConstraint_TYPE
 /*
  * Boxing implementation for struct sqlite3_index_constraint
@@ -440,7 +460,10 @@ mruby_unbox_sqlite3_index_raint(mrb_value boxed) {
   return (struct sqlite3_index_constraint *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexConstraintUsage_boxing */
+/* sha: 16e56b58c687c850a7279c482b45319ffeb9dbdb1c5b2943ac3824ef1f65011e */
 #if BIND_Sqlite3IndexConstraintUsage_TYPE
 /*
  * Boxing implementation for struct sqlite3_index_constraint_usage
@@ -498,7 +521,10 @@ mruby_unbox_sqlite3_index_raint_usage(mrb_value boxed) {
   return (struct sqlite3_index_constraint_usage *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexInfo_boxing */
+/* sha: d73818685765e06ee00329c734955b110fa9a78e95d156b21e355c90fe51801b */
 #if BIND_Sqlite3IndexInfo_TYPE
 /*
  * Boxing implementation for struct sqlite3_index_info
@@ -556,7 +582,10 @@ mruby_unbox_sqlite3_index_info(mrb_value boxed) {
   return (struct sqlite3_index_info *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexOrderby_boxing */
+/* sha: 9d4ceb98d1e68a259f3b982ad9ff0b86b15c847af0662655528643909b0f947a */
 #if BIND_Sqlite3IndexOrderby_TYPE
 /*
  * Boxing implementation for struct sqlite3_index_orderby
@@ -614,7 +643,10 @@ mruby_unbox_sqlite3_index_orderby(mrb_value boxed) {
   return (struct sqlite3_index_orderby *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IoMethods_boxing */
+/* sha: be5bdb7c2ca20e27f83450def46e495cc28ca37be66afa55f717d5e665c86efb */
 #if BIND_Sqlite3IoMethods_TYPE
 /*
  * Boxing implementation for struct sqlite3_io_methods
@@ -672,7 +704,10 @@ mruby_unbox_sqlite3_io_methods(mrb_value boxed) {
   return (struct sqlite3_io_methods *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3MemMethods_boxing */
+/* sha: 188b8b30ca1b5a720cd8e39a5e7757ddf980ed1999b8c869c10899d3b33885f6 */
 #if BIND_Sqlite3MemMethods_TYPE
 /*
  * Boxing implementation for struct sqlite3_mem_methods
@@ -730,7 +765,10 @@ mruby_unbox_sqlite3_mem_methods(mrb_value boxed) {
   return (struct sqlite3_mem_methods *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Module_boxing */
+/* sha: 2d36e3372a0d7dbf092b8b73579cbf9bdb7b4448b526d4e866a667d7a525a09b */
 #if BIND_Sqlite3Module_TYPE
 /*
  * Boxing implementation for struct sqlite3_module
@@ -788,7 +826,10 @@ mruby_unbox_sqlite3_module(mrb_value boxed) {
   return (struct sqlite3_module *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Pcache_boxing */
+/* sha: 277d58bec42bc680868c4c7f6ef97ecdcfb034a482bd4f36a539a57b428e611f */
 #if BIND_Sqlite3Pcache_TYPE
 /*
  * Boxing implementation for struct sqlite3_pcache
@@ -846,7 +887,10 @@ mruby_unbox_sqlite3_pcache(mrb_value boxed) {
   return (struct sqlite3_pcache *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3PcacheMethods_boxing */
+/* sha: f95cb953beb5bbc243d2e5e9996814ba307ea88356a42c87776f9cb4255ea868 */
 #if BIND_Sqlite3PcacheMethods_TYPE
 /*
  * Boxing implementation for struct sqlite3_pcache_methods
@@ -904,7 +948,10 @@ mruby_unbox_sqlite3_pcache_methods(mrb_value boxed) {
   return (struct sqlite3_pcache_methods *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3PcacheMethods2_boxing */
+/* sha: 2fbca9a89126651f33aae45c1d139ee886fe64e5f46fdaac918ad0e266a93624 */
 #if BIND_Sqlite3PcacheMethods2_TYPE
 /*
  * Boxing implementation for struct sqlite3_pcache_methods2
@@ -962,7 +1009,10 @@ mruby_unbox_sqlite3_pcache_methods2(mrb_value boxed) {
   return (struct sqlite3_pcache_methods2 *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3PcachePage_boxing */
+/* sha: 6316d07920f3e15bdf503bd010bb980f9ad23e09ba969687140e193c51c2eae8 */
 #if BIND_Sqlite3PcachePage_TYPE
 /*
  * Boxing implementation for struct sqlite3_pcache_page
@@ -1020,7 +1070,10 @@ mruby_unbox_sqlite3_pcache_page(mrb_value boxed) {
   return (struct sqlite3_pcache_page *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3RtreeGeometry_boxing */
+/* sha: da7223784e790b47360d5465d949ed50b28778d3ae3c6f1a4985bf44e0f87210 */
 #if BIND_Sqlite3RtreeGeometry_TYPE
 /*
  * Boxing implementation for struct sqlite3_rtree_geometry
@@ -1078,7 +1131,10 @@ mruby_unbox_sqlite3_rtree_geometry(mrb_value boxed) {
   return (struct sqlite3_rtree_geometry *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo_boxing */
+/* sha: 0708473242ca1a9c5b5431b12cf5d9999b099a0004f5b04ee6df46ec99b61179 */
 #if BIND_Sqlite3RtreeQueryInfo_TYPE
 /*
  * Boxing implementation for struct sqlite3_rtree_query_info
@@ -1136,7 +1192,10 @@ mruby_unbox_sqlite3_rtree_query_info(mrb_value boxed) {
   return (struct sqlite3_rtree_query_info *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Stmt_boxing */
+/* sha: f0f5acb3ddfe016067aee5d4dbc1c81666ecbd05cf602c9d5b311c2c4d73ba90 */
 #if BIND_Sqlite3Stmt_TYPE
 /*
  * Boxing implementation for struct sqlite3_stmt
@@ -1146,7 +1205,7 @@ static void free_sqlite3_stmt(mrb_state* mrb, void* ptr) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
   if (box->belongs_to_ruby) {
     if (box->obj != NULL) {
-      sqlite3_finalize(box->obj);
+      free(box->obj);
       box->obj = NULL;
     }
   }
@@ -1194,7 +1253,10 @@ mruby_unbox_sqlite3_stmt(mrb_value boxed) {
   return (struct sqlite3_stmt *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Vfs_boxing */
+/* sha: 2ccfa4a19d8ef0ae088aa3f322f16aed8eb859e82778e7a55cac6b6001ced83c */
 #if BIND_Sqlite3Vfs_TYPE
 /*
  * Boxing implementation for struct sqlite3_vfs
@@ -1252,7 +1314,10 @@ mruby_unbox_sqlite3_vfs(mrb_value boxed) {
   return (struct sqlite3_vfs *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Vtab_boxing */
+/* sha: 9eecbe432a87aa81e9e392563350882a1ff9c585d9595d24af69bf613154348d */
 #if BIND_Sqlite3Vtab_TYPE
 /*
  * Boxing implementation for struct sqlite3_vtab
@@ -1310,7 +1375,10 @@ mruby_unbox_sqlite3_vtab(mrb_value boxed) {
   return (struct sqlite3_vtab *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3VtabCursor_boxing */
+/* sha: 58186c4a2e851c3ae3dc5b7e23b02c1ea52ccad1641323b5c84c349d09d9742e */
 #if BIND_Sqlite3VtabCursor_TYPE
 /*
  * Boxing implementation for struct sqlite3_vtab_cursor
@@ -1368,4 +1436,5 @@ mruby_unbox_sqlite3_vtab_cursor(mrb_value boxed) {
   return (struct sqlite3_vtab_cursor *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
 }
 #endif
+/* MRUBY_BINDING_END */
 
