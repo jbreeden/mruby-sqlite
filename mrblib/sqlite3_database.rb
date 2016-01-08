@@ -31,6 +31,10 @@ module SQLite3
         self.close
       end
     end
+    
+    def assert_open
+      raise SQLite3::Exception.new("Attempte to use a closed database") if closed?
+    end
 
     # def authorizer
     # end
@@ -51,7 +55,8 @@ module SQLite3
     end
 
     def close
-      SQLite.sqlite3_close(@native_db)
+      err = SQLite.sqlite3_close(@native_db)
+      SQLite3.raise_sqlite_error(@native_db, err)
       # Use disown to prevent destruction attempt
       # when the object is GC'ed
       SQLite::Sqlite3.disown(@native_db)
@@ -155,11 +160,15 @@ module SQLite3
       nil
     end
 
-    # def interrupt
-    # end
-    #
-    # def last_insert_row_id
-    # end
+    def interrupt
+      assert_open
+      SQLite::sqlite3_interrupt(@native_db)
+    end
+    
+    def last_insert_row_id
+      assert_open
+      SQLite::sqlite3_last_insert_rowid(@native_db)
+    end
 
     def prepare(sql, &block)
       stmt = SQLite3::Statement.new( self, sql )
@@ -194,6 +203,7 @@ module SQLite3
     end
 
     def total_changes
+      assert_open
       SQLite.sqlite3_total_changes(@native_db)
     end
 

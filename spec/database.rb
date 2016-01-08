@@ -264,9 +264,21 @@ TestFixture.new("SQLite3::Database") do
     end
   end
   
-  describe 'last_insert_row_id_closed' do
-    it 'works' do
-      pending
+  describe 'last_insert_row_id' do
+    it 'Returns 0 if no rows have been inserted' do
+      @db.execute('create table my_table (\'col1\')')
+      assert_equal(0, @db.last_insert_row_id)
+    end
+    
+    it 'Returns non-zero if rows have been inserted' do
+      @db.execute_batch(<<-eosql)
+      create table my_table ('col1');
+      insert into my_table values (1);
+      eosql
+      assert(0 != @db.last_insert_row_id)
+    end
+    
+    it 'Raises SQLite3::Exception if called on a closed database' do
       @db.close
       assert_raise(SQLite3::Exception) do
         @db.last_insert_row_id
@@ -354,12 +366,16 @@ TestFixture.new("SQLite3::Database") do
     end
   end
   
-  describe 'inerrupt_closed' do
-    it 'works' do
+  describe 'inerrupt' do
+    it 'Raises a SQLite3::Exception if called on a closed database' do
       @db.close
       assert_raise(SQLite3::Exception) do
         @db.interrupt
       end
+    end
+    
+    it 'Does not raise if called on an open database' do
+      @db.interrupt
     end
   end
   

@@ -40,6 +40,7 @@ module SQLite3
   class NotADatabaseException < Exception; end
 
   def self.raise_sqlite_error(db, errno)
+    return nil if errno == SQLite::SQLITE_OK
     klass = SQLite3::Exception
     db = db.instance_variable_get(:@native_db) if db.kind_of?(SQLite3::Database)
 
