@@ -53,6 +53,10 @@ class TestFixture
     condition # So client can react to result
   end
   
+  def assert_nil(value)
+    assert(value.nil?)
+  end
+  
   def assert_equal(a, b)
     result = a == b
     @current_test_passed &&= result

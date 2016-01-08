@@ -80,7 +80,7 @@ TestFixture.new("SQLite3::Database") do
   describe 'batch_last_comment_is_processed' do
     it 'works' do
       # FIXME: nil as a successful return value is kinda dumb
-      assert_nil @db.execute_batch <<-eosql
+      assert_nil (@db.execute_batch <<-eosql)
         CREATE TABLE items (id integer PRIMARY KEY AUTOINCREMENT);
         -- omg
       eosql

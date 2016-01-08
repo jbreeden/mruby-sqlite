@@ -174,7 +174,7 @@ module SQLite3
       return nil if @done
 
       status = SQLite.sqlite3_step(@native_stmt)
-
+      
       @done = (status == SQLite::SQLITE_DONE)
       return nil if @done
 
@@ -201,7 +201,11 @@ module SQLite3
         end
 
         if @db.results_as_hash
-          row[self.column_name(index)] = val
+          # Each value is keyed by the zero-based column index,
+          row[index] = val
+          # as well as the column name, as a string. The column name used for an
+          # unnamed column is the 1-based index of the column, as a string.
+          row[self.column_name(index) || (index + 1).to_s] = val
         else
           row.push(val)
         end

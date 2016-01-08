@@ -133,14 +133,14 @@ module SQLite3
       sql = sql.strip
       until sql.empty?
         prepare(sql) do |stmt|
-          # whitespace/comment only "statements" will be closed
-          unless stmt.closed?
-            if varbinds.length > 0 && (varbinds.length == stmt.bind_parameter_count)
-              stmt.bind_params(varbinds)
-            end
-            stmt.step
-          end
           sql = stmt.remainder.strip
+          # whitespace/comment only "statements" will be closed
+          break if stmt.closed?
+          
+          if varbinds.length > 0 && (varbinds.length == stmt.bind_parameter_count)
+            stmt.bind_params(varbinds)
+          end
+          stmt.step
         end
       end
       nil

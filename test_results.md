@@ -1,3 +1,4 @@
+
 SQLite3::Database
 -----------------
 
@@ -14,10 +15,10 @@ SQLite3::Database
     + works
 
   - get_first_row_with_type_translation_and_hash_results
-    + [FAILED] works
+    + works
 
   - execute_with_type_translation_and_hash
-    + [FAILED] works
+    + works
 
   - encoding
     + is not supported on MRuby
@@ -26,14 +27,7 @@ SQLite3::Database
     + works
 
   - batch_last_comment_is_processed
-    + [FAILED] works
-    Uncaught SQLite3::MisuseException: not an error
-fixture.rb:47:in TestFixture.it
-database.rb:87:in Object#instance_eval
-fixture.rb:20:in TestFixture.describe
-database.rb:88:in Object#instance_eval
-fixture.rb:13:in TestFixture.initialize
-database.rb:3
+    + works
 
   - new
     + works
@@ -60,10 +54,10 @@ database.rb:3
     + works
 
   - execute_returns_list_of_hash
-    + [FAILED] works
+    + works
 
   - execute_yields_hash
-    + [FAILED] works
+    + works
 
   - table_info
     + [PENDING] works
@@ -140,4 +134,4 @@ Expected SQLite3::BusyException to be raised, but nothing was
   - execute_with_named_bind_params
     + works
 
-  FAILURE [8/25 tests failed + 18 pending]
+  FAILURE [3/25 tests failed + 18 pending]

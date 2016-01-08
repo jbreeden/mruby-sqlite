@@ -5143,7 +5143,7 @@ mrb_SQLite_sqlite3_prepare_v2(mrb_state* mrb, mrb_value self) {
   const char * native_pzTail = NULL;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oz!i", &db, &native_zSql, &native_nByte);
+  mrb_get_args(mrb, "ozi", &db, &native_zSql, &native_nByte);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, db, Sqlite3_class(mrb))) {
@@ -5162,7 +5162,10 @@ mrb_SQLite_sqlite3_prepare_v2(mrb_state* mrb, mrb_value self) {
   mrb_ary_push(mrb, results, return_value);
   
   /* Box out param: ppStmt */
-  mrb_value ppStmt = mruby_giftwrap_sqlite3_stmt(mrb, native_ppStmt);
+  mrb_value ppStmt = native_ppStmt == NULL 
+    ? mrb_nil_value() 
+    : mruby_giftwrap_sqlite3_stmt(mrb, native_ppStmt);
+    
   /* Box out param: pzTail */
   mrb_value pzTail = mrb_str_new_cstr(mrb, native_pzTail);
 
