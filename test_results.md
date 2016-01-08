@@ -63,8 +63,7 @@ SQLite3::Database
     + [PENDING] works
 
   - total_changes_closed
-Expected SQLite3::Exception to be raised, but nothing was
-    + [FAILED] works
+    + works
 
   - trace_requires_opendb
     + [PENDING] works
@@ -78,8 +77,10 @@ Expected SQLite3::Exception to be raised, but nothing was
   - trace_takes_nil
     + [PENDING] works
 
-  - last_insert_row_id_closed
-    + [PENDING] works
+  - last_insert_row_id
+    + Returns 0 if no rows have been inserted
+    + Returns non-zero if rows have been inserted
+    + Raises SQLite3::Exception if called on a closed database
 
   - define_function
     + [PENDING] works
@@ -102,9 +103,9 @@ Expected SQLite3::Exception to be raised, but nothing was
   - define_function_closed
     + [PENDING] works
 
-  - inerrupt_closed
-Expected SQLite3::Exception to be raised, but was NoMethodError
-    + [FAILED] works
+  - inerrupt
+    + Raises a SQLite3::Exception if called on a closed database
+    + Does not raise if called on an open database
 
   - define_aggregate
     + [PENDING] works
@@ -122,8 +123,7 @@ Expected SQLite3::Exception to be raised, but was NoMethodError
     + [PENDING] works
 
   - close_with_open_statements
-Expected SQLite3::BusyException to be raised, but nothing was
-    + [FAILED] works
+    + works
 
   - execute_with_empty_bind_params
     + works
@@ -134,4 +134,4 @@ Expected SQLite3::BusyException to be raised, but nothing was
   - execute_with_named_bind_params
     + works
 
-  FAILURE [3/25 tests failed + 18 pending]
+  SUCCESS [0/29 tests failed + 17 pending]
