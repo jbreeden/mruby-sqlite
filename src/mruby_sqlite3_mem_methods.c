@@ -1,5 +1,5 @@
 /*
- * struct sqlite3_mem_methods
+ * sqlite3_mem_methods
  * Defined in file sqlite3.h @ line 1463
  */
 
@@ -7,63 +7,22 @@
 
 #if BIND_Sqlite3MemMethods_TYPE
 
-/* MRUBY_BINDING: custom_header */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/*
- * Class Methods
- */
-
 /* MRUBY_BINDING: Sqlite3MemMethods::initialize */
-/* sha: ae045f9e4d0e40e5166c3f1ce5f3a37385c7ce9a4c4ce8a7bcb9a5233b9db29c */
+/* sha: 0ee8e84230cf6f07e2835baacb40a82363c6efb38c1ee74e68efe287e6ce4e95 */
 #if BIND_Sqlite3MemMethods_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods* native_object = (struct sqlite3_mem_methods*)calloc(1, sizeof(struct sqlite3_mem_methods));
-  mruby_giftwrap_sqlite3_mem_methods_data_ptr(self, native_object);
+/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  sqlite3_mem_methods* native_object = (sqlite3_mem_methods*)calloc(1, sizeof(sqlite3_mem_methods));
+  mruby_gift_sqlite3_mem_methods_data_ptr(self, native_object);
   return self;
 }
 #endif
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3MemMethods::initialize */
-/* sha: 69f7ef016a7bdf0c311159616320c86d8e35903e55afb97bcdc169c19d0d52b8 */
-mrb_value
-mrb_SQLite_Sqlite3MemMethods_disown(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3MemMethods.disown only accepts objects of type SQLite::Sqlite3MemMethods");
-    return mrb_nil_value();
-  }
-
-  ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby = FALSE;
-
-  return mrb_nil_value();
-}
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3MemMethods::belongs_to_ruby */
-/* sha: 6503a9096a06c71d41de083c61c9d7b63bca47f180e3e20019833e414ec35d73 */
-mrb_value
-mrb_SQLite_Sqlite3MemMethods_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3MemMethods.belongs_to_ruby only accepts objects of type SQLite::Sqlite3MemMethods");
-    return mrb_nil_value();
-  }
-
-  if ( ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby ) {
-    return mrb_true_value();
-  } else {
-    return mrb_false_value();
-  }
-}
 /* MRUBY_BINDING_END */
 
 /*
@@ -71,7 +30,7 @@ mrb_SQLite_Sqlite3MemMethods_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xMalloc_reader */
-/* sha: 119c5943a136f68fc81d129581a690c5e23dc455039fbd47fa02d7a77f11cdc6 */
+/* sha: be169b3a51ba9784e3488773ee8e1a6f672ac3d41d5d81ff8410350b14c6ce16 */
 #if BIND_Sqlite3MemMethods_xMalloc_FIELD_READER
 /* get_xMalloc
  *
@@ -79,7 +38,7 @@ mrb_SQLite_Sqlite3MemMethods_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xMalloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   void *(*)(int) native_xMalloc = native_self->xMalloc;
 
@@ -91,7 +50,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xMalloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xMalloc_writer */
-/* sha: 53dd908a84006c7436118598d2384497ed55a624862ad33b8933659501811e4a */
+/* sha: 34f83e265e1b3b8bdf26cd676d11985049a44c7097aac26494ae0fe26a4c19ac */
 #if BIND_Sqlite3MemMethods_xMalloc_FIELD_WRITER
 /* set_xMalloc
  *
@@ -100,7 +59,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xMalloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xMalloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xMalloc;
 
   mrb_get_args(mrb, "o", &xMalloc);
@@ -112,6 +71,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xMalloc(mrb_state* mrb, mrb_value self) {
 
   native_self->xMalloc = native_xMalloc;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -120,7 +80,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xMalloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xFree_reader */
-/* sha: 675ae852aff0a25873f943b2011b5e66afa7dfcd0b6fdbac6d4b23d8375288ef */
+/* sha: 1eec16026baa70ece828e5d340bc9d5d780881e198d4e7151e9fb74f3c6a4206 */
 #if BIND_Sqlite3MemMethods_xFree_FIELD_READER
 /* get_xFree
  *
@@ -128,7 +88,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xMalloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xFree(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   void (*)(void *) native_xFree = native_self->xFree;
 
@@ -140,7 +100,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xFree(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xFree_writer */
-/* sha: 7e4e87942c5ff5bd65e39bc48d064893ba57347696e76cd1208632631ddf52a3 */
+/* sha: b3aa50434bd4c853fecf5be2b0ca84d759ebabe06ab62312b56d5696b4f7319f */
 #if BIND_Sqlite3MemMethods_xFree_FIELD_WRITER
 /* set_xFree
  *
@@ -149,7 +109,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xFree(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xFree(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xFree;
 
   mrb_get_args(mrb, "o", &xFree);
@@ -161,6 +121,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xFree(mrb_state* mrb, mrb_value self) {
 
   native_self->xFree = native_xFree;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -169,7 +130,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xFree(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xRealloc_reader */
-/* sha: 2688b135f789962a9c16b0e834d9ecb035bf8cb45f5034d734157b9f157788d8 */
+/* sha: 069286f9160090fa1ba594dc6704046ac6441ff3010676fb85feb3c3a751e392 */
 #if BIND_Sqlite3MemMethods_xRealloc_FIELD_READER
 /* get_xRealloc
  *
@@ -177,7 +138,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xFree(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xRealloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   void *(*)(void *, int) native_xRealloc = native_self->xRealloc;
 
@@ -189,7 +150,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xRealloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xRealloc_writer */
-/* sha: b584275f8f44458feda3d518df3cb6127da991f0a6e51d1af84527f77ed4e9ea */
+/* sha: fbd5685f624676e274de923e4d582f08856772d8b243fdfc5f946b8b9e755687 */
 #if BIND_Sqlite3MemMethods_xRealloc_FIELD_WRITER
 /* set_xRealloc
  *
@@ -198,7 +159,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xRealloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xRealloc(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xRealloc;
 
   mrb_get_args(mrb, "o", &xRealloc);
@@ -210,6 +171,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRealloc(mrb_state* mrb, mrb_value self) {
 
   native_self->xRealloc = native_xRealloc;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -218,7 +180,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRealloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xSize_reader */
-/* sha: 5240ccb85af83fbd45e3c24ccaa572a5d5aa364c9c139000d625e2b466f9db31 */
+/* sha: 587bc170d2c553d546b6e7457a832094b90937a6c08625a1234adaaf66760afc */
 #if BIND_Sqlite3MemMethods_xSize_FIELD_READER
 /* get_xSize
  *
@@ -226,7 +188,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRealloc(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xSize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   int (*)(void *) native_xSize = native_self->xSize;
 
@@ -238,7 +200,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xSize_writer */
-/* sha: c3deab5cc8e5180dc2b3f34f69e62c0e708b22e84916ed7cfd3510d40b58831d */
+/* sha: 5cd30cf1be0d839a281835b867bc3b1402f67ee33b54724818c95d80c81745bf */
 #if BIND_Sqlite3MemMethods_xSize_FIELD_WRITER
 /* set_xSize
  *
@@ -247,7 +209,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xSize(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xSize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xSize;
 
   mrb_get_args(mrb, "o", &xSize);
@@ -259,6 +221,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xSize(mrb_state* mrb, mrb_value self) {
 
   native_self->xSize = native_xSize;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -267,7 +230,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xRoundup_reader */
-/* sha: e287bf7f06f7b4b7480eab27ac7a37d2b12bddc9b679c9bd6fde2ec015c2d0fb */
+/* sha: 117374f1047fa97ad81b12ae91d732825bcdb0deec226c24d470f3e5f2b68cb7 */
 #if BIND_Sqlite3MemMethods_xRoundup_FIELD_READER
 /* get_xRoundup
  *
@@ -275,7 +238,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xSize(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xRoundup(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   int (*)(int) native_xRoundup = native_self->xRoundup;
 
@@ -287,7 +250,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xRoundup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xRoundup_writer */
-/* sha: 384e863f1dcacbf48a5110c08925f964f74b9c57c16a8539cafeb8f54f142dc6 */
+/* sha: 598965eb0783aea19fb05ab08973c75f81f4a25902cb669bede19f7200aa8157 */
 #if BIND_Sqlite3MemMethods_xRoundup_FIELD_WRITER
 /* set_xRoundup
  *
@@ -296,7 +259,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xRoundup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xRoundup(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xRoundup;
 
   mrb_get_args(mrb, "o", &xRoundup);
@@ -308,6 +271,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRoundup(mrb_state* mrb, mrb_value self) {
 
   native_self->xRoundup = native_xRoundup;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -316,7 +280,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRoundup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xInit_reader */
-/* sha: bacce95e41efef7a695291d9fa50208ddbc4f5fcb58f8f6ea3d9e319fdff4f48 */
+/* sha: 23057776389e63765bfdd12795c4774a5bc2d0ffb98d49dbb9f8118c4d864c59 */
 #if BIND_Sqlite3MemMethods_xInit_FIELD_READER
 /* get_xInit
  *
@@ -324,7 +288,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xRoundup(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xInit(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   int (*)(void *) native_xInit = native_self->xInit;
 
@@ -336,7 +300,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xInit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xInit_writer */
-/* sha: 44d5d75cc8cccf433ee8be268b54fefdf6a299252516389352294c6be19964e8 */
+/* sha: b3ef440f6c4c03bff365df1120fc377e1ab3b18f7f00791c64ce5eeff1e9fbab */
 #if BIND_Sqlite3MemMethods_xInit_FIELD_WRITER
 /* set_xInit
  *
@@ -345,7 +309,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xInit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xInit(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xInit;
 
   mrb_get_args(mrb, "o", &xInit);
@@ -357,6 +321,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xInit(mrb_state* mrb, mrb_value self) {
 
   native_self->xInit = native_xInit;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -365,7 +330,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xInit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xShutdown_reader */
-/* sha: 4384deaeade41fedadd861c14430fe75e8d1cac398ede9cb70076891d9432377 */
+/* sha: 668d22d4b1b7a79f2f9cbe6206c8d051f25cf7d7a6b86c2f1a84f8a47b5b11d7 */
 #if BIND_Sqlite3MemMethods_xShutdown_FIELD_READER
 /* get_xShutdown
  *
@@ -373,7 +338,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xInit(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_xShutdown(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   void (*)(void *) native_xShutdown = native_self->xShutdown;
 
@@ -385,7 +350,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xShutdown(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::xShutdown_writer */
-/* sha: 41e3369eed0c0bc95365f694583b6335bd758875d65bbffe0091f881e9bc6ac4 */
+/* sha: 2d8ffe5fc9b4b8f476c6b6901676da6d94cea65299ce0d32fe02939df7222932 */
 #if BIND_Sqlite3MemMethods_xShutdown_FIELD_WRITER
 /* set_xShutdown
  *
@@ -394,7 +359,7 @@ mrb_SQLite_Sqlite3MemMethods_get_xShutdown(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_xShutdown(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value xShutdown;
 
   mrb_get_args(mrb, "o", &xShutdown);
@@ -406,6 +371,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xShutdown(mrb_state* mrb, mrb_value self) {
 
   native_self->xShutdown = native_xShutdown;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -414,7 +380,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xShutdown(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::pAppData_reader */
-/* sha: ec4c0535c81d4e7d3f46e4d4b0a0ce16355631bd976432fb9299a2149740025a */
+/* sha: 839b3a8e8ab3f0e82f1439ca6c061e5604d2ea54a6b4f5d4b4a2fc70818c5680 */
 #if BIND_Sqlite3MemMethods_pAppData_FIELD_READER
 /* get_pAppData
  *
@@ -422,7 +388,7 @@ mrb_SQLite_Sqlite3MemMethods_set_xShutdown(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_get_pAppData(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
 
   void * native_pAppData = native_self->pAppData;
 
@@ -434,7 +400,7 @@ mrb_SQLite_Sqlite3MemMethods_get_pAppData(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::pAppData_writer */
-/* sha: f18b942f66627ea98af02b2cabea6a39f14e2bf22e45484bd4b81ba31812536e */
+/* sha: e0a092c39b3aa95a14cc619fe628808a2433f2a84d2e783d7c8f105b919a17ad */
 #if BIND_Sqlite3MemMethods_pAppData_FIELD_WRITER
 /* set_pAppData
  *
@@ -443,7 +409,7 @@ mrb_SQLite_Sqlite3MemMethods_get_pAppData(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3MemMethods_set_pAppData(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
+  sqlite3_mem_methods * native_self = mruby_unbox_sqlite3_mem_methods(self);
   mrb_value pAppData;
 
   mrb_get_args(mrb, "o", &pAppData);
@@ -455,6 +421,7 @@ mrb_SQLite_Sqlite3MemMethods_set_pAppData(mrb_state* mrb, mrb_value self) {
 
   native_self->pAppData = native_pAppData;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -464,19 +431,35 @@ mrb_SQLite_Sqlite3MemMethods_set_pAppData(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3MemMethods_init(mrb_state* mrb) {
+/* MRUBY_BINDING: Sqlite3MemMethods::class_init_header */
+/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
+  /* Don't double-init. */
+  static int initialized = 0;
+  if (initialized) return;
+  else initialized = 1;
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3MemMethods::class_definition */
 /* sha: 3a943efd48b275f06740c784a1b6578dae057b60f26b1e992d8dffd29ebfcba3 */
   struct RClass* Sqlite3MemMethods_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3MemMethods", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3MemMethods_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3MemMethods::pre_class_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3MemMethods::class_method_definitions */
-/* sha: 3a62d40395105c607228102ff6f1a5ea245f3e869bf91ff27790dbfa25836bf6 */
+/* sha: 4eace8e14ee47667818ffc916a132fb52ffa17ef9856bc9cab6fd1aeaf00b786 */
 #if BIND_Sqlite3MemMethods_INITIALIZE
   mrb_define_method(mrb, Sqlite3MemMethods_class, "initialize", mrb_SQLite_Sqlite3MemMethods_initialize, MRB_ARGS_NONE());
 #endif
-  mrb_define_class_method(mrb, Sqlite3MemMethods_class, "disown", mrb_SQLite_Sqlite3MemMethods_disown, MRB_ARGS_ARG(1, 0));
-  mrb_define_class_method(mrb, Sqlite3MemMethods_class, "belongs_to_ruby?", mrb_SQLite_Sqlite3MemMethods_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3MemMethods::pre_attr_definitions */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3MemMethods::attr_definitions */
@@ -534,10 +517,27 @@ void mrb_SQLite_Sqlite3MemMethods_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3MemMethods::pre_instance_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3MemMethods::instance_method_definitions */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
+  /*
+   * Member Functions
+   */
+  /* None */
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3MemMethods::class_init_footer */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 }
 
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 #endif

@@ -1,5 +1,5 @@
 /*
- * struct sqlite3_vtab
+ * sqlite3_vtab
  * Defined in file sqlite3.h @ line 5465
  */
 
@@ -7,63 +7,22 @@
 
 #if BIND_Sqlite3Vtab_TYPE
 
-/* MRUBY_BINDING: custom_header */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/*
- * Class Methods
- */
-
 /* MRUBY_BINDING: Sqlite3Vtab::initialize */
-/* sha: d8eb1688ef4ec7f2fe01dde188cb2ed44e03fe199373fda749d949abf49a0d55 */
+/* sha: 6a8174044a85c9d1bbf51c392f80c316788d792242f12d50cb82a033f989b511 */
 #if BIND_Sqlite3Vtab_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Vtab_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab* native_object = (struct sqlite3_vtab*)calloc(1, sizeof(struct sqlite3_vtab));
-  mruby_giftwrap_sqlite3_vtab_data_ptr(self, native_object);
+/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  sqlite3_vtab* native_object = (sqlite3_vtab*)calloc(1, sizeof(sqlite3_vtab));
+  mruby_gift_sqlite3_vtab_data_ptr(self, native_object);
   return self;
 }
 #endif
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Vtab::initialize */
-/* sha: 76a5ebc84fbf8854c9ce30cb36cc3aee85ac13162154e56033d9ed7ab1a021ff */
-mrb_value
-mrb_SQLite_Sqlite3Vtab_disown(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3Vtab.disown only accepts objects of type SQLite::Sqlite3Vtab");
-    return mrb_nil_value();
-  }
-
-  ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby = FALSE;
-
-  return mrb_nil_value();
-}
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Vtab::belongs_to_ruby */
-/* sha: 0d94ba1377c5d86f843a7580dc61761e12ceb91c1d7aecb667b3bce023cbe91c */
-mrb_value
-mrb_SQLite_Sqlite3Vtab_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3Vtab.belongs_to_ruby only accepts objects of type SQLite::Sqlite3Vtab");
-    return mrb_nil_value();
-  }
-
-  if ( ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby ) {
-    return mrb_true_value();
-  } else {
-    return mrb_false_value();
-  }
-}
 /* MRUBY_BINDING_END */
 
 /*
@@ -71,7 +30,7 @@ mrb_SQLite_Sqlite3Vtab_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3Vtab::pModule_reader */
-/* sha: f2bf8cc7f90a3f744a22af0251eeb95fa57ce3a2b4027e94b945ce497e244688 */
+/* sha: a44f28530e4043cac83c3d8287819d4823ba2d74ef00b3fab88b778be6fa19d1 */
 #if BIND_Sqlite3Vtab_pModule_FIELD_READER
 /* get_pModule
  *
@@ -79,7 +38,7 @@ mrb_SQLite_Sqlite3Vtab_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
   const sqlite3_module * native_pModule = native_self->pModule;
 
@@ -91,7 +50,7 @@ mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::pModule_writer */
-/* sha: a5cab68b0330315d563ee30dd2be61d73593dc947a75460ffabab57a6b4bca19 */
+/* sha: 52fc46c46711308d121a4724d4788cb5c3e1c3eb121086c3a0be7d5b884f639b */
 #if BIND_Sqlite3Vtab_pModule_FIELD_WRITER
 /* set_pModule
  *
@@ -100,7 +59,7 @@ mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
   mrb_value pModule;
 
   mrb_get_args(mrb, "o", &pModule);
@@ -115,6 +74,7 @@ mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
 
   native_self->pModule = native_pModule;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -123,7 +83,7 @@ mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::nRef_reader */
-/* sha: 44675802077db8207f93ad8513e1d4140c6990aa965c6f5d3fe113dbc8b27c84 */
+/* sha: 0ba22eb10c1746d8229ac69d07dc4caa2964d3c297c53ed11a74492e0f4a6fc5 */
 #if BIND_Sqlite3Vtab_nRef_FIELD_READER
 /* get_nRef
  *
@@ -131,7 +91,7 @@ mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
   int native_nRef = native_self->nRef;
 
@@ -143,7 +103,7 @@ mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::nRef_writer */
-/* sha: 1703182030ed808c9087cfc0fa61b13369ce62a2bd2aeea92ac9ab8841748960 */
+/* sha: 50a60188abb0e9164b0d6ed1c281b67f212fbac50eb19a98de69caaa70f15e66 */
 #if BIND_Sqlite3Vtab_nRef_FIELD_WRITER
 /* set_nRef
  *
@@ -152,13 +112,14 @@ mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
   mrb_int native_nRef;
 
   mrb_get_args(mrb, "i", &native_nRef);
 
   native_self->nRef = native_nRef;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -167,7 +128,7 @@ mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::zErrMsg_reader */
-/* sha: c35bf032af06f9b47cafb4f03517ea9882793185e2c3832fa736979419f91e28 */
+/* sha: 51c5888d31955a96fe430efe4adfa866a40c5f8f4e499674567262a6ac8aa0ec */
 #if BIND_Sqlite3Vtab_zErrMsg_FIELD_READER
 /* get_zErrMsg
  *
@@ -175,7 +136,7 @@ mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
 
   char * native_zErrMsg = native_self->zErrMsg;
 
@@ -187,7 +148,7 @@ mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::zErrMsg_writer */
-/* sha: a1dabe9b4a2a5988ad64c8b0f35691e06162421779f80c73e328714b60e5f50b */
+/* sha: a94915427d9e8ed23d7a5a7a3ed20ec703fc66069591aef67d8881f4b160b1a4 */
 #if BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER
 /* set_zErrMsg
  *
@@ -196,7 +157,7 @@ mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
+  sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
   mrb_value zErrMsg;
 
   mrb_get_args(mrb, "o", &zErrMsg);
@@ -208,6 +169,7 @@ mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
 
   native_self->zErrMsg = native_zErrMsg;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -217,19 +179,35 @@ mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
+/* MRUBY_BINDING: Sqlite3Vtab::class_init_header */
+/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
+  /* Don't double-init. */
+  static int initialized = 0;
+  if (initialized) return;
+  else initialized = 1;
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3Vtab::class_definition */
 /* sha: 008ff32534793c07965e6f477d3690e1b0019cdaed764ebdcc40993b87d388ac */
   struct RClass* Sqlite3Vtab_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3Vtab", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3Vtab_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Vtab::pre_class_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3Vtab::class_method_definitions */
-/* sha: 663d41b10c91c96cc9aecc12b1c47e44da15e26447830456df330376fc3c4bd9 */
+/* sha: 380df65e514f34d8365c215c81db694b054006a5657ed801c53561069a784d42 */
 #if BIND_Sqlite3Vtab_INITIALIZE
   mrb_define_method(mrb, Sqlite3Vtab_class, "initialize", mrb_SQLite_Sqlite3Vtab_initialize, MRB_ARGS_NONE());
 #endif
-  mrb_define_class_method(mrb, Sqlite3Vtab_class, "disown", mrb_SQLite_Sqlite3Vtab_disown, MRB_ARGS_ARG(1, 0));
-  mrb_define_class_method(mrb, Sqlite3Vtab_class, "belongs_to_ruby?", mrb_SQLite_Sqlite3Vtab_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3Vtab::pre_attr_definitions */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::attr_definitions */
@@ -257,10 +235,27 @@ void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3Vtab::pre_instance_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3Vtab::instance_method_definitions */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
+  /*
+   * Member Functions
+   */
+  /* None */
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3Vtab::class_init_footer */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 }
 
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 #endif

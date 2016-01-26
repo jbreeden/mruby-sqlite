@@ -57,9 +57,6 @@ module SQLite3
     def close
       err = SQLite.sqlite3_close(@native_db)
       SQLite3.raise_sqlite_error(@native_db, err)
-      # Use disown to prevent destruction attempt
-      # when the object is GC'ed
-      SQLite::Sqlite3.disown(@native_db)
       @closed = true
     end
 

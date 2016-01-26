@@ -15,10 +15,18 @@
  *       you will need to prepend the relative path.
  */
 
+/* MRUBY_BINDING: pre_includes */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: includes */
+/* sha: e61c13d4a6ca34d78b0bd8f83fc52026e07cfe840d6c7a3d6c4becc318cd525e */
 #include <stdlib.h>
 #include "mruby.h"
 #include "mruby/array.h"
 #include "mruby/class.h"
+#include "mruby/compile.h"
 #include "mruby/data.h"
 #include "mruby/string.h"
 #include "mruby/value.h"
@@ -29,6 +37,12 @@
 #include "mruby_SQLite_functions.h"
 #include "mruby_SQLite_classes.h"
 #include "mruby_SQLite_boxing.h"
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: post_includes */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 
 /*
  * RClass Macros
@@ -37,8 +51,14 @@
  * Macros for retrieving the RClass*'s defined by this gem.
  */
 
+/* MRUBY_BINDING: pre_class_macros */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: class_macros */
+/* sha: 1bf14cd6b875585ff3d529d04fefd30813c18cb0d326d1efb9f0f241bf30f9df */
 #define SQLite_module(mrb) mrb_module_get(mrb, "SQLite")
-#define Mem_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Mem")
 #define Sqlite3_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3")
 #define Sqlite3Backup_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Backup")
 #define Sqlite3Blob_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Blob")
@@ -58,21 +78,29 @@
 #define Sqlite3RtreeGeometry_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3RtreeGeometry")
 #define Sqlite3RtreeQueryInfo_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3RtreeQueryInfo")
 #define Sqlite3Stmt_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Stmt")
+#define Sqlite3Value_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Value")
 #define Sqlite3Vfs_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Vfs")
 #define Sqlite3Vtab_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Vtab")
 #define Sqlite3VtabCursor_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3VtabCursor")
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: post_class_macros */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 
 /*
  * Class initialization function declarations
  * ------------------------------------------
- *
- * These declarations are controlled by the macros in the
- * "Class Bindings Options" section above.
  */
 
-#if BIND_Mem_TYPE
-void mrb_SQLite_Mem_init(mrb_state* mrb);
-#endif
+/* MRUBY_BINDING: pre_class_init_decls */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: pre_class_init_decls */
+/* sha: 09d2702af0fa4609ea3c2354e85898918ccdb6b2d13615ea0e7518e8cc49393d */
 #if BIND_Sqlite3_TYPE
 void mrb_SQLite_Sqlite3_init(mrb_state* mrb);
 #endif
@@ -130,6 +158,9 @@ void mrb_SQLite_Sqlite3RtreeQueryInfo_init(mrb_state* mrb);
 #if BIND_Sqlite3Stmt_TYPE
 void mrb_SQLite_Sqlite3Stmt_init(mrb_state* mrb);
 #endif
+#if BIND_Sqlite3Value_TYPE
+void mrb_SQLite_Sqlite3Value_init(mrb_state* mrb);
+#endif
 #if BIND_Sqlite3Vfs_TYPE
 void mrb_SQLite_Sqlite3Vfs_init(mrb_state* mrb);
 #endif
@@ -139,11 +170,18 @@ void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb);
 #if BIND_Sqlite3VtabCursor_TYPE
 void mrb_SQLite_Sqlite3VtabCursor_init(mrb_state* mrb);
 #endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: post_class_init_decls */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 
 /*
- * Macro definition function declaration
- * -------------------------------------
+ * Macro & Enum definition function declarations
+ * ---------------------------------------------
  */
 void mruby_SQLite_define_macro_constants(mrb_state* mrb);
+void mruby_SQLite_define_enum_constants(mrb_state* mrb);
 
 #endif

@@ -1,5 +1,5 @@
 /*
- * struct sqlite3_rtree_query_info
+ * sqlite3_rtree_query_info
  * Defined in file sqlite3.h @ line 7739
  */
 
@@ -7,63 +7,22 @@
 
 #if BIND_Sqlite3RtreeQueryInfo_TYPE
 
-/* MRUBY_BINDING: custom_header */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/*
- * Class Methods
- */
-
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::initialize */
-/* sha: 07a51e2bac385698bbff181d662c8f652ef2f65a131180cff5ab51ccd1fb23e7 */
+/* sha: 9e20f0da6609a0bd2fa48db138560083f50c22a17904e3005db93ba5dcf97bc9 */
 #if BIND_Sqlite3RtreeQueryInfo_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info* native_object = (struct sqlite3_rtree_query_info*)calloc(1, sizeof(struct sqlite3_rtree_query_info));
-  mruby_giftwrap_sqlite3_rtree_query_info_data_ptr(self, native_object);
+/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  sqlite3_rtree_query_info* native_object = (sqlite3_rtree_query_info*)calloc(1, sizeof(sqlite3_rtree_query_info));
+  mruby_gift_sqlite3_rtree_query_info_data_ptr(self, native_object);
   return self;
 }
 #endif
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::initialize */
-/* sha: 38f42eb423b1100e60db7bcc5c860007b4adf5e3f062e0e6f5670942b56d0d15 */
-mrb_value
-mrb_SQLite_Sqlite3RtreeQueryInfo_disown(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3RtreeQueryInfo.disown only accepts objects of type SQLite::Sqlite3RtreeQueryInfo");
-    return mrb_nil_value();
-  }
-
-  ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby = FALSE;
-
-  return mrb_nil_value();
-}
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::belongs_to_ruby */
-/* sha: 77daa8fdb656d709e1371549f6744285c655c6af5de841dba0f76b2f0bf24fd6 */
-mrb_value
-mrb_SQLite_Sqlite3RtreeQueryInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3RtreeQueryInfo.belongs_to_ruby only accepts objects of type SQLite::Sqlite3RtreeQueryInfo");
-    return mrb_nil_value();
-  }
-
-  if ( ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby ) {
-    return mrb_true_value();
-  } else {
-    return mrb_false_value();
-  }
-}
 /* MRUBY_BINDING_END */
 
 /*
@@ -71,7 +30,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self)
  */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pContext_reader */
-/* sha: 5cf13fb0b938a1a4ec741b1c9970bdaf8b07dd4b3b7df7101caf6b1cd5561c50 */
+/* sha: 24d8808cfe6630ce22fb81bc4cfa424cb4627963ccd021948b2a5f922ddceb81 */
 #if BIND_Sqlite3RtreeQueryInfo_pContext_FIELD_READER
 /* get_pContext
  *
@@ -79,7 +38,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_belongs_to_ruby(mrb_state* mrb, mrb_value self)
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_pContext(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   void * native_pContext = native_self->pContext;
 
@@ -91,7 +50,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_pContext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pContext_writer */
-/* sha: 09c0e877d106890ae49d7ce559ebcd5e099d932b83ac04e4b74cf60385123524 */
+/* sha: cc0c49db6036f6dd0afc7f3b9af37ae6cbe60e21e40f08417bfa983a3bdb5b68 */
 #if BIND_Sqlite3RtreeQueryInfo_pContext_FIELD_WRITER
 /* set_pContext
  *
@@ -100,7 +59,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_pContext(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_pContext(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value pContext;
 
   mrb_get_args(mrb, "o", &pContext);
@@ -112,6 +71,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pContext(mrb_state* mrb, mrb_value self) {
 
   native_self->pContext = native_pContext;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -120,7 +80,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pContext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::nParam_reader */
-/* sha: a6d8620e677da7c19453d45949b568fb7157b1da77848527a5795c90b7418c14 */
+/* sha: 936f0154ef6d8272687751e84933adf45912041a1d469680ff71ecc002d0f6e9 */
 #if BIND_Sqlite3RtreeQueryInfo_nParam_FIELD_READER
 /* get_nParam
  *
@@ -128,7 +88,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pContext(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_nParam(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_nParam = native_self->nParam;
 
@@ -140,7 +100,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_nParam(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::nParam_writer */
-/* sha: 9f111a102f8342b492ebbd14ec03415bf0cfcaebe50620572e90e911819f2bfe */
+/* sha: be7eca3d44e0780d2453a2238d2c70e95e1a4e66dcd5e0ec4fa3c489d3def2ce */
 #if BIND_Sqlite3RtreeQueryInfo_nParam_FIELD_WRITER
 /* set_nParam
  *
@@ -149,13 +109,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_nParam(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_nParam(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_nParam;
 
   mrb_get_args(mrb, "i", &native_nParam);
 
   native_self->nParam = native_nParam;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -164,7 +125,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_nParam(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::aParam_reader */
-/* sha: 35dfd4783da0f1de8993d9fe0f0fab60ece13ca161a7f3a0ddfb57c8fcaa9880 */
+/* sha: 9b2bcea6350208f8e5c7abc9a7bb3ed199eeb54b2d57a876228fd123dc632190 */
 #if BIND_Sqlite3RtreeQueryInfo_aParam_FIELD_READER
 /* get_aParam
  *
@@ -172,7 +133,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_nParam(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_aParam(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   sqlite3_rtree_dbl * native_aParam = native_self->aParam;
 
@@ -184,7 +145,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_aParam(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::aParam_writer */
-/* sha: d76a472221be3b2f2625b13cc3f847e0d3150679768fad3623cd334e0952b8cf */
+/* sha: 2c342d349e9c0454d676d5b8f80a8360b7b67d8897da994d155b5337a5c58f1a */
 #if BIND_Sqlite3RtreeQueryInfo_aParam_FIELD_WRITER
 /* set_aParam
  *
@@ -193,7 +154,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_aParam(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_aParam(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value aParam;
 
   mrb_get_args(mrb, "o", &aParam);
@@ -205,6 +166,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aParam(mrb_state* mrb, mrb_value self) {
 
   native_self->aParam = native_aParam;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -213,7 +175,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aParam(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pUser_reader */
-/* sha: c33b3c42f2a6f02a1bc814880e5470c44d82b877992e19aa45a077e78ec5665b */
+/* sha: b2f4677a3cba648fdb7728a908ce3d8e33787406dce92f013f25e17ced6c6232 */
 #if BIND_Sqlite3RtreeQueryInfo_pUser_FIELD_READER
 /* get_pUser
  *
@@ -221,7 +183,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aParam(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_pUser(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   void * native_pUser = native_self->pUser;
 
@@ -233,7 +195,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_pUser(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pUser_writer */
-/* sha: 1ed9889019be006d79bb3d7a859fb9758ab79751dd43560e4f17dd95f64c10cb */
+/* sha: 458d6e6f84a9c6a019ed1e3a0a2037739eca43a769f6ec23d60886582d187b3c */
 #if BIND_Sqlite3RtreeQueryInfo_pUser_FIELD_WRITER
 /* set_pUser
  *
@@ -242,7 +204,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_pUser(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_pUser(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value pUser;
 
   mrb_get_args(mrb, "o", &pUser);
@@ -254,6 +216,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pUser(mrb_state* mrb, mrb_value self) {
 
   native_self->pUser = native_pUser;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -262,7 +225,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pUser(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::xDelUser_reader */
-/* sha: d489907d026fac8200eafd8c4fc3c7d3eea0c1faef8f50acdfaaee88966206c6 */
+/* sha: ddf3228a3e3a0493f5e5471c53d4fb85a1a8671d3eaf14a99723f225ed23f226 */
 #if BIND_Sqlite3RtreeQueryInfo_xDelUser_FIELD_READER
 /* get_xDelUser
  *
@@ -270,7 +233,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_pUser(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_xDelUser(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   void (*)(void *) native_xDelUser = native_self->xDelUser;
 
@@ -282,7 +245,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_xDelUser(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::xDelUser_writer */
-/* sha: 3ff8e7d23de903f1d1cad50b5ec779f4932c1266fd31b8b0283325896b219885 */
+/* sha: dbcdb77c158e4d89368bee135570d81a4774ae4f713f3f1515cf374178291b95 */
 #if BIND_Sqlite3RtreeQueryInfo_xDelUser_FIELD_WRITER
 /* set_xDelUser
  *
@@ -291,7 +254,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_xDelUser(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_xDelUser(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value xDelUser;
 
   mrb_get_args(mrb, "o", &xDelUser);
@@ -303,6 +266,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_xDelUser(mrb_state* mrb, mrb_value self) {
 
   native_self->xDelUser = native_xDelUser;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -311,7 +275,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_xDelUser(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::aCoord_reader */
-/* sha: f26f445c00158dd795ebd64ed959cef7ed481d5c07aefcfdf6b4f6019206b740 */
+/* sha: 547286b0a5bdd7eb492da63af8d8caebd72e2e1f650dfb772fcf05f82ddd49df */
 #if BIND_Sqlite3RtreeQueryInfo_aCoord_FIELD_READER
 /* get_aCoord
  *
@@ -319,7 +283,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_xDelUser(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_aCoord(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   sqlite3_rtree_dbl * native_aCoord = native_self->aCoord;
 
@@ -331,7 +295,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_aCoord(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::aCoord_writer */
-/* sha: 9b20be4305a4478e52e3a1d3f7cc4551734899bb3adec939294e297b4d387440 */
+/* sha: 91d8ebf2215e1500507dacbe441d6ccc54be60c5a0c40816a3ed04e9203d1ba8 */
 #if BIND_Sqlite3RtreeQueryInfo_aCoord_FIELD_WRITER
 /* set_aCoord
  *
@@ -340,7 +304,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_aCoord(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_aCoord(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value aCoord;
 
   mrb_get_args(mrb, "o", &aCoord);
@@ -352,6 +316,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aCoord(mrb_state* mrb, mrb_value self) {
 
   native_self->aCoord = native_aCoord;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -360,7 +325,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aCoord(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::anQueue_reader */
-/* sha: b4451c7b7b215aaa11d6e445af1a27626fc74fac17fd09d5bb3c42f1e809c680 */
+/* sha: 31e61dbdb1b5178897b574a374268ea3b6c9e14d7bcf32c336326c93a8ddcae3 */
 #if BIND_Sqlite3RtreeQueryInfo_anQueue_FIELD_READER
 /* get_anQueue
  *
@@ -368,7 +333,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_aCoord(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_anQueue(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   unsigned int * native_anQueue = native_self->anQueue;
 
@@ -380,7 +345,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_anQueue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::anQueue_writer */
-/* sha: c8f053d74d807d4e9c60965943a4026c1c165c9079c2ae0583a08a07768c6b08 */
+/* sha: 6cf0657a64d52e7d038d0c3fa0eb28fa6f49f0eddf39f9c55bb3ca0253ed8d27 */
 #if BIND_Sqlite3RtreeQueryInfo_anQueue_FIELD_WRITER
 /* set_anQueue
  *
@@ -389,7 +354,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_anQueue(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_anQueue(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_value anQueue;
 
   mrb_get_args(mrb, "o", &anQueue);
@@ -401,6 +366,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_anQueue(mrb_state* mrb, mrb_value self) {
 
   native_self->anQueue = native_anQueue;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -409,7 +375,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_anQueue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::nCoord_reader */
-/* sha: dcd6c5c2fe17815e12ec15202d5c461ca1466b81a756e2066e80b93cb069653a */
+/* sha: 6a42a3a2194f5afa8e97e60b0a5a473d40e8621929f970557458de6472538d33 */
 #if BIND_Sqlite3RtreeQueryInfo_nCoord_FIELD_READER
 /* get_nCoord
  *
@@ -417,7 +383,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_anQueue(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_nCoord(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_nCoord = native_self->nCoord;
 
@@ -429,7 +395,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_nCoord(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::nCoord_writer */
-/* sha: cb96c2ccc2fd2a583bc4c5de9f240f8212f6af9f750ed7522148cb082ea6a945 */
+/* sha: 5a1c64aae804468bb0363954db55f08fc208ca1c4635126a1d461f0c3789be2a */
 #if BIND_Sqlite3RtreeQueryInfo_nCoord_FIELD_WRITER
 /* set_nCoord
  *
@@ -438,13 +404,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_nCoord(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_nCoord(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_nCoord;
 
   mrb_get_args(mrb, "i", &native_nCoord);
 
   native_self->nCoord = native_nCoord;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -453,7 +420,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_nCoord(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::iLevel_reader */
-/* sha: a6a49d8bbe3cba92bdc65f98ce5cff15652c6a6cd390f1d61c5e122a473eed90 */
+/* sha: b2f1b3f397619d09274388686778a279cfc167e3669efa0b637c32127722072f */
 #if BIND_Sqlite3RtreeQueryInfo_iLevel_FIELD_READER
 /* get_iLevel
  *
@@ -461,7 +428,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_nCoord(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_iLevel(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_iLevel = native_self->iLevel;
 
@@ -473,7 +440,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_iLevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::iLevel_writer */
-/* sha: c5b0a10a27964cdc29e65b8427eac939ad878d33b5d02164d69a148dce82bec5 */
+/* sha: 125d728eb80376e95695bc4518ebbf2a7fe861893e41de7fa7a979b324e846eb */
 #if BIND_Sqlite3RtreeQueryInfo_iLevel_FIELD_WRITER
 /* set_iLevel
  *
@@ -482,13 +449,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_iLevel(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_iLevel(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_iLevel;
 
   mrb_get_args(mrb, "i", &native_iLevel);
 
   native_self->iLevel = native_iLevel;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -497,7 +465,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_iLevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::mxLevel_reader */
-/* sha: c3f49bb3ace264a24a286de2df7e9b9be6dee23f0f991c31aa57cdf76301af00 */
+/* sha: 02c73e8d11d59a097f6993c29692bc455fb035b584ffdadee0a20587e9e87b38 */
 #if BIND_Sqlite3RtreeQueryInfo_mxLevel_FIELD_READER
 /* get_mxLevel
  *
@@ -505,7 +473,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_iLevel(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_mxLevel(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_mxLevel = native_self->mxLevel;
 
@@ -517,7 +485,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_mxLevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::mxLevel_writer */
-/* sha: ec2c37c3d91ac1bdce7c6854def9eaf5d6f878a5a14bbbbb5477e4fe7ba36eb9 */
+/* sha: 466669b7f7b927547cdd76ecdb399a0d470d3c89ddaa45484ccbe4a435f14836 */
 #if BIND_Sqlite3RtreeQueryInfo_mxLevel_FIELD_WRITER
 /* set_mxLevel
  *
@@ -526,13 +494,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_mxLevel(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_mxLevel(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_mxLevel;
 
   mrb_get_args(mrb, "i", &native_mxLevel);
 
   native_self->mxLevel = native_mxLevel;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -541,7 +510,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_mxLevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::iRowid_reader */
-/* sha: 4b053b112173db1b49b943e5007f83f10c83d0076a4aec911f6e877e7eee8a3c */
+/* sha: 58509425f6a6597ad50421b8f23d8dbc9e0324ec52c05ace9fb2d3a90f6cacb9 */
 #if BIND_Sqlite3RtreeQueryInfo_iRowid_FIELD_READER
 /* get_iRowid
  *
@@ -549,7 +518,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_mxLevel(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_iRowid(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   sqlite3_int64 native_iRowid = native_self->iRowid;
 
@@ -561,7 +530,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_iRowid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::iRowid_writer */
-/* sha: 6514f1ef345a997c9a933a0c11ef1e2cafa76758a747479bc7ce56f5a0b38acb */
+/* sha: 2231ea023634351c2edac4714c192cb5294430824cac6297b64e68a1146f8e0f */
 #if BIND_Sqlite3RtreeQueryInfo_iRowid_FIELD_WRITER
 /* set_iRowid
  *
@@ -570,13 +539,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_iRowid(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_iRowid(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_iRowid;
 
   mrb_get_args(mrb, "i", &native_iRowid);
 
   native_self->iRowid = native_iRowid;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -585,7 +555,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_iRowid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::rParentScore_reader */
-/* sha: 11a4b0f8e6686b13eb0c0e2521665e3af2ce91bc15b51968f0440c73e5d23e12 */
+/* sha: 6e1bdc2e5cd50ca8156d502280749c129dfd30af0ff49382a907fe5ed041959f */
 #if BIND_Sqlite3RtreeQueryInfo_rParentScore_FIELD_READER
 /* get_rParentScore
  *
@@ -593,7 +563,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_iRowid(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_rParentScore(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   sqlite3_rtree_dbl native_rParentScore = native_self->rParentScore;
 
@@ -605,7 +575,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_rParentScore(mrb_state* mrb, mrb_value self
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::rParentScore_writer */
-/* sha: 232e49531386b47b958bc4ed603e0cadad4f4f04498605f363aa9c16d668929d */
+/* sha: 4df914b90d550f3c0885aca9012f219da461d5ea21deb4e01ebd900c1bc7a83e */
 #if BIND_Sqlite3RtreeQueryInfo_rParentScore_FIELD_WRITER
 /* set_rParentScore
  *
@@ -614,13 +584,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_rParentScore(mrb_state* mrb, mrb_value self
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_rParentScore(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_float native_rParentScore;
 
   mrb_get_args(mrb, "f", &native_rParentScore);
 
   native_self->rParentScore = native_rParentScore;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -629,7 +600,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_rParentScore(mrb_state* mrb, mrb_value self
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::eParentWithin_reader */
-/* sha: 3e61307c805b32ba20a26857c7abea8610856e1c2f3205f985d041a7c67990d0 */
+/* sha: 3a16d30b1a3c3e92d80e8aa076fb7896a3c26f3e1f5b184cc2a7c32c0b9591d9 */
 #if BIND_Sqlite3RtreeQueryInfo_eParentWithin_FIELD_READER
 /* get_eParentWithin
  *
@@ -637,7 +608,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_rParentScore(mrb_state* mrb, mrb_value self
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_eParentWithin(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_eParentWithin = native_self->eParentWithin;
 
@@ -649,7 +620,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_eParentWithin(mrb_state* mrb, mrb_value sel
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::eParentWithin_writer */
-/* sha: a1024a9a08065a13cd1f96f3c70c1553a6f15f653ee70ad5c638e0f9ad2542cf */
+/* sha: 648e3119dc69ec4831d5fbbbb65012b01aba8831c4301373c789a761a029b8ab */
 #if BIND_Sqlite3RtreeQueryInfo_eParentWithin_FIELD_WRITER
 /* set_eParentWithin
  *
@@ -658,13 +629,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_eParentWithin(mrb_state* mrb, mrb_value sel
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_eParentWithin(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_eParentWithin;
 
   mrb_get_args(mrb, "i", &native_eParentWithin);
 
   native_self->eParentWithin = native_eParentWithin;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -673,7 +645,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_eParentWithin(mrb_state* mrb, mrb_value sel
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::eWithin_reader */
-/* sha: 89adb5b7f83d7cc7804af19477c72d23358b36076a75f4bc7854a8b2fcd44c51 */
+/* sha: 0edd0f01a4f65f0d54a16446c500b9df1ae4881a5ef5ca1422cbfb86f47cbb37 */
 #if BIND_Sqlite3RtreeQueryInfo_eWithin_FIELD_READER
 /* get_eWithin
  *
@@ -681,7 +653,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_eParentWithin(mrb_state* mrb, mrb_value sel
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_eWithin(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   int native_eWithin = native_self->eWithin;
 
@@ -693,7 +665,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_eWithin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::eWithin_writer */
-/* sha: e1af25f93d9a7c8145fab162b085f77c729a4027cf28054426448b989869fc29 */
+/* sha: b701319db295c7b6859a1a87c728ea7d2dbd17a159ef549d828766e5d3bff3c3 */
 #if BIND_Sqlite3RtreeQueryInfo_eWithin_FIELD_WRITER
 /* set_eWithin
  *
@@ -702,13 +674,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_eWithin(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_eWithin(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_int native_eWithin;
 
   mrb_get_args(mrb, "i", &native_eWithin);
 
   native_self->eWithin = native_eWithin;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -717,7 +690,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_eWithin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::rScore_reader */
-/* sha: 3c4df4667e299e4dc0c902c30b78a4e58f907a61e2725c4c34a2d97d724d41a7 */
+/* sha: afb6f3c028f74bbda09f6d3cbd2a5d54959e4fef3c1b22fc659046de7a7d8f76 */
 #if BIND_Sqlite3RtreeQueryInfo_rScore_FIELD_READER
 /* get_rScore
  *
@@ -725,7 +698,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_eWithin(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_get_rScore(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
 
   sqlite3_rtree_dbl native_rScore = native_self->rScore;
 
@@ -737,7 +710,7 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_rScore(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::rScore_writer */
-/* sha: 1e406eaf8cae5d58a6d4aad3f6d3dcf7edf156acbfecb9741303f5478af64abb */
+/* sha: 164ab79a4970dc8a194087669b0cc2e471853501c7bc1b043c1fa28e6068f453 */
 #if BIND_Sqlite3RtreeQueryInfo_rScore_FIELD_WRITER
 /* set_rScore
  *
@@ -746,13 +719,14 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_get_rScore(mrb_state* mrb, mrb_value self) {
  */
 mrb_value
 mrb_SQLite_Sqlite3RtreeQueryInfo_set_rScore(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
+  sqlite3_rtree_query_info * native_self = mruby_unbox_sqlite3_rtree_query_info(self);
   mrb_float native_rScore;
 
   mrb_get_args(mrb, "f", &native_rScore);
 
   native_self->rScore = native_rScore;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -762,19 +736,35 @@ mrb_SQLite_Sqlite3RtreeQueryInfo_set_rScore(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3RtreeQueryInfo_init(mrb_state* mrb) {
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::class_init_header */
+/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
+  /* Don't double-init. */
+  static int initialized = 0;
+  if (initialized) return;
+  else initialized = 1;
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::class_definition */
 /* sha: 59db23f23f396e646e769a7e045e64ec17b1fdb2270d87d2eafa7efa0cde1628 */
   struct RClass* Sqlite3RtreeQueryInfo_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3RtreeQueryInfo", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3RtreeQueryInfo_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pre_class_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::class_method_definitions */
-/* sha: ba0c962e4351f650ea69af35104c691090181df64a8cfba1a78d150fb508cfcd */
+/* sha: 97a107b7245f0a1a92af56dee29046ad2cf58d35b12d855893fa4d5a25941a10 */
 #if BIND_Sqlite3RtreeQueryInfo_INITIALIZE
   mrb_define_method(mrb, Sqlite3RtreeQueryInfo_class, "initialize", mrb_SQLite_Sqlite3RtreeQueryInfo_initialize, MRB_ARGS_NONE());
 #endif
-  mrb_define_class_method(mrb, Sqlite3RtreeQueryInfo_class, "disown", mrb_SQLite_Sqlite3RtreeQueryInfo_disown, MRB_ARGS_ARG(1, 0));
-  mrb_define_class_method(mrb, Sqlite3RtreeQueryInfo_class, "belongs_to_ruby?", mrb_SQLite_Sqlite3RtreeQueryInfo_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pre_attr_definitions */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::attr_definitions */
@@ -874,10 +864,27 @@ void mrb_SQLite_Sqlite3RtreeQueryInfo_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::pre_instance_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3RtreeQueryInfo::instance_method_definitions */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
+  /*
+   * Member Functions
+   */
+  /* None */
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3RtreeQueryInfo::class_init_footer */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 }
 
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 #endif

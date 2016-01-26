@@ -14,9 +14,10 @@
 #if BIND_Sqlite3Mutex_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Mutex_initialize(mrb_state* mrb, mrb_value self) {
-  struct sqlite3_mutex* native_object = (struct sqlite3_mutex*)calloc(1, sizeof(struct sqlite3_mutex));
-  mruby_giftwrap_sqlite3_mutex_data_ptr(self, native_object);
-  return self;
+// TODO Do we need this? Can't calloc opaque types
+  // struct sqlite3_mutex* native_object = (struct sqlite3_mutex*)calloc(1, sizeof(struct sqlite3_mutex));
+  // mruby_giftwrap_sqlite3_mutex_data_ptr(self, native_object);
+  // return self;
 }
 #endif
 

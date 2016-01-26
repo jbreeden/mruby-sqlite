@@ -7,63 +7,22 @@
 
 #if BIND_Sqlite3IndexOrderby_TYPE
 
-/* MRUBY_BINDING: custom_header */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/*
- * Class Methods
- */
-
 /* MRUBY_BINDING: Sqlite3IndexOrderby::initialize */
-/* sha: a3b7478114a24d7928d882324ddf200bb59f18fe807bfb21e937ab0b514b515a */
+/* sha: 5ba8cad5075ed082e7138dbbc998dd83fe747c14428274c3ae845439922a634a */
 #if BIND_Sqlite3IndexOrderby_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexOrderby_initialize(mrb_state* mrb, mrb_value self) {
+/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
   struct sqlite3_index_orderby* native_object = (struct sqlite3_index_orderby*)calloc(1, sizeof(struct sqlite3_index_orderby));
-  mruby_giftwrap_sqlite3_index_orderby_data_ptr(self, native_object);
+  mruby_gift_sqlite3_index_orderby_data_ptr(self, native_object);
   return self;
 }
 #endif
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexOrderby::initialize */
-/* sha: 4d53bb1e3767161551e1e0718dd0a2d79c298f9436a00b4978618705a535ca27 */
-mrb_value
-mrb_SQLite_Sqlite3IndexOrderby_disown(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3IndexOrderby.disown only accepts objects of type SQLite::Sqlite3IndexOrderby");
-    return mrb_nil_value();
-  }
-
-  ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby = FALSE;
-
-  return mrb_nil_value();
-}
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexOrderby::belongs_to_ruby */
-/* sha: 88de38da4bb00cb9ba212a6e8f8593b1ed85edefe862e881943a3a40c2940676 */
-mrb_value
-mrb_SQLite_Sqlite3IndexOrderby_belongs_to_ruby(mrb_state* mrb, mrb_value self) {
-  mrb_value ruby_object;
-  mrb_get_args(mrb, "o", &ruby_object);
-
-  if (!mrb_obj_is_kind_of(mrb, ruby_object, mrb_class_ptr(self))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "SQLite::Sqlite3IndexOrderby.belongs_to_ruby only accepts objects of type SQLite::Sqlite3IndexOrderby");
-    return mrb_nil_value();
-  }
-
-  if ( ((mruby_to_native_ref*)(DATA_PTR(ruby_object)))->belongs_to_ruby ) {
-    return mrb_true_value();
-  } else {
-    return mrb_false_value();
-  }
-}
 /* MRUBY_BINDING_END */
 
 /*
@@ -91,7 +50,7 @@ mrb_SQLite_Sqlite3IndexOrderby_get_iColumn(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexOrderby::iColumn_writer */
-/* sha: fa9a080078c8981a5e995f4fe0296a79bfe786c5fb8bef0c6531de7fb04dfc6d */
+/* sha: 83bc3079d84fecb7d395bba3cb45524871597e88d79179163f35562a0847ef13 */
 #if BIND_Sqlite3IndexOrderby_iColumn_FIELD_WRITER
 /* set_iColumn
  *
@@ -107,6 +66,7 @@ mrb_SQLite_Sqlite3IndexOrderby_set_iColumn(mrb_state* mrb, mrb_value self) {
 
   native_self->iColumn = native_iColumn;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -135,7 +95,7 @@ mrb_SQLite_Sqlite3IndexOrderby_get_desc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexOrderby::desc_writer */
-/* sha: d1a0da61e14f647b0a6b76cd398960c1dbe996e89c625285e77032b55bf60af8 */
+/* sha: aa9f869ace33ef0585b4c83803b3fcc5cd4b6bca397b83971167a629d1b66b59 */
 #if BIND_Sqlite3IndexOrderby_desc_FIELD_WRITER
 /* set_desc
  *
@@ -151,6 +111,7 @@ mrb_SQLite_Sqlite3IndexOrderby_set_desc(mrb_state* mrb, mrb_value self) {
 
   native_self->desc = native_desc;
   
+  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -160,19 +121,35 @@ mrb_SQLite_Sqlite3IndexOrderby_set_desc(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3IndexOrderby_init(mrb_state* mrb) {
+/* MRUBY_BINDING: Sqlite3IndexOrderby::class_init_header */
+/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
+  /* Don't double-init. */
+  static int initialized = 0;
+  if (initialized) return;
+  else initialized = 1;
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3IndexOrderby::class_definition */
 /* sha: 1600d181e22c044ca123570994295b2413080d67f0a441af1b96366e43ee5a82 */
   struct RClass* Sqlite3IndexOrderby_class = mrb_define_class_under(mrb, SQLite_module(mrb), "Sqlite3IndexOrderby", mrb->object_class);
   MRB_SET_INSTANCE_TT(Sqlite3IndexOrderby_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexOrderby::pre_class_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3IndexOrderby::class_method_definitions */
-/* sha: c949e8650f6469e55385d82ecfd731a2a88297fcd02cf038497377649fd7e4e4 */
+/* sha: ac98453c8e1203396bc82a1be217ba27f5e11cef8060b6f7e2f186d60e9812c3 */
 #if BIND_Sqlite3IndexOrderby_INITIALIZE
   mrb_define_method(mrb, Sqlite3IndexOrderby_class, "initialize", mrb_SQLite_Sqlite3IndexOrderby_initialize, MRB_ARGS_NONE());
 #endif
-  mrb_define_class_method(mrb, Sqlite3IndexOrderby_class, "disown", mrb_SQLite_Sqlite3IndexOrderby_disown, MRB_ARGS_ARG(1, 0));
-  mrb_define_class_method(mrb, Sqlite3IndexOrderby_class, "belongs_to_ruby?", mrb_SQLite_Sqlite3IndexOrderby_belongs_to_ruby, MRB_ARGS_ARG(1, 0));
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3IndexOrderby::pre_attr_definitions */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexOrderby::attr_definitions */
@@ -194,10 +171,27 @@ void mrb_SQLite_Sqlite3IndexOrderby_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Sqlite3IndexOrderby::pre_instance_method_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3IndexOrderby::instance_method_definitions */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
+  /*
+   * Member Functions
+   */
+  /* None */
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: Sqlite3IndexOrderby::class_init_footer */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 }
 
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 #endif

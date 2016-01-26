@@ -88,7 +88,6 @@ module SQLite3
       @closed = true
       # Ignore the status returned. Step would have raised it already.
       SQLite::sqlite3_finalize(@native_stmt)
-      SQLite::Sqlite3Stmt.disown(@native_stmt)
       self
     end
 

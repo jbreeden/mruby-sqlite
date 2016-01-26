@@ -1,9 +1,11 @@
+require 'mruby_bindings'
+
 namespace :bindings do
   desc 'Extract type information from C files'
   task :scrape do
     File.delete('declarations.json') if File.exists?('declarations.json')
     
-    headers = ['sqlite3/sqlite3.h'] 
+    headers = ['sqlite3/sqlite3.h']
     
     if headers.length == 0
       $stderr.puts 'No headers defined. Please update rakelib/mruby-bindings.rake'
@@ -11,7 +13,15 @@ namespace :bindings do
     end
     
     headers.each do |header|
-      sh "clang2json #{header} | egrep -v 'mutex|scanstatus' >> declarations.json"
+      sh "clang2json #{header} >> declarations.json"
+    end
+  end
+  
+  desc 'Inspect all declarations in an interactive Pry shell (require pry gem)'
+  task :pry do
+    require 'pry'
+    MRubyBindings.read_declarations("declarations.json") do |lib|
+      binding.pry
     end
   end
 
@@ -21,10 +31,13 @@ namespace :bindings do
     cmd << '-input declarations.json'
     cmd << '-module SQLite'
     cmd << '-gem mruby-sqlite'
-    cmd << '-load mruby-bindings.in/macro_types.rb' if File.exists?('mruby-bindings.in/macro_types.rb')
+    cmd << '-load mruby-bindings.in/ctypes.rb' if File.exists?('mruby-bindings.in/ctypes.rb')
     cmd << '-load mruby-bindings.in/fn_types.rb' if File.exists?('mruby-bindings.in/fn_types.rb')
+    cmd << '-load mruby-bindings.in/macro_types.rb' if File.exists?('mruby-bindings.in/macro_types.rb')
+    cmd << '-includes mruby-bindings.in/includes.h' if File.exists?('mruby-bindings.in/includes.h')
     cmd << '-output bindings'
     cmd << '-force'
+    cmd << '-v'
     sh cmd.join(' ')
   end
   
@@ -50,23 +63,28 @@ namespace :bindings do
     end
   end
   
+  desc 'Regenerate functions & classes headers'
+  task :'enable-functions' do
+    sh 'mrbind enable-functions -m SQLite -g mruby-sqlite -o .'
+  end
+  
   task :fn_count do
-    sh "cat bindings/include/mruby_SQLite_functions.h | egrep 'TRUE|FALSE' | wc -l"
+    sh "cat include/mruby_SQLite_functions.h | egrep 'TRUE|FALSE' | wc -l"
   end
 
   task :bound_fns do
-    sh "cat bindings/include/mruby_SQLite_functions.h | egrep 'TRUE'"
+    sh "cat include/mruby_SQLite_functions.h | egrep 'TRUE'"
   end
 
   task :bound_fn_count do
-    sh "cat bindings/include/mruby_SQLite_functions.h | egrep 'TRUE' | wc -l"
+    sh "cat include/mruby_SQLite_functions.h | egrep 'TRUE' | wc -l"
   end
 
   task :unbound_fns do
-    sh "cat bindings/include/mruby_SQLite_functions.h | egrep 'FALSE'"
+    sh "cat include/mruby_SQLite_functions.h | egrep 'FALSE'"
   end
 
   task :unbound_fn_count do
-    sh "cat bindings/include/mruby_SQLite_functions.h | egrep 'FALSE' | wc -l"
+    sh "cat include/mruby_SQLite_functions.h | egrep 'FALSE' | wc -l"
   end
 end

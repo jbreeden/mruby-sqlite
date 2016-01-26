@@ -1,7 +1,17 @@
 #include "mruby_SQLite.h"
 
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 void
 mruby_SQLite_define_macro_constants(mrb_state* mrb) {
+/* MRUBY_BINDING: pre_macro_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+
 #ifdef FULLY_WITHIN
   do {
     mrb_value macro = mrb_fixnum_value(FULLY_WITHIN);
@@ -2030,4 +2040,14 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_WARNING_AUTOINDEX", macro);
   } while (0);
 #endif
+
+/* MRUBY_BINDING: post_macro_definitions */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 }
+
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */

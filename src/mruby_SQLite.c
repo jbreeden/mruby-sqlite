@@ -1,7 +1,7 @@
 #include "mruby_SQLite.h"
 
-/* MRUBY_BINDING: custom_header */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: header */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
@@ -872,7 +872,7 @@ mrb_SQLite_sqlite3_bind_text64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_value */
-/* sha: 0af2a5607cabfd484d72cde13bacc68d866c62d75e018f831936fbbc0e51659c */
+/* sha: 5fec91de685a890ac2f44277624941f4a29b4f977886a9e1e7c5cc5e2667bcef */
 #if BIND_sqlite3_bind_value_FUNCTION
 #define sqlite3_bind_value_REQUIRED_ARGC 3
 #define sqlite3_bind_value_OPTIONAL_ARGC 0
@@ -898,8 +898,8 @@ mrb_SQLite_sqlite3_bind_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg3, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg3, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
@@ -907,7 +907,7 @@ mrb_SQLite_sqlite3_bind_value(mrb_state* mrb, mrb_value self) {
   sqlite3_stmt * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_stmt(arg1));
 
   /* Unbox param: arg3 */
-  const sqlite3_value * native_arg3 = (mrb_nil_p(arg3) ? NULL : mruby_unbox_Mem(arg3));
+  const sqlite3_value * native_arg3 = (mrb_nil_p(arg3) ? NULL : TODO_TODO_mruby_unbox_Mem(arg3));
 
   /* Invocation */
   int native_return_value = sqlite3_bind_value(native_arg1, native_arg2, native_arg3);
@@ -1496,6 +1496,7 @@ mrb_SQLite_sqlite3_close_v2(mrb_state* mrb, mrb_value self) {
 
   /* Invocation */
   int native_return_value = sqlite3_close_v2(native_arg1);
+  MRUBY_BOX_CLEAR(arg1);
 
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
@@ -2438,7 +2439,7 @@ mrb_SQLite_sqlite3_column_value(mrb_state* mrb, mrb_value self) {
   sqlite3_value * native_return_value = sqlite3_column_value(native_arg1, native_iCol);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_Mem(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : TODO_mruby_box_Mem(mrb, native_return_value));
   
   return return_value;
 }
@@ -3974,6 +3975,7 @@ mrb_SQLite_sqlite3_finalize(mrb_state* mrb, mrb_value self) {
 
   /* Unbox param: pStmt */
   sqlite3_stmt * native_pStmt = (mrb_nil_p(pStmt) ? NULL : mruby_unbox_sqlite3_stmt(pStmt));
+  MRUBY_BOX_CLEAR(pStmt);
 
   /* Invocation */
   int native_return_value = sqlite3_finalize(native_pStmt);
@@ -6145,7 +6147,7 @@ mrb_SQLite_sqlite3_result_text64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_value */
-/* sha: fedf819a8c7d349629e53ba968737062f1729456a67065fc0c4d983527c98c7e */
+/* sha: 9195a502e93c1642de041f6689c05e90a07bd77b1b6878cee878414288b07b7f */
 #if BIND_sqlite3_result_value_FUNCTION
 #define sqlite3_result_value_REQUIRED_ARGC 2
 #define sqlite3_result_value_OPTIONAL_ARGC 0
@@ -6169,8 +6171,8 @@ mrb_SQLite_sqlite3_result_value(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Context expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg2, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg2, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
@@ -6178,7 +6180,7 @@ mrb_SQLite_sqlite3_result_value(mrb_state* mrb, mrb_value self) {
   sqlite3_context * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_sqlite3_context(arg1));
 
   /* Unbox param: arg2 */
-  sqlite3_value * native_arg2 = (mrb_nil_p(arg2) ? NULL : mruby_unbox_Mem(arg2));
+  sqlite3_value * native_arg2 = (mrb_nil_p(arg2) ? NULL : TODO_mruby_unbox_Mem(arg2));
 
   /* Invocation */
   sqlite3_result_value(native_arg1, native_arg2);
@@ -7549,7 +7551,7 @@ mrb_SQLite_sqlite3_user_data(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_blob */
-/* sha: d24f60c5c48d7b6c6ec2bc68dd3c99fcf3ff10148ef7cabddad9f5b2fde71631 */
+/* sha: 321624fcb4498a3ec01fc9ba9c10598b91a8bba4e2927104b81ea3acc70b6a63 */
 #if BIND_sqlite3_value_blob_FUNCTION
 #define sqlite3_value_blob_REQUIRED_ARGC 1
 #define sqlite3_value_blob_OPTIONAL_ARGC 0
@@ -7567,13 +7569,13 @@ mrb_SQLite_sqlite3_value_blob(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   const void * native_return_value = sqlite3_value_blob(native_arg1);
@@ -7587,7 +7589,7 @@ mrb_SQLite_sqlite3_value_blob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_bytes */
-/* sha: a8df22eb637d8cbc69afb0a64fc94e9b74a4c174523381e91c4a913b16d68243 */
+/* sha: ed5ff234a010c1fc959bf6240bd16babc02f6c11f384b0e1f42687804bdc5b68 */
 #if BIND_sqlite3_value_bytes_FUNCTION
 #define sqlite3_value_bytes_REQUIRED_ARGC 1
 #define sqlite3_value_bytes_OPTIONAL_ARGC 0
@@ -7605,13 +7607,13 @@ mrb_SQLite_sqlite3_value_bytes(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   int native_return_value = sqlite3_value_bytes(native_arg1);
@@ -7625,7 +7627,7 @@ mrb_SQLite_sqlite3_value_bytes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_bytes16 */
-/* sha: 2d2e71cf4024cd6b37915504b1b8de650f62e48da5a3694435bef68a91d75fba */
+/* sha: d7c1ec04ef9687d0456069d0dcd041b43a5b75335112b6673788dda338cb0b46 */
 #if BIND_sqlite3_value_bytes16_FUNCTION
 #define sqlite3_value_bytes16_REQUIRED_ARGC 1
 #define sqlite3_value_bytes16_OPTIONAL_ARGC 0
@@ -7643,13 +7645,13 @@ mrb_SQLite_sqlite3_value_bytes16(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   int native_return_value = sqlite3_value_bytes16(native_arg1);
@@ -7663,7 +7665,7 @@ mrb_SQLite_sqlite3_value_bytes16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_double */
-/* sha: 43c4afdb6d6b9da1567acbd1b06acfaeb7d931f20a024e160da4882e42d9f1b4 */
+/* sha: 598d22fb8502dc6cd136c1fb751863680cb0036c44f84183e285b66bc8328960 */
 #if BIND_sqlite3_value_double_FUNCTION
 #define sqlite3_value_double_REQUIRED_ARGC 1
 #define sqlite3_value_double_OPTIONAL_ARGC 0
@@ -7681,13 +7683,13 @@ mrb_SQLite_sqlite3_value_double(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   double native_return_value = sqlite3_value_double(native_arg1);
@@ -7701,7 +7703,7 @@ mrb_SQLite_sqlite3_value_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_int */
-/* sha: ce36148ebdd5ac604d78fea6d9e50a1700aa17b95a1110ce0260c764661ba689 */
+/* sha: f34a0ffefb80e09bdce678e76b4ec983cee9c61229b418f3d054c51c6f44b610 */
 #if BIND_sqlite3_value_int_FUNCTION
 #define sqlite3_value_int_REQUIRED_ARGC 1
 #define sqlite3_value_int_OPTIONAL_ARGC 0
@@ -7719,13 +7721,13 @@ mrb_SQLite_sqlite3_value_int(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   int native_return_value = sqlite3_value_int(native_arg1);
@@ -7739,7 +7741,7 @@ mrb_SQLite_sqlite3_value_int(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_int64 */
-/* sha: 8fa437dd4028a98919c4978ae532509dd3ee3a6ffa31203f9630f5bbf2bd78e6 */
+/* sha: 7279eb1aade5bd784ae0285e1ba8dd3606d2631de228cfcbe9c93c72dc19d9a1 */
 #if BIND_sqlite3_value_int64_FUNCTION
 #define sqlite3_value_int64_REQUIRED_ARGC 1
 #define sqlite3_value_int64_OPTIONAL_ARGC 0
@@ -7757,13 +7759,13 @@ mrb_SQLite_sqlite3_value_int64(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   sqlite3_int64 native_return_value = sqlite3_value_int64(native_arg1);
@@ -7777,7 +7779,7 @@ mrb_SQLite_sqlite3_value_int64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_numeric_type */
-/* sha: 64c07e43e1aaee6430ed5a5e8d995563715c115b48afe5a312935a34333b9cca */
+/* sha: 250dd9beaaa003956bebf9204c7a9b220f80c66775d119cec1987bf8a5af3a08 */
 #if BIND_sqlite3_value_numeric_type_FUNCTION
 #define sqlite3_value_numeric_type_REQUIRED_ARGC 1
 #define sqlite3_value_numeric_type_OPTIONAL_ARGC 0
@@ -7795,13 +7797,13 @@ mrb_SQLite_sqlite3_value_numeric_type(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   int native_return_value = sqlite3_value_numeric_type(native_arg1);
@@ -7815,7 +7817,7 @@ mrb_SQLite_sqlite3_value_numeric_type(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_text */
-/* sha: 971d9a353fb1799ebb1f1f0dc11389bb14a4319190a6097b9c6d52b785ec516a */
+/* sha: 5df0a59d4963b60ee3c01a2abb99c26a5d2444823897ec6acae5ca2f63efa1c1 */
 #if BIND_sqlite3_value_text_FUNCTION
 #define sqlite3_value_text_REQUIRED_ARGC 1
 #define sqlite3_value_text_OPTIONAL_ARGC 0
@@ -7833,13 +7835,13 @@ mrb_SQLite_sqlite3_value_text(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   const unsigned char * native_return_value = sqlite3_value_text(native_arg1);
@@ -7853,7 +7855,7 @@ mrb_SQLite_sqlite3_value_text(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_text16 */
-/* sha: dbfb3d892cdeb1d3e4f7d5f3849d8b657283b409b24c7c0d7c47d51d81c8a53a */
+/* sha: 2eeb59076236391aed99317b89a902037c6b744fd435ea39cdff2205b3bbbe3d */
 #if BIND_sqlite3_value_text16_FUNCTION
 #define sqlite3_value_text16_REQUIRED_ARGC 1
 #define sqlite3_value_text16_OPTIONAL_ARGC 0
@@ -7871,13 +7873,13 @@ mrb_SQLite_sqlite3_value_text16(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   const void * native_return_value = sqlite3_value_text16(native_arg1);
@@ -7891,7 +7893,7 @@ mrb_SQLite_sqlite3_value_text16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_text16be */
-/* sha: b110c052dc79468c7a4f40b4742ad9fff5adf23c44002d69bacd83da16329bd2 */
+/* sha: 25ea8846c69526a722b1b5eda9f5696337477c73c842ea4ef08c66c3c80882e8 */
 #if BIND_sqlite3_value_text16be_FUNCTION
 #define sqlite3_value_text16be_REQUIRED_ARGC 1
 #define sqlite3_value_text16be_OPTIONAL_ARGC 0
@@ -7909,13 +7911,13 @@ mrb_SQLite_sqlite3_value_text16be(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   const void * native_return_value = sqlite3_value_text16be(native_arg1);
@@ -7929,7 +7931,7 @@ mrb_SQLite_sqlite3_value_text16be(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_text16le */
-/* sha: bf9fd57a07dce8ac40ee1d496a7fa9673260fc562f3a13ffe68c7720933b74fb */
+/* sha: 35d2b691b0be7d789b764fa0b9f918ce4d891f4f34307f8faf643e5c43d355c1 */
 #if BIND_sqlite3_value_text16le_FUNCTION
 #define sqlite3_value_text16le_REQUIRED_ARGC 1
 #define sqlite3_value_text16le_OPTIONAL_ARGC 0
@@ -7947,13 +7949,13 @@ mrb_SQLite_sqlite3_value_text16le(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   const void * native_return_value = sqlite3_value_text16le(native_arg1);
@@ -7967,7 +7969,7 @@ mrb_SQLite_sqlite3_value_text16le(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_value_type */
-/* sha: ccbd6af9c109fe76faf10ff3eb2b602c09ca98cb6402defc479d2ec3b3d3e317 */
+/* sha: 0d06aac7294faaca46a2d5a9f181c58224ba3f12610c258d98ea0bfd65407603 */
 #if BIND_sqlite3_value_type_FUNCTION
 #define sqlite3_value_type_REQUIRED_ARGC 1
 #define sqlite3_value_type_OPTIONAL_ARGC 0
@@ -7985,13 +7987,13 @@ mrb_SQLite_sqlite3_value_type(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, Mem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Mem expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Sqlite3Value_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Value expected");
     return mrb_nil_value();
   }
 
   /* Unbox param: arg1 */
-  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : mruby_unbox_Mem(arg1));
+  sqlite3_value * native_arg1 = (mrb_nil_p(arg1) ? NULL : TODO_mruby_unbox_Mem(arg1));
 
   /* Invocation */
   int native_return_value = sqlite3_value_type(native_arg1);
@@ -8447,17 +8449,22 @@ mrb_SQLite_sqlite3_wal_hook(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
+/* MRUBY_BINDING: pre_module_definition */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
+  
   struct RClass* SQLite_module = mrb_define_module(mrb, "SQLite");
   mruby_SQLite_define_macro_constants(mrb);
+  mruby_SQLite_define_enum_constants(mrb);
+
+/* MRUBY_BINDING: pre_class_initializations */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_initializations */
-/* sha: 627773eafb34098b2323c95732eee0fcf708cad7e4c22908a9670e1dc7ea85fc */
-  /*
-   * Initialize class bindings
-   */
-#if BIND_Mem_TYPE
-  mrb_SQLite_Mem_init(mrb);
-#endif
+/* sha: 7bab1e4564169a6cc61ed481da8bcaf9f8020db295a97fb01f5c3aa8875adcf3 */
 #if BIND_Sqlite3_TYPE
   mrb_SQLite_Sqlite3_init(mrb);
 #endif
@@ -8515,6 +8522,9 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 #if BIND_Sqlite3Stmt_TYPE
   mrb_SQLite_Sqlite3Stmt_init(mrb);
 #endif
+#if BIND_Sqlite3Value_TYPE
+  mrb_SQLite_Sqlite3Value_init(mrb);
+#endif
 #if BIND_Sqlite3Vfs_TYPE
   mrb_SQLite_Sqlite3Vfs_init(mrb);
 #endif
@@ -8524,6 +8534,11 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 #if BIND_Sqlite3VtabCursor_TYPE
   mrb_SQLite_Sqlite3VtabCursor_init(mrb);
 #endif
+/* MRUBY_BINDING_END */
+
+/* MRUBY_BINDING: pre_global_function_initializations */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: global_function_definitions */
@@ -9157,19 +9172,23 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: custom_module_init */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: post_module_definition */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
-
 }
 
 void mrb_mruby_sqlite_gem_final(mrb_state* mrb){
-/* MRUBY_BINDING: custom_module_final */
-/* sha: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 */
+/* MRUBY_BINDING: module_final */
+/* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 }
+
+/* MRUBY_BINDING: footer */
+/* sha: user_defined */
+
+/* MRUBY_BINDING_END */
 
 #ifdef __cplusplus
 }
