@@ -15,7 +15,7 @@ module SQLite3
       @closed = false
       @transaction_active = false
 
-      status, db = SQLite.sqlite3_open(filename)
+      status, db = SQLite.open(filename)
       if status == SQLite::SQLITE_OK
         @native_db = db
       else
@@ -46,16 +46,16 @@ module SQLite3
     # end
 
     def busy_timeout=(ms)
-      SQLite.sqlite3_busy_timeout(@native_db, ms)
+      SQLite.busy_timeout(@native_db, ms)
     end
     alias busy_timeout busy_timeout=
 
     def changes
-      SQLite.sqlite3_changes(@native_db)
+      SQLite.changes(@native_db)
     end
 
     def close
-      err = SQLite.sqlite3_close(@native_db)
+      err = SQLite.close(@native_db)
       SQLite3.raise_sqlite_error(@native_db, err)
       @closed = true
     end
@@ -76,7 +76,7 @@ module SQLite3
     end
 
     def complete?(sql)
-      SQLite.sqlite3_complete(sql) == 1
+      SQLite.complete(sql) == 1
     end
 
     # def create_aggregate
@@ -98,11 +98,11 @@ module SQLite3
     # end
 
     def errcode
-      SQLite::sqlite3_errcode(@native_db)
+      SQLite.errcode(@native_db)
     end
 
     def errmsg
-      SQLite.sqlite3_errmsg(@native_db)
+      SQLite.errmsg(@native_db)
     end
 
     def execute(sql, varbinds=[], &block)
@@ -159,12 +159,12 @@ module SQLite3
 
     def interrupt
       assert_open
-      SQLite::sqlite3_interrupt(@native_db)
+      SQLite.interrupt(@native_db)
     end
     
     def last_insert_row_id
       assert_open
-      SQLite::sqlite3_last_insert_rowid(@native_db)
+      SQLite.last_insert_rowid(@native_db)
     end
 
     def prepare(sql, &block)
@@ -201,7 +201,7 @@ module SQLite3
 
     def total_changes
       assert_open
-      SQLite.sqlite3_total_changes(@native_db)
+      SQLite.total_changes(@native_db)
     end
 
     # def trace

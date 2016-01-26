@@ -101,6 +101,6 @@ module SQLite3
       klass =  SQLite3::NotADatabaseException
     end
 
-    raise klass.new(SQLite.sqlite3_errmsg(db))
+    raise klass.new(SQLite.errmsg(db))
   end
 end

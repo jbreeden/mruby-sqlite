@@ -8542,633 +8542,633 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: global_function_definitions */
-/* sha: 40bb808d78804b745dc799c6262d1119e0f62c9a0eab76f7e2cf3d89e58592a4 */
+/* sha: 632078f04be9ba586d231c7c51cb92da99ed920a59c17b06be534f6572db8ed6 */
   /*
    * Global Functions
    */
 #if BIND_sqlite3_aggregate_context_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_aggregate_context", mrb_SQLite_sqlite3_aggregate_context, MRB_ARGS_ARG(sqlite3_aggregate_context_REQUIRED_ARGC, sqlite3_aggregate_context_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "aggregate_context", mrb_SQLite_sqlite3_aggregate_context, MRB_ARGS_ARG(sqlite3_aggregate_context_REQUIRED_ARGC, sqlite3_aggregate_context_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_aggregate_count_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_aggregate_count", mrb_SQLite_sqlite3_aggregate_count, MRB_ARGS_ARG(sqlite3_aggregate_count_REQUIRED_ARGC, sqlite3_aggregate_count_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "aggregate_count", mrb_SQLite_sqlite3_aggregate_count, MRB_ARGS_ARG(sqlite3_aggregate_count_REQUIRED_ARGC, sqlite3_aggregate_count_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_auto_extension_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_auto_extension", mrb_SQLite_sqlite3_auto_extension, MRB_ARGS_ARG(sqlite3_auto_extension_REQUIRED_ARGC, sqlite3_auto_extension_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "auto_extension", mrb_SQLite_sqlite3_auto_extension, MRB_ARGS_ARG(sqlite3_auto_extension_REQUIRED_ARGC, sqlite3_auto_extension_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_backup_finish_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_backup_finish", mrb_SQLite_sqlite3_backup_finish, MRB_ARGS_ARG(sqlite3_backup_finish_REQUIRED_ARGC, sqlite3_backup_finish_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "backup_finish", mrb_SQLite_sqlite3_backup_finish, MRB_ARGS_ARG(sqlite3_backup_finish_REQUIRED_ARGC, sqlite3_backup_finish_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_backup_init_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_backup_init", mrb_SQLite_sqlite3_backup_init, MRB_ARGS_ARG(sqlite3_backup_init_REQUIRED_ARGC, sqlite3_backup_init_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "backup_init", mrb_SQLite_sqlite3_backup_init, MRB_ARGS_ARG(sqlite3_backup_init_REQUIRED_ARGC, sqlite3_backup_init_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_backup_pagecount_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_backup_pagecount", mrb_SQLite_sqlite3_backup_pagecount, MRB_ARGS_ARG(sqlite3_backup_pagecount_REQUIRED_ARGC, sqlite3_backup_pagecount_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "backup_pagecount", mrb_SQLite_sqlite3_backup_pagecount, MRB_ARGS_ARG(sqlite3_backup_pagecount_REQUIRED_ARGC, sqlite3_backup_pagecount_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_backup_remaining_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_backup_remaining", mrb_SQLite_sqlite3_backup_remaining, MRB_ARGS_ARG(sqlite3_backup_remaining_REQUIRED_ARGC, sqlite3_backup_remaining_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "backup_remaining", mrb_SQLite_sqlite3_backup_remaining, MRB_ARGS_ARG(sqlite3_backup_remaining_REQUIRED_ARGC, sqlite3_backup_remaining_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_backup_step_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_backup_step", mrb_SQLite_sqlite3_backup_step, MRB_ARGS_ARG(sqlite3_backup_step_REQUIRED_ARGC, sqlite3_backup_step_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "backup_step", mrb_SQLite_sqlite3_backup_step, MRB_ARGS_ARG(sqlite3_backup_step_REQUIRED_ARGC, sqlite3_backup_step_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_blob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_blob", mrb_SQLite_sqlite3_bind_blob, MRB_ARGS_ARG(sqlite3_bind_blob_REQUIRED_ARGC, sqlite3_bind_blob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_blob", mrb_SQLite_sqlite3_bind_blob, MRB_ARGS_ARG(sqlite3_bind_blob_REQUIRED_ARGC, sqlite3_bind_blob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_blob64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_blob64", mrb_SQLite_sqlite3_bind_blob64, MRB_ARGS_ARG(sqlite3_bind_blob64_REQUIRED_ARGC, sqlite3_bind_blob64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_blob64", mrb_SQLite_sqlite3_bind_blob64, MRB_ARGS_ARG(sqlite3_bind_blob64_REQUIRED_ARGC, sqlite3_bind_blob64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_double_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_double", mrb_SQLite_sqlite3_bind_double, MRB_ARGS_ARG(sqlite3_bind_double_REQUIRED_ARGC, sqlite3_bind_double_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_double", mrb_SQLite_sqlite3_bind_double, MRB_ARGS_ARG(sqlite3_bind_double_REQUIRED_ARGC, sqlite3_bind_double_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_int_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_int", mrb_SQLite_sqlite3_bind_int, MRB_ARGS_ARG(sqlite3_bind_int_REQUIRED_ARGC, sqlite3_bind_int_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_int", mrb_SQLite_sqlite3_bind_int, MRB_ARGS_ARG(sqlite3_bind_int_REQUIRED_ARGC, sqlite3_bind_int_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_int64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_int64", mrb_SQLite_sqlite3_bind_int64, MRB_ARGS_ARG(sqlite3_bind_int64_REQUIRED_ARGC, sqlite3_bind_int64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_int64", mrb_SQLite_sqlite3_bind_int64, MRB_ARGS_ARG(sqlite3_bind_int64_REQUIRED_ARGC, sqlite3_bind_int64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_null_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_null", mrb_SQLite_sqlite3_bind_null, MRB_ARGS_ARG(sqlite3_bind_null_REQUIRED_ARGC, sqlite3_bind_null_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_null", mrb_SQLite_sqlite3_bind_null, MRB_ARGS_ARG(sqlite3_bind_null_REQUIRED_ARGC, sqlite3_bind_null_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_parameter_count_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_parameter_count", mrb_SQLite_sqlite3_bind_parameter_count, MRB_ARGS_ARG(sqlite3_bind_parameter_count_REQUIRED_ARGC, sqlite3_bind_parameter_count_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_parameter_count", mrb_SQLite_sqlite3_bind_parameter_count, MRB_ARGS_ARG(sqlite3_bind_parameter_count_REQUIRED_ARGC, sqlite3_bind_parameter_count_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_parameter_index_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_parameter_index", mrb_SQLite_sqlite3_bind_parameter_index, MRB_ARGS_ARG(sqlite3_bind_parameter_index_REQUIRED_ARGC, sqlite3_bind_parameter_index_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_parameter_index", mrb_SQLite_sqlite3_bind_parameter_index, MRB_ARGS_ARG(sqlite3_bind_parameter_index_REQUIRED_ARGC, sqlite3_bind_parameter_index_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_parameter_name_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_parameter_name", mrb_SQLite_sqlite3_bind_parameter_name, MRB_ARGS_ARG(sqlite3_bind_parameter_name_REQUIRED_ARGC, sqlite3_bind_parameter_name_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_parameter_name", mrb_SQLite_sqlite3_bind_parameter_name, MRB_ARGS_ARG(sqlite3_bind_parameter_name_REQUIRED_ARGC, sqlite3_bind_parameter_name_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_text_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_text", mrb_SQLite_sqlite3_bind_text, MRB_ARGS_ARG(sqlite3_bind_text_REQUIRED_ARGC, sqlite3_bind_text_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_text", mrb_SQLite_sqlite3_bind_text, MRB_ARGS_ARG(sqlite3_bind_text_REQUIRED_ARGC, sqlite3_bind_text_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_text16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_text16", mrb_SQLite_sqlite3_bind_text16, MRB_ARGS_ARG(sqlite3_bind_text16_REQUIRED_ARGC, sqlite3_bind_text16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_text16", mrb_SQLite_sqlite3_bind_text16, MRB_ARGS_ARG(sqlite3_bind_text16_REQUIRED_ARGC, sqlite3_bind_text16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_text64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_text64", mrb_SQLite_sqlite3_bind_text64, MRB_ARGS_ARG(sqlite3_bind_text64_REQUIRED_ARGC, sqlite3_bind_text64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_text64", mrb_SQLite_sqlite3_bind_text64, MRB_ARGS_ARG(sqlite3_bind_text64_REQUIRED_ARGC, sqlite3_bind_text64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_value_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_value", mrb_SQLite_sqlite3_bind_value, MRB_ARGS_ARG(sqlite3_bind_value_REQUIRED_ARGC, sqlite3_bind_value_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_value", mrb_SQLite_sqlite3_bind_value, MRB_ARGS_ARG(sqlite3_bind_value_REQUIRED_ARGC, sqlite3_bind_value_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_bind_zeroblob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_bind_zeroblob", mrb_SQLite_sqlite3_bind_zeroblob, MRB_ARGS_ARG(sqlite3_bind_zeroblob_REQUIRED_ARGC, sqlite3_bind_zeroblob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "bind_zeroblob", mrb_SQLite_sqlite3_bind_zeroblob, MRB_ARGS_ARG(sqlite3_bind_zeroblob_REQUIRED_ARGC, sqlite3_bind_zeroblob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_bytes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_bytes", mrb_SQLite_sqlite3_blob_bytes, MRB_ARGS_ARG(sqlite3_blob_bytes_REQUIRED_ARGC, sqlite3_blob_bytes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_bytes", mrb_SQLite_sqlite3_blob_bytes, MRB_ARGS_ARG(sqlite3_blob_bytes_REQUIRED_ARGC, sqlite3_blob_bytes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_close_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_close", mrb_SQLite_sqlite3_blob_close, MRB_ARGS_ARG(sqlite3_blob_close_REQUIRED_ARGC, sqlite3_blob_close_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_close", mrb_SQLite_sqlite3_blob_close, MRB_ARGS_ARG(sqlite3_blob_close_REQUIRED_ARGC, sqlite3_blob_close_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_open_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_open", mrb_SQLite_sqlite3_blob_open, MRB_ARGS_ARG(sqlite3_blob_open_REQUIRED_ARGC, sqlite3_blob_open_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_open", mrb_SQLite_sqlite3_blob_open, MRB_ARGS_ARG(sqlite3_blob_open_REQUIRED_ARGC, sqlite3_blob_open_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_read_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_read", mrb_SQLite_sqlite3_blob_read, MRB_ARGS_ARG(sqlite3_blob_read_REQUIRED_ARGC, sqlite3_blob_read_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_read", mrb_SQLite_sqlite3_blob_read, MRB_ARGS_ARG(sqlite3_blob_read_REQUIRED_ARGC, sqlite3_blob_read_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_reopen_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_reopen", mrb_SQLite_sqlite3_blob_reopen, MRB_ARGS_ARG(sqlite3_blob_reopen_REQUIRED_ARGC, sqlite3_blob_reopen_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_reopen", mrb_SQLite_sqlite3_blob_reopen, MRB_ARGS_ARG(sqlite3_blob_reopen_REQUIRED_ARGC, sqlite3_blob_reopen_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_blob_write_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_blob_write", mrb_SQLite_sqlite3_blob_write, MRB_ARGS_ARG(sqlite3_blob_write_REQUIRED_ARGC, sqlite3_blob_write_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "blob_write", mrb_SQLite_sqlite3_blob_write, MRB_ARGS_ARG(sqlite3_blob_write_REQUIRED_ARGC, sqlite3_blob_write_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_busy_handler_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_busy_handler", mrb_SQLite_sqlite3_busy_handler, MRB_ARGS_ARG(sqlite3_busy_handler_REQUIRED_ARGC, sqlite3_busy_handler_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "busy_handler", mrb_SQLite_sqlite3_busy_handler, MRB_ARGS_ARG(sqlite3_busy_handler_REQUIRED_ARGC, sqlite3_busy_handler_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_busy_timeout_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_busy_timeout", mrb_SQLite_sqlite3_busy_timeout, MRB_ARGS_ARG(sqlite3_busy_timeout_REQUIRED_ARGC, sqlite3_busy_timeout_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "busy_timeout", mrb_SQLite_sqlite3_busy_timeout, MRB_ARGS_ARG(sqlite3_busy_timeout_REQUIRED_ARGC, sqlite3_busy_timeout_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_cancel_auto_extension_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_cancel_auto_extension", mrb_SQLite_sqlite3_cancel_auto_extension, MRB_ARGS_ARG(sqlite3_cancel_auto_extension_REQUIRED_ARGC, sqlite3_cancel_auto_extension_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "cancel_auto_extension", mrb_SQLite_sqlite3_cancel_auto_extension, MRB_ARGS_ARG(sqlite3_cancel_auto_extension_REQUIRED_ARGC, sqlite3_cancel_auto_extension_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_changes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_changes", mrb_SQLite_sqlite3_changes, MRB_ARGS_ARG(sqlite3_changes_REQUIRED_ARGC, sqlite3_changes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "changes", mrb_SQLite_sqlite3_changes, MRB_ARGS_ARG(sqlite3_changes_REQUIRED_ARGC, sqlite3_changes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_clear_bindings_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_clear_bindings", mrb_SQLite_sqlite3_clear_bindings, MRB_ARGS_ARG(sqlite3_clear_bindings_REQUIRED_ARGC, sqlite3_clear_bindings_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "clear_bindings", mrb_SQLite_sqlite3_clear_bindings, MRB_ARGS_ARG(sqlite3_clear_bindings_REQUIRED_ARGC, sqlite3_clear_bindings_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_close_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_close", mrb_SQLite_sqlite3_close, MRB_ARGS_ARG(sqlite3_close_REQUIRED_ARGC, sqlite3_close_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "close", mrb_SQLite_sqlite3_close, MRB_ARGS_ARG(sqlite3_close_REQUIRED_ARGC, sqlite3_close_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_close_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_close_v2", mrb_SQLite_sqlite3_close_v2, MRB_ARGS_ARG(sqlite3_close_v2_REQUIRED_ARGC, sqlite3_close_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "close_v2", mrb_SQLite_sqlite3_close_v2, MRB_ARGS_ARG(sqlite3_close_v2_REQUIRED_ARGC, sqlite3_close_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_collation_needed_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_collation_needed", mrb_SQLite_sqlite3_collation_needed, MRB_ARGS_ARG(sqlite3_collation_needed_REQUIRED_ARGC, sqlite3_collation_needed_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "collation_needed", mrb_SQLite_sqlite3_collation_needed, MRB_ARGS_ARG(sqlite3_collation_needed_REQUIRED_ARGC, sqlite3_collation_needed_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_collation_needed16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_collation_needed16", mrb_SQLite_sqlite3_collation_needed16, MRB_ARGS_ARG(sqlite3_collation_needed16_REQUIRED_ARGC, sqlite3_collation_needed16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "collation_needed16", mrb_SQLite_sqlite3_collation_needed16, MRB_ARGS_ARG(sqlite3_collation_needed16_REQUIRED_ARGC, sqlite3_collation_needed16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_blob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_blob", mrb_SQLite_sqlite3_column_blob, MRB_ARGS_ARG(sqlite3_column_blob_REQUIRED_ARGC, sqlite3_column_blob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_blob", mrb_SQLite_sqlite3_column_blob, MRB_ARGS_ARG(sqlite3_column_blob_REQUIRED_ARGC, sqlite3_column_blob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_bytes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_bytes", mrb_SQLite_sqlite3_column_bytes, MRB_ARGS_ARG(sqlite3_column_bytes_REQUIRED_ARGC, sqlite3_column_bytes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_bytes", mrb_SQLite_sqlite3_column_bytes, MRB_ARGS_ARG(sqlite3_column_bytes_REQUIRED_ARGC, sqlite3_column_bytes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_bytes16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_bytes16", mrb_SQLite_sqlite3_column_bytes16, MRB_ARGS_ARG(sqlite3_column_bytes16_REQUIRED_ARGC, sqlite3_column_bytes16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_bytes16", mrb_SQLite_sqlite3_column_bytes16, MRB_ARGS_ARG(sqlite3_column_bytes16_REQUIRED_ARGC, sqlite3_column_bytes16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_count_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_count", mrb_SQLite_sqlite3_column_count, MRB_ARGS_ARG(sqlite3_column_count_REQUIRED_ARGC, sqlite3_column_count_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_count", mrb_SQLite_sqlite3_column_count, MRB_ARGS_ARG(sqlite3_column_count_REQUIRED_ARGC, sqlite3_column_count_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_database_name_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_database_name", mrb_SQLite_sqlite3_column_database_name, MRB_ARGS_ARG(sqlite3_column_database_name_REQUIRED_ARGC, sqlite3_column_database_name_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_database_name", mrb_SQLite_sqlite3_column_database_name, MRB_ARGS_ARG(sqlite3_column_database_name_REQUIRED_ARGC, sqlite3_column_database_name_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_database_name16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_database_name16", mrb_SQLite_sqlite3_column_database_name16, MRB_ARGS_ARG(sqlite3_column_database_name16_REQUIRED_ARGC, sqlite3_column_database_name16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_database_name16", mrb_SQLite_sqlite3_column_database_name16, MRB_ARGS_ARG(sqlite3_column_database_name16_REQUIRED_ARGC, sqlite3_column_database_name16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_decltype_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_decltype", mrb_SQLite_sqlite3_column_decltype, MRB_ARGS_ARG(sqlite3_column_decltype_REQUIRED_ARGC, sqlite3_column_decltype_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_decltype", mrb_SQLite_sqlite3_column_decltype, MRB_ARGS_ARG(sqlite3_column_decltype_REQUIRED_ARGC, sqlite3_column_decltype_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_decltype16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_decltype16", mrb_SQLite_sqlite3_column_decltype16, MRB_ARGS_ARG(sqlite3_column_decltype16_REQUIRED_ARGC, sqlite3_column_decltype16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_decltype16", mrb_SQLite_sqlite3_column_decltype16, MRB_ARGS_ARG(sqlite3_column_decltype16_REQUIRED_ARGC, sqlite3_column_decltype16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_double_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_double", mrb_SQLite_sqlite3_column_double, MRB_ARGS_ARG(sqlite3_column_double_REQUIRED_ARGC, sqlite3_column_double_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_double", mrb_SQLite_sqlite3_column_double, MRB_ARGS_ARG(sqlite3_column_double_REQUIRED_ARGC, sqlite3_column_double_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_int_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_int", mrb_SQLite_sqlite3_column_int, MRB_ARGS_ARG(sqlite3_column_int_REQUIRED_ARGC, sqlite3_column_int_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_int", mrb_SQLite_sqlite3_column_int, MRB_ARGS_ARG(sqlite3_column_int_REQUIRED_ARGC, sqlite3_column_int_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_int64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_int64", mrb_SQLite_sqlite3_column_int64, MRB_ARGS_ARG(sqlite3_column_int64_REQUIRED_ARGC, sqlite3_column_int64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_int64", mrb_SQLite_sqlite3_column_int64, MRB_ARGS_ARG(sqlite3_column_int64_REQUIRED_ARGC, sqlite3_column_int64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_name_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_name", mrb_SQLite_sqlite3_column_name, MRB_ARGS_ARG(sqlite3_column_name_REQUIRED_ARGC, sqlite3_column_name_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_name", mrb_SQLite_sqlite3_column_name, MRB_ARGS_ARG(sqlite3_column_name_REQUIRED_ARGC, sqlite3_column_name_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_name16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_name16", mrb_SQLite_sqlite3_column_name16, MRB_ARGS_ARG(sqlite3_column_name16_REQUIRED_ARGC, sqlite3_column_name16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_name16", mrb_SQLite_sqlite3_column_name16, MRB_ARGS_ARG(sqlite3_column_name16_REQUIRED_ARGC, sqlite3_column_name16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_origin_name_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_origin_name", mrb_SQLite_sqlite3_column_origin_name, MRB_ARGS_ARG(sqlite3_column_origin_name_REQUIRED_ARGC, sqlite3_column_origin_name_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_origin_name", mrb_SQLite_sqlite3_column_origin_name, MRB_ARGS_ARG(sqlite3_column_origin_name_REQUIRED_ARGC, sqlite3_column_origin_name_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_origin_name16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_origin_name16", mrb_SQLite_sqlite3_column_origin_name16, MRB_ARGS_ARG(sqlite3_column_origin_name16_REQUIRED_ARGC, sqlite3_column_origin_name16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_origin_name16", mrb_SQLite_sqlite3_column_origin_name16, MRB_ARGS_ARG(sqlite3_column_origin_name16_REQUIRED_ARGC, sqlite3_column_origin_name16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_table_name_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_table_name", mrb_SQLite_sqlite3_column_table_name, MRB_ARGS_ARG(sqlite3_column_table_name_REQUIRED_ARGC, sqlite3_column_table_name_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_table_name", mrb_SQLite_sqlite3_column_table_name, MRB_ARGS_ARG(sqlite3_column_table_name_REQUIRED_ARGC, sqlite3_column_table_name_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_table_name16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_table_name16", mrb_SQLite_sqlite3_column_table_name16, MRB_ARGS_ARG(sqlite3_column_table_name16_REQUIRED_ARGC, sqlite3_column_table_name16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_table_name16", mrb_SQLite_sqlite3_column_table_name16, MRB_ARGS_ARG(sqlite3_column_table_name16_REQUIRED_ARGC, sqlite3_column_table_name16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_text_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_text", mrb_SQLite_sqlite3_column_text, MRB_ARGS_ARG(sqlite3_column_text_REQUIRED_ARGC, sqlite3_column_text_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_text", mrb_SQLite_sqlite3_column_text, MRB_ARGS_ARG(sqlite3_column_text_REQUIRED_ARGC, sqlite3_column_text_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_text16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_text16", mrb_SQLite_sqlite3_column_text16, MRB_ARGS_ARG(sqlite3_column_text16_REQUIRED_ARGC, sqlite3_column_text16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_text16", mrb_SQLite_sqlite3_column_text16, MRB_ARGS_ARG(sqlite3_column_text16_REQUIRED_ARGC, sqlite3_column_text16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_type_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_type", mrb_SQLite_sqlite3_column_type, MRB_ARGS_ARG(sqlite3_column_type_REQUIRED_ARGC, sqlite3_column_type_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_type", mrb_SQLite_sqlite3_column_type, MRB_ARGS_ARG(sqlite3_column_type_REQUIRED_ARGC, sqlite3_column_type_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_column_value_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_column_value", mrb_SQLite_sqlite3_column_value, MRB_ARGS_ARG(sqlite3_column_value_REQUIRED_ARGC, sqlite3_column_value_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "column_value", mrb_SQLite_sqlite3_column_value, MRB_ARGS_ARG(sqlite3_column_value_REQUIRED_ARGC, sqlite3_column_value_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_commit_hook_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_commit_hook", mrb_SQLite_sqlite3_commit_hook, MRB_ARGS_ARG(sqlite3_commit_hook_REQUIRED_ARGC, sqlite3_commit_hook_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "commit_hook", mrb_SQLite_sqlite3_commit_hook, MRB_ARGS_ARG(sqlite3_commit_hook_REQUIRED_ARGC, sqlite3_commit_hook_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_compileoption_get_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_compileoption_get", mrb_SQLite_sqlite3_compileoption_get, MRB_ARGS_ARG(sqlite3_compileoption_get_REQUIRED_ARGC, sqlite3_compileoption_get_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "compileoption_get", mrb_SQLite_sqlite3_compileoption_get, MRB_ARGS_ARG(sqlite3_compileoption_get_REQUIRED_ARGC, sqlite3_compileoption_get_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_compileoption_used_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_compileoption_used", mrb_SQLite_sqlite3_compileoption_used, MRB_ARGS_ARG(sqlite3_compileoption_used_REQUIRED_ARGC, sqlite3_compileoption_used_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "compileoption_used", mrb_SQLite_sqlite3_compileoption_used, MRB_ARGS_ARG(sqlite3_compileoption_used_REQUIRED_ARGC, sqlite3_compileoption_used_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_complete_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_complete", mrb_SQLite_sqlite3_complete, MRB_ARGS_ARG(sqlite3_complete_REQUIRED_ARGC, sqlite3_complete_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "complete", mrb_SQLite_sqlite3_complete, MRB_ARGS_ARG(sqlite3_complete_REQUIRED_ARGC, sqlite3_complete_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_complete16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_complete16", mrb_SQLite_sqlite3_complete16, MRB_ARGS_ARG(sqlite3_complete16_REQUIRED_ARGC, sqlite3_complete16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "complete16", mrb_SQLite_sqlite3_complete16, MRB_ARGS_ARG(sqlite3_complete16_REQUIRED_ARGC, sqlite3_complete16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_config_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_config", mrb_SQLite_sqlite3_config, MRB_ARGS_ARG(sqlite3_config_REQUIRED_ARGC, sqlite3_config_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "config", mrb_SQLite_sqlite3_config, MRB_ARGS_ARG(sqlite3_config_REQUIRED_ARGC, sqlite3_config_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_context_db_handle_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_context_db_handle", mrb_SQLite_sqlite3_context_db_handle, MRB_ARGS_ARG(sqlite3_context_db_handle_REQUIRED_ARGC, sqlite3_context_db_handle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "context_db_handle", mrb_SQLite_sqlite3_context_db_handle, MRB_ARGS_ARG(sqlite3_context_db_handle_REQUIRED_ARGC, sqlite3_context_db_handle_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_collation_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_collation", mrb_SQLite_sqlite3_create_collation, MRB_ARGS_ARG(sqlite3_create_collation_REQUIRED_ARGC, sqlite3_create_collation_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_collation", mrb_SQLite_sqlite3_create_collation, MRB_ARGS_ARG(sqlite3_create_collation_REQUIRED_ARGC, sqlite3_create_collation_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_collation16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_collation16", mrb_SQLite_sqlite3_create_collation16, MRB_ARGS_ARG(sqlite3_create_collation16_REQUIRED_ARGC, sqlite3_create_collation16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_collation16", mrb_SQLite_sqlite3_create_collation16, MRB_ARGS_ARG(sqlite3_create_collation16_REQUIRED_ARGC, sqlite3_create_collation16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_collation_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_collation_v2", mrb_SQLite_sqlite3_create_collation_v2, MRB_ARGS_ARG(sqlite3_create_collation_v2_REQUIRED_ARGC, sqlite3_create_collation_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_collation_v2", mrb_SQLite_sqlite3_create_collation_v2, MRB_ARGS_ARG(sqlite3_create_collation_v2_REQUIRED_ARGC, sqlite3_create_collation_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_function_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_function", mrb_SQLite_sqlite3_create_function, MRB_ARGS_ARG(sqlite3_create_function_REQUIRED_ARGC, sqlite3_create_function_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_function", mrb_SQLite_sqlite3_create_function, MRB_ARGS_ARG(sqlite3_create_function_REQUIRED_ARGC, sqlite3_create_function_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_function16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_function16", mrb_SQLite_sqlite3_create_function16, MRB_ARGS_ARG(sqlite3_create_function16_REQUIRED_ARGC, sqlite3_create_function16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_function16", mrb_SQLite_sqlite3_create_function16, MRB_ARGS_ARG(sqlite3_create_function16_REQUIRED_ARGC, sqlite3_create_function16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_function_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_function_v2", mrb_SQLite_sqlite3_create_function_v2, MRB_ARGS_ARG(sqlite3_create_function_v2_REQUIRED_ARGC, sqlite3_create_function_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_function_v2", mrb_SQLite_sqlite3_create_function_v2, MRB_ARGS_ARG(sqlite3_create_function_v2_REQUIRED_ARGC, sqlite3_create_function_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_module_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_module", mrb_SQLite_sqlite3_create_module, MRB_ARGS_ARG(sqlite3_create_module_REQUIRED_ARGC, sqlite3_create_module_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_module", mrb_SQLite_sqlite3_create_module, MRB_ARGS_ARG(sqlite3_create_module_REQUIRED_ARGC, sqlite3_create_module_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_create_module_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_create_module_v2", mrb_SQLite_sqlite3_create_module_v2, MRB_ARGS_ARG(sqlite3_create_module_v2_REQUIRED_ARGC, sqlite3_create_module_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "create_module_v2", mrb_SQLite_sqlite3_create_module_v2, MRB_ARGS_ARG(sqlite3_create_module_v2_REQUIRED_ARGC, sqlite3_create_module_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_data_count_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_data_count", mrb_SQLite_sqlite3_data_count, MRB_ARGS_ARG(sqlite3_data_count_REQUIRED_ARGC, sqlite3_data_count_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "data_count", mrb_SQLite_sqlite3_data_count, MRB_ARGS_ARG(sqlite3_data_count_REQUIRED_ARGC, sqlite3_data_count_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_config_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_config", mrb_SQLite_sqlite3_db_config, MRB_ARGS_ARG(sqlite3_db_config_REQUIRED_ARGC, sqlite3_db_config_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_config", mrb_SQLite_sqlite3_db_config, MRB_ARGS_ARG(sqlite3_db_config_REQUIRED_ARGC, sqlite3_db_config_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_filename_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_filename", mrb_SQLite_sqlite3_db_filename, MRB_ARGS_ARG(sqlite3_db_filename_REQUIRED_ARGC, sqlite3_db_filename_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_filename", mrb_SQLite_sqlite3_db_filename, MRB_ARGS_ARG(sqlite3_db_filename_REQUIRED_ARGC, sqlite3_db_filename_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_handle_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_handle", mrb_SQLite_sqlite3_db_handle, MRB_ARGS_ARG(sqlite3_db_handle_REQUIRED_ARGC, sqlite3_db_handle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_handle", mrb_SQLite_sqlite3_db_handle, MRB_ARGS_ARG(sqlite3_db_handle_REQUIRED_ARGC, sqlite3_db_handle_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_readonly_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_readonly", mrb_SQLite_sqlite3_db_readonly, MRB_ARGS_ARG(sqlite3_db_readonly_REQUIRED_ARGC, sqlite3_db_readonly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_readonly", mrb_SQLite_sqlite3_db_readonly, MRB_ARGS_ARG(sqlite3_db_readonly_REQUIRED_ARGC, sqlite3_db_readonly_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_release_memory_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_release_memory", mrb_SQLite_sqlite3_db_release_memory, MRB_ARGS_ARG(sqlite3_db_release_memory_REQUIRED_ARGC, sqlite3_db_release_memory_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_release_memory", mrb_SQLite_sqlite3_db_release_memory, MRB_ARGS_ARG(sqlite3_db_release_memory_REQUIRED_ARGC, sqlite3_db_release_memory_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_db_status_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_db_status", mrb_SQLite_sqlite3_db_status, MRB_ARGS_ARG(sqlite3_db_status_REQUIRED_ARGC, sqlite3_db_status_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "db_status", mrb_SQLite_sqlite3_db_status, MRB_ARGS_ARG(sqlite3_db_status_REQUIRED_ARGC, sqlite3_db_status_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_declare_vtab_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_declare_vtab", mrb_SQLite_sqlite3_declare_vtab, MRB_ARGS_ARG(sqlite3_declare_vtab_REQUIRED_ARGC, sqlite3_declare_vtab_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "declare_vtab", mrb_SQLite_sqlite3_declare_vtab, MRB_ARGS_ARG(sqlite3_declare_vtab_REQUIRED_ARGC, sqlite3_declare_vtab_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_enable_load_extension_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_enable_load_extension", mrb_SQLite_sqlite3_enable_load_extension, MRB_ARGS_ARG(sqlite3_enable_load_extension_REQUIRED_ARGC, sqlite3_enable_load_extension_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "enable_load_extension", mrb_SQLite_sqlite3_enable_load_extension, MRB_ARGS_ARG(sqlite3_enable_load_extension_REQUIRED_ARGC, sqlite3_enable_load_extension_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_enable_shared_cache_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_enable_shared_cache", mrb_SQLite_sqlite3_enable_shared_cache, MRB_ARGS_ARG(sqlite3_enable_shared_cache_REQUIRED_ARGC, sqlite3_enable_shared_cache_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "enable_shared_cache", mrb_SQLite_sqlite3_enable_shared_cache, MRB_ARGS_ARG(sqlite3_enable_shared_cache_REQUIRED_ARGC, sqlite3_enable_shared_cache_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_errcode_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_errcode", mrb_SQLite_sqlite3_errcode, MRB_ARGS_ARG(sqlite3_errcode_REQUIRED_ARGC, sqlite3_errcode_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "errcode", mrb_SQLite_sqlite3_errcode, MRB_ARGS_ARG(sqlite3_errcode_REQUIRED_ARGC, sqlite3_errcode_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_errmsg_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_errmsg", mrb_SQLite_sqlite3_errmsg, MRB_ARGS_ARG(sqlite3_errmsg_REQUIRED_ARGC, sqlite3_errmsg_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "errmsg", mrb_SQLite_sqlite3_errmsg, MRB_ARGS_ARG(sqlite3_errmsg_REQUIRED_ARGC, sqlite3_errmsg_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_errmsg16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_errmsg16", mrb_SQLite_sqlite3_errmsg16, MRB_ARGS_ARG(sqlite3_errmsg16_REQUIRED_ARGC, sqlite3_errmsg16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "errmsg16", mrb_SQLite_sqlite3_errmsg16, MRB_ARGS_ARG(sqlite3_errmsg16_REQUIRED_ARGC, sqlite3_errmsg16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_errstr_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_errstr", mrb_SQLite_sqlite3_errstr, MRB_ARGS_ARG(sqlite3_errstr_REQUIRED_ARGC, sqlite3_errstr_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "errstr", mrb_SQLite_sqlite3_errstr, MRB_ARGS_ARG(sqlite3_errstr_REQUIRED_ARGC, sqlite3_errstr_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_exec_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_exec", mrb_SQLite_sqlite3_exec, MRB_ARGS_ARG(sqlite3_exec_REQUIRED_ARGC, sqlite3_exec_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "exec", mrb_SQLite_sqlite3_exec, MRB_ARGS_ARG(sqlite3_exec_REQUIRED_ARGC, sqlite3_exec_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_expired_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_expired", mrb_SQLite_sqlite3_expired, MRB_ARGS_ARG(sqlite3_expired_REQUIRED_ARGC, sqlite3_expired_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "expired", mrb_SQLite_sqlite3_expired, MRB_ARGS_ARG(sqlite3_expired_REQUIRED_ARGC, sqlite3_expired_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_extended_errcode_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_extended_errcode", mrb_SQLite_sqlite3_extended_errcode, MRB_ARGS_ARG(sqlite3_extended_errcode_REQUIRED_ARGC, sqlite3_extended_errcode_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "extended_errcode", mrb_SQLite_sqlite3_extended_errcode, MRB_ARGS_ARG(sqlite3_extended_errcode_REQUIRED_ARGC, sqlite3_extended_errcode_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_extended_result_codes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_extended_result_codes", mrb_SQLite_sqlite3_extended_result_codes, MRB_ARGS_ARG(sqlite3_extended_result_codes_REQUIRED_ARGC, sqlite3_extended_result_codes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "extended_result_codes", mrb_SQLite_sqlite3_extended_result_codes, MRB_ARGS_ARG(sqlite3_extended_result_codes_REQUIRED_ARGC, sqlite3_extended_result_codes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_file_control_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_file_control", mrb_SQLite_sqlite3_file_control, MRB_ARGS_ARG(sqlite3_file_control_REQUIRED_ARGC, sqlite3_file_control_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "file_control", mrb_SQLite_sqlite3_file_control, MRB_ARGS_ARG(sqlite3_file_control_REQUIRED_ARGC, sqlite3_file_control_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_finalize_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_finalize", mrb_SQLite_sqlite3_finalize, MRB_ARGS_ARG(sqlite3_finalize_REQUIRED_ARGC, sqlite3_finalize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "finalize", mrb_SQLite_sqlite3_finalize, MRB_ARGS_ARG(sqlite3_finalize_REQUIRED_ARGC, sqlite3_finalize_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_free_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_free", mrb_SQLite_sqlite3_free, MRB_ARGS_ARG(sqlite3_free_REQUIRED_ARGC, sqlite3_free_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "free", mrb_SQLite_sqlite3_free, MRB_ARGS_ARG(sqlite3_free_REQUIRED_ARGC, sqlite3_free_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_free_table_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_free_table", mrb_SQLite_sqlite3_free_table, MRB_ARGS_ARG(sqlite3_free_table_REQUIRED_ARGC, sqlite3_free_table_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "free_table", mrb_SQLite_sqlite3_free_table, MRB_ARGS_ARG(sqlite3_free_table_REQUIRED_ARGC, sqlite3_free_table_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_get_autocommit_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_get_autocommit", mrb_SQLite_sqlite3_get_autocommit, MRB_ARGS_ARG(sqlite3_get_autocommit_REQUIRED_ARGC, sqlite3_get_autocommit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "get_autocommit", mrb_SQLite_sqlite3_get_autocommit, MRB_ARGS_ARG(sqlite3_get_autocommit_REQUIRED_ARGC, sqlite3_get_autocommit_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_get_auxdata_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_get_auxdata", mrb_SQLite_sqlite3_get_auxdata, MRB_ARGS_ARG(sqlite3_get_auxdata_REQUIRED_ARGC, sqlite3_get_auxdata_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "get_auxdata", mrb_SQLite_sqlite3_get_auxdata, MRB_ARGS_ARG(sqlite3_get_auxdata_REQUIRED_ARGC, sqlite3_get_auxdata_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_get_table_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_get_table", mrb_SQLite_sqlite3_get_table, MRB_ARGS_ARG(sqlite3_get_table_REQUIRED_ARGC, sqlite3_get_table_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "get_table", mrb_SQLite_sqlite3_get_table, MRB_ARGS_ARG(sqlite3_get_table_REQUIRED_ARGC, sqlite3_get_table_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_global_recover_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_global_recover", mrb_SQLite_sqlite3_global_recover, MRB_ARGS_ARG(sqlite3_global_recover_REQUIRED_ARGC, sqlite3_global_recover_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "global_recover", mrb_SQLite_sqlite3_global_recover, MRB_ARGS_ARG(sqlite3_global_recover_REQUIRED_ARGC, sqlite3_global_recover_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_initialize_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_initialize", mrb_SQLite_sqlite3_initialize, MRB_ARGS_ARG(sqlite3_initialize_REQUIRED_ARGC, sqlite3_initialize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "initialize", mrb_SQLite_sqlite3_initialize, MRB_ARGS_ARG(sqlite3_initialize_REQUIRED_ARGC, sqlite3_initialize_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_interrupt_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_interrupt", mrb_SQLite_sqlite3_interrupt, MRB_ARGS_ARG(sqlite3_interrupt_REQUIRED_ARGC, sqlite3_interrupt_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "interrupt", mrb_SQLite_sqlite3_interrupt, MRB_ARGS_ARG(sqlite3_interrupt_REQUIRED_ARGC, sqlite3_interrupt_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_last_insert_rowid_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_last_insert_rowid", mrb_SQLite_sqlite3_last_insert_rowid, MRB_ARGS_ARG(sqlite3_last_insert_rowid_REQUIRED_ARGC, sqlite3_last_insert_rowid_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "last_insert_rowid", mrb_SQLite_sqlite3_last_insert_rowid, MRB_ARGS_ARG(sqlite3_last_insert_rowid_REQUIRED_ARGC, sqlite3_last_insert_rowid_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_libversion_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_libversion", mrb_SQLite_sqlite3_libversion, MRB_ARGS_ARG(sqlite3_libversion_REQUIRED_ARGC, sqlite3_libversion_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "libversion", mrb_SQLite_sqlite3_libversion, MRB_ARGS_ARG(sqlite3_libversion_REQUIRED_ARGC, sqlite3_libversion_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_libversion_number_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_libversion_number", mrb_SQLite_sqlite3_libversion_number, MRB_ARGS_ARG(sqlite3_libversion_number_REQUIRED_ARGC, sqlite3_libversion_number_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "libversion_number", mrb_SQLite_sqlite3_libversion_number, MRB_ARGS_ARG(sqlite3_libversion_number_REQUIRED_ARGC, sqlite3_libversion_number_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_limit_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_limit", mrb_SQLite_sqlite3_limit, MRB_ARGS_ARG(sqlite3_limit_REQUIRED_ARGC, sqlite3_limit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "limit", mrb_SQLite_sqlite3_limit, MRB_ARGS_ARG(sqlite3_limit_REQUIRED_ARGC, sqlite3_limit_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_load_extension_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_load_extension", mrb_SQLite_sqlite3_load_extension, MRB_ARGS_ARG(sqlite3_load_extension_REQUIRED_ARGC, sqlite3_load_extension_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "load_extension", mrb_SQLite_sqlite3_load_extension, MRB_ARGS_ARG(sqlite3_load_extension_REQUIRED_ARGC, sqlite3_load_extension_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_log_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_log", mrb_SQLite_sqlite3_log, MRB_ARGS_ARG(sqlite3_log_REQUIRED_ARGC, sqlite3_log_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "log", mrb_SQLite_sqlite3_log, MRB_ARGS_ARG(sqlite3_log_REQUIRED_ARGC, sqlite3_log_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_malloc_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_malloc", mrb_SQLite_sqlite3_malloc, MRB_ARGS_ARG(sqlite3_malloc_REQUIRED_ARGC, sqlite3_malloc_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "malloc", mrb_SQLite_sqlite3_malloc, MRB_ARGS_ARG(sqlite3_malloc_REQUIRED_ARGC, sqlite3_malloc_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_malloc64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_malloc64", mrb_SQLite_sqlite3_malloc64, MRB_ARGS_ARG(sqlite3_malloc64_REQUIRED_ARGC, sqlite3_malloc64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "malloc64", mrb_SQLite_sqlite3_malloc64, MRB_ARGS_ARG(sqlite3_malloc64_REQUIRED_ARGC, sqlite3_malloc64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_memory_alarm_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_memory_alarm", mrb_SQLite_sqlite3_memory_alarm, MRB_ARGS_ARG(sqlite3_memory_alarm_REQUIRED_ARGC, sqlite3_memory_alarm_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "memory_alarm", mrb_SQLite_sqlite3_memory_alarm, MRB_ARGS_ARG(sqlite3_memory_alarm_REQUIRED_ARGC, sqlite3_memory_alarm_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_memory_highwater_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_memory_highwater", mrb_SQLite_sqlite3_memory_highwater, MRB_ARGS_ARG(sqlite3_memory_highwater_REQUIRED_ARGC, sqlite3_memory_highwater_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "memory_highwater", mrb_SQLite_sqlite3_memory_highwater, MRB_ARGS_ARG(sqlite3_memory_highwater_REQUIRED_ARGC, sqlite3_memory_highwater_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_memory_used_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_memory_used", mrb_SQLite_sqlite3_memory_used, MRB_ARGS_ARG(sqlite3_memory_used_REQUIRED_ARGC, sqlite3_memory_used_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "memory_used", mrb_SQLite_sqlite3_memory_used, MRB_ARGS_ARG(sqlite3_memory_used_REQUIRED_ARGC, sqlite3_memory_used_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_mprintf_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_mprintf", mrb_SQLite_sqlite3_mprintf, MRB_ARGS_ARG(sqlite3_mprintf_REQUIRED_ARGC, sqlite3_mprintf_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "mprintf", mrb_SQLite_sqlite3_mprintf, MRB_ARGS_ARG(sqlite3_mprintf_REQUIRED_ARGC, sqlite3_mprintf_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_msize_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_msize", mrb_SQLite_sqlite3_msize, MRB_ARGS_ARG(sqlite3_msize_REQUIRED_ARGC, sqlite3_msize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "msize", mrb_SQLite_sqlite3_msize, MRB_ARGS_ARG(sqlite3_msize_REQUIRED_ARGC, sqlite3_msize_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_next_stmt_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_next_stmt", mrb_SQLite_sqlite3_next_stmt, MRB_ARGS_ARG(sqlite3_next_stmt_REQUIRED_ARGC, sqlite3_next_stmt_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "next_stmt", mrb_SQLite_sqlite3_next_stmt, MRB_ARGS_ARG(sqlite3_next_stmt_REQUIRED_ARGC, sqlite3_next_stmt_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_open_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_open", mrb_SQLite_sqlite3_open, MRB_ARGS_ARG(sqlite3_open_REQUIRED_ARGC, sqlite3_open_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "open", mrb_SQLite_sqlite3_open, MRB_ARGS_ARG(sqlite3_open_REQUIRED_ARGC, sqlite3_open_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_open16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_open16", mrb_SQLite_sqlite3_open16, MRB_ARGS_ARG(sqlite3_open16_REQUIRED_ARGC, sqlite3_open16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "open16", mrb_SQLite_sqlite3_open16, MRB_ARGS_ARG(sqlite3_open16_REQUIRED_ARGC, sqlite3_open16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_open_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_open_v2", mrb_SQLite_sqlite3_open_v2, MRB_ARGS_ARG(sqlite3_open_v2_REQUIRED_ARGC, sqlite3_open_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "open_v2", mrb_SQLite_sqlite3_open_v2, MRB_ARGS_ARG(sqlite3_open_v2_REQUIRED_ARGC, sqlite3_open_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_os_end_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_os_end", mrb_SQLite_sqlite3_os_end, MRB_ARGS_ARG(sqlite3_os_end_REQUIRED_ARGC, sqlite3_os_end_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "os_end", mrb_SQLite_sqlite3_os_end, MRB_ARGS_ARG(sqlite3_os_end_REQUIRED_ARGC, sqlite3_os_end_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_os_init_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_os_init", mrb_SQLite_sqlite3_os_init, MRB_ARGS_ARG(sqlite3_os_init_REQUIRED_ARGC, sqlite3_os_init_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "os_init", mrb_SQLite_sqlite3_os_init, MRB_ARGS_ARG(sqlite3_os_init_REQUIRED_ARGC, sqlite3_os_init_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_overload_function_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_overload_function", mrb_SQLite_sqlite3_overload_function, MRB_ARGS_ARG(sqlite3_overload_function_REQUIRED_ARGC, sqlite3_overload_function_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "overload_function", mrb_SQLite_sqlite3_overload_function, MRB_ARGS_ARG(sqlite3_overload_function_REQUIRED_ARGC, sqlite3_overload_function_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_prepare_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_prepare", mrb_SQLite_sqlite3_prepare, MRB_ARGS_ARG(sqlite3_prepare_REQUIRED_ARGC, sqlite3_prepare_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "prepare", mrb_SQLite_sqlite3_prepare, MRB_ARGS_ARG(sqlite3_prepare_REQUIRED_ARGC, sqlite3_prepare_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_prepare16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_prepare16", mrb_SQLite_sqlite3_prepare16, MRB_ARGS_ARG(sqlite3_prepare16_REQUIRED_ARGC, sqlite3_prepare16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "prepare16", mrb_SQLite_sqlite3_prepare16, MRB_ARGS_ARG(sqlite3_prepare16_REQUIRED_ARGC, sqlite3_prepare16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_prepare16_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_prepare16_v2", mrb_SQLite_sqlite3_prepare16_v2, MRB_ARGS_ARG(sqlite3_prepare16_v2_REQUIRED_ARGC, sqlite3_prepare16_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "prepare16_v2", mrb_SQLite_sqlite3_prepare16_v2, MRB_ARGS_ARG(sqlite3_prepare16_v2_REQUIRED_ARGC, sqlite3_prepare16_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_prepare_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_prepare_v2", mrb_SQLite_sqlite3_prepare_v2, MRB_ARGS_ARG(sqlite3_prepare_v2_REQUIRED_ARGC, sqlite3_prepare_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "prepare_v2", mrb_SQLite_sqlite3_prepare_v2, MRB_ARGS_ARG(sqlite3_prepare_v2_REQUIRED_ARGC, sqlite3_prepare_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_profile_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_profile", mrb_SQLite_sqlite3_profile, MRB_ARGS_ARG(sqlite3_profile_REQUIRED_ARGC, sqlite3_profile_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "profile", mrb_SQLite_sqlite3_profile, MRB_ARGS_ARG(sqlite3_profile_REQUIRED_ARGC, sqlite3_profile_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_progress_handler_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_progress_handler", mrb_SQLite_sqlite3_progress_handler, MRB_ARGS_ARG(sqlite3_progress_handler_REQUIRED_ARGC, sqlite3_progress_handler_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "progress_handler", mrb_SQLite_sqlite3_progress_handler, MRB_ARGS_ARG(sqlite3_progress_handler_REQUIRED_ARGC, sqlite3_progress_handler_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_randomness_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_randomness", mrb_SQLite_sqlite3_randomness, MRB_ARGS_ARG(sqlite3_randomness_REQUIRED_ARGC, sqlite3_randomness_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "randomness", mrb_SQLite_sqlite3_randomness, MRB_ARGS_ARG(sqlite3_randomness_REQUIRED_ARGC, sqlite3_randomness_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_realloc_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_realloc", mrb_SQLite_sqlite3_realloc, MRB_ARGS_ARG(sqlite3_realloc_REQUIRED_ARGC, sqlite3_realloc_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "realloc", mrb_SQLite_sqlite3_realloc, MRB_ARGS_ARG(sqlite3_realloc_REQUIRED_ARGC, sqlite3_realloc_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_realloc64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_realloc64", mrb_SQLite_sqlite3_realloc64, MRB_ARGS_ARG(sqlite3_realloc64_REQUIRED_ARGC, sqlite3_realloc64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "realloc64", mrb_SQLite_sqlite3_realloc64, MRB_ARGS_ARG(sqlite3_realloc64_REQUIRED_ARGC, sqlite3_realloc64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_release_memory_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_release_memory", mrb_SQLite_sqlite3_release_memory, MRB_ARGS_ARG(sqlite3_release_memory_REQUIRED_ARGC, sqlite3_release_memory_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "release_memory", mrb_SQLite_sqlite3_release_memory, MRB_ARGS_ARG(sqlite3_release_memory_REQUIRED_ARGC, sqlite3_release_memory_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_reset_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_reset", mrb_SQLite_sqlite3_reset, MRB_ARGS_ARG(sqlite3_reset_REQUIRED_ARGC, sqlite3_reset_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "reset", mrb_SQLite_sqlite3_reset, MRB_ARGS_ARG(sqlite3_reset_REQUIRED_ARGC, sqlite3_reset_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_reset_auto_extension_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_reset_auto_extension", mrb_SQLite_sqlite3_reset_auto_extension, MRB_ARGS_ARG(sqlite3_reset_auto_extension_REQUIRED_ARGC, sqlite3_reset_auto_extension_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "reset_auto_extension", mrb_SQLite_sqlite3_reset_auto_extension, MRB_ARGS_ARG(sqlite3_reset_auto_extension_REQUIRED_ARGC, sqlite3_reset_auto_extension_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_blob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_blob", mrb_SQLite_sqlite3_result_blob, MRB_ARGS_ARG(sqlite3_result_blob_REQUIRED_ARGC, sqlite3_result_blob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_blob", mrb_SQLite_sqlite3_result_blob, MRB_ARGS_ARG(sqlite3_result_blob_REQUIRED_ARGC, sqlite3_result_blob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_blob64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_blob64", mrb_SQLite_sqlite3_result_blob64, MRB_ARGS_ARG(sqlite3_result_blob64_REQUIRED_ARGC, sqlite3_result_blob64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_blob64", mrb_SQLite_sqlite3_result_blob64, MRB_ARGS_ARG(sqlite3_result_blob64_REQUIRED_ARGC, sqlite3_result_blob64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_double_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_double", mrb_SQLite_sqlite3_result_double, MRB_ARGS_ARG(sqlite3_result_double_REQUIRED_ARGC, sqlite3_result_double_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_double", mrb_SQLite_sqlite3_result_double, MRB_ARGS_ARG(sqlite3_result_double_REQUIRED_ARGC, sqlite3_result_double_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_error_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_error", mrb_SQLite_sqlite3_result_error, MRB_ARGS_ARG(sqlite3_result_error_REQUIRED_ARGC, sqlite3_result_error_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_error", mrb_SQLite_sqlite3_result_error, MRB_ARGS_ARG(sqlite3_result_error_REQUIRED_ARGC, sqlite3_result_error_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_error16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_error16", mrb_SQLite_sqlite3_result_error16, MRB_ARGS_ARG(sqlite3_result_error16_REQUIRED_ARGC, sqlite3_result_error16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_error16", mrb_SQLite_sqlite3_result_error16, MRB_ARGS_ARG(sqlite3_result_error16_REQUIRED_ARGC, sqlite3_result_error16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_error_code_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_error_code", mrb_SQLite_sqlite3_result_error_code, MRB_ARGS_ARG(sqlite3_result_error_code_REQUIRED_ARGC, sqlite3_result_error_code_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_error_code", mrb_SQLite_sqlite3_result_error_code, MRB_ARGS_ARG(sqlite3_result_error_code_REQUIRED_ARGC, sqlite3_result_error_code_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_error_nomem_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_error_nomem", mrb_SQLite_sqlite3_result_error_nomem, MRB_ARGS_ARG(sqlite3_result_error_nomem_REQUIRED_ARGC, sqlite3_result_error_nomem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_error_nomem", mrb_SQLite_sqlite3_result_error_nomem, MRB_ARGS_ARG(sqlite3_result_error_nomem_REQUIRED_ARGC, sqlite3_result_error_nomem_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_error_toobig_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_error_toobig", mrb_SQLite_sqlite3_result_error_toobig, MRB_ARGS_ARG(sqlite3_result_error_toobig_REQUIRED_ARGC, sqlite3_result_error_toobig_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_error_toobig", mrb_SQLite_sqlite3_result_error_toobig, MRB_ARGS_ARG(sqlite3_result_error_toobig_REQUIRED_ARGC, sqlite3_result_error_toobig_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_int_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_int", mrb_SQLite_sqlite3_result_int, MRB_ARGS_ARG(sqlite3_result_int_REQUIRED_ARGC, sqlite3_result_int_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_int", mrb_SQLite_sqlite3_result_int, MRB_ARGS_ARG(sqlite3_result_int_REQUIRED_ARGC, sqlite3_result_int_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_int64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_int64", mrb_SQLite_sqlite3_result_int64, MRB_ARGS_ARG(sqlite3_result_int64_REQUIRED_ARGC, sqlite3_result_int64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_int64", mrb_SQLite_sqlite3_result_int64, MRB_ARGS_ARG(sqlite3_result_int64_REQUIRED_ARGC, sqlite3_result_int64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_null_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_null", mrb_SQLite_sqlite3_result_null, MRB_ARGS_ARG(sqlite3_result_null_REQUIRED_ARGC, sqlite3_result_null_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_null", mrb_SQLite_sqlite3_result_null, MRB_ARGS_ARG(sqlite3_result_null_REQUIRED_ARGC, sqlite3_result_null_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_text_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_text", mrb_SQLite_sqlite3_result_text, MRB_ARGS_ARG(sqlite3_result_text_REQUIRED_ARGC, sqlite3_result_text_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_text", mrb_SQLite_sqlite3_result_text, MRB_ARGS_ARG(sqlite3_result_text_REQUIRED_ARGC, sqlite3_result_text_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_text16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_text16", mrb_SQLite_sqlite3_result_text16, MRB_ARGS_ARG(sqlite3_result_text16_REQUIRED_ARGC, sqlite3_result_text16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_text16", mrb_SQLite_sqlite3_result_text16, MRB_ARGS_ARG(sqlite3_result_text16_REQUIRED_ARGC, sqlite3_result_text16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_text16be_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_text16be", mrb_SQLite_sqlite3_result_text16be, MRB_ARGS_ARG(sqlite3_result_text16be_REQUIRED_ARGC, sqlite3_result_text16be_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_text16be", mrb_SQLite_sqlite3_result_text16be, MRB_ARGS_ARG(sqlite3_result_text16be_REQUIRED_ARGC, sqlite3_result_text16be_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_text16le_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_text16le", mrb_SQLite_sqlite3_result_text16le, MRB_ARGS_ARG(sqlite3_result_text16le_REQUIRED_ARGC, sqlite3_result_text16le_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_text16le", mrb_SQLite_sqlite3_result_text16le, MRB_ARGS_ARG(sqlite3_result_text16le_REQUIRED_ARGC, sqlite3_result_text16le_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_text64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_text64", mrb_SQLite_sqlite3_result_text64, MRB_ARGS_ARG(sqlite3_result_text64_REQUIRED_ARGC, sqlite3_result_text64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_text64", mrb_SQLite_sqlite3_result_text64, MRB_ARGS_ARG(sqlite3_result_text64_REQUIRED_ARGC, sqlite3_result_text64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_value_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_value", mrb_SQLite_sqlite3_result_value, MRB_ARGS_ARG(sqlite3_result_value_REQUIRED_ARGC, sqlite3_result_value_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_value", mrb_SQLite_sqlite3_result_value, MRB_ARGS_ARG(sqlite3_result_value_REQUIRED_ARGC, sqlite3_result_value_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_result_zeroblob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_result_zeroblob", mrb_SQLite_sqlite3_result_zeroblob, MRB_ARGS_ARG(sqlite3_result_zeroblob_REQUIRED_ARGC, sqlite3_result_zeroblob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "result_zeroblob", mrb_SQLite_sqlite3_result_zeroblob, MRB_ARGS_ARG(sqlite3_result_zeroblob_REQUIRED_ARGC, sqlite3_result_zeroblob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_rollback_hook_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_rollback_hook", mrb_SQLite_sqlite3_rollback_hook, MRB_ARGS_ARG(sqlite3_rollback_hook_REQUIRED_ARGC, sqlite3_rollback_hook_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "rollback_hook", mrb_SQLite_sqlite3_rollback_hook, MRB_ARGS_ARG(sqlite3_rollback_hook_REQUIRED_ARGC, sqlite3_rollback_hook_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_rtree_geometry_callback_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_rtree_geometry_callback", mrb_SQLite_sqlite3_rtree_geometry_callback, MRB_ARGS_ARG(sqlite3_rtree_geometry_callback_REQUIRED_ARGC, sqlite3_rtree_geometry_callback_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "rtree_geometry_callback", mrb_SQLite_sqlite3_rtree_geometry_callback, MRB_ARGS_ARG(sqlite3_rtree_geometry_callback_REQUIRED_ARGC, sqlite3_rtree_geometry_callback_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_rtree_query_callback_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_rtree_query_callback", mrb_SQLite_sqlite3_rtree_query_callback, MRB_ARGS_ARG(sqlite3_rtree_query_callback_REQUIRED_ARGC, sqlite3_rtree_query_callback_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "rtree_query_callback", mrb_SQLite_sqlite3_rtree_query_callback, MRB_ARGS_ARG(sqlite3_rtree_query_callback_REQUIRED_ARGC, sqlite3_rtree_query_callback_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_set_authorizer_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_set_authorizer", mrb_SQLite_sqlite3_set_authorizer, MRB_ARGS_ARG(sqlite3_set_authorizer_REQUIRED_ARGC, sqlite3_set_authorizer_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "set_authorizer", mrb_SQLite_sqlite3_set_authorizer, MRB_ARGS_ARG(sqlite3_set_authorizer_REQUIRED_ARGC, sqlite3_set_authorizer_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_set_auxdata_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_set_auxdata", mrb_SQLite_sqlite3_set_auxdata, MRB_ARGS_ARG(sqlite3_set_auxdata_REQUIRED_ARGC, sqlite3_set_auxdata_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "set_auxdata", mrb_SQLite_sqlite3_set_auxdata, MRB_ARGS_ARG(sqlite3_set_auxdata_REQUIRED_ARGC, sqlite3_set_auxdata_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_shutdown_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_shutdown", mrb_SQLite_sqlite3_shutdown, MRB_ARGS_ARG(sqlite3_shutdown_REQUIRED_ARGC, sqlite3_shutdown_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "shutdown", mrb_SQLite_sqlite3_shutdown, MRB_ARGS_ARG(sqlite3_shutdown_REQUIRED_ARGC, sqlite3_shutdown_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_sleep_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_sleep", mrb_SQLite_sqlite3_sleep, MRB_ARGS_ARG(sqlite3_sleep_REQUIRED_ARGC, sqlite3_sleep_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "sleep", mrb_SQLite_sqlite3_sleep, MRB_ARGS_ARG(sqlite3_sleep_REQUIRED_ARGC, sqlite3_sleep_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_snprintf_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_snprintf", mrb_SQLite_sqlite3_snprintf, MRB_ARGS_ARG(sqlite3_snprintf_REQUIRED_ARGC, sqlite3_snprintf_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "snprintf", mrb_SQLite_sqlite3_snprintf, MRB_ARGS_ARG(sqlite3_snprintf_REQUIRED_ARGC, sqlite3_snprintf_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_soft_heap_limit_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_soft_heap_limit", mrb_SQLite_sqlite3_soft_heap_limit, MRB_ARGS_ARG(sqlite3_soft_heap_limit_REQUIRED_ARGC, sqlite3_soft_heap_limit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "soft_heap_limit", mrb_SQLite_sqlite3_soft_heap_limit, MRB_ARGS_ARG(sqlite3_soft_heap_limit_REQUIRED_ARGC, sqlite3_soft_heap_limit_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_soft_heap_limit64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_soft_heap_limit64", mrb_SQLite_sqlite3_soft_heap_limit64, MRB_ARGS_ARG(sqlite3_soft_heap_limit64_REQUIRED_ARGC, sqlite3_soft_heap_limit64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "soft_heap_limit64", mrb_SQLite_sqlite3_soft_heap_limit64, MRB_ARGS_ARG(sqlite3_soft_heap_limit64_REQUIRED_ARGC, sqlite3_soft_heap_limit64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_sourceid_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_sourceid", mrb_SQLite_sqlite3_sourceid, MRB_ARGS_ARG(sqlite3_sourceid_REQUIRED_ARGC, sqlite3_sourceid_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "sourceid", mrb_SQLite_sqlite3_sourceid, MRB_ARGS_ARG(sqlite3_sourceid_REQUIRED_ARGC, sqlite3_sourceid_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_sql_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_sql", mrb_SQLite_sqlite3_sql, MRB_ARGS_ARG(sqlite3_sql_REQUIRED_ARGC, sqlite3_sql_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "sql", mrb_SQLite_sqlite3_sql, MRB_ARGS_ARG(sqlite3_sql_REQUIRED_ARGC, sqlite3_sql_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_status_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_status", mrb_SQLite_sqlite3_status, MRB_ARGS_ARG(sqlite3_status_REQUIRED_ARGC, sqlite3_status_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "status", mrb_SQLite_sqlite3_status, MRB_ARGS_ARG(sqlite3_status_REQUIRED_ARGC, sqlite3_status_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_status64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_status64", mrb_SQLite_sqlite3_status64, MRB_ARGS_ARG(sqlite3_status64_REQUIRED_ARGC, sqlite3_status64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "status64", mrb_SQLite_sqlite3_status64, MRB_ARGS_ARG(sqlite3_status64_REQUIRED_ARGC, sqlite3_status64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_step_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_step", mrb_SQLite_sqlite3_step, MRB_ARGS_ARG(sqlite3_step_REQUIRED_ARGC, sqlite3_step_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "step", mrb_SQLite_sqlite3_step, MRB_ARGS_ARG(sqlite3_step_REQUIRED_ARGC, sqlite3_step_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_stmt_busy_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_stmt_busy", mrb_SQLite_sqlite3_stmt_busy, MRB_ARGS_ARG(sqlite3_stmt_busy_REQUIRED_ARGC, sqlite3_stmt_busy_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "stmt_busy", mrb_SQLite_sqlite3_stmt_busy, MRB_ARGS_ARG(sqlite3_stmt_busy_REQUIRED_ARGC, sqlite3_stmt_busy_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_stmt_readonly_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_stmt_readonly", mrb_SQLite_sqlite3_stmt_readonly, MRB_ARGS_ARG(sqlite3_stmt_readonly_REQUIRED_ARGC, sqlite3_stmt_readonly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "stmt_readonly", mrb_SQLite_sqlite3_stmt_readonly, MRB_ARGS_ARG(sqlite3_stmt_readonly_REQUIRED_ARGC, sqlite3_stmt_readonly_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_stmt_status_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_stmt_status", mrb_SQLite_sqlite3_stmt_status, MRB_ARGS_ARG(sqlite3_stmt_status_REQUIRED_ARGC, sqlite3_stmt_status_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "stmt_status", mrb_SQLite_sqlite3_stmt_status, MRB_ARGS_ARG(sqlite3_stmt_status_REQUIRED_ARGC, sqlite3_stmt_status_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_strglob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_strglob", mrb_SQLite_sqlite3_strglob, MRB_ARGS_ARG(sqlite3_strglob_REQUIRED_ARGC, sqlite3_strglob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "strglob", mrb_SQLite_sqlite3_strglob, MRB_ARGS_ARG(sqlite3_strglob_REQUIRED_ARGC, sqlite3_strglob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_stricmp_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_stricmp", mrb_SQLite_sqlite3_stricmp, MRB_ARGS_ARG(sqlite3_stricmp_REQUIRED_ARGC, sqlite3_stricmp_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "stricmp", mrb_SQLite_sqlite3_stricmp, MRB_ARGS_ARG(sqlite3_stricmp_REQUIRED_ARGC, sqlite3_stricmp_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_strnicmp_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_strnicmp", mrb_SQLite_sqlite3_strnicmp, MRB_ARGS_ARG(sqlite3_strnicmp_REQUIRED_ARGC, sqlite3_strnicmp_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "strnicmp", mrb_SQLite_sqlite3_strnicmp, MRB_ARGS_ARG(sqlite3_strnicmp_REQUIRED_ARGC, sqlite3_strnicmp_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_table_column_metadata_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_table_column_metadata", mrb_SQLite_sqlite3_table_column_metadata, MRB_ARGS_ARG(sqlite3_table_column_metadata_REQUIRED_ARGC, sqlite3_table_column_metadata_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "table_column_metadata", mrb_SQLite_sqlite3_table_column_metadata, MRB_ARGS_ARG(sqlite3_table_column_metadata_REQUIRED_ARGC, sqlite3_table_column_metadata_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_test_control_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_test_control", mrb_SQLite_sqlite3_test_control, MRB_ARGS_ARG(sqlite3_test_control_REQUIRED_ARGC, sqlite3_test_control_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "test_control", mrb_SQLite_sqlite3_test_control, MRB_ARGS_ARG(sqlite3_test_control_REQUIRED_ARGC, sqlite3_test_control_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_thread_cleanup_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_thread_cleanup", mrb_SQLite_sqlite3_thread_cleanup, MRB_ARGS_ARG(sqlite3_thread_cleanup_REQUIRED_ARGC, sqlite3_thread_cleanup_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "thread_cleanup", mrb_SQLite_sqlite3_thread_cleanup, MRB_ARGS_ARG(sqlite3_thread_cleanup_REQUIRED_ARGC, sqlite3_thread_cleanup_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_threadsafe_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_threadsafe", mrb_SQLite_sqlite3_threadsafe, MRB_ARGS_ARG(sqlite3_threadsafe_REQUIRED_ARGC, sqlite3_threadsafe_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "threadsafe", mrb_SQLite_sqlite3_threadsafe, MRB_ARGS_ARG(sqlite3_threadsafe_REQUIRED_ARGC, sqlite3_threadsafe_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_total_changes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_total_changes", mrb_SQLite_sqlite3_total_changes, MRB_ARGS_ARG(sqlite3_total_changes_REQUIRED_ARGC, sqlite3_total_changes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "total_changes", mrb_SQLite_sqlite3_total_changes, MRB_ARGS_ARG(sqlite3_total_changes_REQUIRED_ARGC, sqlite3_total_changes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_trace_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_trace", mrb_SQLite_sqlite3_trace, MRB_ARGS_ARG(sqlite3_trace_REQUIRED_ARGC, sqlite3_trace_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "trace", mrb_SQLite_sqlite3_trace, MRB_ARGS_ARG(sqlite3_trace_REQUIRED_ARGC, sqlite3_trace_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_transfer_bindings_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_transfer_bindings", mrb_SQLite_sqlite3_transfer_bindings, MRB_ARGS_ARG(sqlite3_transfer_bindings_REQUIRED_ARGC, sqlite3_transfer_bindings_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "transfer_bindings", mrb_SQLite_sqlite3_transfer_bindings, MRB_ARGS_ARG(sqlite3_transfer_bindings_REQUIRED_ARGC, sqlite3_transfer_bindings_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_unlock_notify_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_unlock_notify", mrb_SQLite_sqlite3_unlock_notify, MRB_ARGS_ARG(sqlite3_unlock_notify_REQUIRED_ARGC, sqlite3_unlock_notify_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "unlock_notify", mrb_SQLite_sqlite3_unlock_notify, MRB_ARGS_ARG(sqlite3_unlock_notify_REQUIRED_ARGC, sqlite3_unlock_notify_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_update_hook_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_update_hook", mrb_SQLite_sqlite3_update_hook, MRB_ARGS_ARG(sqlite3_update_hook_REQUIRED_ARGC, sqlite3_update_hook_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "update_hook", mrb_SQLite_sqlite3_update_hook, MRB_ARGS_ARG(sqlite3_update_hook_REQUIRED_ARGC, sqlite3_update_hook_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_uri_boolean_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_uri_boolean", mrb_SQLite_sqlite3_uri_boolean, MRB_ARGS_ARG(sqlite3_uri_boolean_REQUIRED_ARGC, sqlite3_uri_boolean_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "uri_boolean", mrb_SQLite_sqlite3_uri_boolean, MRB_ARGS_ARG(sqlite3_uri_boolean_REQUIRED_ARGC, sqlite3_uri_boolean_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_uri_int64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_uri_int64", mrb_SQLite_sqlite3_uri_int64, MRB_ARGS_ARG(sqlite3_uri_int64_REQUIRED_ARGC, sqlite3_uri_int64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "uri_int64", mrb_SQLite_sqlite3_uri_int64, MRB_ARGS_ARG(sqlite3_uri_int64_REQUIRED_ARGC, sqlite3_uri_int64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_uri_parameter_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_uri_parameter", mrb_SQLite_sqlite3_uri_parameter, MRB_ARGS_ARG(sqlite3_uri_parameter_REQUIRED_ARGC, sqlite3_uri_parameter_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "uri_parameter", mrb_SQLite_sqlite3_uri_parameter, MRB_ARGS_ARG(sqlite3_uri_parameter_REQUIRED_ARGC, sqlite3_uri_parameter_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_user_data_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_user_data", mrb_SQLite_sqlite3_user_data, MRB_ARGS_ARG(sqlite3_user_data_REQUIRED_ARGC, sqlite3_user_data_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "user_data", mrb_SQLite_sqlite3_user_data, MRB_ARGS_ARG(sqlite3_user_data_REQUIRED_ARGC, sqlite3_user_data_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_blob_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_blob", mrb_SQLite_sqlite3_value_blob, MRB_ARGS_ARG(sqlite3_value_blob_REQUIRED_ARGC, sqlite3_value_blob_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_blob", mrb_SQLite_sqlite3_value_blob, MRB_ARGS_ARG(sqlite3_value_blob_REQUIRED_ARGC, sqlite3_value_blob_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_bytes_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_bytes", mrb_SQLite_sqlite3_value_bytes, MRB_ARGS_ARG(sqlite3_value_bytes_REQUIRED_ARGC, sqlite3_value_bytes_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_bytes", mrb_SQLite_sqlite3_value_bytes, MRB_ARGS_ARG(sqlite3_value_bytes_REQUIRED_ARGC, sqlite3_value_bytes_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_bytes16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_bytes16", mrb_SQLite_sqlite3_value_bytes16, MRB_ARGS_ARG(sqlite3_value_bytes16_REQUIRED_ARGC, sqlite3_value_bytes16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_bytes16", mrb_SQLite_sqlite3_value_bytes16, MRB_ARGS_ARG(sqlite3_value_bytes16_REQUIRED_ARGC, sqlite3_value_bytes16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_double_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_double", mrb_SQLite_sqlite3_value_double, MRB_ARGS_ARG(sqlite3_value_double_REQUIRED_ARGC, sqlite3_value_double_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_double", mrb_SQLite_sqlite3_value_double, MRB_ARGS_ARG(sqlite3_value_double_REQUIRED_ARGC, sqlite3_value_double_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_int_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_int", mrb_SQLite_sqlite3_value_int, MRB_ARGS_ARG(sqlite3_value_int_REQUIRED_ARGC, sqlite3_value_int_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_int", mrb_SQLite_sqlite3_value_int, MRB_ARGS_ARG(sqlite3_value_int_REQUIRED_ARGC, sqlite3_value_int_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_int64_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_int64", mrb_SQLite_sqlite3_value_int64, MRB_ARGS_ARG(sqlite3_value_int64_REQUIRED_ARGC, sqlite3_value_int64_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_int64", mrb_SQLite_sqlite3_value_int64, MRB_ARGS_ARG(sqlite3_value_int64_REQUIRED_ARGC, sqlite3_value_int64_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_numeric_type_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_numeric_type", mrb_SQLite_sqlite3_value_numeric_type, MRB_ARGS_ARG(sqlite3_value_numeric_type_REQUIRED_ARGC, sqlite3_value_numeric_type_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_numeric_type", mrb_SQLite_sqlite3_value_numeric_type, MRB_ARGS_ARG(sqlite3_value_numeric_type_REQUIRED_ARGC, sqlite3_value_numeric_type_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_text_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_text", mrb_SQLite_sqlite3_value_text, MRB_ARGS_ARG(sqlite3_value_text_REQUIRED_ARGC, sqlite3_value_text_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_text", mrb_SQLite_sqlite3_value_text, MRB_ARGS_ARG(sqlite3_value_text_REQUIRED_ARGC, sqlite3_value_text_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_text16_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_text16", mrb_SQLite_sqlite3_value_text16, MRB_ARGS_ARG(sqlite3_value_text16_REQUIRED_ARGC, sqlite3_value_text16_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_text16", mrb_SQLite_sqlite3_value_text16, MRB_ARGS_ARG(sqlite3_value_text16_REQUIRED_ARGC, sqlite3_value_text16_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_text16be_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_text16be", mrb_SQLite_sqlite3_value_text16be, MRB_ARGS_ARG(sqlite3_value_text16be_REQUIRED_ARGC, sqlite3_value_text16be_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_text16be", mrb_SQLite_sqlite3_value_text16be, MRB_ARGS_ARG(sqlite3_value_text16be_REQUIRED_ARGC, sqlite3_value_text16be_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_text16le_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_text16le", mrb_SQLite_sqlite3_value_text16le, MRB_ARGS_ARG(sqlite3_value_text16le_REQUIRED_ARGC, sqlite3_value_text16le_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_text16le", mrb_SQLite_sqlite3_value_text16le, MRB_ARGS_ARG(sqlite3_value_text16le_REQUIRED_ARGC, sqlite3_value_text16le_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_value_type_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_value_type", mrb_SQLite_sqlite3_value_type, MRB_ARGS_ARG(sqlite3_value_type_REQUIRED_ARGC, sqlite3_value_type_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "value_type", mrb_SQLite_sqlite3_value_type, MRB_ARGS_ARG(sqlite3_value_type_REQUIRED_ARGC, sqlite3_value_type_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vfs_find_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vfs_find", mrb_SQLite_sqlite3_vfs_find, MRB_ARGS_ARG(sqlite3_vfs_find_REQUIRED_ARGC, sqlite3_vfs_find_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vfs_find", mrb_SQLite_sqlite3_vfs_find, MRB_ARGS_ARG(sqlite3_vfs_find_REQUIRED_ARGC, sqlite3_vfs_find_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vfs_register_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vfs_register", mrb_SQLite_sqlite3_vfs_register, MRB_ARGS_ARG(sqlite3_vfs_register_REQUIRED_ARGC, sqlite3_vfs_register_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vfs_register", mrb_SQLite_sqlite3_vfs_register, MRB_ARGS_ARG(sqlite3_vfs_register_REQUIRED_ARGC, sqlite3_vfs_register_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vfs_unregister_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vfs_unregister", mrb_SQLite_sqlite3_vfs_unregister, MRB_ARGS_ARG(sqlite3_vfs_unregister_REQUIRED_ARGC, sqlite3_vfs_unregister_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vfs_unregister", mrb_SQLite_sqlite3_vfs_unregister, MRB_ARGS_ARG(sqlite3_vfs_unregister_REQUIRED_ARGC, sqlite3_vfs_unregister_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vmprintf_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vmprintf", mrb_SQLite_sqlite3_vmprintf, MRB_ARGS_ARG(sqlite3_vmprintf_REQUIRED_ARGC, sqlite3_vmprintf_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vmprintf", mrb_SQLite_sqlite3_vmprintf, MRB_ARGS_ARG(sqlite3_vmprintf_REQUIRED_ARGC, sqlite3_vmprintf_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vsnprintf_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vsnprintf", mrb_SQLite_sqlite3_vsnprintf, MRB_ARGS_ARG(sqlite3_vsnprintf_REQUIRED_ARGC, sqlite3_vsnprintf_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vsnprintf", mrb_SQLite_sqlite3_vsnprintf, MRB_ARGS_ARG(sqlite3_vsnprintf_REQUIRED_ARGC, sqlite3_vsnprintf_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vtab_config_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vtab_config", mrb_SQLite_sqlite3_vtab_config, MRB_ARGS_ARG(sqlite3_vtab_config_REQUIRED_ARGC, sqlite3_vtab_config_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vtab_config", mrb_SQLite_sqlite3_vtab_config, MRB_ARGS_ARG(sqlite3_vtab_config_REQUIRED_ARGC, sqlite3_vtab_config_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_vtab_on_conflict_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_vtab_on_conflict", mrb_SQLite_sqlite3_vtab_on_conflict, MRB_ARGS_ARG(sqlite3_vtab_on_conflict_REQUIRED_ARGC, sqlite3_vtab_on_conflict_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "vtab_on_conflict", mrb_SQLite_sqlite3_vtab_on_conflict, MRB_ARGS_ARG(sqlite3_vtab_on_conflict_REQUIRED_ARGC, sqlite3_vtab_on_conflict_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_wal_autocheckpoint_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_wal_autocheckpoint", mrb_SQLite_sqlite3_wal_autocheckpoint, MRB_ARGS_ARG(sqlite3_wal_autocheckpoint_REQUIRED_ARGC, sqlite3_wal_autocheckpoint_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "wal_autocheckpoint", mrb_SQLite_sqlite3_wal_autocheckpoint, MRB_ARGS_ARG(sqlite3_wal_autocheckpoint_REQUIRED_ARGC, sqlite3_wal_autocheckpoint_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_wal_checkpoint_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_wal_checkpoint", mrb_SQLite_sqlite3_wal_checkpoint, MRB_ARGS_ARG(sqlite3_wal_checkpoint_REQUIRED_ARGC, sqlite3_wal_checkpoint_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "wal_checkpoint", mrb_SQLite_sqlite3_wal_checkpoint, MRB_ARGS_ARG(sqlite3_wal_checkpoint_REQUIRED_ARGC, sqlite3_wal_checkpoint_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_wal_checkpoint_v2_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_wal_checkpoint_v2", mrb_SQLite_sqlite3_wal_checkpoint_v2, MRB_ARGS_ARG(sqlite3_wal_checkpoint_v2_REQUIRED_ARGC, sqlite3_wal_checkpoint_v2_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "wal_checkpoint_v2", mrb_SQLite_sqlite3_wal_checkpoint_v2, MRB_ARGS_ARG(sqlite3_wal_checkpoint_v2_REQUIRED_ARGC, sqlite3_wal_checkpoint_v2_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_wal_hook_FUNCTION
-  mrb_define_class_method(mrb, SQLite_module, "sqlite3_wal_hook", mrb_SQLite_sqlite3_wal_hook, MRB_ARGS_ARG(sqlite3_wal_hook_REQUIRED_ARGC, sqlite3_wal_hook_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, SQLite_module, "wal_hook", mrb_SQLite_sqlite3_wal_hook, MRB_ARGS_ARG(sqlite3_wal_hook_REQUIRED_ARGC, sqlite3_wal_hook_OPTIONAL_ARGC));
 #endif
 /* MRUBY_BINDING_END */
 

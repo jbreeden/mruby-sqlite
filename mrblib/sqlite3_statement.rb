@@ -4,7 +4,7 @@ module SQLite3
 
     def initialize(db, sql)
       @db = db
-      status, @native_stmt, @remainder = SQLite.sqlite3_prepare_v2(@db.instance_variable_get(:@native_db), sql, -1)
+      status, @native_stmt, @remainder = SQLite.prepare_v2(@db.instance_variable_get(:@native_db), sql, -1)
       SQLite3.raise_sqlite_error(@db, status)
       @done = false
       # Statement may come back nil if it's whitespace, or a comment, though no error is returned
@@ -33,7 +33,7 @@ module SQLite3
           which = ":#{which}"
         end
         
-        param_index = SQLite.sqlite3_bind_parameter_index(@native_stmt, which)
+        param_index = SQLite.bind_parameter_index(@native_stmt, which)
         
         if param_index == 0
           raise SQLite3::Exception.new("No such bind parameter #{which}")
@@ -42,19 +42,19 @@ module SQLite3
 
       case value
       when Fixnum
-        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, value)
+        status = SQLite.bind_int(@native_stmt, param_index, value)
       when Float
-        status = SQLite.sqlite3_bind_double(@native_stmt, param_index, value)
+        status = SQLite.bind_double(@native_stmt, param_index, value)
       when TrueClass
-        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, 1)
+        status = SQLite.bind_int(@native_stmt, param_index, 1)
       when FalseClass
-        status = SQLite.sqlite3_bind_int(@native_stmt, param_index, 0)
+        status = SQLite.bind_int(@native_stmt, param_index, 0)
       when SQLite3::Blob
-        status = SQLite.sqlite3_bind_blob(@native_stmt, param_index, value, value.length)
+        status = SQLite.bind_blob(@native_stmt, param_index, value, value.length)
       when String
-        status = SQLite.sqlite3_bind_text(@native_stmt, param_index, value, value.length)
+        status = SQLite.bind_text(@native_stmt, param_index, value, value.length)
       when NilClass
-        status = SQLite.sqlite3_bind_null(@native_stmt, param_index)
+        status = SQLite.bind_null(@native_stmt, param_index)
       else
         raise SQLite3::Exception.new("Can't prepare #{value.type}")
       end
@@ -64,7 +64,7 @@ module SQLite3
 
     def bind_parameter_count
       assert_open
-      SQLite.sqlite3_bind_parameter_count(@native_stmt)
+      SQLite.bind_parameter_count(@native_stmt)
     end
 
     def bind_params(*varbinds)
@@ -80,14 +80,14 @@ module SQLite3
 
     def clear_bindings!
       assert_open
-      SQLite.sqlite3_clear_bindings(@native_stmt)
+      SQLite.clear_bindings(@native_stmt)
     end
 
     def close
       assert_open
       @closed = true
       # Ignore the status returned. Step would have raised it already.
-      SQLite::sqlite3_finalize(@native_stmt)
+      SQLite.finalize(@native_stmt)
       self
     end
 
@@ -97,17 +97,17 @@ module SQLite3
 
     def column_count
       assert_open
-      SQLite.sqlite3_column_count(@native_stmt)
+      SQLite.column_count(@native_stmt)
     end
 
     def column_decltype(index)
       assert_open
-      SQLite::sqlite3_column_decltype(@native_stmt, index)
+      SQLite.column_decltype(@native_stmt, index)
     end
 
     def column_name(index)
       assert_open
-      SQLite::sqlite3_column_origin_name(@native_stmt, index)
+      SQLite.column_origin_name(@native_stmt, index)
     end
 
     def columns
@@ -165,14 +165,14 @@ module SQLite3
       @columns = nil
       @types = nil
       @done = false
-      status = SQLite::sqlite3_reset(@native_stmt)
+      status = SQLite.reset(@native_stmt)
     end
 
     def step
       assert_open
       return nil if @done
 
-      status = SQLite.sqlite3_step(@native_stmt)
+      status = SQLite.step(@native_stmt)
       
       @done = (status == SQLite::SQLITE_DONE)
       return nil if @done
@@ -184,19 +184,19 @@ module SQLite3
       row = @db.results_as_hash ? {} : []
       (0...(self.column_count)).each do |index|
         val = nil
-        case SQLite.sqlite3_column_type(@native_stmt, index)
+        case SQLite.column_type(@native_stmt, index)
         when SQLite3::ColumnType::INTEGER
-          val = SQLite.sqlite3_column_int(@native_stmt, index)
+          val = SQLite.column_int(@native_stmt, index)
         when SQLite3::ColumnType::FLOAT
-          val = SQLite.sqlite3_column_double(@native_stmt, index)
+          val = SQLite.column_double(@native_stmt, index)
         when SQLite3::ColumnType::BLOB
-          val = SQLite.sqlite3_column_blob(@native_stmt, index)
+          val = SQLite.column_blob(@native_stmt, index)
         when SQLite3::ColumnType::NULL
           val = nil
         when SQLite3::ColumnType::TEXT
-          val = SQLite.sqlite3_column_text(@native_stmt, index)
+          val = SQLite.column_text(@native_stmt, index)
         else
-          val = SQLite.sqlite3_column_text(@native_stmt, index)
+          val = SQLite.column_text(@native_stmt, index)
         end
 
         if @db.results_as_hash
