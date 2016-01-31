@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::initialize */
-/* sha: 03e926f26a1c43da38f8a130a63ea7600974100b3cad4924b4c85cba8340667a */
+/* sha: 86d0bbdb9b0855a75fa4b257a6ef7557133a201a9752954147b7c56b2781381f */
 #if BIND_Sqlite3IndexConstraintUsage_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraintUsage_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   struct sqlite3_index_constraint_usage* native_object = (struct sqlite3_index_constraint_usage*)calloc(1, sizeof(struct sqlite3_index_constraint_usage));
   mruby_gift_sqlite3_index_raint_usage_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_initialize(mrb_state* mrb, mrb_value self
  */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::argvIndex_reader */
-/* sha: 3df41bdb9d8b079fc0ddee2b1bdcc2d6499ddcb3cb30a61811dec5ffbfa6a01d */
+/* sha: 0663ab47ca021ef801aba6a97cccfa01a3d8d4cc0b80bbcbebffb0f670c16a80 */
 #if BIND_Sqlite3IndexConstraintUsage_argvIndex_FIELD_READER
-/* get_argvIndex
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraintUsage_get_argvIndex(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint_usage * native_self = mruby_unbox_sqlite3_index_raint_usage(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_get_argvIndex(mrb_state* mrb, mrb_value s
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::argvIndex_writer */
-/* sha: 30c349098e6552d3770ccb09202010c1e8ee4c2590593e376ff97e307e693f6e */
+/* sha: 6aa3a6e7a5ca67a99c388ec31e85c51293a72839f2c7dfd52f5f14c1668edeb6 */
 #if BIND_Sqlite3IndexConstraintUsage_argvIndex_FIELD_WRITER
-/* set_argvIndex
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraintUsage_set_argvIndex(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint_usage * native_self = mruby_unbox_sqlite3_index_raint_usage(self);
@@ -66,7 +59,6 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_set_argvIndex(mrb_state* mrb, mrb_value s
 
   native_self->argvIndex = native_argvIndex;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -75,12 +67,8 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_set_argvIndex(mrb_state* mrb, mrb_value s
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::omit_reader */
-/* sha: 6752a7a8da6cfc25bad1b1dacb8e731546bbe5e7eb30d1b0ab7379b2bee0b190 */
+/* sha: 81374490593e799e7232c6e93656e9a9adcab85970de82e35342a5004b95bef1 */
 #if BIND_Sqlite3IndexConstraintUsage_omit_FIELD_READER
-/* get_omit
- *
- * Return Type: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraintUsage_get_omit(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint_usage * native_self = mruby_unbox_sqlite3_index_raint_usage(self);
@@ -95,13 +83,8 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_get_omit(mrb_state* mrb, mrb_value self) 
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::omit_writer */
-/* sha: 80825d089bc7f49481f8352d5bf50bf3ae5e48e72c4eb9bb5df88b5b0079ade5 */
+/* sha: 0e4fad23a6c9891e1f243c351be394ff001fdec821939f3acc4fc915014e9e96 */
 #if BIND_Sqlite3IndexConstraintUsage_omit_FIELD_WRITER
-/* set_omit
- *
- * Parameters:
- * - value: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraintUsage_set_omit(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint_usage * native_self = mruby_unbox_sqlite3_index_raint_usage(self);
@@ -111,7 +94,6 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_set_omit(mrb_state* mrb, mrb_value self) 
 
   native_self->omit = native_omit;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -121,12 +103,13 @@ mrb_SQLite_Sqlite3IndexConstraintUsage_set_omit(mrb_state* mrb, mrb_value self) 
 
 
 void mrb_SQLite_Sqlite3IndexConstraintUsage_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3IndexConstraintUsage::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraintUsage::class_definition */
@@ -171,20 +154,8 @@ void mrb_SQLite_Sqlite3IndexConstraintUsage_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3IndexConstraintUsage::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexConstraintUsage::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexConstraintUsage::class_init_footer */
+/* MRUBY_BINDING: Sqlite3IndexConstraintUsage::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

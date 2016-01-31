@@ -13,7 +13,7 @@ namespace :bindings do
     end
     
     headers.each do |header|
-      sh "clang2json #{header} >> declarations.json"
+      sh "clang2json #{header} | egrep -iv 'mutex|scanstatus_reset' > declarations.json"
     end
   end
   

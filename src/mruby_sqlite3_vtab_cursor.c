@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3VtabCursor::initialize */
-/* sha: 6151917573b0475983f7c5c48244c04cb1fa560ee1d2d6efd21c5dc8b7423e19 */
+/* sha: 719ca4ec59158d6e3555a5d6417fb360268e8845e247334fb7ae8661f9957447 */
 #if BIND_Sqlite3VtabCursor_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3VtabCursor_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   sqlite3_vtab_cursor* native_object = (sqlite3_vtab_cursor*)calloc(1, sizeof(sqlite3_vtab_cursor));
   mruby_gift_sqlite3_vtab_cursor_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3VtabCursor_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3VtabCursor::pVtab_reader */
-/* sha: d85c74577f9db25ac1f91394dcda61f2aa6bb63ee972d0397d5a8ff71f581e03 */
+/* sha: b01fe2851b54a8afa487b79d6da536ccbd5dc7544069bda94296409958a9afcc */
 #if BIND_Sqlite3VtabCursor_pVtab_FIELD_READER
-/* get_pVtab
- *
- * Return Type: sqlite3_vtab *
- */
 mrb_value
 mrb_SQLite_Sqlite3VtabCursor_get_pVtab(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab_cursor * native_self = mruby_unbox_sqlite3_vtab_cursor(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3VtabCursor_get_pVtab(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3VtabCursor::pVtab_writer */
-/* sha: cc505e80cb1e12aa4e01d3add633096e5f452cd1e758285f4969a62bfc507463 */
+/* sha: 48d5f1d1e1b1f4d415a54463665158e7f6ed01262408c203bb94d65ff30e1e99 */
 #if BIND_Sqlite3VtabCursor_pVtab_FIELD_WRITER
-/* set_pVtab
- *
- * Parameters:
- * - value: sqlite3_vtab *
- */
 mrb_value
 mrb_SQLite_Sqlite3VtabCursor_set_pVtab(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab_cursor * native_self = mruby_unbox_sqlite3_vtab_cursor(self);
@@ -74,7 +67,6 @@ mrb_SQLite_Sqlite3VtabCursor_set_pVtab(mrb_state* mrb, mrb_value self) {
 
   native_self->pVtab = native_pVtab;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -84,12 +76,13 @@ mrb_SQLite_Sqlite3VtabCursor_set_pVtab(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3VtabCursor_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3VtabCursor::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3VtabCursor::class_definition */
@@ -128,20 +121,8 @@ void mrb_SQLite_Sqlite3VtabCursor_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3VtabCursor::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3VtabCursor::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3VtabCursor::class_init_footer */
+/* MRUBY_BINDING: Sqlite3VtabCursor::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

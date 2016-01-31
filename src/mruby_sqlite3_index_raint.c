@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::initialize */
-/* sha: fd02e0a942456a9b716c0142817b778e0e2f7b02289de5776400e741da6c909f */
+/* sha: 5fb88e110e0be6144465ee13b2e7dfff2b9b4042892cfb80287b2230cdef67ef */
 #if BIND_Sqlite3IndexConstraint_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   struct sqlite3_index_constraint* native_object = (struct sqlite3_index_constraint*)calloc(1, sizeof(struct sqlite3_index_constraint));
   mruby_gift_sqlite3_index_raint_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3IndexConstraint_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::iColumn_reader */
-/* sha: 285c19b27823d24d1e36648d5311b9a6289b1cd0ad7d8db2a58f042d0e4c7221 */
+/* sha: d44d6e72526b3e61a15c369c1344ba5df3d0e70c99dfb6dcf457e9cb9b7edfdc */
 #if BIND_Sqlite3IndexConstraint_iColumn_FIELD_READER
-/* get_iColumn
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_iColumn(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3IndexConstraint_get_iColumn(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::iColumn_writer */
-/* sha: a6f8b241c289a3e05ea99aa1e87da98f0c2f20690d06c89f2bc532f9bf5f80cb */
+/* sha: d195bbae5f92c61c53c4e62c5649b67939e5f63c9e5c29c0ed3e238d96c36a8b */
 #if BIND_Sqlite3IndexConstraint_iColumn_FIELD_WRITER
-/* set_iColumn
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_iColumn(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -66,7 +59,6 @@ mrb_SQLite_Sqlite3IndexConstraint_set_iColumn(mrb_state* mrb, mrb_value self) {
 
   native_self->iColumn = native_iColumn;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -75,12 +67,8 @@ mrb_SQLite_Sqlite3IndexConstraint_set_iColumn(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::op_reader */
-/* sha: dcd3974a8169c8ab95ecb90f1ca347085f37e000ef48b40cb0e5673e37c16d97 */
+/* sha: 0714140205867e8af653c42b83747d52439912b5823b68335777c9e667f40531 */
 #if BIND_Sqlite3IndexConstraint_op_FIELD_READER
-/* get_op
- *
- * Return Type: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_op(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -95,13 +83,8 @@ mrb_SQLite_Sqlite3IndexConstraint_get_op(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::op_writer */
-/* sha: 56275f2e696cef438f2993ac67970a644b8ef4e3a4e41dc7ffcf68381327e964 */
+/* sha: 0bee1c1a85f091813114475e912d691224e51f629a3938c3542f74bba15f6b16 */
 #if BIND_Sqlite3IndexConstraint_op_FIELD_WRITER
-/* set_op
- *
- * Parameters:
- * - value: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_op(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -111,7 +94,6 @@ mrb_SQLite_Sqlite3IndexConstraint_set_op(mrb_state* mrb, mrb_value self) {
 
   native_self->op = native_op;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -120,12 +102,8 @@ mrb_SQLite_Sqlite3IndexConstraint_set_op(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::usable_reader */
-/* sha: 064c9d2e53bea3fc904fce692df80f1e2cf6b412b039f00b85a14647d3da61db */
+/* sha: f92cfd897a4ccd8ab30ba397b26edd17b216087e17663361b03611a7c56cf43c */
 #if BIND_Sqlite3IndexConstraint_usable_FIELD_READER
-/* get_usable
- *
- * Return Type: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_usable(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -140,13 +118,8 @@ mrb_SQLite_Sqlite3IndexConstraint_get_usable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::usable_writer */
-/* sha: 06778ab2a7aaee4cfe1c34d96bfcd76682f0cb4053c974a54ea02282f9b8f6f3 */
+/* sha: 799be1b0717021f4029bf09afadc82cd4ac69193eb90ae110beb9fa873be11f6 */
 #if BIND_Sqlite3IndexConstraint_usable_FIELD_WRITER
-/* set_usable
- *
- * Parameters:
- * - value: unsigned char
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_usable(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -156,7 +129,6 @@ mrb_SQLite_Sqlite3IndexConstraint_set_usable(mrb_state* mrb, mrb_value self) {
 
   native_self->usable = native_usable;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -165,12 +137,8 @@ mrb_SQLite_Sqlite3IndexConstraint_set_usable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::iTermOffset_reader */
-/* sha: 23d47b7611ff0a8b6914731cf49d95a5e243769bc7881f3f3f032fac33585a76 */
+/* sha: 1769b0951b0148fa27d91682df543eea751c54028ad8fff1f539ec364878fa05 */
 #if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_READER
-/* get_iTermOffset
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_get_iTermOffset(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -185,13 +153,8 @@ mrb_SQLite_Sqlite3IndexConstraint_get_iTermOffset(mrb_state* mrb, mrb_value self
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::iTermOffset_writer */
-/* sha: c560e9ddb67ef6acad97a4399079e0766befca2f2cb1d6d4960f2adac32eface */
+/* sha: e13e490ddd33bb9ea23d10d0308aa6ff681f624bd6820d9ad99c1bc51b1b0916 */
 #if BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_WRITER
-/* set_iTermOffset
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3IndexConstraint_set_iTermOffset(mrb_state* mrb, mrb_value self) {
   struct sqlite3_index_constraint * native_self = mruby_unbox_sqlite3_index_raint(self);
@@ -201,7 +164,6 @@ mrb_SQLite_Sqlite3IndexConstraint_set_iTermOffset(mrb_state* mrb, mrb_value self
 
   native_self->iTermOffset = native_iTermOffset;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -211,12 +173,13 @@ mrb_SQLite_Sqlite3IndexConstraint_set_iTermOffset(mrb_state* mrb, mrb_value self
 
 
 void mrb_SQLite_Sqlite3IndexConstraint_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3IndexConstraint::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3IndexConstraint::class_definition */
@@ -273,20 +236,8 @@ void mrb_SQLite_Sqlite3IndexConstraint_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3IndexConstraint::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexConstraint::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3IndexConstraint::class_init_footer */
+/* MRUBY_BINDING: Sqlite3IndexConstraint::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

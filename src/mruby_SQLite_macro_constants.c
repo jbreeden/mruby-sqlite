@@ -192,12 +192,6 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_CONFIG_GETMALLOC", macro);
   } while (0);
 #endif
-#ifdef SQLITE_CONFIG_GETMUTEX
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_CONFIG_GETMUTEX);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_CONFIG_GETMUTEX", macro);
-  } while (0);
-#endif
 #ifdef SQLITE_CONFIG_GETPCACHE
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_CONFIG_GETPCACHE);
@@ -250,12 +244,6 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_CONFIG_MULTITHREAD);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_CONFIG_MULTITHREAD", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_CONFIG_MUTEX
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_CONFIG_MUTEX);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_CONFIG_MUTEX", macro);
   } while (0);
 #endif
 #ifdef SQLITE_CONFIG_PAGECACHE
@@ -1266,84 +1254,6 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MISUSE", macro);
   } while (0);
 #endif
-#ifdef SQLITE_MUTEX_FAST
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_FAST);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_FAST", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_RECURSIVE
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_RECURSIVE);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_RECURSIVE", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_APP1
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_APP1);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_APP1", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_APP2
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_APP2);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_APP2", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_APP3
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_APP3);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_APP3", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_LRU
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_LRU);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_LRU", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_LRU2
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_LRU2);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_LRU2", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_MASTER
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_MASTER);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_MASTER", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_MEM
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_MEM);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_MEM", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_MEM2
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_MEM2);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_MEM2", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_OPEN
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_OPEN);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_OPEN", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_PMEM
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_PMEM);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_PMEM", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_MUTEX_STATIC_PRNG
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_MUTEX_STATIC_PRNG);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_MUTEX_STATIC_PRNG", macro);
-  } while (0);
-#endif
 #ifdef SQLITE_NOLFS
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_NOLFS);
@@ -1422,12 +1332,6 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_OPEN_EXCLUSIVE", macro);
   } while (0);
 #endif
-#ifdef SQLITE_OPEN_FULLMUTEX
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_OPEN_FULLMUTEX);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_OPEN_FULLMUTEX", macro);
-  } while (0);
-#endif
 #ifdef SQLITE_OPEN_MAIN_DB
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_OPEN_MAIN_DB);
@@ -1450,12 +1354,6 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
   do {
     mrb_value macro = mrb_fixnum_value(SQLITE_OPEN_MEMORY);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_OPEN_MEMORY", macro);
-  } while (0);
-#endif
-#ifdef SQLITE_OPEN_NOMUTEX
-  do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_OPEN_NOMUTEX);
-    mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_OPEN_NOMUTEX", macro);
   } while (0);
 #endif
 #ifdef SQLITE_OPEN_PRIVATECACHE

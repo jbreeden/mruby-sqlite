@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::initialize */
-/* sha: f50ffb2bd834715c01294a042844aa0de0198d99c76d31854725d604fa96031d */
+/* sha: b9067c41a86bd56659d0009d771a7753024c483cd5ee7455e0bb523f3a023885 */
 #if BIND_Sqlite3Module_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Module_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   sqlite3_module* native_object = (sqlite3_module*)calloc(1, sizeof(sqlite3_module));
   mruby_gift_sqlite3_module_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3Module_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3Module::iVersion_reader */
-/* sha: e8be69b503d8da06c9aafd708b91463aab404a99f11ad0f24aba4ffb4c1ac3d3 */
+/* sha: 96fbddeae699618f1e622515345ce2b8ab0a8f4e03aa3b255fcf4be1952604e2 */
 #if BIND_Sqlite3Module_iVersion_FIELD_READER
-/* get_iVersion
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_iVersion(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3Module_get_iVersion(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::iVersion_writer */
-/* sha: ca8dfcc4e9e226f222ac9daebab9aa95da9d6d396ec1fc28f52682cb2294300e */
+/* sha: e3ef5df56ad919fbd2ed11bba4c0d0015ed9583f1a88d39e79394848a9035a95 */
 #if BIND_Sqlite3Module_iVersion_FIELD_WRITER
-/* set_iVersion
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_iVersion(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -66,7 +59,6 @@ mrb_SQLite_Sqlite3Module_set_iVersion(mrb_state* mrb, mrb_value self) {
 
   native_self->iVersion = native_iVersion;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -75,12 +67,8 @@ mrb_SQLite_Sqlite3Module_set_iVersion(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xCreate_reader */
-/* sha: d0a3e9269b8d88109d1a7071b45b2fd02a255a6749d146fcb44eb570b61897b7 */
+/* sha: a8f0ee4d16d516cd9bae5404ff88bc695c8dad81a0ad1009245338ad69a8fc35 */
 #if BIND_Sqlite3Module_xCreate_FIELD_READER
-/* get_xCreate
- *
- * Return Type: int (*)(sqlite3 *, void *, int, const char *const *, sqlite3_vtab **, char **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xCreate(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -95,13 +83,8 @@ mrb_SQLite_Sqlite3Module_get_xCreate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xCreate_writer */
-/* sha: a51eb086ca63c174e212ef8b98bfaaa5fa553824c7793a46e6baa73532f6f1b3 */
+/* sha: e8133d19340ce7a45bf255e8e9ab17955d7e56d7b3ce87dec5cc11b407aaa2d3 */
 #if BIND_Sqlite3Module_xCreate_FIELD_WRITER
-/* set_xCreate
- *
- * Parameters:
- * - value: int (*)(sqlite3 *, void *, int, const char *const *, sqlite3_vtab **, char **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xCreate(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -116,7 +99,6 @@ mrb_SQLite_Sqlite3Module_set_xCreate(mrb_state* mrb, mrb_value self) {
 
   native_self->xCreate = native_xCreate;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -125,12 +107,8 @@ mrb_SQLite_Sqlite3Module_set_xCreate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xConnect_reader */
-/* sha: 7cdb3221f385838cce3d7382387f9aaf2f6f4759871028dce12f8015280a867d */
+/* sha: 5ecd50f7bb0771ddb3043543efb8bdddd578081f3a16baae4d33ae2a1a71bc5e */
 #if BIND_Sqlite3Module_xConnect_FIELD_READER
-/* get_xConnect
- *
- * Return Type: int (*)(sqlite3 *, void *, int, const char *const *, sqlite3_vtab **, char **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xConnect(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -145,13 +123,8 @@ mrb_SQLite_Sqlite3Module_get_xConnect(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xConnect_writer */
-/* sha: 3265fd5889c1b032c55de0b71aaa6b0bd510ad450c4099b12de8e23faa65a578 */
+/* sha: 5e9ff42752015cbb7d42cb201c0832103837cd81afc6dab8b3a6d1fe5ca5134b */
 #if BIND_Sqlite3Module_xConnect_FIELD_WRITER
-/* set_xConnect
- *
- * Parameters:
- * - value: int (*)(sqlite3 *, void *, int, const char *const *, sqlite3_vtab **, char **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xConnect(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -166,7 +139,6 @@ mrb_SQLite_Sqlite3Module_set_xConnect(mrb_state* mrb, mrb_value self) {
 
   native_self->xConnect = native_xConnect;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -175,12 +147,8 @@ mrb_SQLite_Sqlite3Module_set_xConnect(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xBestIndex_reader */
-/* sha: 68c9541f8dff1c1113b4ca196f79079f3c9e661c6f15f83f37a6541fe2136003 */
+/* sha: d47726ca6a04ff0888ac4f52bd9005c83a3d121107fcca3735bfa3cba804adee */
 #if BIND_Sqlite3Module_xBestIndex_FIELD_READER
-/* get_xBestIndex
- *
- * Return Type: int (*)(sqlite3_vtab *, sqlite3_index_info *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xBestIndex(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -195,13 +163,8 @@ mrb_SQLite_Sqlite3Module_get_xBestIndex(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xBestIndex_writer */
-/* sha: c77cb639ae33a6daa96bd25ae0f3534f808897320d0d3594fa86f43ee2dac7a5 */
+/* sha: 31763f4ee81ed2c753be8c18cbd65a0edf51f23a0b2156f4ea1dbb77933fa14b */
 #if BIND_Sqlite3Module_xBestIndex_FIELD_WRITER
-/* set_xBestIndex
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, sqlite3_index_info *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xBestIndex(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -216,7 +179,6 @@ mrb_SQLite_Sqlite3Module_set_xBestIndex(mrb_state* mrb, mrb_value self) {
 
   native_self->xBestIndex = native_xBestIndex;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,12 +187,8 @@ mrb_SQLite_Sqlite3Module_set_xBestIndex(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xDisconnect_reader */
-/* sha: eef41c2133500d0d1da4cc605c1f23a85ec7708dd45a30a30f83ea5cbd3ea828 */
+/* sha: 002f3305937e2ba4143c16de418afe1f4055daf9b4a1c49ce15ea43342564bea */
 #if BIND_Sqlite3Module_xDisconnect_FIELD_READER
-/* get_xDisconnect
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xDisconnect(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -245,13 +203,8 @@ mrb_SQLite_Sqlite3Module_get_xDisconnect(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xDisconnect_writer */
-/* sha: de9c017000aa16c943a03ebe1a8fd7f3390b31b0a7f6481a4b8a1e80fdb22c96 */
+/* sha: 63f24b97fe0128e2184d64794b47be34e71bb22acbb015ff5aec8978eb2f8c19 */
 #if BIND_Sqlite3Module_xDisconnect_FIELD_WRITER
-/* set_xDisconnect
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xDisconnect(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -266,7 +219,6 @@ mrb_SQLite_Sqlite3Module_set_xDisconnect(mrb_state* mrb, mrb_value self) {
 
   native_self->xDisconnect = native_xDisconnect;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -275,12 +227,8 @@ mrb_SQLite_Sqlite3Module_set_xDisconnect(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xDestroy_reader */
-/* sha: fd950b3be8111876787999533103b64ddae7405144cb92d80343286ec7d184f4 */
+/* sha: 89aa36a262e08edc5675c727b8b27bac866ac2f2c77c36706cc8a569d41ff19f */
 #if BIND_Sqlite3Module_xDestroy_FIELD_READER
-/* get_xDestroy
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xDestroy(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -295,13 +243,8 @@ mrb_SQLite_Sqlite3Module_get_xDestroy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xDestroy_writer */
-/* sha: 03ab836afc79924e0f174f9c8843bf23258c56803921acb485daebf105d0299a */
+/* sha: 1340c74ad857a7c6b3326b0375b4df3a92242dc187898c5fd2833d8df2460c25 */
 #if BIND_Sqlite3Module_xDestroy_FIELD_WRITER
-/* set_xDestroy
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xDestroy(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -316,7 +259,6 @@ mrb_SQLite_Sqlite3Module_set_xDestroy(mrb_state* mrb, mrb_value self) {
 
   native_self->xDestroy = native_xDestroy;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -325,12 +267,8 @@ mrb_SQLite_Sqlite3Module_set_xDestroy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xOpen_reader */
-/* sha: 04118a6cb79ae664ebbd6765019fc612da915eb81a241de69d6b13489aedfee6 */
+/* sha: 1de3dd906030344a1bd2cd7f1c066bef8de591dbf6e14ebd7ee3733510fc54fa */
 #if BIND_Sqlite3Module_xOpen_FIELD_READER
-/* get_xOpen
- *
- * Return Type: int (*)(sqlite3_vtab *, sqlite3_vtab_cursor **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xOpen(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -345,13 +283,8 @@ mrb_SQLite_Sqlite3Module_get_xOpen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xOpen_writer */
-/* sha: 5fa4dd42227131471cad76328bc493a1a5b7538255c16a593e6664405fef69b2 */
+/* sha: 95550c7158a580e2cb0cd1439b892733bf2aa30699ff35c9fdfa39448dc4a388 */
 #if BIND_Sqlite3Module_xOpen_FIELD_WRITER
-/* set_xOpen
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, sqlite3_vtab_cursor **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xOpen(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -366,7 +299,6 @@ mrb_SQLite_Sqlite3Module_set_xOpen(mrb_state* mrb, mrb_value self) {
 
   native_self->xOpen = native_xOpen;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -375,12 +307,8 @@ mrb_SQLite_Sqlite3Module_set_xOpen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xClose_reader */
-/* sha: 9054391a3a64f5a740ae8d517c40d2b2ed3bd492d02e9eb818232a5e61a1bb2d */
+/* sha: dbafef3be6ba6dd80077db4983ba155df10aec5e3a80abba2a524b1fc9aa0579 */
 #if BIND_Sqlite3Module_xClose_FIELD_READER
-/* get_xClose
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xClose(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -395,13 +323,8 @@ mrb_SQLite_Sqlite3Module_get_xClose(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xClose_writer */
-/* sha: 76af50f1c3e6e38c02328071af004364efda029df51c191b323b75eb644554db */
+/* sha: 55d9b9e228cbffc0968296ff8ba7e7af269710801fe5b03ea9d5c2798b6b30cb */
 #if BIND_Sqlite3Module_xClose_FIELD_WRITER
-/* set_xClose
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xClose(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -416,7 +339,6 @@ mrb_SQLite_Sqlite3Module_set_xClose(mrb_state* mrb, mrb_value self) {
 
   native_self->xClose = native_xClose;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -425,12 +347,8 @@ mrb_SQLite_Sqlite3Module_set_xClose(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xFilter_reader */
-/* sha: a245d16c6ff792f98a78a2eaa255943234078a76ab70188283248941748ed69c */
+/* sha: f848185cb6a475a341f8d045478ec147ba262fd0b4b1225232319e6ec527584b */
 #if BIND_Sqlite3Module_xFilter_FIELD_READER
-/* get_xFilter
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *, int, const char *, int, sqlite3_value **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xFilter(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -445,13 +363,8 @@ mrb_SQLite_Sqlite3Module_get_xFilter(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xFilter_writer */
-/* sha: 374d330a720b30c6093ae9852f151c07e42b20ace63b899eff5e1e44b09cc001 */
+/* sha: 1a4b93ee94953200b23931fa60ce5ae3f35895e98851551dec3c50f5b8e3fb12 */
 #if BIND_Sqlite3Module_xFilter_FIELD_WRITER
-/* set_xFilter
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *, int, const char *, int, sqlite3_value **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xFilter(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -466,7 +379,6 @@ mrb_SQLite_Sqlite3Module_set_xFilter(mrb_state* mrb, mrb_value self) {
 
   native_self->xFilter = native_xFilter;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -475,12 +387,8 @@ mrb_SQLite_Sqlite3Module_set_xFilter(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xNext_reader */
-/* sha: 54cd255ce27c89b86cfa5a7720b242363f3b224ca21f1a2c8991f05af6279b38 */
+/* sha: 37cb9e05790da9a03f17354141d2b273f585d3ba93d277fe04b8aaaee48b2893 */
 #if BIND_Sqlite3Module_xNext_FIELD_READER
-/* get_xNext
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xNext(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -495,13 +403,8 @@ mrb_SQLite_Sqlite3Module_get_xNext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xNext_writer */
-/* sha: fa5f207b20a99083d819eb4ad99e5c81a6912d080d456aefff4a2b9f9e00f414 */
+/* sha: 038bdca17ab0ae5c4c79226952627c38da5e030d30cb93105bf1574fa2ae5422 */
 #if BIND_Sqlite3Module_xNext_FIELD_WRITER
-/* set_xNext
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xNext(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -516,7 +419,6 @@ mrb_SQLite_Sqlite3Module_set_xNext(mrb_state* mrb, mrb_value self) {
 
   native_self->xNext = native_xNext;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -525,12 +427,8 @@ mrb_SQLite_Sqlite3Module_set_xNext(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xEof_reader */
-/* sha: 9cc7dbea3bb3e24bd39a0d106fff8a8d4ed4dc310805c7ec7da3c868a51f78af */
+/* sha: 26bb5bae62faeddec76927258620bc46a7b5e196e859df4ac8bb56cbede10aa1 */
 #if BIND_Sqlite3Module_xEof_FIELD_READER
-/* get_xEof
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xEof(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -545,13 +443,8 @@ mrb_SQLite_Sqlite3Module_get_xEof(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xEof_writer */
-/* sha: b20e15bed8c4753dd7b2e444232aed638bac5ce5fa83a36a93b12185747faa00 */
+/* sha: 18661c4aeed5000fbc12fe6cc09ac7c5c7db97f3012cefe2091d609e3b3e5fbd */
 #if BIND_Sqlite3Module_xEof_FIELD_WRITER
-/* set_xEof
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xEof(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -566,7 +459,6 @@ mrb_SQLite_Sqlite3Module_set_xEof(mrb_state* mrb, mrb_value self) {
 
   native_self->xEof = native_xEof;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -575,12 +467,8 @@ mrb_SQLite_Sqlite3Module_set_xEof(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xColumn_reader */
-/* sha: c00d754354bbe304dae712729291712c924527915802865bc74272cbe543bda6 */
+/* sha: f64227027ad393cddac07ed619f0750d040d9c7f3a3e2a3b99230691765e5cde */
 #if BIND_Sqlite3Module_xColumn_FIELD_READER
-/* get_xColumn
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *, sqlite3_context *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xColumn(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -595,13 +483,8 @@ mrb_SQLite_Sqlite3Module_get_xColumn(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xColumn_writer */
-/* sha: b3f9a8e121649ac4e9531ee175f5aa18956de879448627a78d31daa0be77e2b4 */
+/* sha: 592ad129352990f937ca40b5d049dad1878e9046c4952335fa2e4d3ef20039a5 */
 #if BIND_Sqlite3Module_xColumn_FIELD_WRITER
-/* set_xColumn
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *, sqlite3_context *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xColumn(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -616,7 +499,6 @@ mrb_SQLite_Sqlite3Module_set_xColumn(mrb_state* mrb, mrb_value self) {
 
   native_self->xColumn = native_xColumn;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -625,12 +507,8 @@ mrb_SQLite_Sqlite3Module_set_xColumn(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRowid_reader */
-/* sha: 4cc228fe135af85fe0e623988dcc9a42d9edf4be78548c697fbeab17515c89f1 */
+/* sha: ce4f48af2f301187aaa088e6f9586ed6be94357d8caf097583e36e0fbe5ea7b5 */
 #if BIND_Sqlite3Module_xRowid_FIELD_READER
-/* get_xRowid
- *
- * Return Type: int (*)(sqlite3_vtab_cursor *, sqlite3_int64 *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xRowid(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -645,13 +523,8 @@ mrb_SQLite_Sqlite3Module_get_xRowid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRowid_writer */
-/* sha: a106e8684a4061ca866115bdc58a98fa42b85b484249875c7e44588d2f05a635 */
+/* sha: e28fda51e0141b6b58d86651214b3d4b6624d7703225306579a99406d3876140 */
 #if BIND_Sqlite3Module_xRowid_FIELD_WRITER
-/* set_xRowid
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab_cursor *, sqlite3_int64 *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xRowid(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -666,7 +539,6 @@ mrb_SQLite_Sqlite3Module_set_xRowid(mrb_state* mrb, mrb_value self) {
 
   native_self->xRowid = native_xRowid;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -675,12 +547,8 @@ mrb_SQLite_Sqlite3Module_set_xRowid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xUpdate_reader */
-/* sha: 1e4a31ff95416a36f95e9bfabe8bf3597fc0020a7d6c476b0f1af6a02ce09132 */
+/* sha: 8cbac2db45820925173e84b29e64938ff1ee62f8e6903f1923cfd57a2d079457 */
 #if BIND_Sqlite3Module_xUpdate_FIELD_READER
-/* get_xUpdate
- *
- * Return Type: int (*)(sqlite3_vtab *, int, sqlite3_value **, sqlite3_int64 *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xUpdate(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -695,13 +563,8 @@ mrb_SQLite_Sqlite3Module_get_xUpdate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xUpdate_writer */
-/* sha: d22280a36912150158298b98efd53db6ab1b939eeceb88be5b2075491b564b80 */
+/* sha: a4f41fbdfc91c634f65fb66b5ede0b5f689246eec8a7f1bcdedc16c546eda651 */
 #if BIND_Sqlite3Module_xUpdate_FIELD_WRITER
-/* set_xUpdate
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, int, sqlite3_value **, sqlite3_int64 *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xUpdate(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -716,7 +579,6 @@ mrb_SQLite_Sqlite3Module_set_xUpdate(mrb_state* mrb, mrb_value self) {
 
   native_self->xUpdate = native_xUpdate;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -725,12 +587,8 @@ mrb_SQLite_Sqlite3Module_set_xUpdate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xBegin_reader */
-/* sha: 8f3818c21ee36c4c38cf510c1583286e4e8d4f486100fb73e45eb109fc694111 */
+/* sha: 3d3b0cb2546675d27a5abe1b9446f282d60c20dcefac40bdfe8510c354756c34 */
 #if BIND_Sqlite3Module_xBegin_FIELD_READER
-/* get_xBegin
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xBegin(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -745,13 +603,8 @@ mrb_SQLite_Sqlite3Module_get_xBegin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xBegin_writer */
-/* sha: c7556ee862ab206b212ce6820d66288f67d3430d8f2d0ddcd52d3d6d71660386 */
+/* sha: 09b95383456d8e8d86585a9c6c6f5e4bbd872f5012d6e930e951293537ac3dd8 */
 #if BIND_Sqlite3Module_xBegin_FIELD_WRITER
-/* set_xBegin
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xBegin(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -766,7 +619,6 @@ mrb_SQLite_Sqlite3Module_set_xBegin(mrb_state* mrb, mrb_value self) {
 
   native_self->xBegin = native_xBegin;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -775,12 +627,8 @@ mrb_SQLite_Sqlite3Module_set_xBegin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xSync_reader */
-/* sha: 1110dce20403a27056aa1f18ced712ee1999dfb98543905294c9f826bbc3ba8f */
+/* sha: e4899fba6c420823135056e7b582e574999b711595b99c6f75f8a32ddf91a073 */
 #if BIND_Sqlite3Module_xSync_FIELD_READER
-/* get_xSync
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xSync(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -795,13 +643,8 @@ mrb_SQLite_Sqlite3Module_get_xSync(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xSync_writer */
-/* sha: b70f5a2c9b3d7db561689eff82fc119e10de8548df9fc1aa014f3c4a5582ddfe */
+/* sha: 5f9023917001d1edb7904bd0ffc75e78bbd2b824ee8e4134bc36dc8cb92c103e */
 #if BIND_Sqlite3Module_xSync_FIELD_WRITER
-/* set_xSync
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xSync(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -816,7 +659,6 @@ mrb_SQLite_Sqlite3Module_set_xSync(mrb_state* mrb, mrb_value self) {
 
   native_self->xSync = native_xSync;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -825,12 +667,8 @@ mrb_SQLite_Sqlite3Module_set_xSync(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xCommit_reader */
-/* sha: 4131f80c8193f3a7ebf58b5116884715115a74b7bd5577758b1990ce999f0145 */
+/* sha: 3df8747249f761fcd2e2d618cd71952215636d89ef6e4664a27e491234b88e64 */
 #if BIND_Sqlite3Module_xCommit_FIELD_READER
-/* get_xCommit
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xCommit(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -845,13 +683,8 @@ mrb_SQLite_Sqlite3Module_get_xCommit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xCommit_writer */
-/* sha: 00def637b245654719d2405958819fe1985a5ed411c2c7fcc63a572edbcf3d7b */
+/* sha: 22d20723e7f6276a18e0d8ff08895c8203023b9b5ea5c946a8d8271aecf4babc */
 #if BIND_Sqlite3Module_xCommit_FIELD_WRITER
-/* set_xCommit
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xCommit(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -866,7 +699,6 @@ mrb_SQLite_Sqlite3Module_set_xCommit(mrb_state* mrb, mrb_value self) {
 
   native_self->xCommit = native_xCommit;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -875,12 +707,8 @@ mrb_SQLite_Sqlite3Module_set_xCommit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRollback_reader */
-/* sha: 15b3d315c5db7820453cb6ab1ca1297c841605158b34d3d045f804687087162f */
+/* sha: 2f908b2a6b3e1d23fb590141e287bafc76ec69ade1739002811be37b73217ced */
 #if BIND_Sqlite3Module_xRollback_FIELD_READER
-/* get_xRollback
- *
- * Return Type: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xRollback(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -895,13 +723,8 @@ mrb_SQLite_Sqlite3Module_get_xRollback(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRollback_writer */
-/* sha: 1d18b5d40b47b4ca11155c9d4bb793b971881f0083142017e047ba5243b68c33 */
+/* sha: b4c54b7e4108b372e287f907ad20abc593738db48b5c0433a34e87976dc523b4 */
 #if BIND_Sqlite3Module_xRollback_FIELD_WRITER
-/* set_xRollback
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xRollback(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -916,7 +739,6 @@ mrb_SQLite_Sqlite3Module_set_xRollback(mrb_state* mrb, mrb_value self) {
 
   native_self->xRollback = native_xRollback;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -925,12 +747,8 @@ mrb_SQLite_Sqlite3Module_set_xRollback(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xFindFunction_reader */
-/* sha: 2d90705964647f3566f42be302bf6a48061cd627f3db63a799bcedd70f708396 */
+/* sha: 6856b8bd7ffc1943c2ce4de8104dcf28a9bc6be94e50f1a313024a949960a9b3 */
 #if BIND_Sqlite3Module_xFindFunction_FIELD_READER
-/* get_xFindFunction
- *
- * Return Type: int (*)(sqlite3_vtab *, int, const char *, void (**)(sqlite3_context *, int, sqlite3_value **), void **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xFindFunction(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -945,13 +763,8 @@ mrb_SQLite_Sqlite3Module_get_xFindFunction(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xFindFunction_writer */
-/* sha: f5e362c106c078fbad15aebb48d0c0f5b8b69f0a38aa05b7e4d98dba8e2cefbc */
+/* sha: 50982eb00e07cc0eb6e8b29bb9550b8a72f1fd8f411cdbf5f34afdcf4822a9a2 */
 #if BIND_Sqlite3Module_xFindFunction_FIELD_WRITER
-/* set_xFindFunction
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, int, const char *, void (**)(sqlite3_context *, int, sqlite3_value **), void **)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xFindFunction(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -966,7 +779,6 @@ mrb_SQLite_Sqlite3Module_set_xFindFunction(mrb_state* mrb, mrb_value self) {
 
   native_self->xFindFunction = native_xFindFunction;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -975,12 +787,8 @@ mrb_SQLite_Sqlite3Module_set_xFindFunction(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRename_reader */
-/* sha: b4a25fee9e3fec6f2b57845bd4f5a90ea801a7335e333bbaf52a79a7369f3587 */
+/* sha: f28ce38755356077ddfe7739d71914c5705537e5a6b4f7356880610b4fb5c05e */
 #if BIND_Sqlite3Module_xRename_FIELD_READER
-/* get_xRename
- *
- * Return Type: int (*)(sqlite3_vtab *, const char *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xRename(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -995,13 +803,8 @@ mrb_SQLite_Sqlite3Module_get_xRename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRename_writer */
-/* sha: ded8e64b93884d9f6354c9644990603d47edb06ebcd2396011cb9565652fab68 */
+/* sha: f083741e0c1209149005a74e354ba660a2904ce2bd7ce177e5bde9529f668d69 */
 #if BIND_Sqlite3Module_xRename_FIELD_WRITER
-/* set_xRename
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, const char *)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xRename(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1016,7 +819,6 @@ mrb_SQLite_Sqlite3Module_set_xRename(mrb_state* mrb, mrb_value self) {
 
   native_self->xRename = native_xRename;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -1025,12 +827,8 @@ mrb_SQLite_Sqlite3Module_set_xRename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xSavepoint_reader */
-/* sha: 4106e5fd7fa3085dc88e5d5deb0e8b2998e943c36fd5ed468a099eb8d7b2de1a */
+/* sha: 7f7e74ca70d04eb21b358d0e5bd7e4694662b3f1c63d97ec1b9c3e8ce684d9c4 */
 #if BIND_Sqlite3Module_xSavepoint_FIELD_READER
-/* get_xSavepoint
- *
- * Return Type: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xSavepoint(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1045,13 +843,8 @@ mrb_SQLite_Sqlite3Module_get_xSavepoint(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xSavepoint_writer */
-/* sha: 2e6bd979d0abf7e71f0dcb0103e8e6c380199b4114ad39da60774e47abc05f0d */
+/* sha: d408920d36c3c39f784af1bdfb3b71e10d45f9f8dc4f41ce7138b4bd37a24cb7 */
 #if BIND_Sqlite3Module_xSavepoint_FIELD_WRITER
-/* set_xSavepoint
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xSavepoint(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1066,7 +859,6 @@ mrb_SQLite_Sqlite3Module_set_xSavepoint(mrb_state* mrb, mrb_value self) {
 
   native_self->xSavepoint = native_xSavepoint;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -1075,12 +867,8 @@ mrb_SQLite_Sqlite3Module_set_xSavepoint(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRelease_reader */
-/* sha: f0d353334d6b65c9da67023f5ebb247cf9d379db63f97ce3c8144e644e43a583 */
+/* sha: 7282b87790c3adb238e6a930bc1669afa10901ca676c46aa5e1908e309ed48b6 */
 #if BIND_Sqlite3Module_xRelease_FIELD_READER
-/* get_xRelease
- *
- * Return Type: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xRelease(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1095,13 +883,8 @@ mrb_SQLite_Sqlite3Module_get_xRelease(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRelease_writer */
-/* sha: faa8320d855dd4d2df0c5d87068501070c700bd49dfaf4b0d38a03c5095c7824 */
+/* sha: 9c436bddef7ce0bba421c4f9d4c7a9d561121e4b7c3c02155e6fa472f6445fbf */
 #if BIND_Sqlite3Module_xRelease_FIELD_WRITER
-/* set_xRelease
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xRelease(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1116,7 +899,6 @@ mrb_SQLite_Sqlite3Module_set_xRelease(mrb_state* mrb, mrb_value self) {
 
   native_self->xRelease = native_xRelease;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -1125,12 +907,8 @@ mrb_SQLite_Sqlite3Module_set_xRelease(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRollbackTo_reader */
-/* sha: 0dc9480b55e9c01e3a6363b59b4a807925288e50841dbd0beef2e7d89b5f2817 */
+/* sha: eb0f7a8e81235232b7b97486ad9d8f1d8242eedc956d608c60b9b0aa62da8c5b */
 #if BIND_Sqlite3Module_xRollbackTo_FIELD_READER
-/* get_xRollbackTo
- *
- * Return Type: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_get_xRollbackTo(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1145,13 +923,8 @@ mrb_SQLite_Sqlite3Module_get_xRollbackTo(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::xRollbackTo_writer */
-/* sha: fb0dafd2b9c3ade4503f99a43a68412f975802a04add6ed54e79397e92c1b552 */
+/* sha: 4a5336e57596d14ccfc286c38dbeecd0a800087f88592a55ff9701dc85865541 */
 #if BIND_Sqlite3Module_xRollbackTo_FIELD_WRITER
-/* set_xRollbackTo
- *
- * Parameters:
- * - value: int (*)(sqlite3_vtab *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3Module_set_xRollbackTo(mrb_state* mrb, mrb_value self) {
   sqlite3_module * native_self = mruby_unbox_sqlite3_module(self);
@@ -1166,7 +939,6 @@ mrb_SQLite_Sqlite3Module_set_xRollbackTo(mrb_state* mrb, mrb_value self) {
 
   native_self->xRollbackTo = native_xRollbackTo;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -1176,12 +948,13 @@ mrb_SQLite_Sqlite3Module_set_xRollbackTo(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Module_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3Module::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Module::class_definition */
@@ -1352,20 +1125,8 @@ void mrb_SQLite_Sqlite3Module_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3Module::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Module::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Module::class_init_footer */
+/* MRUBY_BINDING: Sqlite3Module::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

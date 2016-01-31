@@ -1,25 +1,28 @@
 #ifndef MRUBY_SQLite_CLASSES_HEADER
 #define MRUBY_SQLite_CLASSES_HEADER
 
+#define BIND_Mem_TYPE TRUE
+#define BIND_Mem_INITIALIZE TRUE
+
 #define BIND_Sqlite3_TYPE TRUE
-#define BIND_Sqlite3_INITIALIZE FALSE
+#define BIND_Sqlite3_INITIALIZE TRUE
 
 #define BIND_Sqlite3Backup_TYPE TRUE
-#define BIND_Sqlite3Backup_INITIALIZE FALSE
+#define BIND_Sqlite3Backup_INITIALIZE TRUE
 
 #define BIND_Sqlite3Blob_TYPE TRUE
-#define BIND_Sqlite3Blob_INITIALIZE FALSE
+#define BIND_Sqlite3Blob_INITIALIZE TRUE
 
 #define BIND_Sqlite3Context_TYPE TRUE
-#define BIND_Sqlite3Context_INITIALIZE FALSE
+#define BIND_Sqlite3Context_INITIALIZE TRUE
 
 #define BIND_Sqlite3File_TYPE TRUE
-#define BIND_Sqlite3File_INITIALIZE FALSE
+#define BIND_Sqlite3File_INITIALIZE TRUE
 #define BIND_Sqlite3File_pMethods_FIELD_READER TRUE
 #define BIND_Sqlite3File_pMethods_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3IndexInfo_TYPE TRUE
-#define BIND_Sqlite3IndexInfo_INITIALIZE FALSE
+#define BIND_Sqlite3IndexInfo_INITIALIZE TRUE
 #define BIND_Sqlite3IndexInfo_nConstraint_FIELD_READER TRUE
 #define BIND_Sqlite3IndexInfo_nConstraint_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexInfo_aConstraint_FIELD_READER TRUE
@@ -44,14 +47,14 @@
 #define BIND_Sqlite3IndexInfo_estimatedRows_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3IndexOrderby_TYPE TRUE
-#define BIND_Sqlite3IndexOrderby_INITIALIZE FALSE
+#define BIND_Sqlite3IndexOrderby_INITIALIZE TRUE
 #define BIND_Sqlite3IndexOrderby_iColumn_FIELD_READER TRUE
 #define BIND_Sqlite3IndexOrderby_iColumn_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexOrderby_desc_FIELD_READER TRUE
 #define BIND_Sqlite3IndexOrderby_desc_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3IndexConstraint_TYPE TRUE
-#define BIND_Sqlite3IndexConstraint_INITIALIZE FALSE
+#define BIND_Sqlite3IndexConstraint_INITIALIZE TRUE
 #define BIND_Sqlite3IndexConstraint_iColumn_FIELD_READER TRUE
 #define BIND_Sqlite3IndexConstraint_iColumn_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexConstraint_op_FIELD_READER TRUE
@@ -62,14 +65,14 @@
 #define BIND_Sqlite3IndexConstraint_iTermOffset_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3IndexConstraintUsage_TYPE TRUE
-#define BIND_Sqlite3IndexConstraintUsage_INITIALIZE FALSE
+#define BIND_Sqlite3IndexConstraintUsage_INITIALIZE TRUE
 #define BIND_Sqlite3IndexConstraintUsage_argvIndex_FIELD_READER TRUE
 #define BIND_Sqlite3IndexConstraintUsage_argvIndex_FIELD_WRITER TRUE
 #define BIND_Sqlite3IndexConstraintUsage_omit_FIELD_READER TRUE
 #define BIND_Sqlite3IndexConstraintUsage_omit_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3IoMethods_TYPE TRUE
-#define BIND_Sqlite3IoMethods_INITIALIZE FALSE
+#define BIND_Sqlite3IoMethods_INITIALIZE TRUE
 #define BIND_Sqlite3IoMethods_iVersion_FIELD_READER TRUE
 #define BIND_Sqlite3IoMethods_iVersion_FIELD_WRITER TRUE
 #define BIND_Sqlite3IoMethods_xClose_FIELD_READER FALSE
@@ -110,7 +113,7 @@
 #define BIND_Sqlite3IoMethods_xUnfetch_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3MemMethods_TYPE TRUE
-#define BIND_Sqlite3MemMethods_INITIALIZE FALSE
+#define BIND_Sqlite3MemMethods_INITIALIZE TRUE
 #define BIND_Sqlite3MemMethods_xMalloc_FIELD_READER FALSE
 #define BIND_Sqlite3MemMethods_xMalloc_FIELD_WRITER FALSE
 #define BIND_Sqlite3MemMethods_xFree_FIELD_READER FALSE
@@ -129,7 +132,7 @@
 #define BIND_Sqlite3MemMethods_pAppData_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3Module_TYPE TRUE
-#define BIND_Sqlite3Module_INITIALIZE FALSE
+#define BIND_Sqlite3Module_INITIALIZE TRUE
 #define BIND_Sqlite3Module_iVersion_FIELD_READER TRUE
 #define BIND_Sqlite3Module_iVersion_FIELD_WRITER TRUE
 #define BIND_Sqlite3Module_xCreate_FIELD_READER FALSE
@@ -178,13 +181,34 @@
 #define BIND_Sqlite3Module_xRollbackTo_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3Mutex_TYPE TRUE
-#define BIND_Sqlite3Mutex_INITIALIZE FALSE
+#define BIND_Sqlite3Mutex_INITIALIZE TRUE
+
+#define BIND_Sqlite3MutexMethods_TYPE TRUE
+#define BIND_Sqlite3MutexMethods_INITIALIZE TRUE
+#define BIND_Sqlite3MutexMethods_xMutexInit_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexInit_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexEnd_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexAlloc_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexFree_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexFree_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexEnter_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexTry_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexTry_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexLeave_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexHeld_FIELD_WRITER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_READER FALSE
+#define BIND_Sqlite3MutexMethods_xMutexNotheld_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3Pcache_TYPE TRUE
-#define BIND_Sqlite3Pcache_INITIALIZE FALSE
+#define BIND_Sqlite3Pcache_INITIALIZE TRUE
 
 #define BIND_Sqlite3PcacheMethods_TYPE TRUE
-#define BIND_Sqlite3PcacheMethods_INITIALIZE FALSE
+#define BIND_Sqlite3PcacheMethods_INITIALIZE TRUE
 #define BIND_Sqlite3PcacheMethods_pArg_FIELD_READER FALSE
 #define BIND_Sqlite3PcacheMethods_pArg_FIELD_WRITER FALSE
 #define BIND_Sqlite3PcacheMethods_xInit_FIELD_READER FALSE
@@ -209,7 +233,7 @@
 #define BIND_Sqlite3PcacheMethods_xDestroy_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3PcacheMethods2_TYPE TRUE
-#define BIND_Sqlite3PcacheMethods2_INITIALIZE FALSE
+#define BIND_Sqlite3PcacheMethods2_INITIALIZE TRUE
 #define BIND_Sqlite3PcacheMethods2_iVersion_FIELD_READER TRUE
 #define BIND_Sqlite3PcacheMethods2_iVersion_FIELD_WRITER TRUE
 #define BIND_Sqlite3PcacheMethods2_pArg_FIELD_READER FALSE
@@ -238,14 +262,14 @@
 #define BIND_Sqlite3PcacheMethods2_xShrink_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3PcachePage_TYPE TRUE
-#define BIND_Sqlite3PcachePage_INITIALIZE FALSE
+#define BIND_Sqlite3PcachePage_INITIALIZE TRUE
 #define BIND_Sqlite3PcachePage_pBuf_FIELD_READER FALSE
 #define BIND_Sqlite3PcachePage_pBuf_FIELD_WRITER FALSE
 #define BIND_Sqlite3PcachePage_pExtra_FIELD_READER FALSE
 #define BIND_Sqlite3PcachePage_pExtra_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3RtreeGeometry_TYPE TRUE
-#define BIND_Sqlite3RtreeGeometry_INITIALIZE FALSE
+#define BIND_Sqlite3RtreeGeometry_INITIALIZE TRUE
 #define BIND_Sqlite3RtreeGeometry_pContext_FIELD_READER FALSE
 #define BIND_Sqlite3RtreeGeometry_pContext_FIELD_WRITER FALSE
 #define BIND_Sqlite3RtreeGeometry_nParam_FIELD_READER TRUE
@@ -258,7 +282,7 @@
 #define BIND_Sqlite3RtreeGeometry_xDelUser_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3RtreeQueryInfo_TYPE TRUE
-#define BIND_Sqlite3RtreeQueryInfo_INITIALIZE FALSE
+#define BIND_Sqlite3RtreeQueryInfo_INITIALIZE TRUE
 #define BIND_Sqlite3RtreeQueryInfo_pContext_FIELD_READER FALSE
 #define BIND_Sqlite3RtreeQueryInfo_pContext_FIELD_WRITER FALSE
 #define BIND_Sqlite3RtreeQueryInfo_nParam_FIELD_READER TRUE
@@ -291,13 +315,13 @@
 #define BIND_Sqlite3RtreeQueryInfo_rScore_FIELD_WRITER TRUE
 
 #define BIND_Sqlite3Stmt_TYPE TRUE
-#define BIND_Sqlite3Stmt_INITIALIZE FALSE
+#define BIND_Sqlite3Stmt_INITIALIZE TRUE
 
 #define BIND_Sqlite3Value_TYPE TRUE
-#define BIND_Sqlite3Value_INITIALIZE FALSE
+#define BIND_Sqlite3Value_INITIALIZE TRUE
 
 #define BIND_Sqlite3Vfs_TYPE TRUE
-#define BIND_Sqlite3Vfs_INITIALIZE FALSE
+#define BIND_Sqlite3Vfs_INITIALIZE TRUE
 #define BIND_Sqlite3Vfs_iVersion_FIELD_READER TRUE
 #define BIND_Sqlite3Vfs_iVersion_FIELD_WRITER TRUE
 #define BIND_Sqlite3Vfs_szOsFile_FIELD_READER TRUE
@@ -344,7 +368,7 @@
 #define BIND_Sqlite3Vfs_xNextSystemCall_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3Vtab_TYPE TRUE
-#define BIND_Sqlite3Vtab_INITIALIZE FALSE
+#define BIND_Sqlite3Vtab_INITIALIZE TRUE
 #define BIND_Sqlite3Vtab_pModule_FIELD_READER TRUE
 #define BIND_Sqlite3Vtab_pModule_FIELD_WRITER TRUE
 #define BIND_Sqlite3Vtab_nRef_FIELD_READER TRUE
@@ -353,7 +377,7 @@
 #define BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER FALSE
 
 #define BIND_Sqlite3VtabCursor_TYPE TRUE
-#define BIND_Sqlite3VtabCursor_INITIALIZE FALSE
+#define BIND_Sqlite3VtabCursor_INITIALIZE TRUE
 #define BIND_Sqlite3VtabCursor_pVtab_FIELD_READER TRUE
 #define BIND_Sqlite3VtabCursor_pVtab_FIELD_WRITER TRUE
 

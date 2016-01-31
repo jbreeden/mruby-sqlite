@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::initialize */
-/* sha: 6a8174044a85c9d1bbf51c392f80c316788d792242f12d50cb82a033f989b511 */
+/* sha: 1ef0fca49ad940296c8d66d9aa7ca666e0862cd9a1036b93fee69b0aaad1521b */
 #if BIND_Sqlite3Vtab_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3Vtab_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   sqlite3_vtab* native_object = (sqlite3_vtab*)calloc(1, sizeof(sqlite3_vtab));
   mruby_gift_sqlite3_vtab_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3Vtab_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3Vtab::pModule_reader */
-/* sha: a44f28530e4043cac83c3d8287819d4823ba2d74ef00b3fab88b778be6fa19d1 */
+/* sha: d3564f4f675787143c74778681a1a16c21eae1defa3045a5508826bfb5897802 */
 #if BIND_Sqlite3Vtab_pModule_FIELD_READER
-/* get_pModule
- *
- * Return Type: const sqlite3_module *
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3Vtab_get_pModule(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::pModule_writer */
-/* sha: 52fc46c46711308d121a4724d4788cb5c3e1c3eb121086c3a0be7d5b884f639b */
+/* sha: 0dd6651a1b69335732889d3917da3e7a67a712cd435c488f9b7f1d7e6b607e19 */
 #if BIND_Sqlite3Vtab_pModule_FIELD_WRITER
-/* set_pModule
- *
- * Parameters:
- * - value: const sqlite3_module *
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -74,7 +67,6 @@ mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
 
   native_self->pModule = native_pModule;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -83,12 +75,8 @@ mrb_SQLite_Sqlite3Vtab_set_pModule(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::nRef_reader */
-/* sha: 0ba22eb10c1746d8229ac69d07dc4caa2964d3c297c53ed11a74492e0f4a6fc5 */
+/* sha: 0f80b0233a72c44873e866ddddc8505d7a9473e7b4f91b035b010d5e0ea0294a */
 #if BIND_Sqlite3Vtab_nRef_FIELD_READER
-/* get_nRef
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -103,13 +91,8 @@ mrb_SQLite_Sqlite3Vtab_get_nRef(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::nRef_writer */
-/* sha: 50a60188abb0e9164b0d6ed1c281b67f212fbac50eb19a98de69caaa70f15e66 */
+/* sha: 7f9773bca9dbccc2f51dafa8808a3757f7f8987ac2bcf0ae161432b286e43e5c */
 #if BIND_Sqlite3Vtab_nRef_FIELD_WRITER
-/* set_nRef
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -119,7 +102,6 @@ mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
 
   native_self->nRef = native_nRef;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -128,12 +110,8 @@ mrb_SQLite_Sqlite3Vtab_set_nRef(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::zErrMsg_reader */
-/* sha: 51c5888d31955a96fe430efe4adfa866a40c5f8f4e499674567262a6ac8aa0ec */
+/* sha: 8a03d08f880eb268827a52f71e3dbc2c9f55150ff3df613f4e538b7f3b27eac3 */
 #if BIND_Sqlite3Vtab_zErrMsg_FIELD_READER
-/* get_zErrMsg
- *
- * Return Type: char *
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -148,13 +126,8 @@ mrb_SQLite_Sqlite3Vtab_get_zErrMsg(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::zErrMsg_writer */
-/* sha: a94915427d9e8ed23d7a5a7a3ed20ec703fc66069591aef67d8881f4b160b1a4 */
+/* sha: 8ab363b363d8e9c487d786190157bb63ac4c2cbcab10d95f8dfc61c62ebc3380 */
 #if BIND_Sqlite3Vtab_zErrMsg_FIELD_WRITER
-/* set_zErrMsg
- *
- * Parameters:
- * - value: char *
- */
 mrb_value
 mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
   sqlite3_vtab * native_self = mruby_unbox_sqlite3_vtab(self);
@@ -169,7 +142,6 @@ mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
 
   native_self->zErrMsg = native_zErrMsg;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -179,12 +151,13 @@ mrb_SQLite_Sqlite3Vtab_set_zErrMsg(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3Vtab::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3Vtab::class_definition */
@@ -235,20 +208,8 @@ void mrb_SQLite_Sqlite3Vtab_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3Vtab::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Vtab::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3Vtab::class_init_footer */
+/* MRUBY_BINDING: Sqlite3Vtab::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

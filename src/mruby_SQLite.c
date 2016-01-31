@@ -10,17 +10,11 @@ extern "C" {
 #endif
 
 /* MRUBY_BINDING: sqlite3_aggregate_context */
-/* sha: 52286965d7110e78323f823340ab3703404b3215dbf7ab310c567b4328dcd670 */
+/* sha: c51d990d1e0b1f8a58623ea1236f7a3a74fa541de98378c6c55f364cad0d3f73 */
 #if BIND_sqlite3_aggregate_context_FUNCTION
 #define sqlite3_aggregate_context_REQUIRED_ARGC 2
 #define sqlite3_aggregate_context_OPTIONAL_ARGC 0
-/* sqlite3_aggregate_context
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - nBytes: int
- * Return Type: void *
- */
+/* void * sqlite3_aggregate_context(sqlite3_context * arg1, int nBytes) */
 mrb_value
 mrb_SQLite_sqlite3_aggregate_context(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -50,16 +44,11 @@ mrb_SQLite_sqlite3_aggregate_context(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_aggregate_count */
-/* sha: 534339078746c7c481db4f7d6cd36e5d5b9e741b6f95f2fde107efbf708149cd */
+/* sha: e31161c9fdd1e2846ec6aa494c25ead580a70c9789141abd00676e9960bcf535 */
 #if BIND_sqlite3_aggregate_count_FUNCTION
 #define sqlite3_aggregate_count_REQUIRED_ARGC 1
 #define sqlite3_aggregate_count_OPTIONAL_ARGC 0
-/* sqlite3_aggregate_count
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: int
- */
+/* int sqlite3_aggregate_count(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_aggregate_count(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -88,16 +77,11 @@ mrb_SQLite_sqlite3_aggregate_count(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_auto_extension */
-/* sha: 25d84afb7c9f58cef3126a0e8558a2ea373b8d6b5917035179e4220a621dea8f */
+/* sha: 66c5da22e0342f99d4b11ccd9d5353512f75ae2c6b56f50c631bf8cd5b489be0 */
 #if BIND_sqlite3_auto_extension_FUNCTION
 #define sqlite3_auto_extension_REQUIRED_ARGC 1
 #define sqlite3_auto_extension_OPTIONAL_ARGC 0
-/* sqlite3_auto_extension
- *
- * Parameters:
- * - xEntryPoint: void (*)(void)
- * Return Type: int
- */
+/* int sqlite3_auto_extension(void (*)(void) xEntryPoint) */
 mrb_value
 mrb_SQLite_sqlite3_auto_extension(mrb_state* mrb, mrb_value self) {
   mrb_value xEntryPoint;
@@ -123,16 +107,11 @@ mrb_SQLite_sqlite3_auto_extension(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_backup_finish */
-/* sha: c6185c3db583ea5b6e61c7fc0a4da78ef86017d22dfe9646744ef0ce4a972699 */
+/* sha: 0d59fbef3dc804c1084c766a41405e0274af47089b512e020ad10961b1d90b98 */
 #if BIND_sqlite3_backup_finish_FUNCTION
 #define sqlite3_backup_finish_REQUIRED_ARGC 1
 #define sqlite3_backup_finish_OPTIONAL_ARGC 0
-/* sqlite3_backup_finish
- *
- * Parameters:
- * - p: sqlite3_backup *
- * Return Type: int
- */
+/* int sqlite3_backup_finish(sqlite3_backup * p) */
 mrb_value
 mrb_SQLite_sqlite3_backup_finish(mrb_state* mrb, mrb_value self) {
   mrb_value p;
@@ -161,19 +140,11 @@ mrb_SQLite_sqlite3_backup_finish(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_backup_init */
-/* sha: 2d66e3a9667bc968357fab66d24265a3fb77a30fd907c3cca5757cc5a56d7340 */
+/* sha: d415a48ceb9eef96ca72ed7e87ab4fb46b131d6f377e55fbe664a3ce53cb05b2 */
 #if BIND_sqlite3_backup_init_FUNCTION
 #define sqlite3_backup_init_REQUIRED_ARGC 4
 #define sqlite3_backup_init_OPTIONAL_ARGC 0
-/* sqlite3_backup_init
- *
- * Parameters:
- * - pDest: sqlite3 *
- * - zDestName: const char *
- * - pSource: sqlite3 *
- * - zSourceName: const char *
- * Return Type: sqlite3_backup *
- */
+/* sqlite3_backup * sqlite3_backup_init(sqlite3 * pDest, const char * zDestName, sqlite3 * pSource, const char * zSourceName) */
 mrb_value
 mrb_SQLite_sqlite3_backup_init(mrb_state* mrb, mrb_value self) {
   mrb_value pDest;
@@ -212,16 +183,11 @@ mrb_SQLite_sqlite3_backup_init(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_backup_pagecount */
-/* sha: d5e8a78f87a73449eb62727a9dc1035d831e9c44861b57d908037db1a331faef */
+/* sha: dd2e5dc611b0718c554e4407dccf42d620778f1a1ad75cf9543f3292b868835b */
 #if BIND_sqlite3_backup_pagecount_FUNCTION
 #define sqlite3_backup_pagecount_REQUIRED_ARGC 1
 #define sqlite3_backup_pagecount_OPTIONAL_ARGC 0
-/* sqlite3_backup_pagecount
- *
- * Parameters:
- * - p: sqlite3_backup *
- * Return Type: int
- */
+/* int sqlite3_backup_pagecount(sqlite3_backup * p) */
 mrb_value
 mrb_SQLite_sqlite3_backup_pagecount(mrb_state* mrb, mrb_value self) {
   mrb_value p;
@@ -250,16 +216,11 @@ mrb_SQLite_sqlite3_backup_pagecount(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_backup_remaining */
-/* sha: e4c50849e4846d8d167cb712348e4fa2b42bc64d1287269274e6e8ca7dd051cb */
+/* sha: 80280b72d88d44bc6871498e3f79fcc21483a1df3ef2699621489708fd4d14e8 */
 #if BIND_sqlite3_backup_remaining_FUNCTION
 #define sqlite3_backup_remaining_REQUIRED_ARGC 1
 #define sqlite3_backup_remaining_OPTIONAL_ARGC 0
-/* sqlite3_backup_remaining
- *
- * Parameters:
- * - p: sqlite3_backup *
- * Return Type: int
- */
+/* int sqlite3_backup_remaining(sqlite3_backup * p) */
 mrb_value
 mrb_SQLite_sqlite3_backup_remaining(mrb_state* mrb, mrb_value self) {
   mrb_value p;
@@ -288,17 +249,11 @@ mrb_SQLite_sqlite3_backup_remaining(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_backup_step */
-/* sha: 8fe40cd2c805f42bb4e615a2ed9fbe76582c52cbb180414c360eff9af4d2cb9f */
+/* sha: 2833d06011720797c19db460d21488acd7957f661c8a6c56beaf4b2ff037d340 */
 #if BIND_sqlite3_backup_step_FUNCTION
 #define sqlite3_backup_step_REQUIRED_ARGC 2
 #define sqlite3_backup_step_OPTIONAL_ARGC 0
-/* sqlite3_backup_step
- *
- * Parameters:
- * - p: sqlite3_backup *
- * - nPage: int
- * Return Type: int
- */
+/* int sqlite3_backup_step(sqlite3_backup * p, int nPage) */
 mrb_value
 mrb_SQLite_sqlite3_backup_step(mrb_state* mrb, mrb_value self) {
   mrb_value p;
@@ -380,20 +335,11 @@ mrb_SQLite_sqlite3_bind_blob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_blob64 */
-/* sha: 55580bf963b89243eac63d89a39a833cb526e8e51f7cf4587cb5fb8432b72941 */
+/* sha: 2dfb5b718f9b667dc40f3260e7a6d841464199bca4c97288280ccf106222eade */
 #if BIND_sqlite3_bind_blob64_FUNCTION
 #define sqlite3_bind_blob64_REQUIRED_ARGC 5
 #define sqlite3_bind_blob64_OPTIONAL_ARGC 0
-/* sqlite3_bind_blob64
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: const void *
- * - arg4: sqlite3_uint64
- * - arg5: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_bind_blob64(sqlite3_stmt * arg1, int arg2, const void * arg3, sqlite3_uint64 arg4, void (*)(void *) arg5) */
 mrb_value
 mrb_SQLite_sqlite3_bind_blob64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -434,18 +380,11 @@ mrb_SQLite_sqlite3_bind_blob64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_double */
-/* sha: fddecc3656cac20dc01a2a55199f89174d85b9ade123c58b695474f67db024cb */
+/* sha: 4bdb9a2552b589ec9feb47e40d76b9d7b02a7c87db9d802adf6a55f1a09c3485 */
 #if BIND_sqlite3_bind_double_FUNCTION
 #define sqlite3_bind_double_REQUIRED_ARGC 3
 #define sqlite3_bind_double_OPTIONAL_ARGC 0
-/* sqlite3_bind_double
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: double
- * Return Type: int
- */
+/* int sqlite3_bind_double(sqlite3_stmt * arg1, int arg2, double arg3) */
 mrb_value
 mrb_SQLite_sqlite3_bind_double(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -476,18 +415,11 @@ mrb_SQLite_sqlite3_bind_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_int */
-/* sha: 6cb11570b0ae42afcd4a2c9f61bacf5b68b30c2b2c6946a2609adad8c8ff5686 */
+/* sha: 1b1023433994db5f92239a8a0d0e45e8bdb7582cb201f3f2b169c5441f781479 */
 #if BIND_sqlite3_bind_int_FUNCTION
 #define sqlite3_bind_int_REQUIRED_ARGC 3
 #define sqlite3_bind_int_OPTIONAL_ARGC 0
-/* sqlite3_bind_int
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: int
- * Return Type: int
- */
+/* int sqlite3_bind_int(sqlite3_stmt * arg1, int arg2, int arg3) */
 mrb_value
 mrb_SQLite_sqlite3_bind_int(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -518,18 +450,11 @@ mrb_SQLite_sqlite3_bind_int(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_int64 */
-/* sha: a72cb424e4c61b9f05bb13f6c371832119e1fc25620f7da1d00f6499ed32a3f4 */
+/* sha: f602c453ae14d5270fd5e81321aa2996a2c03ecea8d1157db998ce35243cb66d */
 #if BIND_sqlite3_bind_int64_FUNCTION
 #define sqlite3_bind_int64_REQUIRED_ARGC 3
 #define sqlite3_bind_int64_OPTIONAL_ARGC 0
-/* sqlite3_bind_int64
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: sqlite3_int64
- * Return Type: int
- */
+/* int sqlite3_bind_int64(sqlite3_stmt * arg1, int arg2, sqlite3_int64 arg3) */
 mrb_value
 mrb_SQLite_sqlite3_bind_int64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -560,17 +485,11 @@ mrb_SQLite_sqlite3_bind_int64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_null */
-/* sha: 0d8df68831f725f77509e098a860502b7c39f02337de6b101ba788c7e2524dec */
+/* sha: f90cc676a0199d2945ad73261c398d147cace6337fec25850f414a095d6f3263 */
 #if BIND_sqlite3_bind_null_FUNCTION
 #define sqlite3_bind_null_REQUIRED_ARGC 2
 #define sqlite3_bind_null_OPTIONAL_ARGC 0
-/* sqlite3_bind_null
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: int
- */
+/* int sqlite3_bind_null(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_bind_null(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -600,16 +519,11 @@ mrb_SQLite_sqlite3_bind_null(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_parameter_count */
-/* sha: a95fa3264742bf9d74c401c25a2f1aac1cac2aeb1d206afcc37b0abdcc4b11f5 */
+/* sha: f9e6cce940b95d51fa5bba5e07568455a8da1d23384a4a54381f757db9cf1c3e */
 #if BIND_sqlite3_bind_parameter_count_FUNCTION
 #define sqlite3_bind_parameter_count_REQUIRED_ARGC 1
 #define sqlite3_bind_parameter_count_OPTIONAL_ARGC 0
-/* sqlite3_bind_parameter_count
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_bind_parameter_count(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_bind_parameter_count(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -638,17 +552,11 @@ mrb_SQLite_sqlite3_bind_parameter_count(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_parameter_index */
-/* sha: 84199d7bb060fc2342358f06c6af5370852997a31961639d3ebf3639d3945817 */
+/* sha: 8f73416f634a8881d26c4b9fab7477fa31bbd1fd6275253ef8288f2f6913243f */
 #if BIND_sqlite3_bind_parameter_index_FUNCTION
 #define sqlite3_bind_parameter_index_REQUIRED_ARGC 2
 #define sqlite3_bind_parameter_index_OPTIONAL_ARGC 0
-/* sqlite3_bind_parameter_index
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - zName: const char *
- * Return Type: int
- */
+/* int sqlite3_bind_parameter_index(sqlite3_stmt * arg1, const char * zName) */
 mrb_value
 mrb_SQLite_sqlite3_bind_parameter_index(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -678,17 +586,11 @@ mrb_SQLite_sqlite3_bind_parameter_index(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_parameter_name */
-/* sha: 3f21ca4bd1c1b81bf34f0a008efd21a854aad59e8555c2d5cab6e619a77756d2 */
+/* sha: 1633bc6be95376cf47aae46cbed5d3547fa7f11d002214988f9bacdeac59026a */
 #if BIND_sqlite3_bind_parameter_name_FUNCTION
 #define sqlite3_bind_parameter_name_REQUIRED_ARGC 2
 #define sqlite3_bind_parameter_name_OPTIONAL_ARGC 0
-/* sqlite3_bind_parameter_name
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const char *
- */
+/* const char * sqlite3_bind_parameter_name(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_bind_parameter_name(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -766,20 +668,11 @@ mrb_SQLite_sqlite3_bind_text(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_text16 */
-/* sha: 946c3bc7be0b9ca061039e79bb3c883110b01130713a575a004e9a867dd2ef69 */
+/* sha: cdd80accd01dc1a1e0357202eafd4e35c6f21fc724387c862258ad4392bd73fb */
 #if BIND_sqlite3_bind_text16_FUNCTION
 #define sqlite3_bind_text16_REQUIRED_ARGC 5
 #define sqlite3_bind_text16_OPTIONAL_ARGC 0
-/* sqlite3_bind_text16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: const void *
- * - arg4: int
- * - arg5: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_bind_text16(sqlite3_stmt * arg1, int arg2, const void * arg3, int arg4, void (*)(void *) arg5) */
 mrb_value
 mrb_SQLite_sqlite3_bind_text16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -820,21 +713,11 @@ mrb_SQLite_sqlite3_bind_text16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_text64 */
-/* sha: 38775bc32e9a0b9ebc110e8ea13bb83023e114822657f64eab49764fb999671c */
+/* sha: 3710fdb3cf7ff2cac492215afff590cca0cbbb72d83cfb0f762293bcae42d0ed */
 #if BIND_sqlite3_bind_text64_FUNCTION
 #define sqlite3_bind_text64_REQUIRED_ARGC 6
 #define sqlite3_bind_text64_OPTIONAL_ARGC 0
-/* sqlite3_bind_text64
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - arg3: const char *
- * - arg4: sqlite3_uint64
- * - arg5: void (*)(void *)
- * - encoding: unsigned char
- * Return Type: int
- */
+/* int sqlite3_bind_text64(sqlite3_stmt * arg1, int arg2, const char * arg3, sqlite3_uint64 arg4, void (*)(void *) arg5, unsigned char encoding) */
 mrb_value
 mrb_SQLite_sqlite3_bind_text64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -921,18 +804,11 @@ mrb_SQLite_sqlite3_bind_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_bind_zeroblob */
-/* sha: dfbe671ed51d41e0d29d32142866be872532339b09919bbcc54b3fc3cef2789d */
+/* sha: 53068e741ceeb5e24ba8b7098fd01ea7521317ce14a4fbfdee4e134ccb1983c1 */
 #if BIND_sqlite3_bind_zeroblob_FUNCTION
 #define sqlite3_bind_zeroblob_REQUIRED_ARGC 3
 #define sqlite3_bind_zeroblob_OPTIONAL_ARGC 0
-/* sqlite3_bind_zeroblob
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * - n: int
- * Return Type: int
- */
+/* int sqlite3_bind_zeroblob(sqlite3_stmt * arg1, int arg2, int n) */
 mrb_value
 mrb_SQLite_sqlite3_bind_zeroblob(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -963,16 +839,11 @@ mrb_SQLite_sqlite3_bind_zeroblob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_bytes */
-/* sha: aa45d55dcc7f94fc5a452ca002fe89b240dc14164e72da20a84dd0a669054ba9 */
+/* sha: 840667951173d295d7ad4df2b6c301083906449a91cd8f128d945e7de67a8a5d */
 #if BIND_sqlite3_blob_bytes_FUNCTION
 #define sqlite3_blob_bytes_REQUIRED_ARGC 1
 #define sqlite3_blob_bytes_OPTIONAL_ARGC 0
-/* sqlite3_blob_bytes
- *
- * Parameters:
- * - arg1: sqlite3_blob *
- * Return Type: int
- */
+/* int sqlite3_blob_bytes(sqlite3_blob * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_blob_bytes(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1001,16 +872,11 @@ mrb_SQLite_sqlite3_blob_bytes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_close */
-/* sha: 2d6c969a80697051bfd7652e36c9d9a97b6231fd2b9c54510cf4b90c5f2dde17 */
+/* sha: 1ebb854bc1d97dff0dc426d0278bb9dfe51c91830beda206b3a40bc4c5d20fd7 */
 #if BIND_sqlite3_blob_close_FUNCTION
 #define sqlite3_blob_close_REQUIRED_ARGC 1
 #define sqlite3_blob_close_OPTIONAL_ARGC 0
-/* sqlite3_blob_close
- *
- * Parameters:
- * - arg1: sqlite3_blob *
- * Return Type: int
- */
+/* int sqlite3_blob_close(sqlite3_blob * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_blob_close(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1039,22 +905,11 @@ mrb_SQLite_sqlite3_blob_close(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_open */
-/* sha: 06ec8887146bea86d5ef67e168f6eb18f70423136831a2bad4700e567f5424a4 */
+/* sha: 7221814d3572a75e2c24fb8309f1f88dbdcdc2b7ffb084da8ae4ff32acbf1cbd */
 #if BIND_sqlite3_blob_open_FUNCTION
 #define sqlite3_blob_open_REQUIRED_ARGC 7
 #define sqlite3_blob_open_OPTIONAL_ARGC 0
-/* sqlite3_blob_open
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zDb: const char *
- * - zTable: const char *
- * - zColumn: const char *
- * - iRow: sqlite3_int64
- * - flags: int
- * - ppBlob: sqlite3_blob **
- * Return Type: int
- */
+/* int sqlite3_blob_open(sqlite3 * arg1, const char * zDb, const char * zTable, const char * zColumn, sqlite3_int64 iRow, int flags, sqlite3_blob ** ppBlob) */
 mrb_value
 mrb_SQLite_sqlite3_blob_open(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1093,19 +948,11 @@ mrb_SQLite_sqlite3_blob_open(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_read */
-/* sha: de88daa3c2e7e11f53e9d872384b691d1468aa4bc9cc5b2a40aff11fef8676ff */
+/* sha: ab59334f80a47781a8a578d4d8d53ad848a370b3d0d5698fd134d9f5e474be6f */
 #if BIND_sqlite3_blob_read_FUNCTION
 #define sqlite3_blob_read_REQUIRED_ARGC 4
 #define sqlite3_blob_read_OPTIONAL_ARGC 0
-/* sqlite3_blob_read
- *
- * Parameters:
- * - arg1: sqlite3_blob *
- * - Z: void *
- * - N: int
- * - iOffset: int
- * Return Type: int
- */
+/* int sqlite3_blob_read(sqlite3_blob * arg1, void * Z, int N, int iOffset) */
 mrb_value
 mrb_SQLite_sqlite3_blob_read(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1141,17 +988,11 @@ mrb_SQLite_sqlite3_blob_read(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_reopen */
-/* sha: 4eb006e6f6e128c10230313ce406327b35070451faa19d1629cd1d2b604b6475 */
+/* sha: 4e246e10de6508469c60f5eab616a786e38a7aa1ac72d31a5535c7119fa19d87 */
 #if BIND_sqlite3_blob_reopen_FUNCTION
 #define sqlite3_blob_reopen_REQUIRED_ARGC 2
 #define sqlite3_blob_reopen_OPTIONAL_ARGC 0
-/* sqlite3_blob_reopen
- *
- * Parameters:
- * - arg1: sqlite3_blob *
- * - arg2: sqlite3_int64
- * Return Type: int
- */
+/* int sqlite3_blob_reopen(sqlite3_blob * arg1, sqlite3_int64 arg2) */
 mrb_value
 mrb_SQLite_sqlite3_blob_reopen(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1181,19 +1022,11 @@ mrb_SQLite_sqlite3_blob_reopen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_blob_write */
-/* sha: 8000d71627f3591451474f2059e69da07c4e2eeccaad62c1c2300804e35eb9a3 */
+/* sha: 5d7313d5f3c73518c75f06c97c02d549c0dd2b9c12f58633add3ee0e203ddf92 */
 #if BIND_sqlite3_blob_write_FUNCTION
 #define sqlite3_blob_write_REQUIRED_ARGC 4
 #define sqlite3_blob_write_OPTIONAL_ARGC 0
-/* sqlite3_blob_write
- *
- * Parameters:
- * - arg1: sqlite3_blob *
- * - z: const void *
- * - n: int
- * - iOffset: int
- * Return Type: int
- */
+/* int sqlite3_blob_write(sqlite3_blob * arg1, const void * z, int n, int iOffset) */
 mrb_value
 mrb_SQLite_sqlite3_blob_write(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1229,18 +1062,11 @@ mrb_SQLite_sqlite3_blob_write(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_busy_handler */
-/* sha: 4bb74a6f158dd2ae0d7256b6caafd3aa50755dd7a20cfc9a474a3993bae32f58 */
+/* sha: 492c8d3f79489e89babe57181a3db8eb233833692c760c961e428d4d83c0ca1b */
 #if BIND_sqlite3_busy_handler_FUNCTION
 #define sqlite3_busy_handler_REQUIRED_ARGC 3
 #define sqlite3_busy_handler_OPTIONAL_ARGC 0
-/* sqlite3_busy_handler
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: int (*)(void *, int)
- * - arg3: void *
- * Return Type: int
- */
+/* int sqlite3_busy_handler(sqlite3 * arg1, int (*)(void *, int) arg2, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_busy_handler(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1279,17 +1105,11 @@ mrb_SQLite_sqlite3_busy_handler(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_busy_timeout */
-/* sha: 4168bdfb0dc65a873b938b9a047eae53296aec315a65d62fd9fb0a27fbf62329 */
+/* sha: 5558e05619af3da39a508443cfff2a83dc831de92454e7483b67f59549ed913c */
 #if BIND_sqlite3_busy_timeout_FUNCTION
 #define sqlite3_busy_timeout_REQUIRED_ARGC 2
 #define sqlite3_busy_timeout_OPTIONAL_ARGC 0
-/* sqlite3_busy_timeout
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - ms: int
- * Return Type: int
- */
+/* int sqlite3_busy_timeout(sqlite3 * arg1, int ms) */
 mrb_value
 mrb_SQLite_sqlite3_busy_timeout(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1319,16 +1139,11 @@ mrb_SQLite_sqlite3_busy_timeout(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_cancel_auto_extension */
-/* sha: 8ca4cdcd1b1f8cbb39886c732d4c2f9e9527f00f2eb21fb341362f1fb8651ceb */
+/* sha: b58cb21dda8d03d6320d12a841f00965d487306941a7ca0de39710fe744dfff8 */
 #if BIND_sqlite3_cancel_auto_extension_FUNCTION
 #define sqlite3_cancel_auto_extension_REQUIRED_ARGC 1
 #define sqlite3_cancel_auto_extension_OPTIONAL_ARGC 0
-/* sqlite3_cancel_auto_extension
- *
- * Parameters:
- * - xEntryPoint: void (*)(void)
- * Return Type: int
- */
+/* int sqlite3_cancel_auto_extension(void (*)(void) xEntryPoint) */
 mrb_value
 mrb_SQLite_sqlite3_cancel_auto_extension(mrb_state* mrb, mrb_value self) {
   mrb_value xEntryPoint;
@@ -1354,16 +1169,11 @@ mrb_SQLite_sqlite3_cancel_auto_extension(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_changes */
-/* sha: 1caf2c4113b01ce86d318c9ceea8f65c88ef7d83b3e6fa0e4fdcaff812cf76f1 */
+/* sha: 71ed4a29b2e7ee1c3779f051dd8fd6d15d274a86560c0d443330b33654973b8a */
 #if BIND_sqlite3_changes_FUNCTION
 #define sqlite3_changes_REQUIRED_ARGC 1
 #define sqlite3_changes_OPTIONAL_ARGC 0
-/* sqlite3_changes
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_changes(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_changes(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1392,16 +1202,11 @@ mrb_SQLite_sqlite3_changes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_clear_bindings */
-/* sha: 4a5a98f1d1177989cef011be6daeaf11275f109c539dcf3ea112bb2daa973494 */
+/* sha: 0561ad1f9b32adc9f69bb21043a5630ebd123b4aad5fd1a81c69b3ae18ac0c5b */
 #if BIND_sqlite3_clear_bindings_FUNCTION
 #define sqlite3_clear_bindings_REQUIRED_ARGC 1
 #define sqlite3_clear_bindings_OPTIONAL_ARGC 0
-/* sqlite3_clear_bindings
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_clear_bindings(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_clear_bindings(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1430,16 +1235,11 @@ mrb_SQLite_sqlite3_clear_bindings(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_close */
-/* sha: 24fac32717225146f7877d217c139d9d70e548e00ea266b701e89d2f4d7d973b */
+/* sha: 53be8e9e80bd6c9eafbf99e2226f0fbe45310ca0bca53609be5daa94bcf312bb */
 #if BIND_sqlite3_close_FUNCTION
 #define sqlite3_close_REQUIRED_ARGC 1
 #define sqlite3_close_OPTIONAL_ARGC 0
-/* sqlite3_close
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_close(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_close(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1507,18 +1307,11 @@ mrb_SQLite_sqlite3_close_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_collation_needed */
-/* sha: 232eb7e783a69add2b412b5d5b58ed8a5a0cadf411b45e95847c6569885f0d84 */
+/* sha: 4c51a2fbaedec3774f8d3cd4f145661c4e77e6e13fcb40ce6c80617b8e2b47b2 */
 #if BIND_sqlite3_collation_needed_FUNCTION
 #define sqlite3_collation_needed_REQUIRED_ARGC 3
 #define sqlite3_collation_needed_OPTIONAL_ARGC 0
-/* sqlite3_collation_needed
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: void *
- * - arg3: void (*)(void *, sqlite3 *, int, const char *)
- * Return Type: int
- */
+/* int sqlite3_collation_needed(sqlite3 * arg1, void * arg2, void (*)(void *, sqlite3 *, int, const char *) arg3) */
 mrb_value
 mrb_SQLite_sqlite3_collation_needed(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1557,18 +1350,11 @@ mrb_SQLite_sqlite3_collation_needed(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_collation_needed16 */
-/* sha: 0c05b58abb3c769722ec0cfefa188bf53a1e7de2cb28b5c0d15e6cc87bc37634 */
+/* sha: e34c30bf3bdbe460ae06e71f9223509d8e99ef0a96a15052e3a88039395833a8 */
 #if BIND_sqlite3_collation_needed16_FUNCTION
 #define sqlite3_collation_needed16_REQUIRED_ARGC 3
 #define sqlite3_collation_needed16_OPTIONAL_ARGC 0
-/* sqlite3_collation_needed16
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: void *
- * - arg3: void (*)(void *, sqlite3 *, int, const void *)
- * Return Type: int
- */
+/* int sqlite3_collation_needed16(sqlite3 * arg1, void * arg2, void (*)(void *, sqlite3 *, int, const void *) arg3) */
 mrb_value
 mrb_SQLite_sqlite3_collation_needed16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1648,17 +1434,11 @@ mrb_SQLite_sqlite3_column_blob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_bytes */
-/* sha: 0c8a2123e293cddeb9e758b480c0c92df2fa0963320e76ef2b5e2c24ad56570a */
+/* sha: 3806d709a98b3620b2d7d8eae96ce4f52834eabdc47e2dc978f0a9fc765da477 */
 #if BIND_sqlite3_column_bytes_FUNCTION
 #define sqlite3_column_bytes_REQUIRED_ARGC 2
 #define sqlite3_column_bytes_OPTIONAL_ARGC 0
-/* sqlite3_column_bytes
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: int
- */
+/* int sqlite3_column_bytes(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_bytes(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1688,17 +1468,11 @@ mrb_SQLite_sqlite3_column_bytes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_bytes16 */
-/* sha: 7f15c4eb9d3427c5589bf91f4c1043b70bd2aff6b0d126002e31b7c041b7b1bb */
+/* sha: c85465a1daecea872d57f80c46fdfcd7c3883e268f66a3192cc0116287258d5e */
 #if BIND_sqlite3_column_bytes16_FUNCTION
 #define sqlite3_column_bytes16_REQUIRED_ARGC 2
 #define sqlite3_column_bytes16_OPTIONAL_ARGC 0
-/* sqlite3_column_bytes16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: int
- */
+/* int sqlite3_column_bytes16(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_bytes16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1728,16 +1502,11 @@ mrb_SQLite_sqlite3_column_bytes16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_count */
-/* sha: c4cfc3189e5531132ffb000a7d7fe0f1248e715f8093c6835000d79bd6920cd7 */
+/* sha: ed48f6b0b1f62794575ac07f7888c1dfe3cacc073fa0949c8be0d8a56601972d */
 #if BIND_sqlite3_column_count_FUNCTION
 #define sqlite3_column_count_REQUIRED_ARGC 1
 #define sqlite3_column_count_OPTIONAL_ARGC 0
-/* sqlite3_column_count
- *
- * Parameters:
- * - pStmt: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_column_count(sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_column_count(mrb_state* mrb, mrb_value self) {
   mrb_value pStmt;
@@ -1766,17 +1535,11 @@ mrb_SQLite_sqlite3_column_count(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_database_name */
-/* sha: a3140aef7b6ca50f905e7cb9e34a03aecd070bbd01d9658e64a7add362e84d2d */
+/* sha: 228fe81bf26f69aac348d174789a9754441537a611960b5865b3665a31dfe51e */
 #if BIND_sqlite3_column_database_name_FUNCTION
 #define sqlite3_column_database_name_REQUIRED_ARGC 2
 #define sqlite3_column_database_name_OPTIONAL_ARGC 0
-/* sqlite3_column_database_name
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const char *
- */
+/* const char * sqlite3_column_database_name(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_database_name(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1806,17 +1569,11 @@ mrb_SQLite_sqlite3_column_database_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_database_name16 */
-/* sha: 66cab32fca3c5bf05312cf0b5bcef31bda288c0fab2c5bccbfa8b0fc2b0632f4 */
+/* sha: a122f612d577a7f56d11313040f20a48f816d735d7387a46050e79a5b362934e */
 #if BIND_sqlite3_column_database_name16_FUNCTION
 #define sqlite3_column_database_name16_REQUIRED_ARGC 2
 #define sqlite3_column_database_name16_OPTIONAL_ARGC 0
-/* sqlite3_column_database_name16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_database_name16(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_database_name16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1846,17 +1603,11 @@ mrb_SQLite_sqlite3_column_database_name16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_decltype */
-/* sha: f5b470dcfad9ebbd0f28d5b71aa6438f4e58d50ea998c5f9bba4d38914612277 */
+/* sha: 065a7a9134e699565921aa637a10ff8ffa1f0254f3f6021d76ec6b0151e794fd */
 #if BIND_sqlite3_column_decltype_FUNCTION
 #define sqlite3_column_decltype_REQUIRED_ARGC 2
 #define sqlite3_column_decltype_OPTIONAL_ARGC 0
-/* sqlite3_column_decltype
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const char *
- */
+/* const char * sqlite3_column_decltype(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_decltype(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1886,17 +1637,11 @@ mrb_SQLite_sqlite3_column_decltype(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_decltype16 */
-/* sha: 57485d84d06e5396f42da86e92b9d0542f31c5bba2e109d8057d912f550cd6d1 */
+/* sha: 254614a253e16abfb182094f19ef08bf5ba45baf47f9f90828185b329041460e */
 #if BIND_sqlite3_column_decltype16_FUNCTION
 #define sqlite3_column_decltype16_REQUIRED_ARGC 2
 #define sqlite3_column_decltype16_OPTIONAL_ARGC 0
-/* sqlite3_column_decltype16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_decltype16(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_decltype16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1926,17 +1671,11 @@ mrb_SQLite_sqlite3_column_decltype16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_double */
-/* sha: 10057ab418a7f6f5c36b232239726f1a597ca40c1247347849c22d47b06be0a9 */
+/* sha: b72c9c7614bd0dfa689d6051a03c2f0814d7cc2dafe1d6a1917e1e07a00adb70 */
 #if BIND_sqlite3_column_double_FUNCTION
 #define sqlite3_column_double_REQUIRED_ARGC 2
 #define sqlite3_column_double_OPTIONAL_ARGC 0
-/* sqlite3_column_double
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: double
- */
+/* double sqlite3_column_double(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_double(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -1966,17 +1705,11 @@ mrb_SQLite_sqlite3_column_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_int */
-/* sha: 6edc3e4d4d0fd5a5569d910a58a8a95a5c61ee095158f11978a3288c8074fed0 */
+/* sha: 0196c056058f11d8626a88b075195f5ffe886def3791398de7def0ae6738ff57 */
 #if BIND_sqlite3_column_int_FUNCTION
 #define sqlite3_column_int_REQUIRED_ARGC 2
 #define sqlite3_column_int_OPTIONAL_ARGC 0
-/* sqlite3_column_int
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: int
- */
+/* int sqlite3_column_int(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_int(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2006,17 +1739,11 @@ mrb_SQLite_sqlite3_column_int(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_int64 */
-/* sha: eb4d725e36349a8e67b49f7f8f7fdbca5fdfb418c230a87262792c694e7f94bf */
+/* sha: de1d89fb151789a6b4c59dcc74fd6cc57548c391a0923ddce0c2132da0b94db3 */
 #if BIND_sqlite3_column_int64_FUNCTION
 #define sqlite3_column_int64_REQUIRED_ARGC 2
 #define sqlite3_column_int64_OPTIONAL_ARGC 0
-/* sqlite3_column_int64
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_column_int64(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_int64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2046,17 +1773,11 @@ mrb_SQLite_sqlite3_column_int64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_name */
-/* sha: eeafccf478487bf1d5ad9cf3a8f7a63929b00ce035a186e1e31d4da9cdf53161 */
+/* sha: 11bb213609b1a1c5f748c1bf75f3de1a206d6a54f56942d2ff8268076254bfbe */
 #if BIND_sqlite3_column_name_FUNCTION
 #define sqlite3_column_name_REQUIRED_ARGC 2
 #define sqlite3_column_name_OPTIONAL_ARGC 0
-/* sqlite3_column_name
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - N: int
- * Return Type: const char *
- */
+/* const char * sqlite3_column_name(sqlite3_stmt * arg1, int N) */
 mrb_value
 mrb_SQLite_sqlite3_column_name(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2086,17 +1807,11 @@ mrb_SQLite_sqlite3_column_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_name16 */
-/* sha: 7aa5f1a676d3740be49a3be4f303606a6e5ca8bb25fb5074a145fe57776baf4a */
+/* sha: a94fc6b15685b926978f77c849b21dd162f53e36fdbfc48a67fec50d5aa861b7 */
 #if BIND_sqlite3_column_name16_FUNCTION
 #define sqlite3_column_name16_REQUIRED_ARGC 2
 #define sqlite3_column_name16_OPTIONAL_ARGC 0
-/* sqlite3_column_name16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - N: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_name16(sqlite3_stmt * arg1, int N) */
 mrb_value
 mrb_SQLite_sqlite3_column_name16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2126,17 +1841,11 @@ mrb_SQLite_sqlite3_column_name16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_origin_name */
-/* sha: 4822ee5eba9e73386a209466fbb747982e33ec3c884cfa6b88744777dc831f01 */
+/* sha: 78d1c149c35084769e7092f58fb7ae721d80fe129b970fee6ae0a3cc009b47f7 */
 #if BIND_sqlite3_column_origin_name_FUNCTION
 #define sqlite3_column_origin_name_REQUIRED_ARGC 2
 #define sqlite3_column_origin_name_OPTIONAL_ARGC 0
-/* sqlite3_column_origin_name
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const char *
- */
+/* const char * sqlite3_column_origin_name(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_origin_name(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2166,17 +1875,11 @@ mrb_SQLite_sqlite3_column_origin_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_origin_name16 */
-/* sha: ce2c15a5401be25d38002f03725eba16dea4e2bd48c38b095375e8ca7e58b1e2 */
+/* sha: 4b8f6c20e670d5605268c0b9272c9249a2646a1317a5ec79abba4d7eadf86fa1 */
 #if BIND_sqlite3_column_origin_name16_FUNCTION
 #define sqlite3_column_origin_name16_REQUIRED_ARGC 2
 #define sqlite3_column_origin_name16_OPTIONAL_ARGC 0
-/* sqlite3_column_origin_name16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_origin_name16(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_origin_name16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2206,17 +1909,11 @@ mrb_SQLite_sqlite3_column_origin_name16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_table_name */
-/* sha: 58f33b2274bce4233308061703424a86b4aba9df9b43a33bff25bd75cb35070d */
+/* sha: cf618094bbcc348ee2f24dc85c6670c3d2ff1859ea18b650e5b8a8c7177a26ae */
 #if BIND_sqlite3_column_table_name_FUNCTION
 #define sqlite3_column_table_name_REQUIRED_ARGC 2
 #define sqlite3_column_table_name_OPTIONAL_ARGC 0
-/* sqlite3_column_table_name
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const char *
- */
+/* const char * sqlite3_column_table_name(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_table_name(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2246,17 +1943,11 @@ mrb_SQLite_sqlite3_column_table_name(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_table_name16 */
-/* sha: a5c17f09712bdd4d094dad743e985bcd2b42f45b1f6aca4d44600419d221a619 */
+/* sha: 2e1f12bcfb58735f2ec7ca520c7c2207fcfcd6757ff1880ee2e4a38f5f67e6b0 */
 #if BIND_sqlite3_column_table_name16_FUNCTION
 #define sqlite3_column_table_name16_REQUIRED_ARGC 2
 #define sqlite3_column_table_name16_OPTIONAL_ARGC 0
-/* sqlite3_column_table_name16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_table_name16(sqlite3_stmt * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_column_table_name16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2327,17 +2018,11 @@ mrb_SQLite_sqlite3_column_text(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_text16 */
-/* sha: e6fd1bf5c588031f68cc21b767e06ea35de990b12d1df87b1fdff829924742e0 */
+/* sha: a85eadac00632de788850a9fb6835b2a4314b2f52dd10bd7f0426c5804e44a4d */
 #if BIND_sqlite3_column_text16_FUNCTION
 #define sqlite3_column_text16_REQUIRED_ARGC 2
 #define sqlite3_column_text16_OPTIONAL_ARGC 0
-/* sqlite3_column_text16
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: const void *
- */
+/* const void * sqlite3_column_text16(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_text16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2367,17 +2052,11 @@ mrb_SQLite_sqlite3_column_text16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_column_type */
-/* sha: 231c6410b64dbb65d615f3c1b36d6dae026866e974cb205e6342fd0e59b453d7 */
+/* sha: d676f9b42ab9e09d63bfa7c663648470708b7ae444cef6107eb957e1d8185e0d */
 #if BIND_sqlite3_column_type_FUNCTION
 #define sqlite3_column_type_REQUIRED_ARGC 2
 #define sqlite3_column_type_OPTIONAL_ARGC 0
-/* sqlite3_column_type
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - iCol: int
- * Return Type: int
- */
+/* int sqlite3_column_type(sqlite3_stmt * arg1, int iCol) */
 mrb_value
 mrb_SQLite_sqlite3_column_type(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2447,18 +2126,11 @@ mrb_SQLite_sqlite3_column_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_commit_hook */
-/* sha: f630a6cda8f06f7469c44688823e3c481be004ce598d8ab79ecc234b4b0bd031 */
+/* sha: ea67814cdeb77138b38a64a00a4f388db65a57e935f7146bdacaf91ba486a60f */
 #if BIND_sqlite3_commit_hook_FUNCTION
 #define sqlite3_commit_hook_REQUIRED_ARGC 3
 #define sqlite3_commit_hook_OPTIONAL_ARGC 0
-/* sqlite3_commit_hook
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: int (*)(void *)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_commit_hook(sqlite3 * arg1, int (*)(void *) arg2, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_commit_hook(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2497,16 +2169,11 @@ mrb_SQLite_sqlite3_commit_hook(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_compileoption_get */
-/* sha: 59b6867142db816d5e6d5ece70921fcfea542455bd533d30724fd657dc7af64d */
+/* sha: 9a781f88feabc63550c977d79596ee8d221b6ea6309a0ba37a2c6e241198aadd */
 #if BIND_sqlite3_compileoption_get_FUNCTION
 #define sqlite3_compileoption_get_REQUIRED_ARGC 1
 #define sqlite3_compileoption_get_OPTIONAL_ARGC 0
-/* sqlite3_compileoption_get
- *
- * Parameters:
- * - N: int
- * Return Type: const char *
- */
+/* const char * sqlite3_compileoption_get(int N) */
 mrb_value
 mrb_SQLite_sqlite3_compileoption_get(mrb_state* mrb, mrb_value self) {
   mrb_int native_N;
@@ -2526,16 +2193,11 @@ mrb_SQLite_sqlite3_compileoption_get(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_compileoption_used */
-/* sha: a70ca6a72de6d2d83a4341e7f91934041caf8ee3b2be10199a0c814844a33de5 */
+/* sha: 1408356acf582ff31186b1517867622ac0072fe08bd824bd86c7a7b171a7243c */
 #if BIND_sqlite3_compileoption_used_FUNCTION
 #define sqlite3_compileoption_used_REQUIRED_ARGC 1
 #define sqlite3_compileoption_used_OPTIONAL_ARGC 0
-/* sqlite3_compileoption_used
- *
- * Parameters:
- * - zOptName: const char *
- * Return Type: int
- */
+/* int sqlite3_compileoption_used(const char * zOptName) */
 mrb_value
 mrb_SQLite_sqlite3_compileoption_used(mrb_state* mrb, mrb_value self) {
   char * native_zOptName = NULL;
@@ -2555,16 +2217,11 @@ mrb_SQLite_sqlite3_compileoption_used(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_complete */
-/* sha: 9ba868ebe24bd5eee6f5d398a964c156d94f427f7aca8c8fdbc4773f0273d637 */
+/* sha: d8559ffe5587f8016a30b6c23eebad7a41517319f4f05f5056bbe8fa8d7018e5 */
 #if BIND_sqlite3_complete_FUNCTION
 #define sqlite3_complete_REQUIRED_ARGC 1
 #define sqlite3_complete_OPTIONAL_ARGC 0
-/* sqlite3_complete
- *
- * Parameters:
- * - sql: const char *
- * Return Type: int
- */
+/* int sqlite3_complete(const char * sql) */
 mrb_value
 mrb_SQLite_sqlite3_complete(mrb_state* mrb, mrb_value self) {
   char * native_sql = NULL;
@@ -2584,16 +2241,11 @@ mrb_SQLite_sqlite3_complete(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_complete16 */
-/* sha: 470b0ca8be5fca4c9ef590eced173edde5ec8bb28504d16c892c407e65ed1de6 */
+/* sha: 40a70c10b43bad23f243402710ab9efbcc76f60f060d3e091d04e06d4b2157a0 */
 #if BIND_sqlite3_complete16_FUNCTION
 #define sqlite3_complete16_REQUIRED_ARGC 1
 #define sqlite3_complete16_OPTIONAL_ARGC 0
-/* sqlite3_complete16
- *
- * Parameters:
- * - sql: const void *
- * Return Type: int
- */
+/* int sqlite3_complete16(const void * sql) */
 mrb_value
 mrb_SQLite_sqlite3_complete16(mrb_state* mrb, mrb_value self) {
   mrb_value sql;
@@ -2619,16 +2271,11 @@ mrb_SQLite_sqlite3_complete16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_config */
-/* sha: d2cddd6016dfe6cb4b367f6da6c4cc29cc7eaec9dca154a2629d0534508f2d12 */
+/* sha: f87f9d02d33dfa559273cc502a2d24b728682f88f59b35bdc1fe8317f90d5e0f */
 #if BIND_sqlite3_config_FUNCTION
 #define sqlite3_config_REQUIRED_ARGC 1
 #define sqlite3_config_OPTIONAL_ARGC 0
-/* sqlite3_config
- *
- * Parameters:
- * - arg1: int
- * Return Type: int
- */
+/* int sqlite3_config(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_config(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -2648,16 +2295,11 @@ mrb_SQLite_sqlite3_config(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_context_db_handle */
-/* sha: 34be861cc3cdc8eb9952c6e99a2eb058062dc1ee474b19dadf153bc428f8aced */
+/* sha: 88647a375ab68017705b165d0c9832931ec957d11ffbf84c1481c0bcf2eaf247 */
 #if BIND_sqlite3_context_db_handle_FUNCTION
 #define sqlite3_context_db_handle_REQUIRED_ARGC 1
 #define sqlite3_context_db_handle_OPTIONAL_ARGC 0
-/* sqlite3_context_db_handle
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: sqlite3 *
- */
+/* sqlite3 * sqlite3_context_db_handle(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_context_db_handle(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2686,20 +2328,11 @@ mrb_SQLite_sqlite3_context_db_handle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_collation */
-/* sha: c01d391594033533eaecb82ad79186c1119ddd20c386665302e0682693ead54a */
+/* sha: 8f89e57be03694aa42f430fae6f6702a3c2d80259d7ed95d7a3c4783b3eada73 */
 #if BIND_sqlite3_create_collation_FUNCTION
 #define sqlite3_create_collation_REQUIRED_ARGC 5
 #define sqlite3_create_collation_OPTIONAL_ARGC 0
-/* sqlite3_create_collation
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zName: const char *
- * - eTextRep: int
- * - pArg: void *
- * - xCompare: int (*)(void *, int, const void *, int, const void *)
- * Return Type: int
- */
+/* int sqlite3_create_collation(sqlite3 * arg1, const char * zName, int eTextRep, void * pArg, int (*)(void *, int, const void *, int, const void *) xCompare) */
 mrb_value
 mrb_SQLite_sqlite3_create_collation(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2740,20 +2373,11 @@ mrb_SQLite_sqlite3_create_collation(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_collation16 */
-/* sha: b032258cdda49c0b7ea8922f7c2a1941cbfa914039df557f6d45de71fa9c636b */
+/* sha: 37eb01c4f84a4b099e4ea85cffdfd115e947a2206e9879589e30a9c9b8dd1234 */
 #if BIND_sqlite3_create_collation16_FUNCTION
 #define sqlite3_create_collation16_REQUIRED_ARGC 5
 #define sqlite3_create_collation16_OPTIONAL_ARGC 0
-/* sqlite3_create_collation16
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zName: const void *
- * - eTextRep: int
- * - pArg: void *
- * - xCompare: int (*)(void *, int, const void *, int, const void *)
- * Return Type: int
- */
+/* int sqlite3_create_collation16(sqlite3 * arg1, const void * zName, int eTextRep, void * pArg, int (*)(void *, int, const void *, int, const void *) xCompare) */
 mrb_value
 mrb_SQLite_sqlite3_create_collation16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2798,21 +2422,11 @@ mrb_SQLite_sqlite3_create_collation16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_collation_v2 */
-/* sha: 6109eb97ad5ac18eac887c115f1c19850047181140be033f2eb7c1616fd55c54 */
+/* sha: 49e593e8365839bac54f2ac3a540a7a3faf680360e0da3ac53d5a9e6cab2ef7b */
 #if BIND_sqlite3_create_collation_v2_FUNCTION
 #define sqlite3_create_collation_v2_REQUIRED_ARGC 6
 #define sqlite3_create_collation_v2_OPTIONAL_ARGC 0
-/* sqlite3_create_collation_v2
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zName: const char *
- * - eTextRep: int
- * - pArg: void *
- * - xCompare: int (*)(void *, int, const void *, int, const void *)
- * - xDestroy: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_create_collation_v2(sqlite3 * arg1, const char * zName, int eTextRep, void * pArg, int (*)(void *, int, const void *, int, const void *) xCompare, void (*)(void *) xDestroy) */
 mrb_value
 mrb_SQLite_sqlite3_create_collation_v2(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -2858,23 +2472,11 @@ mrb_SQLite_sqlite3_create_collation_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_function */
-/* sha: 50eb196c4682f93649fbc516f67925be5520092cac8764e702f2645942f3733b */
+/* sha: a6f1c914c1e2ef2da82613977dca8b970248576f89652cc79b0a0f3f8d86134a */
 #if BIND_sqlite3_create_function_FUNCTION
 #define sqlite3_create_function_REQUIRED_ARGC 8
 #define sqlite3_create_function_OPTIONAL_ARGC 0
-/* sqlite3_create_function
- *
- * Parameters:
- * - db: sqlite3 *
- * - zFunctionName: const char *
- * - nArg: int
- * - eTextRep: int
- * - pApp: void *
- * - xFunc: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xStep: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xFinal: void (*)(sqlite3_context *)
- * Return Type: int
- */
+/* int sqlite3_create_function(sqlite3 * db, const char * zFunctionName, int nArg, int eTextRep, void * pApp, void (*)(sqlite3_context *, int, sqlite3_value **) xFunc, void (*)(sqlite3_context *, int, sqlite3_value **) xStep, void (*)(sqlite3_context *) xFinal) */
 mrb_value
 mrb_SQLite_sqlite3_create_function(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -2926,23 +2528,11 @@ mrb_SQLite_sqlite3_create_function(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_function16 */
-/* sha: ca30ec6ef6e832c4cf3cae242b7271ba997a543f9c522f83cb3c48e00a9ad57a */
+/* sha: ecb1f5542c7f584deafe472af7268ec8423597891bf8447685557c1bfc578177 */
 #if BIND_sqlite3_create_function16_FUNCTION
 #define sqlite3_create_function16_REQUIRED_ARGC 8
 #define sqlite3_create_function16_OPTIONAL_ARGC 0
-/* sqlite3_create_function16
- *
- * Parameters:
- * - db: sqlite3 *
- * - zFunctionName: const void *
- * - nArg: int
- * - eTextRep: int
- * - pApp: void *
- * - xFunc: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xStep: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xFinal: void (*)(sqlite3_context *)
- * Return Type: int
- */
+/* int sqlite3_create_function16(sqlite3 * db, const void * zFunctionName, int nArg, int eTextRep, void * pApp, void (*)(sqlite3_context *, int, sqlite3_value **) xFunc, void (*)(sqlite3_context *, int, sqlite3_value **) xStep, void (*)(sqlite3_context *) xFinal) */
 mrb_value
 mrb_SQLite_sqlite3_create_function16(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -2998,24 +2588,11 @@ mrb_SQLite_sqlite3_create_function16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_function_v2 */
-/* sha: 34fae102a815b29cd18f4f02e973aee110cd2413044a099b8ff7e8d3cb381573 */
+/* sha: 5c0393abbcb0c177d4e94cd9dcfc0fb6073d0cc63e1f8eab79f471454eb12df2 */
 #if BIND_sqlite3_create_function_v2_FUNCTION
 #define sqlite3_create_function_v2_REQUIRED_ARGC 9
 #define sqlite3_create_function_v2_OPTIONAL_ARGC 0
-/* sqlite3_create_function_v2
- *
- * Parameters:
- * - db: sqlite3 *
- * - zFunctionName: const char *
- * - nArg: int
- * - eTextRep: int
- * - pApp: void *
- * - xFunc: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xStep: void (*)(sqlite3_context *, int, sqlite3_value **)
- * - xFinal: void (*)(sqlite3_context *)
- * - xDestroy: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_create_function_v2(sqlite3 * db, const char * zFunctionName, int nArg, int eTextRep, void * pApp, void (*)(sqlite3_context *, int, sqlite3_value **) xFunc, void (*)(sqlite3_context *, int, sqlite3_value **) xStep, void (*)(sqlite3_context *) xFinal, void (*)(void *) xDestroy) */
 mrb_value
 mrb_SQLite_sqlite3_create_function_v2(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3072,19 +2649,11 @@ mrb_SQLite_sqlite3_create_function_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_module */
-/* sha: 3d01ff227cb32078296830650e2ee33bbfff8af45a74513fcd319392437b8d7b */
+/* sha: a00cdc44fb8bf65350676624ea40fc07d19d4ea0e257ea42ee6e8a93e44d52c1 */
 #if BIND_sqlite3_create_module_FUNCTION
 #define sqlite3_create_module_REQUIRED_ARGC 4
 #define sqlite3_create_module_OPTIONAL_ARGC 0
-/* sqlite3_create_module
- *
- * Parameters:
- * - db: sqlite3 *
- * - zName: const char *
- * - p: const sqlite3_module *
- * - pClientData: void *
- * Return Type: int
- */
+/* int sqlite3_create_module(sqlite3 * db, const char * zName, const sqlite3_module * p, void * pClientData) */
 mrb_value
 mrb_SQLite_sqlite3_create_module(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3127,20 +2696,11 @@ mrb_SQLite_sqlite3_create_module(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_create_module_v2 */
-/* sha: 6059b93dc770032603ddaa05fd15650c47487391d214a867cbbefffc72049dd8 */
+/* sha: bc3102a815d3ba3743c42e1716a8c4e626581df834baa99dd2cdfe8e2883a796 */
 #if BIND_sqlite3_create_module_v2_FUNCTION
 #define sqlite3_create_module_v2_REQUIRED_ARGC 5
 #define sqlite3_create_module_v2_OPTIONAL_ARGC 0
-/* sqlite3_create_module_v2
- *
- * Parameters:
- * - db: sqlite3 *
- * - zName: const char *
- * - p: const sqlite3_module *
- * - pClientData: void *
- * - xDestroy: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_create_module_v2(sqlite3 * db, const char * zName, const sqlite3_module * p, void * pClientData, void (*)(void *) xDestroy) */
 mrb_value
 mrb_SQLite_sqlite3_create_module_v2(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3188,16 +2748,11 @@ mrb_SQLite_sqlite3_create_module_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_data_count */
-/* sha: 1606e1636596bff85c525cdd1283e2cfb12d106fd526aa70e3acb2c143e00cdf */
+/* sha: fc3af2af7bb3bebbc0c8aeccc6676a93755934e142d44893e1f45adf44a92c62 */
 #if BIND_sqlite3_data_count_FUNCTION
 #define sqlite3_data_count_REQUIRED_ARGC 1
 #define sqlite3_data_count_OPTIONAL_ARGC 0
-/* sqlite3_data_count
- *
- * Parameters:
- * - pStmt: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_data_count(sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_data_count(mrb_state* mrb, mrb_value self) {
   mrb_value pStmt;
@@ -3226,17 +2781,11 @@ mrb_SQLite_sqlite3_data_count(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_config */
-/* sha: 7111806e7f058477426483be357f31a2aae9cb8009197ed4b46841f9546ae4f8 */
+/* sha: aa4f5e7e5d24cf729758ec811d1d58a70ebee523a2ee1812995f0bee953a6021 */
 #if BIND_sqlite3_db_config_FUNCTION
 #define sqlite3_db_config_REQUIRED_ARGC 2
 #define sqlite3_db_config_OPTIONAL_ARGC 0
-/* sqlite3_db_config
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - op: int
- * Return Type: int
- */
+/* int sqlite3_db_config(sqlite3 * arg1, int op) */
 mrb_value
 mrb_SQLite_sqlite3_db_config(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3266,17 +2815,11 @@ mrb_SQLite_sqlite3_db_config(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_filename */
-/* sha: f22e8504fad00738271029000560e6b7ad011d214b9d49b53d97d9eb2024ac39 */
+/* sha: 30d8d8da94ac8689f39c506dab4c7243eccce28fb171949cea6c302c128a573a */
 #if BIND_sqlite3_db_filename_FUNCTION
 #define sqlite3_db_filename_REQUIRED_ARGC 2
 #define sqlite3_db_filename_OPTIONAL_ARGC 0
-/* sqlite3_db_filename
- *
- * Parameters:
- * - db: sqlite3 *
- * - zDbName: const char *
- * Return Type: const char *
- */
+/* const char * sqlite3_db_filename(sqlite3 * db, const char * zDbName) */
 mrb_value
 mrb_SQLite_sqlite3_db_filename(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3306,16 +2849,11 @@ mrb_SQLite_sqlite3_db_filename(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_handle */
-/* sha: e6e5857d701e71c27de9aae6f772ef629ea05827fd4bad4168445951e8383189 */
+/* sha: d3de87feb97cb5ac1f7c9b5b8d722f2398fae438e324bf6ae3e49ea73bfdfab8 */
 #if BIND_sqlite3_db_handle_FUNCTION
 #define sqlite3_db_handle_REQUIRED_ARGC 1
 #define sqlite3_db_handle_OPTIONAL_ARGC 0
-/* sqlite3_db_handle
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: sqlite3 *
- */
+/* sqlite3 * sqlite3_db_handle(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_db_handle(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3344,17 +2882,11 @@ mrb_SQLite_sqlite3_db_handle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_readonly */
-/* sha: fbfd6054f953f475a85544c603aa02f95a612b006a1ed518377d661e8fdd37b9 */
+/* sha: 2c47045d1b8b67f0436c3cdbe9d9b84f3324c0bcc20a14f58d961f7e680fec5a */
 #if BIND_sqlite3_db_readonly_FUNCTION
 #define sqlite3_db_readonly_REQUIRED_ARGC 2
 #define sqlite3_db_readonly_OPTIONAL_ARGC 0
-/* sqlite3_db_readonly
- *
- * Parameters:
- * - db: sqlite3 *
- * - zDbName: const char *
- * Return Type: int
- */
+/* int sqlite3_db_readonly(sqlite3 * db, const char * zDbName) */
 mrb_value
 mrb_SQLite_sqlite3_db_readonly(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3384,16 +2916,11 @@ mrb_SQLite_sqlite3_db_readonly(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_release_memory */
-/* sha: 287cfc1155001ec17e4dc77051bd6ca06a451d22a4abdaafca2c163e9b39cb25 */
+/* sha: 3e2c8585365c856b48e25f8609747cf64ec119e4dac98a2ec7b66b50b0543448 */
 #if BIND_sqlite3_db_release_memory_FUNCTION
 #define sqlite3_db_release_memory_REQUIRED_ARGC 1
 #define sqlite3_db_release_memory_OPTIONAL_ARGC 0
-/* sqlite3_db_release_memory
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_db_release_memory(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_db_release_memory(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3422,20 +2949,11 @@ mrb_SQLite_sqlite3_db_release_memory(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_db_status */
-/* sha: f0d3660b37e7afb831957c4cfa15aae516f0b65cb4f6e8e1581ae6351f8d4df4 */
+/* sha: 3c896026ea1e0f6446d8e3af60d84fe8d0869687ba53f4cafa3094c0513b9fa7 */
 #if BIND_sqlite3_db_status_FUNCTION
 #define sqlite3_db_status_REQUIRED_ARGC 5
 #define sqlite3_db_status_OPTIONAL_ARGC 0
-/* sqlite3_db_status
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - op: int
- * - pCur: int *
- * - pHiwtr: int *
- * - resetFlg: int
- * Return Type: int
- */
+/* int sqlite3_db_status(sqlite3 * arg1, int op, int * pCur, int * pHiwtr, int resetFlg) */
 mrb_value
 mrb_SQLite_sqlite3_db_status(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3476,17 +2994,11 @@ mrb_SQLite_sqlite3_db_status(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_declare_vtab */
-/* sha: a340ca55f448c21c96f942fc6b1de355c91d48debf5e4b744a77ae742a090bf6 */
+/* sha: ede4456794aece6d1423da5d02a653ea27b04e8ef33b0797b6e6dd7fa556146e */
 #if BIND_sqlite3_declare_vtab_FUNCTION
 #define sqlite3_declare_vtab_REQUIRED_ARGC 2
 #define sqlite3_declare_vtab_OPTIONAL_ARGC 0
-/* sqlite3_declare_vtab
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zSQL: const char *
- * Return Type: int
- */
+/* int sqlite3_declare_vtab(sqlite3 * arg1, const char * zSQL) */
 mrb_value
 mrb_SQLite_sqlite3_declare_vtab(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3516,17 +3028,11 @@ mrb_SQLite_sqlite3_declare_vtab(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_enable_load_extension */
-/* sha: 10390835bacfcf0f10c54882fd4f51944330d352011c11de17d83181b240c822 */
+/* sha: e9a9ce926a210d12a9e0993f1726eb6f17b64b0a4e85ed65c25ec431e3cd2d94 */
 #if BIND_sqlite3_enable_load_extension_FUNCTION
 #define sqlite3_enable_load_extension_REQUIRED_ARGC 2
 #define sqlite3_enable_load_extension_OPTIONAL_ARGC 0
-/* sqlite3_enable_load_extension
- *
- * Parameters:
- * - db: sqlite3 *
- * - onoff: int
- * Return Type: int
- */
+/* int sqlite3_enable_load_extension(sqlite3 * db, int onoff) */
 mrb_value
 mrb_SQLite_sqlite3_enable_load_extension(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3556,16 +3062,11 @@ mrb_SQLite_sqlite3_enable_load_extension(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_enable_shared_cache */
-/* sha: e89c8b2aa8338502602a861240624a335ee94bdd459f97d520a2b4bb8d9dc31a */
+/* sha: 6ef2098e65f30c75fd9b0245504350db5141e773d26e1fc69d0a4537f0655e3f */
 #if BIND_sqlite3_enable_shared_cache_FUNCTION
 #define sqlite3_enable_shared_cache_REQUIRED_ARGC 1
 #define sqlite3_enable_shared_cache_OPTIONAL_ARGC 0
-/* sqlite3_enable_shared_cache
- *
- * Parameters:
- * - arg1: int
- * Return Type: int
- */
+/* int sqlite3_enable_shared_cache(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_enable_shared_cache(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -3585,16 +3086,11 @@ mrb_SQLite_sqlite3_enable_shared_cache(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_errcode */
-/* sha: faa752490f26c9ac4b62912d6042cbf3d589ba316783bab635b39fd81b127f96 */
+/* sha: b3ca4036d0367fe416c9d1b0c1a453ccf28f77bcf3f2591d99a5895be8b8a2ad */
 #if BIND_sqlite3_errcode_FUNCTION
 #define sqlite3_errcode_REQUIRED_ARGC 1
 #define sqlite3_errcode_OPTIONAL_ARGC 0
-/* sqlite3_errcode
- *
- * Parameters:
- * - db: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_errcode(sqlite3 * db) */
 mrb_value
 mrb_SQLite_sqlite3_errcode(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3623,16 +3119,11 @@ mrb_SQLite_sqlite3_errcode(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_errmsg */
-/* sha: c3a1c78b2fb4ad303bb2604c554293800c878db8811e0becb8ca6f599c0cd756 */
+/* sha: e9bde58962001f000b957c446673f74167938a8cf6ebd19c1db969ad80e2a2fd */
 #if BIND_sqlite3_errmsg_FUNCTION
 #define sqlite3_errmsg_REQUIRED_ARGC 1
 #define sqlite3_errmsg_OPTIONAL_ARGC 0
-/* sqlite3_errmsg
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: const char *
- */
+/* const char * sqlite3_errmsg(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_errmsg(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3661,16 +3152,11 @@ mrb_SQLite_sqlite3_errmsg(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_errmsg16 */
-/* sha: fd82168bbec4c525938d0870652f5716f9d7dd13a4db2ba11d081f29c36a85e3 */
+/* sha: 10309b8667263a83ba380132432e2d957443a7d52bdce3ce0bf4eb3a4838cde6 */
 #if BIND_sqlite3_errmsg16_FUNCTION
 #define sqlite3_errmsg16_REQUIRED_ARGC 1
 #define sqlite3_errmsg16_OPTIONAL_ARGC 0
-/* sqlite3_errmsg16
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: const void *
- */
+/* const void * sqlite3_errmsg16(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_errmsg16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3699,16 +3185,11 @@ mrb_SQLite_sqlite3_errmsg16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_errstr */
-/* sha: b7eb9464937fd0b1987c94a58a3531028d7fdb070230b90184d9b353515db16b */
+/* sha: ea6e87693380c08d3317b5cc6eb405312182703d0cb5476d2b2cbd6b94ee85a0 */
 #if BIND_sqlite3_errstr_FUNCTION
 #define sqlite3_errstr_REQUIRED_ARGC 1
 #define sqlite3_errstr_OPTIONAL_ARGC 0
-/* sqlite3_errstr
- *
- * Parameters:
- * - arg1: int
- * Return Type: const char *
- */
+/* const char * sqlite3_errstr(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_errstr(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -3728,20 +3209,11 @@ mrb_SQLite_sqlite3_errstr(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_exec */
-/* sha: 7300a8a878f429849576b6600f134c386da61e6cc9a543ff4aeb2343a615dd9d */
+/* sha: b37bf2553f491d6f6ececb8a26c7924b38977a60c122cf96412337530cd49cd1 */
 #if BIND_sqlite3_exec_FUNCTION
 #define sqlite3_exec_REQUIRED_ARGC 5
 #define sqlite3_exec_OPTIONAL_ARGC 0
-/* sqlite3_exec
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - sql: const char *
- * - callback: int (*)(void *, int, char **, char **)
- * - arg4: void *
- * - errmsg: char **
- * Return Type: int
- */
+/* int sqlite3_exec(sqlite3 * arg1, const char * sql, int (*)(void *, int, char **, char **) callback, void * arg4, char ** errmsg) */
 mrb_value
 mrb_SQLite_sqlite3_exec(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3786,16 +3258,11 @@ mrb_SQLite_sqlite3_exec(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_expired */
-/* sha: f301dab6d2512a1b61553ef9e303d42a92bb1c412bc4fd2a7bcef54c70854b59 */
+/* sha: 997031553e82d0380783af71bbe43266c8686e0535d6316f9bc382d79e12774e */
 #if BIND_sqlite3_expired_FUNCTION
 #define sqlite3_expired_REQUIRED_ARGC 1
 #define sqlite3_expired_OPTIONAL_ARGC 0
-/* sqlite3_expired
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_expired(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_expired(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3824,16 +3291,11 @@ mrb_SQLite_sqlite3_expired(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_extended_errcode */
-/* sha: 49b0b9ba8565d39cba0202c97c11ddba4a5a2ac23dd13289beea4496ff3464d9 */
+/* sha: bd065ccc326da05263d8aa004356ba9179034767860ae4cdd03e9b7dc296dc1d */
 #if BIND_sqlite3_extended_errcode_FUNCTION
 #define sqlite3_extended_errcode_REQUIRED_ARGC 1
 #define sqlite3_extended_errcode_OPTIONAL_ARGC 0
-/* sqlite3_extended_errcode
- *
- * Parameters:
- * - db: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_extended_errcode(sqlite3 * db) */
 mrb_value
 mrb_SQLite_sqlite3_extended_errcode(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -3862,17 +3324,11 @@ mrb_SQLite_sqlite3_extended_errcode(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_extended_result_codes */
-/* sha: e54be5cd4ed816f5263ec44b2083b2e3e4b243f93f1661fc29893a9abb324416 */
+/* sha: 84e364793979323e30d59cb3459994f82f814fe3fa4e47b9f1dd273a120c9115 */
 #if BIND_sqlite3_extended_result_codes_FUNCTION
 #define sqlite3_extended_result_codes_REQUIRED_ARGC 2
 #define sqlite3_extended_result_codes_OPTIONAL_ARGC 0
-/* sqlite3_extended_result_codes
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - onoff: int
- * Return Type: int
- */
+/* int sqlite3_extended_result_codes(sqlite3 * arg1, int onoff) */
 mrb_value
 mrb_SQLite_sqlite3_extended_result_codes(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3902,19 +3358,11 @@ mrb_SQLite_sqlite3_extended_result_codes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_file_control */
-/* sha: 93ff3a60877a637ee4bf160db99ae65c6b23691a791edab783e48f2c10fd6cf2 */
+/* sha: 2b6bf7caa2b7914cfe49aa77d1e2a5b465853dadb525ea10bc99c0218702d88e */
 #if BIND_sqlite3_file_control_FUNCTION
 #define sqlite3_file_control_REQUIRED_ARGC 4
 #define sqlite3_file_control_OPTIONAL_ARGC 0
-/* sqlite3_file_control
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zDbName: const char *
- * - op: int
- * - arg4: void *
- * Return Type: int
- */
+/* int sqlite3_file_control(sqlite3 * arg1, const char * zDbName, int op, void * arg4) */
 mrb_value
 mrb_SQLite_sqlite3_file_control(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -3989,16 +3437,11 @@ mrb_SQLite_sqlite3_finalize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_free */
-/* sha: 46095b268608ba2fa6a8c5c29a78336c038172507c7d9c9539e85c1dd7f92b82 */
+/* sha: 0f9265e93b40d82a43275d11fa5a0cd35da9dda72043e4057a982f797ddac89e */
 #if BIND_sqlite3_free_FUNCTION
 #define sqlite3_free_REQUIRED_ARGC 1
 #define sqlite3_free_OPTIONAL_ARGC 0
-/* sqlite3_free
- *
- * Parameters:
- * - arg1: void *
- * Return Type: void
- */
+/* void sqlite3_free(void * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_free(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4021,16 +3464,11 @@ mrb_SQLite_sqlite3_free(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_free_table */
-/* sha: 0981b9aabf0712025ac99a3519071a4e7275da7ca3ccbead3a71430cb9fdd9da */
+/* sha: f31fa860380db00acdfef635a4fc4d02679ac4cca2f4790ab9fd8aaf7398beb5 */
 #if BIND_sqlite3_free_table_FUNCTION
 #define sqlite3_free_table_REQUIRED_ARGC 1
 #define sqlite3_free_table_OPTIONAL_ARGC 0
-/* sqlite3_free_table
- *
- * Parameters:
- * - result: char **
- * Return Type: void
- */
+/* void sqlite3_free_table(char ** result) */
 mrb_value
 mrb_SQLite_sqlite3_free_table(mrb_state* mrb, mrb_value self) {
   mrb_value result;
@@ -4053,16 +3491,11 @@ mrb_SQLite_sqlite3_free_table(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_get_autocommit */
-/* sha: d88e3e76e3913e69d7898767ad2e5da744f1e478f57ab5fd3878179060388bf4 */
+/* sha: f73d610a3455fb27a6b3d66f3bad80e959c6c6b93a11690a0e7a9e2fe25f2239 */
 #if BIND_sqlite3_get_autocommit_FUNCTION
 #define sqlite3_get_autocommit_REQUIRED_ARGC 1
 #define sqlite3_get_autocommit_OPTIONAL_ARGC 0
-/* sqlite3_get_autocommit
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_get_autocommit(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_get_autocommit(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4091,17 +3524,11 @@ mrb_SQLite_sqlite3_get_autocommit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_get_auxdata */
-/* sha: 1a8a25bb24b64b2bc5bb11cf82a3a3efd78d7e431f682851d2391c5d7c31f461 */
+/* sha: 03fac1e79dd251ffa3867cc6cb62073d52341c1eb4f278d46017e14f3389082c */
 #if BIND_sqlite3_get_auxdata_FUNCTION
 #define sqlite3_get_auxdata_REQUIRED_ARGC 2
 #define sqlite3_get_auxdata_OPTIONAL_ARGC 0
-/* sqlite3_get_auxdata
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - N: int
- * Return Type: void *
- */
+/* void * sqlite3_get_auxdata(sqlite3_context * arg1, int N) */
 mrb_value
 mrb_SQLite_sqlite3_get_auxdata(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4131,21 +3558,11 @@ mrb_SQLite_sqlite3_get_auxdata(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_get_table */
-/* sha: f374ec9c6d13b9806d5b58c69ee872eccb2de75dd27d9dd299d0eafcd8da84c3 */
+/* sha: 2c7090e1f2a787f2b2823fbdc09756e66a7062a36859303a31d07f40ae35bd33 */
 #if BIND_sqlite3_get_table_FUNCTION
 #define sqlite3_get_table_REQUIRED_ARGC 6
 #define sqlite3_get_table_OPTIONAL_ARGC 0
-/* sqlite3_get_table
- *
- * Parameters:
- * - db: sqlite3 *
- * - zSql: const char *
- * - pazResult: char ***
- * - pnRow: int *
- * - pnColumn: int *
- * - pzErrmsg: char **
- * Return Type: int
- */
+/* int sqlite3_get_table(sqlite3 * db, const char * zSql, char *** pazResult, int * pnRow, int * pnColumn, char ** pzErrmsg) */
 mrb_value
 mrb_SQLite_sqlite3_get_table(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -4195,15 +3612,11 @@ mrb_SQLite_sqlite3_get_table(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_global_recover */
-/* sha: 05b4c153da0d177c2effec94b8e0a7d87c3776b2644d1605241d376f35ac1fbe */
+/* sha: d683ff959f44f3cc771bc47c2613d6dbd0cdee0004e51b1baf886e0d10af6afc */
 #if BIND_sqlite3_global_recover_FUNCTION
 #define sqlite3_global_recover_REQUIRED_ARGC 0
 #define sqlite3_global_recover_OPTIONAL_ARGC 0
-/* sqlite3_global_recover
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_global_recover() */
 mrb_value
 mrb_SQLite_sqlite3_global_recover(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4218,15 +3631,11 @@ mrb_SQLite_sqlite3_global_recover(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_initialize */
-/* sha: 24da52c90998d3e2a8a6d30099a9fae08d24e34c460ee2004031af294e114ea8 */
+/* sha: f1fd691ab7537c5d96aa55d9a8166f4b293ab02db5a9a4fcc5855d3d335a0a45 */
 #if BIND_sqlite3_initialize_FUNCTION
 #define sqlite3_initialize_REQUIRED_ARGC 0
 #define sqlite3_initialize_OPTIONAL_ARGC 0
-/* sqlite3_initialize
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_initialize() */
 mrb_value
 mrb_SQLite_sqlite3_initialize(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4241,16 +3650,11 @@ mrb_SQLite_sqlite3_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_interrupt */
-/* sha: 4bc1e5c196db6280194774863d92bc8178351b95c225ee41bb47f08d7ca4430c */
+/* sha: a26663f7d0f9b485568f2b97929d9d6707afd61085bbf1ab338f023afde7ff99 */
 #if BIND_sqlite3_interrupt_FUNCTION
 #define sqlite3_interrupt_REQUIRED_ARGC 1
 #define sqlite3_interrupt_OPTIONAL_ARGC 0
-/* sqlite3_interrupt
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: void
- */
+/* void sqlite3_interrupt(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_interrupt(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4276,16 +3680,11 @@ mrb_SQLite_sqlite3_interrupt(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_last_insert_rowid */
-/* sha: 5bdd3ef34c9fddc3d673647c23666d63f5053f76a445e2ed891aed62384e012b */
+/* sha: 16db8ec0673e5c8b3f74469359ea6379bd55fb28db0d4c1c88033399c0260b48 */
 #if BIND_sqlite3_last_insert_rowid_FUNCTION
 #define sqlite3_last_insert_rowid_REQUIRED_ARGC 1
 #define sqlite3_last_insert_rowid_OPTIONAL_ARGC 0
-/* sqlite3_last_insert_rowid
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_last_insert_rowid(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_last_insert_rowid(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4314,15 +3713,11 @@ mrb_SQLite_sqlite3_last_insert_rowid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_libversion */
-/* sha: 1085bf69e8a65bf058350d36c8c9c466fa3531fd517d2b076d449693fb8004ab */
+/* sha: e93225d293a632296bbcb0bb53feaf17812abd9a0d3f966a162f8e4640aa713b */
 #if BIND_sqlite3_libversion_FUNCTION
 #define sqlite3_libversion_REQUIRED_ARGC 0
 #define sqlite3_libversion_OPTIONAL_ARGC 0
-/* sqlite3_libversion
- *
- * Parameters: None
- * Return Type: const char *
- */
+/* const char * sqlite3_libversion() */
 mrb_value
 mrb_SQLite_sqlite3_libversion(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4337,15 +3732,11 @@ mrb_SQLite_sqlite3_libversion(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_libversion_number */
-/* sha: 71dd281c2ef3fe876c8c064744b40ea1e1b7d9514d1c153a1b0514c23a5010c9 */
+/* sha: 5218123b1fa0938a003d35194d99738608ae6f56483c36c57f02a6aa02ec6c2f */
 #if BIND_sqlite3_libversion_number_FUNCTION
 #define sqlite3_libversion_number_REQUIRED_ARGC 0
 #define sqlite3_libversion_number_OPTIONAL_ARGC 0
-/* sqlite3_libversion_number
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_libversion_number() */
 mrb_value
 mrb_SQLite_sqlite3_libversion_number(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4360,18 +3751,11 @@ mrb_SQLite_sqlite3_libversion_number(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_limit */
-/* sha: d2d2b25d51d4cc0500fda7f8cd3c8c7df6317c844d26c12835c3a3ed56e53eb8 */
+/* sha: 2d4b454dcaff56df58bf427dadf8d6ad89d1355fb19b108cf9797997fe1a45f6 */
 #if BIND_sqlite3_limit_FUNCTION
 #define sqlite3_limit_REQUIRED_ARGC 3
 #define sqlite3_limit_OPTIONAL_ARGC 0
-/* sqlite3_limit
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - id: int
- * - newVal: int
- * Return Type: int
- */
+/* int sqlite3_limit(sqlite3 * arg1, int id, int newVal) */
 mrb_value
 mrb_SQLite_sqlite3_limit(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4402,19 +3786,11 @@ mrb_SQLite_sqlite3_limit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_load_extension */
-/* sha: ea45eb48289a580d3e04710aee0f4e243be6c542032000222f09d15bed8fde3e */
+/* sha: 430282d65d6d4b6594b48402f04ce55f4ff42ae987c396b187e36157a104acaa */
 #if BIND_sqlite3_load_extension_FUNCTION
 #define sqlite3_load_extension_REQUIRED_ARGC 4
 #define sqlite3_load_extension_OPTIONAL_ARGC 0
-/* sqlite3_load_extension
- *
- * Parameters:
- * - db: sqlite3 *
- * - zFile: const char *
- * - zProc: const char *
- * - pzErrMsg: char **
- * Return Type: int
- */
+/* int sqlite3_load_extension(sqlite3 * db, const char * zFile, const char * zProc, char ** pzErrMsg) */
 mrb_value
 mrb_SQLite_sqlite3_load_extension(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -4450,17 +3826,11 @@ mrb_SQLite_sqlite3_load_extension(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_log */
-/* sha: fae61e44244f7f3f7a39fb0b00d640d803f84d53627ed828b100f6e1d885799c */
+/* sha: 78f45b7ea0e28f93849214ab2c1431753364913ca1f3a348bed62b9b13844af7 */
 #if BIND_sqlite3_log_FUNCTION
 #define sqlite3_log_REQUIRED_ARGC 2
 #define sqlite3_log_OPTIONAL_ARGC 0
-/* sqlite3_log
- *
- * Parameters:
- * - iErrCode: int
- * - zFormat: const char *
- * Return Type: void
- */
+/* void sqlite3_log(int iErrCode, const char * zFormat) */
 mrb_value
 mrb_SQLite_sqlite3_log(mrb_state* mrb, mrb_value self) {
   mrb_int native_iErrCode;
@@ -4478,16 +3848,11 @@ mrb_SQLite_sqlite3_log(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_malloc */
-/* sha: 8f64f11c7f6ab1f7fa06eb794615388a72da58517a8efd0fe94a859f89d9e872 */
+/* sha: 264509162f96a9f835ad72a2edd387f3568014aac1ba41d7df32e5f47161b62c */
 #if BIND_sqlite3_malloc_FUNCTION
 #define sqlite3_malloc_REQUIRED_ARGC 1
 #define sqlite3_malloc_OPTIONAL_ARGC 0
-/* sqlite3_malloc
- *
- * Parameters:
- * - arg1: int
- * Return Type: void *
- */
+/* void * sqlite3_malloc(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_malloc(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -4507,16 +3872,11 @@ mrb_SQLite_sqlite3_malloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_malloc64 */
-/* sha: 0c07f2e97f3ae13b04c8008b2e578a5fa3b4b7ea9a3f29c521569a4bd073625e */
+/* sha: 5ed89921f6327689d888e005729a532f01ff8c72eccb6c46fc659a4c1c377aec */
 #if BIND_sqlite3_malloc64_FUNCTION
 #define sqlite3_malloc64_REQUIRED_ARGC 1
 #define sqlite3_malloc64_OPTIONAL_ARGC 0
-/* sqlite3_malloc64
- *
- * Parameters:
- * - arg1: sqlite3_uint64
- * Return Type: void *
- */
+/* void * sqlite3_malloc64(sqlite3_uint64 arg1) */
 mrb_value
 mrb_SQLite_sqlite3_malloc64(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -4536,18 +3896,11 @@ mrb_SQLite_sqlite3_malloc64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_memory_alarm */
-/* sha: 97366cde7b7a5458e8f819329460706cc88369ae3746c2239a981503d36098c0 */
+/* sha: 16d426adecd4fa7b772146b1ee9765ef352ec1848824572848941c51554e98d8 */
 #if BIND_sqlite3_memory_alarm_FUNCTION
 #define sqlite3_memory_alarm_REQUIRED_ARGC 3
 #define sqlite3_memory_alarm_OPTIONAL_ARGC 0
-/* sqlite3_memory_alarm
- *
- * Parameters:
- * - arg1: void (*)(void *, sqlite3_int64, int)
- * - arg2: void *
- * - arg3: sqlite3_int64
- * Return Type: int
- */
+/* int sqlite3_memory_alarm(void (*)(void *, sqlite3_int64, int) arg1, void * arg2, sqlite3_int64 arg3) */
 mrb_value
 mrb_SQLite_sqlite3_memory_alarm(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4579,16 +3932,11 @@ mrb_SQLite_sqlite3_memory_alarm(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_memory_highwater */
-/* sha: 8ef0e3bdbef35070454cf4d3c3826976464bd5a819384f8c59ae6b1c71848392 */
+/* sha: 58b3744f84fb7f3467920dd6d9dad048bb989e4eb41961f029ac1fcfc8255f35 */
 #if BIND_sqlite3_memory_highwater_FUNCTION
 #define sqlite3_memory_highwater_REQUIRED_ARGC 1
 #define sqlite3_memory_highwater_OPTIONAL_ARGC 0
-/* sqlite3_memory_highwater
- *
- * Parameters:
- * - resetFlag: int
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_memory_highwater(int resetFlag) */
 mrb_value
 mrb_SQLite_sqlite3_memory_highwater(mrb_state* mrb, mrb_value self) {
   mrb_int native_resetFlag;
@@ -4608,15 +3956,11 @@ mrb_SQLite_sqlite3_memory_highwater(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_memory_used */
-/* sha: b548a58f951b037bdc50e6437e5ec2f5cdffc4d7bf0c565f9d62d0951182dc13 */
+/* sha: 7b523a7534a3aa00a41e5dc4601bb7e4b4929c307f20b0c6a00389e454827298 */
 #if BIND_sqlite3_memory_used_FUNCTION
 #define sqlite3_memory_used_REQUIRED_ARGC 0
 #define sqlite3_memory_used_OPTIONAL_ARGC 0
-/* sqlite3_memory_used
- *
- * Parameters: None
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_memory_used() */
 mrb_value
 mrb_SQLite_sqlite3_memory_used(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4631,16 +3975,11 @@ mrb_SQLite_sqlite3_memory_used(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_mprintf */
-/* sha: 0daed60260bfcdc4ea63668418fa1d207a4af0d932084da768859023ffe4efd7 */
+/* sha: bee18fab26dee4a2b29a4186cfdadd19f1e614a4503f271365b20b1414766bd8 */
 #if BIND_sqlite3_mprintf_FUNCTION
 #define sqlite3_mprintf_REQUIRED_ARGC 1
 #define sqlite3_mprintf_OPTIONAL_ARGC 0
-/* sqlite3_mprintf
- *
- * Parameters:
- * - arg1: const char *
- * Return Type: char *
- */
+/* char * sqlite3_mprintf(const char * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_mprintf(mrb_state* mrb, mrb_value self) {
   char * native_arg1 = NULL;
@@ -4660,16 +3999,11 @@ mrb_SQLite_sqlite3_mprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_msize */
-/* sha: fed76fac7340dc2f10827bbde8c20b8e39c3f19680c3651990c984235a090089 */
+/* sha: 339eff8f50eae8a8bda4e22d2bc300b31a268dae6d39e1fed1921f60b6c84a4a */
 #if BIND_sqlite3_msize_FUNCTION
 #define sqlite3_msize_REQUIRED_ARGC 1
 #define sqlite3_msize_OPTIONAL_ARGC 0
-/* sqlite3_msize
- *
- * Parameters:
- * - arg1: void *
- * Return Type: sqlite3_uint64
- */
+/* sqlite3_uint64 sqlite3_msize(void * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_msize(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4695,17 +4029,11 @@ mrb_SQLite_sqlite3_msize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_next_stmt */
-/* sha: fa00b90ef2ba1325ac5cb233864220f5a1e67a8ddd57676a8523697fa9f107e4 */
+/* sha: bd72c114b03472a4f584a675ab22a1a8ae6c7c1f6d22fc34e0f592b121377e15 */
 #if BIND_sqlite3_next_stmt_FUNCTION
 #define sqlite3_next_stmt_REQUIRED_ARGC 2
 #define sqlite3_next_stmt_OPTIONAL_ARGC 0
-/* sqlite3_next_stmt
- *
- * Parameters:
- * - pDb: sqlite3 *
- * - pStmt: sqlite3_stmt *
- * Return Type: sqlite3_stmt *
- */
+/* sqlite3_stmt * sqlite3_next_stmt(sqlite3 * pDb, sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_next_stmt(mrb_state* mrb, mrb_value self) {
   mrb_value pDb;
@@ -4781,17 +4109,11 @@ mrb_SQLite_sqlite3_open(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_open16 */
-/* sha: e79bf32728dd2d408da27c8d586578f7a612e2d39c084f4f0e97c87848a35e38 */
+/* sha: 3c64ac9b56708f4f9348fce985c9622aa5bc1dbbaf6ae0ecee8bd046772578f3 */
 #if BIND_sqlite3_open16_FUNCTION
 #define sqlite3_open16_REQUIRED_ARGC 2
 #define sqlite3_open16_OPTIONAL_ARGC 0
-/* sqlite3_open16
- *
- * Parameters:
- * - filename: const void *
- * - ppDb: sqlite3 **
- * Return Type: int
- */
+/* int sqlite3_open16(const void * filename, sqlite3 ** ppDb) */
 mrb_value
 mrb_SQLite_sqlite3_open16(mrb_state* mrb, mrb_value self) {
   mrb_value filename;
@@ -4822,19 +4144,11 @@ mrb_SQLite_sqlite3_open16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_open_v2 */
-/* sha: f366c3251556343824dcc2065dae54de44758d28c35cd52f5e57d2a01dfc0ac3 */
+/* sha: 0c2f5d9b591d3986626a3588c297a9451f3011a51a1f3880f63ed871fdfcf9d2 */
 #if BIND_sqlite3_open_v2_FUNCTION
 #define sqlite3_open_v2_REQUIRED_ARGC 4
 #define sqlite3_open_v2_OPTIONAL_ARGC 0
-/* sqlite3_open_v2
- *
- * Parameters:
- * - filename: const char *
- * - ppDb: sqlite3 **
- * - flags: int
- * - zVfs: const char *
- * Return Type: int
- */
+/* int sqlite3_open_v2(const char * filename, sqlite3 ** ppDb, int flags, const char * zVfs) */
 mrb_value
 mrb_SQLite_sqlite3_open_v2(mrb_state* mrb, mrb_value self) {
   char * native_filename = NULL;
@@ -4863,15 +4177,11 @@ mrb_SQLite_sqlite3_open_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_os_end */
-/* sha: 465f2a414bafe11afb40615460ce400391339ee7c48c8e54a523385ecc037512 */
+/* sha: fd9f90fdf3bc3d661eac0346fba1a13a7c47bcedac757807bacd4b4302fb795f */
 #if BIND_sqlite3_os_end_FUNCTION
 #define sqlite3_os_end_REQUIRED_ARGC 0
 #define sqlite3_os_end_OPTIONAL_ARGC 0
-/* sqlite3_os_end
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_os_end() */
 mrb_value
 mrb_SQLite_sqlite3_os_end(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4886,15 +4196,11 @@ mrb_SQLite_sqlite3_os_end(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_os_init */
-/* sha: 844d7278d130100ffcd43bbf23e9a0ee952aee7c82ebd72bb2e70f16499261fe */
+/* sha: 5c90d2eba4762fcf3477aef68e134f84599fec4050080aa3c1d597f25ef82f91 */
 #if BIND_sqlite3_os_init_FUNCTION
 #define sqlite3_os_init_REQUIRED_ARGC 0
 #define sqlite3_os_init_OPTIONAL_ARGC 0
-/* sqlite3_os_init
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_os_init() */
 mrb_value
 mrb_SQLite_sqlite3_os_init(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -4909,18 +4215,11 @@ mrb_SQLite_sqlite3_os_init(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_overload_function */
-/* sha: 17f4ebb83bf1229360976449fdc4473eeb00eb769796fd28a976f513874b785a */
+/* sha: 94cbad688b49f769ee09569dfd5c3ac0917b4ff7b682ca82e5032916b41244a6 */
 #if BIND_sqlite3_overload_function_FUNCTION
 #define sqlite3_overload_function_REQUIRED_ARGC 3
 #define sqlite3_overload_function_OPTIONAL_ARGC 0
-/* sqlite3_overload_function
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - zFuncName: const char *
- * - nArg: int
- * Return Type: int
- */
+/* int sqlite3_overload_function(sqlite3 * arg1, const char * zFuncName, int nArg) */
 mrb_value
 mrb_SQLite_sqlite3_overload_function(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -4951,20 +4250,11 @@ mrb_SQLite_sqlite3_overload_function(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_prepare */
-/* sha: 9157c336fdd716b617c89aa66fe8079972a3c94e066f3aef807b609022afd606 */
+/* sha: 22a2c82fd65d295453371bf1a0199930bc985a73603ede9183191de16a1846ee */
 #if BIND_sqlite3_prepare_FUNCTION
 #define sqlite3_prepare_REQUIRED_ARGC 5
 #define sqlite3_prepare_OPTIONAL_ARGC 0
-/* sqlite3_prepare
- *
- * Parameters:
- * - db: sqlite3 *
- * - zSql: const char *
- * - nByte: int
- * - ppStmt: sqlite3_stmt **
- * - pzTail: const char **
- * Return Type: int
- */
+/* int sqlite3_prepare(sqlite3 * db, const char * zSql, int nByte, sqlite3_stmt ** ppStmt, const char ** pzTail) */
 mrb_value
 mrb_SQLite_sqlite3_prepare(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -5005,20 +4295,11 @@ mrb_SQLite_sqlite3_prepare(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_prepare16 */
-/* sha: 07f3102292c0f6a34aabe54b3210db72376b001edaf4b455748cf2088a29286a */
+/* sha: 9ba144e109abf84ebc7b94f33beee1ff71f4104ac894a34083168df0326b1301 */
 #if BIND_sqlite3_prepare16_FUNCTION
 #define sqlite3_prepare16_REQUIRED_ARGC 5
 #define sqlite3_prepare16_OPTIONAL_ARGC 0
-/* sqlite3_prepare16
- *
- * Parameters:
- * - db: sqlite3 *
- * - zSql: const void *
- * - nByte: int
- * - ppStmt: sqlite3_stmt **
- * - pzTail: const void **
- * Return Type: int
- */
+/* int sqlite3_prepare16(sqlite3 * db, const void * zSql, int nByte, sqlite3_stmt ** ppStmt, const void ** pzTail) */
 mrb_value
 mrb_SQLite_sqlite3_prepare16(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -5063,20 +4344,11 @@ mrb_SQLite_sqlite3_prepare16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_prepare16_v2 */
-/* sha: 774abea57c221ae43caeda86cdc4dbe7efdc25409003d7a1ca26dfa27f498223 */
+/* sha: 50d53798f8a99662f4263722da8ec7018ea74c6bd382b366ee569a8e642f8833 */
 #if BIND_sqlite3_prepare16_v2_FUNCTION
 #define sqlite3_prepare16_v2_REQUIRED_ARGC 5
 #define sqlite3_prepare16_v2_OPTIONAL_ARGC 0
-/* sqlite3_prepare16_v2
- *
- * Parameters:
- * - db: sqlite3 *
- * - zSql: const void *
- * - nByte: int
- * - ppStmt: sqlite3_stmt **
- * - pzTail: const void **
- * Return Type: int
- */
+/* int sqlite3_prepare16_v2(sqlite3 * db, const void * zSql, int nByte, sqlite3_stmt ** ppStmt, const void ** pzTail) */
 mrb_value
 mrb_SQLite_sqlite3_prepare16_v2(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -5181,18 +4453,11 @@ mrb_SQLite_sqlite3_prepare_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_profile */
-/* sha: 579d7b58bdb26596c6971e6442a5ee04e03dbe282a272726f60be68ebbc42917 */
+/* sha: dc9746b3bfb076f2ecc1edafb29dbd80cff82fc2d39d294189e8ba9c32850719 */
 #if BIND_sqlite3_profile_FUNCTION
 #define sqlite3_profile_REQUIRED_ARGC 3
 #define sqlite3_profile_OPTIONAL_ARGC 0
-/* sqlite3_profile
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - xProfile: void (*)(void *, const char *, sqlite3_uint64)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_profile(sqlite3 * arg1, void (*)(void *, const char *, sqlite3_uint64) xProfile, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_profile(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5231,19 +4496,11 @@ mrb_SQLite_sqlite3_profile(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_progress_handler */
-/* sha: 097552f2884648b61efd09ee10ba4d9d4acd2fba88c4b8c5af75207b77d50bee */
+/* sha: 76d41dd40aa7316b1712d74e27ea4c79636e7415a7ccf23af0f66d3a9b6ca42e */
 #if BIND_sqlite3_progress_handler_FUNCTION
 #define sqlite3_progress_handler_REQUIRED_ARGC 4
 #define sqlite3_progress_handler_OPTIONAL_ARGC 0
-/* sqlite3_progress_handler
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: int
- * - arg3: int (*)(void *)
- * - arg4: void *
- * Return Type: void
- */
+/* void sqlite3_progress_handler(sqlite3 * arg1, int arg2, int (*)(void *) arg3, void * arg4) */
 mrb_value
 mrb_SQLite_sqlite3_progress_handler(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5280,17 +4537,11 @@ mrb_SQLite_sqlite3_progress_handler(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_randomness */
-/* sha: 98c4923a9349cbb2282ede7b76e1f903d28706b30a8c8ac94b0817386f8892a6 */
+/* sha: e98eba63b9c112ea228a9eb3023ddd5b9b3c2905c116abd92cc0e751d6ed1f3c */
 #if BIND_sqlite3_randomness_FUNCTION
 #define sqlite3_randomness_REQUIRED_ARGC 2
 #define sqlite3_randomness_OPTIONAL_ARGC 0
-/* sqlite3_randomness
- *
- * Parameters:
- * - N: int
- * - P: void *
- * Return Type: void
- */
+/* void sqlite3_randomness(int N, void * P) */
 mrb_value
 mrb_SQLite_sqlite3_randomness(mrb_state* mrb, mrb_value self) {
   mrb_int native_N;
@@ -5314,17 +4565,11 @@ mrb_SQLite_sqlite3_randomness(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_realloc */
-/* sha: 9182f3e5ca3e3f48122ade1149769f306b5e5bdf81291c1a0dd03d51b74b8f11 */
+/* sha: 185b8ca497a592d60bf3d332f9517b75fac5ce48ceac9c14c18b6fe55dc8246e */
 #if BIND_sqlite3_realloc_FUNCTION
 #define sqlite3_realloc_REQUIRED_ARGC 2
 #define sqlite3_realloc_OPTIONAL_ARGC 0
-/* sqlite3_realloc
- *
- * Parameters:
- * - arg1: void *
- * - arg2: int
- * Return Type: void *
- */
+/* void * sqlite3_realloc(void * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_realloc(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5351,17 +4596,11 @@ mrb_SQLite_sqlite3_realloc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_realloc64 */
-/* sha: f1be2ea2b6d7066df832fa1c18b125adff9d75a407a023166708040d1ecc0b45 */
+/* sha: 07d2b86119193258487f55c5b4d403403f88562aef1f915aff26920f95a81c14 */
 #if BIND_sqlite3_realloc64_FUNCTION
 #define sqlite3_realloc64_REQUIRED_ARGC 2
 #define sqlite3_realloc64_OPTIONAL_ARGC 0
-/* sqlite3_realloc64
- *
- * Parameters:
- * - arg1: void *
- * - arg2: sqlite3_uint64
- * Return Type: void *
- */
+/* void * sqlite3_realloc64(void * arg1, sqlite3_uint64 arg2) */
 mrb_value
 mrb_SQLite_sqlite3_realloc64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5388,16 +4627,11 @@ mrb_SQLite_sqlite3_realloc64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_release_memory */
-/* sha: 40029f145054a13e39da55863edd3879d6ee67ba2e16935f5e8366fa7c1f6ba9 */
+/* sha: d6d0b12a6c1272e85fd00089eb814510112a69a74dcdf870216af62bdbc0c707 */
 #if BIND_sqlite3_release_memory_FUNCTION
 #define sqlite3_release_memory_REQUIRED_ARGC 1
 #define sqlite3_release_memory_OPTIONAL_ARGC 0
-/* sqlite3_release_memory
- *
- * Parameters:
- * - arg1: int
- * Return Type: int
- */
+/* int sqlite3_release_memory(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_release_memory(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -5417,16 +4651,11 @@ mrb_SQLite_sqlite3_release_memory(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_reset */
-/* sha: aae6ec067b73ba4847d15ca9296eb2b5341ba967c10d370c50ea6795ed25655b */
+/* sha: b42da81e400fd8ee75635cfe5de61f65a10c0e7c512e1750784951cf9181662e */
 #if BIND_sqlite3_reset_FUNCTION
 #define sqlite3_reset_REQUIRED_ARGC 1
 #define sqlite3_reset_OPTIONAL_ARGC 0
-/* sqlite3_reset
- *
- * Parameters:
- * - pStmt: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_reset(sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_reset(mrb_state* mrb, mrb_value self) {
   mrb_value pStmt;
@@ -5455,15 +4684,11 @@ mrb_SQLite_sqlite3_reset(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_reset_auto_extension */
-/* sha: a096b046f7efbbb14a33d5e9c2138b82164eee580d02fb2a567b1db7d3aa42d9 */
+/* sha: 89dd4bf90ab9a10e525ca5ab8d7cb256fb0a6683286be70b1002b82f2b11983b */
 #if BIND_sqlite3_reset_auto_extension_FUNCTION
 #define sqlite3_reset_auto_extension_REQUIRED_ARGC 0
 #define sqlite3_reset_auto_extension_OPTIONAL_ARGC 0
-/* sqlite3_reset_auto_extension
- *
- * Parameters: None
- * Return Type: void
- */
+/* void sqlite3_reset_auto_extension() */
 mrb_value
 mrb_SQLite_sqlite3_reset_auto_extension(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -5475,19 +4700,11 @@ mrb_SQLite_sqlite3_reset_auto_extension(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_blob */
-/* sha: 80f5688d09261c46ff869da005782f1277ae0fca38f09b5151972db488424a84 */
+/* sha: eb6a695ffbc44289f41872cdf34c2d3af8cae5483ce77000c8059b12aabb0ceb */
 #if BIND_sqlite3_result_blob_FUNCTION
 #define sqlite3_result_blob_REQUIRED_ARGC 4
 #define sqlite3_result_blob_OPTIONAL_ARGC 0
-/* sqlite3_result_blob
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: int
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_blob(sqlite3_context * arg1, const void * arg2, int arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_blob(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5524,19 +4741,11 @@ mrb_SQLite_sqlite3_result_blob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_blob64 */
-/* sha: adf2e717453fcda2dbc0778aaecaa21e6eef9009c2c6a76c5b215889dbf311cb */
+/* sha: 3d572345306138dc7824f2de74ae09035d978a751356ce6babbb786ca62f198d */
 #if BIND_sqlite3_result_blob64_FUNCTION
 #define sqlite3_result_blob64_REQUIRED_ARGC 4
 #define sqlite3_result_blob64_OPTIONAL_ARGC 0
-/* sqlite3_result_blob64
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: sqlite3_uint64
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_blob64(sqlite3_context * arg1, const void * arg2, sqlite3_uint64 arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_blob64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5573,17 +4782,11 @@ mrb_SQLite_sqlite3_result_blob64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_double */
-/* sha: c8640f02d8c926d4d554b1fd22e55d73005a3957a09226b2aaec4635d52bf165 */
+/* sha: 657139cf7396fe7ddaf583772c59ccdc9db98cb68055845811cbd1ab5f7a7b49 */
 #if BIND_sqlite3_result_double_FUNCTION
 #define sqlite3_result_double_REQUIRED_ARGC 2
 #define sqlite3_result_double_OPTIONAL_ARGC 0
-/* sqlite3_result_double
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: double
- * Return Type: void
- */
+/* void sqlite3_result_double(sqlite3_context * arg1, double arg2) */
 mrb_value
 mrb_SQLite_sqlite3_result_double(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5610,18 +4813,11 @@ mrb_SQLite_sqlite3_result_double(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_error */
-/* sha: 8a1889be7a21d5ce8d991518a759d0eb32d6a51c6c6b8a3c949985faf2ede5f6 */
+/* sha: b70da70bec3585578e8c8010783025e254922cbc1eda152d2d56f41fc4b4c0d8 */
 #if BIND_sqlite3_result_error_FUNCTION
 #define sqlite3_result_error_REQUIRED_ARGC 3
 #define sqlite3_result_error_OPTIONAL_ARGC 0
-/* sqlite3_result_error
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const char *
- * - arg3: int
- * Return Type: void
- */
+/* void sqlite3_result_error(sqlite3_context * arg1, const char * arg2, int arg3) */
 mrb_value
 mrb_SQLite_sqlite3_result_error(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5649,18 +4845,11 @@ mrb_SQLite_sqlite3_result_error(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_error16 */
-/* sha: 2b5e2a94c4ece654c9c363247b8bc2e2f51309220a20202c4063e8311e01b1ed */
+/* sha: 46a1fb49d56b0a8a022526ee53519ca6a8397d95ae9a40be5668583165be3e19 */
 #if BIND_sqlite3_result_error16_FUNCTION
 #define sqlite3_result_error16_REQUIRED_ARGC 3
 #define sqlite3_result_error16_OPTIONAL_ARGC 0
-/* sqlite3_result_error16
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: int
- * Return Type: void
- */
+/* void sqlite3_result_error16(sqlite3_context * arg1, const void * arg2, int arg3) */
 mrb_value
 mrb_SQLite_sqlite3_result_error16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5692,17 +4881,11 @@ mrb_SQLite_sqlite3_result_error16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_error_code */
-/* sha: af7052b135204b36d1092f2fda1f4573029c85aa845bc73376193add9325aec7 */
+/* sha: 61f7bd250fc6b6dc659b0046ab68e479f29030a079e2cc97a60929cfbf0f63fb */
 #if BIND_sqlite3_result_error_code_FUNCTION
 #define sqlite3_result_error_code_REQUIRED_ARGC 2
 #define sqlite3_result_error_code_OPTIONAL_ARGC 0
-/* sqlite3_result_error_code
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: int
- * Return Type: void
- */
+/* void sqlite3_result_error_code(sqlite3_context * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_result_error_code(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5729,16 +4912,11 @@ mrb_SQLite_sqlite3_result_error_code(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_error_nomem */
-/* sha: b275b9edb166543006a135ba151414f0f303548f1be587166043837394a6d843 */
+/* sha: bcf761fdcf64cd185e889e6aa6d07583f9c82f620d9183cf109a2f0fb0cccfd4 */
 #if BIND_sqlite3_result_error_nomem_FUNCTION
 #define sqlite3_result_error_nomem_REQUIRED_ARGC 1
 #define sqlite3_result_error_nomem_OPTIONAL_ARGC 0
-/* sqlite3_result_error_nomem
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: void
- */
+/* void sqlite3_result_error_nomem(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_result_error_nomem(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5764,16 +4942,11 @@ mrb_SQLite_sqlite3_result_error_nomem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_error_toobig */
-/* sha: a3807a22a40531c53b546c6a5cc702a42e84ec19f5ec82e5cb360fb3de990bab */
+/* sha: c56228b99cd1788ba9d9635b2716c60b374c38ab2b8c9b125dd8621573999de0 */
 #if BIND_sqlite3_result_error_toobig_FUNCTION
 #define sqlite3_result_error_toobig_REQUIRED_ARGC 1
 #define sqlite3_result_error_toobig_OPTIONAL_ARGC 0
-/* sqlite3_result_error_toobig
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: void
- */
+/* void sqlite3_result_error_toobig(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_result_error_toobig(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5799,17 +4972,11 @@ mrb_SQLite_sqlite3_result_error_toobig(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_int */
-/* sha: b517baa4de908a57a02b1e6d985662054ec70bda6f370300ae681b1ed028e4b7 */
+/* sha: de8f74ddbd5117f4298deef2d8ccbbc167333e5d09121fb0a4043b300f9b054c */
 #if BIND_sqlite3_result_int_FUNCTION
 #define sqlite3_result_int_REQUIRED_ARGC 2
 #define sqlite3_result_int_OPTIONAL_ARGC 0
-/* sqlite3_result_int
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: int
- * Return Type: void
- */
+/* void sqlite3_result_int(sqlite3_context * arg1, int arg2) */
 mrb_value
 mrb_SQLite_sqlite3_result_int(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5836,17 +5003,11 @@ mrb_SQLite_sqlite3_result_int(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_int64 */
-/* sha: 906e1cef90b730c2f734e7c90dad9e43c6e3e3bdb77721aca3bbd740379a88d7 */
+/* sha: e34d41c69d9c153145bae623b8848d895493ee744b0ac4f558c146c2f7507748 */
 #if BIND_sqlite3_result_int64_FUNCTION
 #define sqlite3_result_int64_REQUIRED_ARGC 2
 #define sqlite3_result_int64_OPTIONAL_ARGC 0
-/* sqlite3_result_int64
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: sqlite3_int64
- * Return Type: void
- */
+/* void sqlite3_result_int64(sqlite3_context * arg1, sqlite3_int64 arg2) */
 mrb_value
 mrb_SQLite_sqlite3_result_int64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5873,16 +5034,11 @@ mrb_SQLite_sqlite3_result_int64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_null */
-/* sha: 0cd1785d376a61ec74bc528e20855001df95b43852e3e48a0ff98bd970ec3099 */
+/* sha: eaa881c491a2baf357ae749bd1697a0c3bc8f7b6d4a5366dddecb6f5079210ab */
 #if BIND_sqlite3_result_null_FUNCTION
 #define sqlite3_result_null_REQUIRED_ARGC 1
 #define sqlite3_result_null_OPTIONAL_ARGC 0
-/* sqlite3_result_null
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: void
- */
+/* void sqlite3_result_null(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_result_null(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5908,19 +5064,11 @@ mrb_SQLite_sqlite3_result_null(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_text */
-/* sha: 3fa2d984d68c873037ff491f921da04e5512ceb4ab3089e7c096a2819ab70d0f */
+/* sha: b4c2286aa2aa3d5d09416aebd0442a7855f2e99c887a757d0a8c54724da9c0ce */
 #if BIND_sqlite3_result_text_FUNCTION
 #define sqlite3_result_text_REQUIRED_ARGC 4
 #define sqlite3_result_text_OPTIONAL_ARGC 0
-/* sqlite3_result_text
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const char *
- * - arg3: int
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_text(sqlite3_context * arg1, const char * arg2, int arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_text(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -5953,19 +5101,11 @@ mrb_SQLite_sqlite3_result_text(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_text16 */
-/* sha: 8b9dc9e9ba74f31827c7d2154b1456b35a1585ca4e3a1dab38e613ea4ade4700 */
+/* sha: cdcf6c2f48a402bc357e651fa1fb824bbf62936281d0ac41d67065f0a4ff8148 */
 #if BIND_sqlite3_result_text16_FUNCTION
 #define sqlite3_result_text16_REQUIRED_ARGC 4
 #define sqlite3_result_text16_OPTIONAL_ARGC 0
-/* sqlite3_result_text16
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: int
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_text16(sqlite3_context * arg1, const void * arg2, int arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_text16(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6002,19 +5142,11 @@ mrb_SQLite_sqlite3_result_text16(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_text16be */
-/* sha: 83bcf6108bd2ccdf2e246ebadb086b771be716cea439d0e22b7f6c2ccc3c2134 */
+/* sha: f08b117a038febc5212de1e595cac1548dcbd11fe206f9b5c907905cc5fe5cca */
 #if BIND_sqlite3_result_text16be_FUNCTION
 #define sqlite3_result_text16be_REQUIRED_ARGC 4
 #define sqlite3_result_text16be_OPTIONAL_ARGC 0
-/* sqlite3_result_text16be
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: int
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_text16be(sqlite3_context * arg1, const void * arg2, int arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_text16be(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6051,19 +5183,11 @@ mrb_SQLite_sqlite3_result_text16be(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_text16le */
-/* sha: 95a3330f444a68ad1b4dda07946ec64c282e40eeabf3dfe20ca6f316e50e8db7 */
+/* sha: 1430988528dd2acc89b23832c4017ef664281be54f7a10d7ea91c94e13e3da48 */
 #if BIND_sqlite3_result_text16le_FUNCTION
 #define sqlite3_result_text16le_REQUIRED_ARGC 4
 #define sqlite3_result_text16le_OPTIONAL_ARGC 0
-/* sqlite3_result_text16le
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const void *
- * - arg3: int
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_result_text16le(sqlite3_context * arg1, const void * arg2, int arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_result_text16le(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6100,20 +5224,11 @@ mrb_SQLite_sqlite3_result_text16le(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_text64 */
-/* sha: 5514c01b4126ea4a72a4ac34028c9f6153b03480db02e6702ffb6ecbca9d40dc */
+/* sha: da107ed5e63f5bf301ac55c51996281b445ac15277e1d1711ecaf3f5aed884b2 */
 #if BIND_sqlite3_result_text64_FUNCTION
 #define sqlite3_result_text64_REQUIRED_ARGC 5
 #define sqlite3_result_text64_OPTIONAL_ARGC 0
-/* sqlite3_result_text64
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - arg2: const char *
- * - arg3: sqlite3_uint64
- * - arg4: void (*)(void *)
- * - encoding: unsigned char
- * Return Type: void
- */
+/* void sqlite3_result_text64(sqlite3_context * arg1, const char * arg2, sqlite3_uint64 arg3, void (*)(void *) arg4, unsigned char encoding) */
 mrb_value
 mrb_SQLite_sqlite3_result_text64(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6191,17 +5306,11 @@ mrb_SQLite_sqlite3_result_value(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_result_zeroblob */
-/* sha: eb712faca39ace03f3bbcbe7d71a79e11fa7a8f5d7213ade55dcfa2bd279ca2e */
+/* sha: fccdbaa091aee6c21d33eb8a407bf490b5df3abdac966fa5361978f684ad0d89 */
 #if BIND_sqlite3_result_zeroblob_FUNCTION
 #define sqlite3_result_zeroblob_REQUIRED_ARGC 2
 #define sqlite3_result_zeroblob_OPTIONAL_ARGC 0
-/* sqlite3_result_zeroblob
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - n: int
- * Return Type: void
- */
+/* void sqlite3_result_zeroblob(sqlite3_context * arg1, int n) */
 mrb_value
 mrb_SQLite_sqlite3_result_zeroblob(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6228,18 +5337,11 @@ mrb_SQLite_sqlite3_result_zeroblob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_rollback_hook */
-/* sha: 2c4d40b52e3209206716e19093668c699931acdd2d63282ab29e79bd93da446f */
+/* sha: 648fe4d5a83508b5d6081c9788f1309e608cd1fd60160c7a59b4bb2cc50f8e47 */
 #if BIND_sqlite3_rollback_hook_FUNCTION
 #define sqlite3_rollback_hook_REQUIRED_ARGC 3
 #define sqlite3_rollback_hook_OPTIONAL_ARGC 0
-/* sqlite3_rollback_hook
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: void (*)(void *)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_rollback_hook(sqlite3 * arg1, void (*)(void *) arg2, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_rollback_hook(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6278,19 +5380,11 @@ mrb_SQLite_sqlite3_rollback_hook(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_rtree_geometry_callback */
-/* sha: 9031a0251e0c2db5c4aa28d54c0b858c24a8f858f99ea3656841563d0a41c198 */
+/* sha: abad08887cbc2d9cd05364880692186abc17271847f24adb6c1b830628ae7b3a */
 #if BIND_sqlite3_rtree_geometry_callback_FUNCTION
 #define sqlite3_rtree_geometry_callback_REQUIRED_ARGC 4
 #define sqlite3_rtree_geometry_callback_OPTIONAL_ARGC 0
-/* sqlite3_rtree_geometry_callback
- *
- * Parameters:
- * - db: sqlite3 *
- * - zGeom: const char *
- * - xGeom: int (*)(sqlite3_rtree_geometry *, int, sqlite3_rtree_dbl *, int *)
- * - pContext: void *
- * Return Type: int
- */
+/* int sqlite3_rtree_geometry_callback(sqlite3 * db, const char * zGeom, int (*)(sqlite3_rtree_geometry *, int, sqlite3_rtree_dbl *, int *) xGeom, void * pContext) */
 mrb_value
 mrb_SQLite_sqlite3_rtree_geometry_callback(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -6330,20 +5424,11 @@ mrb_SQLite_sqlite3_rtree_geometry_callback(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_rtree_query_callback */
-/* sha: b466c022a5cf2a1b8d7e55311089a0538567f4e1880341c032aaa4fd0a4bbe88 */
+/* sha: 0efc64d996370d1dc12b39e1e7d63d1c76cec2eb8bcc216ca19f2e681289d4ba */
 #if BIND_sqlite3_rtree_query_callback_FUNCTION
 #define sqlite3_rtree_query_callback_REQUIRED_ARGC 5
 #define sqlite3_rtree_query_callback_OPTIONAL_ARGC 0
-/* sqlite3_rtree_query_callback
- *
- * Parameters:
- * - db: sqlite3 *
- * - zQueryFunc: const char *
- * - xQueryFunc: int (*)(sqlite3_rtree_query_info *)
- * - pContext: void *
- * - xDestructor: void (*)(void *)
- * Return Type: int
- */
+/* int sqlite3_rtree_query_callback(sqlite3 * db, const char * zQueryFunc, int (*)(sqlite3_rtree_query_info *) xQueryFunc, void * pContext, void (*)(void *) xDestructor) */
 mrb_value
 mrb_SQLite_sqlite3_rtree_query_callback(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -6388,18 +5473,11 @@ mrb_SQLite_sqlite3_rtree_query_callback(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_set_authorizer */
-/* sha: 4b42e2eadcc5c5d2cb7a29ef1bd35f54a65dd43673a78c6a27ede36f00f1ca97 */
+/* sha: dc7229aede0fc67b9c745c8e30fc447b9818872172a4392226014c2b267a2004 */
 #if BIND_sqlite3_set_authorizer_FUNCTION
 #define sqlite3_set_authorizer_REQUIRED_ARGC 3
 #define sqlite3_set_authorizer_OPTIONAL_ARGC 0
-/* sqlite3_set_authorizer
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - xAuth: int (*)(void *, int, const char *, const char *, const char *, const char *)
- * - pUserData: void *
- * Return Type: int
- */
+/* int sqlite3_set_authorizer(sqlite3 * arg1, int (*)(void *, int, const char *, const char *, const char *, const char *) xAuth, void * pUserData) */
 mrb_value
 mrb_SQLite_sqlite3_set_authorizer(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6438,19 +5516,11 @@ mrb_SQLite_sqlite3_set_authorizer(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_set_auxdata */
-/* sha: 507ddaa59fcca2dad77fad79c9e8e1f4c7d9c9faa81fd8d270cfb1053c9d4a49 */
+/* sha: 1bf2df02703177ebfb1ffd6fad7b02be55a64991e40d41ff3bef8302f7181f4b */
 #if BIND_sqlite3_set_auxdata_FUNCTION
 #define sqlite3_set_auxdata_REQUIRED_ARGC 4
 #define sqlite3_set_auxdata_OPTIONAL_ARGC 0
-/* sqlite3_set_auxdata
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * - N: int
- * - arg3: void *
- * - arg4: void (*)(void *)
- * Return Type: void
- */
+/* void sqlite3_set_auxdata(sqlite3_context * arg1, int N, void * arg3, void (*)(void *) arg4) */
 mrb_value
 mrb_SQLite_sqlite3_set_auxdata(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6487,15 +5557,11 @@ mrb_SQLite_sqlite3_set_auxdata(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_shutdown */
-/* sha: 49ac3996444cb9908b8d0ccf7d82c3be1e5cb6c5cab7823d06221711bec98986 */
+/* sha: edf3e98a2f767cd3c1063839841612384f621eb16f979f8e33dccd1d0d78e75b */
 #if BIND_sqlite3_shutdown_FUNCTION
 #define sqlite3_shutdown_REQUIRED_ARGC 0
 #define sqlite3_shutdown_OPTIONAL_ARGC 0
-/* sqlite3_shutdown
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_shutdown() */
 mrb_value
 mrb_SQLite_sqlite3_shutdown(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -6510,16 +5576,11 @@ mrb_SQLite_sqlite3_shutdown(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_sleep */
-/* sha: fef784d495c0678efd1ac82bc4933bcb18c7965ed072248bbea93f609516164c */
+/* sha: bdbb7bd87d8cf443f338101ccbb3e7c6c732fa6f5aa24d7256feda13858506e6 */
 #if BIND_sqlite3_sleep_FUNCTION
 #define sqlite3_sleep_REQUIRED_ARGC 1
 #define sqlite3_sleep_OPTIONAL_ARGC 0
-/* sqlite3_sleep
- *
- * Parameters:
- * - arg1: int
- * Return Type: int
- */
+/* int sqlite3_sleep(int arg1) */
 mrb_value
 mrb_SQLite_sqlite3_sleep(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -6539,18 +5600,11 @@ mrb_SQLite_sqlite3_sleep(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_snprintf */
-/* sha: 22a8ec8127f489624c17b5728cf72d8bb7808b76cda31f0b60c3201bdbfffb22 */
+/* sha: bb509bf2bfceb0f8a6389efa58315e09bba18a4d5baeaf2a0deddbf86b8211cf */
 #if BIND_sqlite3_snprintf_FUNCTION
 #define sqlite3_snprintf_REQUIRED_ARGC 3
 #define sqlite3_snprintf_OPTIONAL_ARGC 0
-/* sqlite3_snprintf
- *
- * Parameters:
- * - arg1: int
- * - arg2: char *
- * - arg3: const char *
- * Return Type: char *
- */
+/* char * sqlite3_snprintf(int arg1, char * arg2, const char * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_snprintf(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -6578,16 +5632,11 @@ mrb_SQLite_sqlite3_snprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_soft_heap_limit */
-/* sha: 401eb1543bfe0df52df879f1454469aabfd20c50635277fb33e3051c7fd99639 */
+/* sha: 847da9cb6431065946ec07d0aef28bd10dbd3bc94839ec9faa935184810b94f7 */
 #if BIND_sqlite3_soft_heap_limit_FUNCTION
 #define sqlite3_soft_heap_limit_REQUIRED_ARGC 1
 #define sqlite3_soft_heap_limit_OPTIONAL_ARGC 0
-/* sqlite3_soft_heap_limit
- *
- * Parameters:
- * - N: int
- * Return Type: void
- */
+/* void sqlite3_soft_heap_limit(int N) */
 mrb_value
 mrb_SQLite_sqlite3_soft_heap_limit(mrb_state* mrb, mrb_value self) {
   mrb_int native_N;
@@ -6604,16 +5653,11 @@ mrb_SQLite_sqlite3_soft_heap_limit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_soft_heap_limit64 */
-/* sha: 2c34c34edafee745cae48376f60f07b4103575104ce9dd6e4bcb502c1039e88c */
+/* sha: e77e65e390899e3d20304da0eff1fb6ef15913de858a26724409d48dd4260694 */
 #if BIND_sqlite3_soft_heap_limit64_FUNCTION
 #define sqlite3_soft_heap_limit64_REQUIRED_ARGC 1
 #define sqlite3_soft_heap_limit64_OPTIONAL_ARGC 0
-/* sqlite3_soft_heap_limit64
- *
- * Parameters:
- * - N: sqlite3_int64
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_soft_heap_limit64(sqlite3_int64 N) */
 mrb_value
 mrb_SQLite_sqlite3_soft_heap_limit64(mrb_state* mrb, mrb_value self) {
   mrb_int native_N;
@@ -6633,15 +5677,11 @@ mrb_SQLite_sqlite3_soft_heap_limit64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_sourceid */
-/* sha: 3c6f8a6ac6dd3357c951ea93379ec0e82a68698917a3d8d2664008d009e37a1a */
+/* sha: 08ad896f0e66a5b32a131293c31cabd0a0455b9bfea8f56198d5934b16d0c748 */
 #if BIND_sqlite3_sourceid_FUNCTION
 #define sqlite3_sourceid_REQUIRED_ARGC 0
 #define sqlite3_sourceid_OPTIONAL_ARGC 0
-/* sqlite3_sourceid
- *
- * Parameters: None
- * Return Type: const char *
- */
+/* const char * sqlite3_sourceid() */
 mrb_value
 mrb_SQLite_sqlite3_sourceid(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -6656,16 +5696,11 @@ mrb_SQLite_sqlite3_sourceid(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_sql */
-/* sha: e9b4f1bc90872f7e10e39c51849a09b3e196971a25f0b8245bcc5fc25d516737 */
+/* sha: 9d9db44b087aed5858117cbce4ce00f2a5263361aa463408c7bb08057d927382 */
 #if BIND_sqlite3_sql_FUNCTION
 #define sqlite3_sql_REQUIRED_ARGC 1
 #define sqlite3_sql_OPTIONAL_ARGC 0
-/* sqlite3_sql
- *
- * Parameters:
- * - pStmt: sqlite3_stmt *
- * Return Type: const char *
- */
+/* const char * sqlite3_sql(sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_sql(mrb_state* mrb, mrb_value self) {
   mrb_value pStmt;
@@ -6694,19 +5729,11 @@ mrb_SQLite_sqlite3_sql(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_status */
-/* sha: 72a1b98680e921fe482e30c4da048c23fa522eaf5eda32118d9c4860bb544ec2 */
+/* sha: b9ec47fbdf28c192ccd9866eb799d385fb65cc72ee7e0e6ab7ac194d05041fe2 */
 #if BIND_sqlite3_status_FUNCTION
 #define sqlite3_status_REQUIRED_ARGC 4
 #define sqlite3_status_OPTIONAL_ARGC 0
-/* sqlite3_status
- *
- * Parameters:
- * - op: int
- * - pCurrent: int *
- * - pHighwater: int *
- * - resetFlag: int
- * Return Type: int
- */
+/* int sqlite3_status(int op, int * pCurrent, int * pHighwater, int resetFlag) */
 mrb_value
 mrb_SQLite_sqlite3_status(mrb_state* mrb, mrb_value self) {
   mrb_int native_op;
@@ -6739,19 +5766,11 @@ mrb_SQLite_sqlite3_status(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_status64 */
-/* sha: f26e1554e265a4bf8ca2ed7bb91d4d6619383beda4b6d06fb51e791894a7b16e */
+/* sha: 4ca18c09e1d94c784b11e80c21f45638f061e3cd95ff77496c7e3498160cf076 */
 #if BIND_sqlite3_status64_FUNCTION
 #define sqlite3_status64_REQUIRED_ARGC 4
 #define sqlite3_status64_OPTIONAL_ARGC 0
-/* sqlite3_status64
- *
- * Parameters:
- * - op: int
- * - pCurrent: sqlite3_int64 *
- * - pHighwater: sqlite3_int64 *
- * - resetFlag: int
- * Return Type: int
- */
+/* int sqlite3_status64(int op, sqlite3_int64 * pCurrent, sqlite3_int64 * pHighwater, int resetFlag) */
 mrb_value
 mrb_SQLite_sqlite3_status64(mrb_state* mrb, mrb_value self) {
   mrb_int native_op;
@@ -6784,16 +5803,11 @@ mrb_SQLite_sqlite3_status64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_step */
-/* sha: e4bc8b8adb96c5eef42a30e001b2d587b85069e03a05c3e62acdfddc6a4afe79 */
+/* sha: c0990c32dc76d73b38dd4f10995e2dd0d61cd7045f406aa62cc18d444f7d42bb */
 #if BIND_sqlite3_step_FUNCTION
 #define sqlite3_step_REQUIRED_ARGC 1
 #define sqlite3_step_OPTIONAL_ARGC 0
-/* sqlite3_step
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_step(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_step(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6822,16 +5836,11 @@ mrb_SQLite_sqlite3_step(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_stmt_busy */
-/* sha: 3bc17a537087ff8ab32d00abeddf45be8e2a1549b18285c16b063a4f56bada79 */
+/* sha: a23828a6185659068a70ac5f09eb341dda50367b53c9fa36c8b0a20325e72749 */
 #if BIND_sqlite3_stmt_busy_FUNCTION
 #define sqlite3_stmt_busy_REQUIRED_ARGC 1
 #define sqlite3_stmt_busy_OPTIONAL_ARGC 0
-/* sqlite3_stmt_busy
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_stmt_busy(sqlite3_stmt * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_stmt_busy(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6860,16 +5869,11 @@ mrb_SQLite_sqlite3_stmt_busy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_stmt_readonly */
-/* sha: 9aacbde40fe84df2e2b58ed4f4969ef3f980793257a696b0d00a497da47f5682 */
+/* sha: 75687439cc4db0b2b10207f477ad2bcd441e1f6a2198d4f897813320ff457904 */
 #if BIND_sqlite3_stmt_readonly_FUNCTION
 #define sqlite3_stmt_readonly_REQUIRED_ARGC 1
 #define sqlite3_stmt_readonly_OPTIONAL_ARGC 0
-/* sqlite3_stmt_readonly
- *
- * Parameters:
- * - pStmt: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_stmt_readonly(sqlite3_stmt * pStmt) */
 mrb_value
 mrb_SQLite_sqlite3_stmt_readonly(mrb_state* mrb, mrb_value self) {
   mrb_value pStmt;
@@ -6897,19 +5901,52 @@ mrb_SQLite_sqlite3_stmt_readonly(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: sqlite3_stmt_scanstatus */
+/* sha: 320d8abcd4ef4013a678145cac00ae477b9dbbde333d1ce4a5fe3115bc921266 */
+#if BIND_sqlite3_stmt_scanstatus_FUNCTION
+#define sqlite3_stmt_scanstatus_REQUIRED_ARGC 4
+#define sqlite3_stmt_scanstatus_OPTIONAL_ARGC 0
+/* int sqlite3_stmt_scanstatus(sqlite3_stmt * pStmt, int idx, int iScanStatusOp, void * pOut) */
+mrb_value
+mrb_SQLite_sqlite3_stmt_scanstatus(mrb_state* mrb, mrb_value self) {
+  mrb_value pStmt;
+  mrb_int native_idx;
+  mrb_int native_iScanStatusOp;
+  mrb_value pOut;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oiio", &pStmt, &native_idx, &native_iScanStatusOp, &pOut);
+
+  /* Type checking */
+  if (!mrb_obj_is_kind_of(mrb, pStmt, Sqlite3Stmt_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Sqlite3Stmt expected");
+    return mrb_nil_value();
+  }
+  TODO_type_check_void_PTR(pOut);
+
+  /* Unbox param: pStmt */
+  sqlite3_stmt * native_pStmt = (mrb_nil_p(pStmt) ? NULL : mruby_unbox_sqlite3_stmt(pStmt));
+
+  /* Unbox param: pOut */
+  void * native_pOut = TODO_mruby_unbox_void_PTR(pOut);
+
+  /* Invocation */
+  int native_return_value = sqlite3_stmt_scanstatus(native_pStmt, native_idx, native_iScanStatusOp, native_pOut);
+
+  /* Box the return value */
+  mrb_value return_value = mrb_fixnum_value(native_return_value);
+  
+  return return_value;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: sqlite3_stmt_status */
-/* sha: 69853b659f56f3fff10ce03e5dfa90bf93af28d7786dc8db2329911dc7d3af9c */
+/* sha: f9dcd1234348485ac65e052dff70e6eaccc8ab33527739784246ad274e9e86b4 */
 #if BIND_sqlite3_stmt_status_FUNCTION
 #define sqlite3_stmt_status_REQUIRED_ARGC 3
 #define sqlite3_stmt_status_OPTIONAL_ARGC 0
-/* sqlite3_stmt_status
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - op: int
- * - resetFlg: int
- * Return Type: int
- */
+/* int sqlite3_stmt_status(sqlite3_stmt * arg1, int op, int resetFlg) */
 mrb_value
 mrb_SQLite_sqlite3_stmt_status(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -6940,17 +5977,11 @@ mrb_SQLite_sqlite3_stmt_status(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_strglob */
-/* sha: 6c13700e21f2b2c020e5d68101dd34cfb684ae67a94bc10c34c4c1ec297e09ba */
+/* sha: d98012f0eecc8b6889890797ea2dcd1b5cb61f6986bc05efa202353ad590017e */
 #if BIND_sqlite3_strglob_FUNCTION
 #define sqlite3_strglob_REQUIRED_ARGC 2
 #define sqlite3_strglob_OPTIONAL_ARGC 0
-/* sqlite3_strglob
- *
- * Parameters:
- * - zGlob: const char *
- * - zStr: const char *
- * Return Type: int
- */
+/* int sqlite3_strglob(const char * zGlob, const char * zStr) */
 mrb_value
 mrb_SQLite_sqlite3_strglob(mrb_state* mrb, mrb_value self) {
   char * native_zGlob = NULL;
@@ -6971,17 +6002,11 @@ mrb_SQLite_sqlite3_strglob(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_stricmp */
-/* sha: 76a6f5e11b8ec58aec41047162fb7228b0b4186c95352af704d4c28f536a8686 */
+/* sha: 2e9f1cbf7b4f7552c153fc19ab6f28ecaec7d188b3b4ec852adfd32af09f7fc9 */
 #if BIND_sqlite3_stricmp_FUNCTION
 #define sqlite3_stricmp_REQUIRED_ARGC 2
 #define sqlite3_stricmp_OPTIONAL_ARGC 0
-/* sqlite3_stricmp
- *
- * Parameters:
- * - arg1: const char *
- * - arg2: const char *
- * Return Type: int
- */
+/* int sqlite3_stricmp(const char * arg1, const char * arg2) */
 mrb_value
 mrb_SQLite_sqlite3_stricmp(mrb_state* mrb, mrb_value self) {
   char * native_arg1 = NULL;
@@ -7002,18 +6027,11 @@ mrb_SQLite_sqlite3_stricmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_strnicmp */
-/* sha: 07f137a44f2e67bb00a632f6613404e5a561f736311f182e8cde15ad9ee13737 */
+/* sha: 7f56ce94dff43aecbd1a70cdbce39a740f1298db5cd61628c04c4e12ef08ed64 */
 #if BIND_sqlite3_strnicmp_FUNCTION
 #define sqlite3_strnicmp_REQUIRED_ARGC 3
 #define sqlite3_strnicmp_OPTIONAL_ARGC 0
-/* sqlite3_strnicmp
- *
- * Parameters:
- * - arg1: const char *
- * - arg2: const char *
- * - arg3: int
- * Return Type: int
- */
+/* int sqlite3_strnicmp(const char * arg1, const char * arg2, int arg3) */
 mrb_value
 mrb_SQLite_sqlite3_strnicmp(mrb_state* mrb, mrb_value self) {
   char * native_arg1 = NULL;
@@ -7035,24 +6053,11 @@ mrb_SQLite_sqlite3_strnicmp(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_table_column_metadata */
-/* sha: c902dd6bdfcc6564b3a0732188065f939099c6fbdea9b0945179cb5db4e065b9 */
+/* sha: 81de8c44c20e50eb346e541b40def678fa33b55064e6263c0ea3490f18cb5c99 */
 #if BIND_sqlite3_table_column_metadata_FUNCTION
 #define sqlite3_table_column_metadata_REQUIRED_ARGC 9
 #define sqlite3_table_column_metadata_OPTIONAL_ARGC 0
-/* sqlite3_table_column_metadata
- *
- * Parameters:
- * - db: sqlite3 *
- * - zDbName: const char *
- * - zTableName: const char *
- * - zColumnName: const char *
- * - pzDataType: const char **
- * - pzCollSeq: const char **
- * - pNotNull: int *
- * - pPrimaryKey: int *
- * - pAutoinc: int *
- * Return Type: int
- */
+/* int sqlite3_table_column_metadata(sqlite3 * db, const char * zDbName, const char * zTableName, const char * zColumnName, const char ** pzDataType, const char ** pzCollSeq, int * pNotNull, int * pPrimaryKey, int * pAutoinc) */
 mrb_value
 mrb_SQLite_sqlite3_table_column_metadata(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -7109,16 +6114,11 @@ mrb_SQLite_sqlite3_table_column_metadata(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_test_control */
-/* sha: 5728a9ba52d1f9dbc9e501bd2e4c59670f003b03ac4cd4853d094d87a33dc073 */
+/* sha: f0ef66b81c98b090cdb5b8fa8ca9497f29f8b489c52ef792f5f29db8f7d0d0b0 */
 #if BIND_sqlite3_test_control_FUNCTION
 #define sqlite3_test_control_REQUIRED_ARGC 1
 #define sqlite3_test_control_OPTIONAL_ARGC 0
-/* sqlite3_test_control
- *
- * Parameters:
- * - op: int
- * Return Type: int
- */
+/* int sqlite3_test_control(int op) */
 mrb_value
 mrb_SQLite_sqlite3_test_control(mrb_state* mrb, mrb_value self) {
   mrb_int native_op;
@@ -7138,15 +6138,11 @@ mrb_SQLite_sqlite3_test_control(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_thread_cleanup */
-/* sha: 9efa39544221763790f1de1de40c90c7ba108e05ffa1ffe93ded66e85b01fd45 */
+/* sha: f78cdf313776e0512e57bf7e587f610340413d73a4e9149c3269668f2c133292 */
 #if BIND_sqlite3_thread_cleanup_FUNCTION
 #define sqlite3_thread_cleanup_REQUIRED_ARGC 0
 #define sqlite3_thread_cleanup_OPTIONAL_ARGC 0
-/* sqlite3_thread_cleanup
- *
- * Parameters: None
- * Return Type: void
- */
+/* void sqlite3_thread_cleanup() */
 mrb_value
 mrb_SQLite_sqlite3_thread_cleanup(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -7158,15 +6154,11 @@ mrb_SQLite_sqlite3_thread_cleanup(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_threadsafe */
-/* sha: c3c0fbfae687aa5ca7fdffb06c68de0b1dc3f47d0238b0c7d057ee10494a6b02 */
+/* sha: b2d8ea74efb10c0a80b79dccda9253a3926ec8604242e1fbed53f11f92a15320 */
 #if BIND_sqlite3_threadsafe_FUNCTION
 #define sqlite3_threadsafe_REQUIRED_ARGC 0
 #define sqlite3_threadsafe_OPTIONAL_ARGC 0
-/* sqlite3_threadsafe
- *
- * Parameters: None
- * Return Type: int
- */
+/* int sqlite3_threadsafe() */
 mrb_value
 mrb_SQLite_sqlite3_threadsafe(mrb_state* mrb, mrb_value self) {
   /* Invocation */
@@ -7181,16 +6173,11 @@ mrb_SQLite_sqlite3_threadsafe(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_total_changes */
-/* sha: 9afcdb4d0db9de2c06c4713d23280e693c39af905cad33fb471b0ef521167ac1 */
+/* sha: 660cbfa8070ca9d61a04350eb7a0ec2c3534dfa7ad9aa0654889991584e03499 */
 #if BIND_sqlite3_total_changes_FUNCTION
 #define sqlite3_total_changes_REQUIRED_ARGC 1
 #define sqlite3_total_changes_OPTIONAL_ARGC 0
-/* sqlite3_total_changes
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_total_changes(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_total_changes(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -7219,18 +6206,11 @@ mrb_SQLite_sqlite3_total_changes(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_trace */
-/* sha: 8598daa00d5706dca09e6086f1f9fe87f3cac34434d37ba70e1192cf2b6b65f4 */
+/* sha: 0923b8f0a8ae70b6ff2eebaa9e3e1b2bb43dd242984f32e4c1bac98313abeec7 */
 #if BIND_sqlite3_trace_FUNCTION
 #define sqlite3_trace_REQUIRED_ARGC 3
 #define sqlite3_trace_OPTIONAL_ARGC 0
-/* sqlite3_trace
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - xTrace: void (*)(void *, const char *)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_trace(sqlite3 * arg1, void (*)(void *, const char *) xTrace, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_trace(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -7269,17 +6249,11 @@ mrb_SQLite_sqlite3_trace(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_transfer_bindings */
-/* sha: a7d23e8e1be2557976880295442ddd40534889efb9813d6d306085109c2949f1 */
+/* sha: bfaf6777bfccd7f758c9d8a6d3e68006e1afa9986976d968ec79121fa3a3e2cb */
 #if BIND_sqlite3_transfer_bindings_FUNCTION
 #define sqlite3_transfer_bindings_REQUIRED_ARGC 2
 #define sqlite3_transfer_bindings_OPTIONAL_ARGC 0
-/* sqlite3_transfer_bindings
- *
- * Parameters:
- * - arg1: sqlite3_stmt *
- * - arg2: sqlite3_stmt *
- * Return Type: int
- */
+/* int sqlite3_transfer_bindings(sqlite3_stmt * arg1, sqlite3_stmt * arg2) */
 mrb_value
 mrb_SQLite_sqlite3_transfer_bindings(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -7316,18 +6290,11 @@ mrb_SQLite_sqlite3_transfer_bindings(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_unlock_notify */
-/* sha: 8e684a0f6130d4f9a66bc71b1fe154939e722f5ae465722b829fc005c458b4f5 */
+/* sha: 906b24a3a54c1f44863fff80ddc52799a5c4993509405c22577af1d8643050e4 */
 #if BIND_sqlite3_unlock_notify_FUNCTION
 #define sqlite3_unlock_notify_REQUIRED_ARGC 3
 #define sqlite3_unlock_notify_OPTIONAL_ARGC 0
-/* sqlite3_unlock_notify
- *
- * Parameters:
- * - pBlocked: sqlite3 *
- * - xNotify: void (*)(void **, int)
- * - pNotifyArg: void *
- * Return Type: int
- */
+/* int sqlite3_unlock_notify(sqlite3 * pBlocked, void (*)(void **, int) xNotify, void * pNotifyArg) */
 mrb_value
 mrb_SQLite_sqlite3_unlock_notify(mrb_state* mrb, mrb_value self) {
   mrb_value pBlocked;
@@ -7366,18 +6333,11 @@ mrb_SQLite_sqlite3_unlock_notify(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_update_hook */
-/* sha: 281019ef03108841e480e5d37ea007222117a31b2fb0c69878c83b6762559099 */
+/* sha: 36cf6788ef22401d6b366177e4340732787357da26486cd243588cb84007065e */
 #if BIND_sqlite3_update_hook_FUNCTION
 #define sqlite3_update_hook_REQUIRED_ARGC 3
 #define sqlite3_update_hook_OPTIONAL_ARGC 0
-/* sqlite3_update_hook
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: void (*)(void *, int, const char *, const char *, sqlite3_int64)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_update_hook(sqlite3 * arg1, void (*)(void *, int, const char *, const char *, sqlite3_int64) arg2, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_update_hook(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -7416,18 +6376,11 @@ mrb_SQLite_sqlite3_update_hook(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_uri_boolean */
-/* sha: d3606648591356d7e48fedcd607bf1b3bdfe6ed6579ad2e06467c401382062f9 */
+/* sha: 9ec8362dd818760e3c3022c50e12c743b01a4da80f4546f41a39e20d6e0c4d58 */
 #if BIND_sqlite3_uri_boolean_FUNCTION
 #define sqlite3_uri_boolean_REQUIRED_ARGC 3
 #define sqlite3_uri_boolean_OPTIONAL_ARGC 0
-/* sqlite3_uri_boolean
- *
- * Parameters:
- * - zFile: const char *
- * - zParam: const char *
- * - bDefault: int
- * Return Type: int
- */
+/* int sqlite3_uri_boolean(const char * zFile, const char * zParam, int bDefault) */
 mrb_value
 mrb_SQLite_sqlite3_uri_boolean(mrb_state* mrb, mrb_value self) {
   char * native_zFile = NULL;
@@ -7449,18 +6402,11 @@ mrb_SQLite_sqlite3_uri_boolean(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_uri_int64 */
-/* sha: a71e4ef6495d8f0487d4cc658d31dd09c286935f1a9500d0537c25e86c35e4b1 */
+/* sha: 218a527db40ab3477b682a55b60722abf22766c662f6f9982f2da70c2b18c51e */
 #if BIND_sqlite3_uri_int64_FUNCTION
 #define sqlite3_uri_int64_REQUIRED_ARGC 3
 #define sqlite3_uri_int64_OPTIONAL_ARGC 0
-/* sqlite3_uri_int64
- *
- * Parameters:
- * - arg1: const char *
- * - arg2: const char *
- * - arg3: sqlite3_int64
- * Return Type: sqlite3_int64
- */
+/* sqlite3_int64 sqlite3_uri_int64(const char * arg1, const char * arg2, sqlite3_int64 arg3) */
 mrb_value
 mrb_SQLite_sqlite3_uri_int64(mrb_state* mrb, mrb_value self) {
   char * native_arg1 = NULL;
@@ -7482,17 +6428,11 @@ mrb_SQLite_sqlite3_uri_int64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_uri_parameter */
-/* sha: 2ee6991df2f3097f2c238984ea8d7febf07e9249e422a889c3aa964d34aeb7c3 */
+/* sha: 170d1c981969a1e9f6e6d45c6afdae76da3bc82bc518605b850c105ade27b668 */
 #if BIND_sqlite3_uri_parameter_FUNCTION
 #define sqlite3_uri_parameter_REQUIRED_ARGC 2
 #define sqlite3_uri_parameter_OPTIONAL_ARGC 0
-/* sqlite3_uri_parameter
- *
- * Parameters:
- * - zFilename: const char *
- * - zParam: const char *
- * Return Type: const char *
- */
+/* const char * sqlite3_uri_parameter(const char * zFilename, const char * zParam) */
 mrb_value
 mrb_SQLite_sqlite3_uri_parameter(mrb_state* mrb, mrb_value self) {
   char * native_zFilename = NULL;
@@ -7513,16 +6453,11 @@ mrb_SQLite_sqlite3_uri_parameter(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_user_data */
-/* sha: 2c1cd127b5fd0d420d48b1d6c0d394ade7ff59ee877e2d98cd50fdd42a1dbd94 */
+/* sha: c9173864b937e8cae30e581ab47714b74a8d743c97767dee7da4eb59375d054c */
 #if BIND_sqlite3_user_data_FUNCTION
 #define sqlite3_user_data_REQUIRED_ARGC 1
 #define sqlite3_user_data_OPTIONAL_ARGC 0
-/* sqlite3_user_data
- *
- * Parameters:
- * - arg1: sqlite3_context *
- * Return Type: void *
- */
+/* void * sqlite3_user_data(sqlite3_context * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_user_data(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8007,16 +6942,11 @@ mrb_SQLite_sqlite3_value_type(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vfs_find */
-/* sha: f60944041b1f3f8b8cfb22653aaa664bb9228520f69ed948362ae8f77d8a462c */
+/* sha: 849a5c1150d2b60e9071541c3f5cbb1802aa87a2b7ee31497940c69093b0e4db */
 #if BIND_sqlite3_vfs_find_FUNCTION
 #define sqlite3_vfs_find_REQUIRED_ARGC 1
 #define sqlite3_vfs_find_OPTIONAL_ARGC 0
-/* sqlite3_vfs_find
- *
- * Parameters:
- * - zVfsName: const char *
- * Return Type: sqlite3_vfs *
- */
+/* sqlite3_vfs * sqlite3_vfs_find(const char * zVfsName) */
 mrb_value
 mrb_SQLite_sqlite3_vfs_find(mrb_state* mrb, mrb_value self) {
   char * native_zVfsName = NULL;
@@ -8036,17 +6966,11 @@ mrb_SQLite_sqlite3_vfs_find(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vfs_register */
-/* sha: de34ca22acf7fa74498c4aa8a440e8e3d982e59fcd16acc1ac430bf956a63137 */
+/* sha: 5f82d9df48a200094eb956ac377fdb7f4551a714fe42d319beeb0e2169b16bb7 */
 #if BIND_sqlite3_vfs_register_FUNCTION
 #define sqlite3_vfs_register_REQUIRED_ARGC 2
 #define sqlite3_vfs_register_OPTIONAL_ARGC 0
-/* sqlite3_vfs_register
- *
- * Parameters:
- * - arg1: sqlite3_vfs *
- * - makeDflt: int
- * Return Type: int
- */
+/* int sqlite3_vfs_register(sqlite3_vfs * arg1, int makeDflt) */
 mrb_value
 mrb_SQLite_sqlite3_vfs_register(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8076,16 +7000,11 @@ mrb_SQLite_sqlite3_vfs_register(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vfs_unregister */
-/* sha: 2efb4517a64469ac95a07c27d9a078f5d690eb9f2c4f144a7d028cff5a5ef654 */
+/* sha: 7a7805a01feabad7584a89050f2cde50397e8c4dfbb74880cd45f79413bd8b9c */
 #if BIND_sqlite3_vfs_unregister_FUNCTION
 #define sqlite3_vfs_unregister_REQUIRED_ARGC 1
 #define sqlite3_vfs_unregister_OPTIONAL_ARGC 0
-/* sqlite3_vfs_unregister
- *
- * Parameters:
- * - arg1: sqlite3_vfs *
- * Return Type: int
- */
+/* int sqlite3_vfs_unregister(sqlite3_vfs * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_vfs_unregister(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8114,17 +7033,11 @@ mrb_SQLite_sqlite3_vfs_unregister(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vmprintf */
-/* sha: ddbfbb5146cc57590d269c92fec37742aea39dbe57067eb6250904f31fd9ecc2 */
+/* sha: c86140d2b2a36c58966e47cbc9614efe2a91d62471251b6c2aa3a3af1c9fe8e6 */
 #if BIND_sqlite3_vmprintf_FUNCTION
 #define sqlite3_vmprintf_REQUIRED_ARGC 2
 #define sqlite3_vmprintf_OPTIONAL_ARGC 0
-/* sqlite3_vmprintf
- *
- * Parameters:
- * - arg1: const char *
- * - va_list: int
- * Return Type: char *
- */
+/* char * sqlite3_vmprintf(const char * arg1, int va_list) */
 mrb_value
 mrb_SQLite_sqlite3_vmprintf(mrb_state* mrb, mrb_value self) {
   char * native_arg1 = NULL;
@@ -8145,19 +7058,11 @@ mrb_SQLite_sqlite3_vmprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vsnprintf */
-/* sha: 070ad9a37040deecf8c7ba29857d007357676fd096871af328799baadfb83edd */
+/* sha: ecbd69db72c06d890a51f885da26aca4420814406a5e82cd8e009e6ecd6a4e19 */
 #if BIND_sqlite3_vsnprintf_FUNCTION
 #define sqlite3_vsnprintf_REQUIRED_ARGC 4
 #define sqlite3_vsnprintf_OPTIONAL_ARGC 0
-/* sqlite3_vsnprintf
- *
- * Parameters:
- * - arg1: int
- * - arg2: char *
- * - arg3: const char *
- * - va_list: int
- * Return Type: char *
- */
+/* char * sqlite3_vsnprintf(int arg1, char * arg2, const char * arg3, int va_list) */
 mrb_value
 mrb_SQLite_sqlite3_vsnprintf(mrb_state* mrb, mrb_value self) {
   mrb_int native_arg1;
@@ -8186,17 +7091,11 @@ mrb_SQLite_sqlite3_vsnprintf(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vtab_config */
-/* sha: bc917fefcfad36d2d142f896dafc0029cf8590af35150b9ad2518b5348de0fb1 */
+/* sha: 6cf9bb5c7723e1d50213dd8322621ef68358e66eba9fb823cc5c32ddbb3e08d5 */
 #if BIND_sqlite3_vtab_config_FUNCTION
 #define sqlite3_vtab_config_REQUIRED_ARGC 2
 #define sqlite3_vtab_config_OPTIONAL_ARGC 0
-/* sqlite3_vtab_config
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - op: int
- * Return Type: int
- */
+/* int sqlite3_vtab_config(sqlite3 * arg1, int op) */
 mrb_value
 mrb_SQLite_sqlite3_vtab_config(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8226,16 +7125,11 @@ mrb_SQLite_sqlite3_vtab_config(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_vtab_on_conflict */
-/* sha: 5d57c9005d11918add63059a6f84623cf18c67591f6d49ced314714bac5f66a3 */
+/* sha: 317e70baaf3e37493957b3766213476810c585747446049146a2b92b84343918 */
 #if BIND_sqlite3_vtab_on_conflict_FUNCTION
 #define sqlite3_vtab_on_conflict_REQUIRED_ARGC 1
 #define sqlite3_vtab_on_conflict_OPTIONAL_ARGC 0
-/* sqlite3_vtab_on_conflict
- *
- * Parameters:
- * - arg1: sqlite3 *
- * Return Type: int
- */
+/* int sqlite3_vtab_on_conflict(sqlite3 * arg1) */
 mrb_value
 mrb_SQLite_sqlite3_vtab_on_conflict(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8264,17 +7158,11 @@ mrb_SQLite_sqlite3_vtab_on_conflict(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_wal_autocheckpoint */
-/* sha: 280b54b803db17081a679103b593ada28a0094fdd5b3b18f1532f3dd4f84e6f5 */
+/* sha: 6a343f911202dc3b924b20c9de972bea443360b5447f798e2fd1dc81e725c47b */
 #if BIND_sqlite3_wal_autocheckpoint_FUNCTION
 #define sqlite3_wal_autocheckpoint_REQUIRED_ARGC 2
 #define sqlite3_wal_autocheckpoint_OPTIONAL_ARGC 0
-/* sqlite3_wal_autocheckpoint
- *
- * Parameters:
- * - db: sqlite3 *
- * - N: int
- * Return Type: int
- */
+/* int sqlite3_wal_autocheckpoint(sqlite3 * db, int N) */
 mrb_value
 mrb_SQLite_sqlite3_wal_autocheckpoint(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -8304,17 +7192,11 @@ mrb_SQLite_sqlite3_wal_autocheckpoint(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_wal_checkpoint */
-/* sha: fc021553df76f9a2ec606db0bcc653c9d70e794957fe7f4bd56f251709aed51d */
+/* sha: bdd5344db965af69b38417b81b21a0c5e5f1f6769ade64f4d0df710cab638736 */
 #if BIND_sqlite3_wal_checkpoint_FUNCTION
 #define sqlite3_wal_checkpoint_REQUIRED_ARGC 2
 #define sqlite3_wal_checkpoint_OPTIONAL_ARGC 0
-/* sqlite3_wal_checkpoint
- *
- * Parameters:
- * - db: sqlite3 *
- * - zDb: const char *
- * Return Type: int
- */
+/* int sqlite3_wal_checkpoint(sqlite3 * db, const char * zDb) */
 mrb_value
 mrb_SQLite_sqlite3_wal_checkpoint(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -8344,20 +7226,11 @@ mrb_SQLite_sqlite3_wal_checkpoint(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_wal_checkpoint_v2 */
-/* sha: d5620569e1beb03289ead1736197f5424d224eba0a036b082b902a33a6c77154 */
+/* sha: 8708c28e9c9e730d4090cdac09ab628e7d40869fd8a3b2467978bed7bfe5c8e2 */
 #if BIND_sqlite3_wal_checkpoint_v2_FUNCTION
 #define sqlite3_wal_checkpoint_v2_REQUIRED_ARGC 5
 #define sqlite3_wal_checkpoint_v2_OPTIONAL_ARGC 0
-/* sqlite3_wal_checkpoint_v2
- *
- * Parameters:
- * - db: sqlite3 *
- * - zDb: const char *
- * - eMode: int
- * - pnLog: int *
- * - pnCkpt: int *
- * Return Type: int
- */
+/* int sqlite3_wal_checkpoint_v2(sqlite3 * db, const char * zDb, int eMode, int * pnLog, int * pnCkpt) */
 mrb_value
 mrb_SQLite_sqlite3_wal_checkpoint_v2(mrb_state* mrb, mrb_value self) {
   mrb_value db;
@@ -8398,18 +7271,11 @@ mrb_SQLite_sqlite3_wal_checkpoint_v2(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: sqlite3_wal_hook */
-/* sha: fe792e84d8c6c67e022df2d74811b39c073fec1add2003594c35e4fbac7be0b0 */
+/* sha: a8596d9367f4e43a9881a6398835c1b9104069a0c40c7f58f58354dc610f4639 */
 #if BIND_sqlite3_wal_hook_FUNCTION
 #define sqlite3_wal_hook_REQUIRED_ARGC 3
 #define sqlite3_wal_hook_OPTIONAL_ARGC 0
-/* sqlite3_wal_hook
- *
- * Parameters:
- * - arg1: sqlite3 *
- * - arg2: int (*)(void *, sqlite3 *, const char *, int)
- * - arg3: void *
- * Return Type: void *
- */
+/* void * sqlite3_wal_hook(sqlite3 * arg1, int (*)(void *, sqlite3 *, const char *, int) arg2, void * arg3) */
 mrb_value
 mrb_SQLite_sqlite3_wal_hook(mrb_state* mrb, mrb_value self) {
   mrb_value arg1;
@@ -8464,7 +7330,10 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_initializations */
-/* sha: 7bab1e4564169a6cc61ed481da8bcaf9f8020db295a97fb01f5c3aa8875adcf3 */
+/* sha: f6f3610cf9a8a36c48c10bd7640386bfef4a8d80120bbd6c2a6ce6567e8f320e */
+#if BIND_Mem_TYPE
+  mrb_SQLite_Mem_init(mrb);
+#endif
 #if BIND_Sqlite3_TYPE
   mrb_SQLite_Sqlite3_init(mrb);
 #endif
@@ -8542,7 +7411,7 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: global_function_definitions */
-/* sha: 632078f04be9ba586d231c7c51cb92da99ed920a59c17b06be534f6572db8ed6 */
+/* sha: ed1973e7028340b97e09f2dba5580199449da9f05ee3b4bbcca24e554e0ece9d */
   /*
    * Global Functions
    */
@@ -9049,6 +7918,9 @@ void mrb_mruby_sqlite_gem_init(mrb_state* mrb) {
 #endif
 #if BIND_sqlite3_stmt_readonly_FUNCTION
   mrb_define_class_method(mrb, SQLite_module, "stmt_readonly", mrb_SQLite_sqlite3_stmt_readonly, MRB_ARGS_ARG(sqlite3_stmt_readonly_REQUIRED_ARGC, sqlite3_stmt_readonly_OPTIONAL_ARGC));
+#endif
+#if BIND_sqlite3_stmt_scanstatus_FUNCTION
+  mrb_define_class_method(mrb, SQLite_module, "stmt_scanstatus", mrb_SQLite_sqlite3_stmt_scanstatus, MRB_ARGS_ARG(sqlite3_stmt_scanstatus_REQUIRED_ARGC, sqlite3_stmt_scanstatus_OPTIONAL_ARGC));
 #endif
 #if BIND_sqlite3_stmt_status_FUNCTION
   mrb_define_class_method(mrb, SQLite_module, "stmt_status", mrb_SQLite_sqlite3_stmt_status, MRB_ARGS_ARG(sqlite3_stmt_status_REQUIRED_ARGC, sqlite3_stmt_status_OPTIONAL_ARGC));

@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3File::initialize */
-/* sha: 6389641052e6fa7b60d4d339d682ad36b647eb0606a5b09cfb70db4746b9e0ad */
+/* sha: 112021e24580e0f7006d8077261dedcf361927cbda47559b0e8bd09540f0b244 */
 #if BIND_Sqlite3File_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3File_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   sqlite3_file* native_object = (sqlite3_file*)calloc(1, sizeof(sqlite3_file));
   mruby_gift_sqlite3_file_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3File_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3File::pMethods_reader */
-/* sha: 770740f15bbacc56666e38c6a6a806285c5f3ea5a6cb9b71921a6dce7f81c0ee */
+/* sha: 59ce89739834e925c00b63d37ab5435a30b23a9b265e73f456d3ece5bfc735cf */
 #if BIND_Sqlite3File_pMethods_FIELD_READER
-/* get_pMethods
- *
- * Return Type: const struct sqlite3_io_methods *
- */
 mrb_value
 mrb_SQLite_Sqlite3File_get_pMethods(mrb_state* mrb, mrb_value self) {
   sqlite3_file * native_self = mruby_unbox_sqlite3_file(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3File_get_pMethods(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3File::pMethods_writer */
-/* sha: db59e4d0baeba6b29ce2ae9dae27abbbeee1b6857a0acbfe21f93569cf216784 */
+/* sha: 9f39c3f42f0f558882a4a32d5cdcc899d205c7e4904df28e0d46ae33087cd9a6 */
 #if BIND_Sqlite3File_pMethods_FIELD_WRITER
-/* set_pMethods
- *
- * Parameters:
- * - value: const struct sqlite3_io_methods *
- */
 mrb_value
 mrb_SQLite_Sqlite3File_set_pMethods(mrb_state* mrb, mrb_value self) {
   sqlite3_file * native_self = mruby_unbox_sqlite3_file(self);
@@ -74,7 +67,6 @@ mrb_SQLite_Sqlite3File_set_pMethods(mrb_state* mrb, mrb_value self) {
 
   native_self->pMethods = native_pMethods;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -84,12 +76,13 @@ mrb_SQLite_Sqlite3File_set_pMethods(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3File_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3File::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3File::class_definition */
@@ -128,20 +121,8 @@ void mrb_SQLite_Sqlite3File_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3File::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3File::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3File::class_init_footer */
+/* MRUBY_BINDING: Sqlite3File::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

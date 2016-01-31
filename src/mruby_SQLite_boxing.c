@@ -1259,6 +1259,67 @@ mruby_unbox_sqlite3_vtab_cursor(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
+/* MRUBY_BINDING: Mem_boxing */
+/* sha: 4a4d43935ebe1c1344a91d8a639a77aef62238938c2433d9cbcf6b4cc11114b7 */
+#if BIND_Mem_TYPE
+/*
+ * Boxing implementation for struct Mem
+ */
+
+static void free_Mem(mrb_state* mrb, void* ptr) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)ptr;
+  if (box->belongs_to_ruby) {
+    if (box->obj != NULL) {
+      free(box->obj);
+      box->obj = NULL;
+    }
+  }
+  free(box);
+}
+
+static const mrb_data_type Mem_data_type = {
+   "struct Mem", free_Mem
+};
+
+mrb_value
+mruby_box_Mem(mrb_state* mrb, struct Mem *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Mem_class(mrb), &Mem_data_type, box));
+}
+
+mrb_value
+mruby_giftwrap_Mem(mrb_state* mrb, struct Mem *unboxed) {
+   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+   box->belongs_to_ruby = TRUE;
+   box->obj = unboxed;
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Mem_class(mrb), &Mem_data_type, box));
+}
+
+void
+mruby_set_Mem_data_ptr(mrb_value obj, struct Mem *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = FALSE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &Mem_data_type);
+}
+
+void
+mruby_gift_Mem_data_ptr(mrb_value obj, struct Mem *unboxed) {
+  mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
+  box->belongs_to_ruby = TRUE;
+  box->obj = unboxed;
+  mrb_data_init(obj, box, &Mem_data_type);
+}
+
+struct Mem *
+mruby_unbox_Mem(mrb_value boxed) {
+  return (struct Mem *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3IndexConstraint_boxing */
 /* sha: 540832c67d3de17e03a02c3709021a1a2f25364b226aa02715c0ce58a27e8cd9 */
 #if BIND_Sqlite3IndexConstraint_TYPE

@@ -45,6 +45,26 @@ typedef struct mruby_to_native_ref_ {
   void* data;
 } mruby_to_native_ref;
 
+/* MRUBY_BINDING: Mem::boxing_decls */
+/* sha: 42cf4a53372f36eada0c2930e39abeb9cc5a715a4de92dd30097c13ec678c162 */
+#if BIND_Mem_TYPE
+mrb_value
+mruby_box_Mem(mrb_state* mrb, struct Mem *unboxed);
+
+mrb_value
+mruby_giftwrap_Mem(mrb_state* mrb, struct Mem *unboxed);
+
+void
+mruby_set_Mem_data_ptr(mrb_value obj, struct Mem *unboxed);
+
+void
+mruby_gift_Mem_data_ptr(mrb_value obj, struct Mem *unboxed);
+
+struct Mem *
+mruby_unbox_Mem(mrb_value boxed);
+#endif
+/* MRUBY_BINDING_END */
+
 /* MRUBY_BINDING: Sqlite3::boxing_decls */
 /* sha: e570162c1931ebd13409e2e99f343243ab2a4a4ded3d00143af2163183081349 */
 #if BIND_Sqlite3_TYPE

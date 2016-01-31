@@ -57,8 +57,9 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_macros */
-/* sha: 1bf14cd6b875585ff3d529d04fefd30813c18cb0d326d1efb9f0f241bf30f9df */
+/* sha: 7f87695ed5af441fda8d283a547060dd419df2cb3f7686eb8d3ad80855c45019 */
 #define SQLite_module(mrb) mrb_module_get(mrb, "SQLite")
+#define Mem_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Mem")
 #define Sqlite3_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3")
 #define Sqlite3Backup_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Backup")
 #define Sqlite3Blob_class(mrb) mrb_class_get_under(mrb, SQLite_module(mrb), "Sqlite3Blob")
@@ -100,7 +101,10 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: pre_class_init_decls */
-/* sha: 09d2702af0fa4609ea3c2354e85898918ccdb6b2d13615ea0e7518e8cc49393d */
+/* sha: 7087a2c4e4249fa8ac49ebb76d1d7c1e1b6f29a69bf2afb9d3c0035a90d8ebe5 */
+#if BIND_Mem_TYPE
+void mrb_SQLite_Mem_init(mrb_state* mrb);
+#endif
 #if BIND_Sqlite3_TYPE
 void mrb_SQLite_Sqlite3_init(mrb_state* mrb);
 #endif

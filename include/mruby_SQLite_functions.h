@@ -169,6 +169,7 @@
 #define BIND_sqlite3_step_FUNCTION TRUE
 #define BIND_sqlite3_stmt_busy_FUNCTION TRUE
 #define BIND_sqlite3_stmt_readonly_FUNCTION TRUE
+#define BIND_sqlite3_stmt_scanstatus_FUNCTION FALSE
 #define BIND_sqlite3_stmt_status_FUNCTION TRUE
 #define BIND_sqlite3_strglob_FUNCTION TRUE
 #define BIND_sqlite3_stricmp_FUNCTION TRUE

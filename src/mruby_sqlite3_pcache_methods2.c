@@ -13,14 +13,16 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::initialize */
-/* sha: bf1919c95d6b5223ff6488e5ba39d7270e3830b5f21dcf95ee5d719bce4d618e */
+/* sha: 9727e3f1001d169bc287bf9d16baeacf1c8aa00bb4d3ccf03fe18782935794a9 */
 #if BIND_Sqlite3PcacheMethods2_INITIALIZE
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_initialize(mrb_state* mrb, mrb_value self) {
-/* TODO: Remove this comment & run `mrbind enable-functions` if an initializer is desired. */
+  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
+/* 
   sqlite3_pcache_methods2* native_object = (sqlite3_pcache_methods2*)calloc(1, sizeof(sqlite3_pcache_methods2));
   mruby_gift_sqlite3_pcache_methods2_data_ptr(self, native_object);
   return self;
+*/
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -30,12 +32,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_initialize(mrb_state* mrb, mrb_value self) {
  */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::iVersion_reader */
-/* sha: 3423f492a7546359f752a4d0d321860dfb8a744488d32e1c715f8cf142e797a8 */
+/* sha: 3b74053b9de5b0aabf6a710a5db82a62fc3ce7a30224cb69541b3d35bc590ab5 */
 #if BIND_Sqlite3PcacheMethods2_iVersion_FIELD_READER
-/* get_iVersion
- *
- * Return Type: int
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_iVersion(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -50,13 +48,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_iVersion(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::iVersion_writer */
-/* sha: ede44a0643a22a34e10c6bca9806e57ffd38aba88f75d5e5fd75021ce2777c20 */
+/* sha: ebc02cefea7f589006a075fd8be355e224ae01fa013011373c2267ecd2782df1 */
 #if BIND_Sqlite3PcacheMethods2_iVersion_FIELD_WRITER
-/* set_iVersion
- *
- * Parameters:
- * - value: int
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_iVersion(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -66,7 +59,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_iVersion(mrb_state* mrb, mrb_value self) {
 
   native_self->iVersion = native_iVersion;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -75,12 +67,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_iVersion(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::pArg_reader */
-/* sha: b20fe174fe900d293dfc2e007c3644dd1df5536615c2fb62eae60f5e1a553355 */
+/* sha: 902318c9b29671dc6760cacf2262ea9b61e673b13db198073ab76c3ed5ebad14 */
 #if BIND_Sqlite3PcacheMethods2_pArg_FIELD_READER
-/* get_pArg
- *
- * Return Type: void *
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_pArg(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -95,13 +83,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_pArg(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::pArg_writer */
-/* sha: fab38ecc2f04889faf356acffb21ba922201f109badb4e66f5973bf6ce2a2ebe */
+/* sha: fcdefdde0fabcb65a6f429522e1d6dc463e25589e1aeb40b5dbc45c67f398972 */
 #if BIND_Sqlite3PcacheMethods2_pArg_FIELD_WRITER
-/* set_pArg
- *
- * Parameters:
- * - value: void *
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_pArg(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -116,7 +99,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_pArg(mrb_state* mrb, mrb_value self) {
 
   native_self->pArg = native_pArg;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -125,12 +107,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_pArg(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xInit_reader */
-/* sha: b20c5c39140e15c9ae6bd6632a6a356003de4f99fd90dd66bd52b97479063cb8 */
+/* sha: 00514165ee9617210a20595d84d0501e7c62d56a06a062411cad6c91be16bf7d */
 #if BIND_Sqlite3PcacheMethods2_xInit_FIELD_READER
-/* get_xInit
- *
- * Return Type: int (*)(void *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xInit(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -145,13 +123,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xInit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xInit_writer */
-/* sha: 285413152c7a895f1e1327ce9168b73b3d794b134495d25a037ac9bbf235048e */
+/* sha: 79777c3feb592f618167a753918f6a7eef0c08d31c0db906d5fdefa6fc6b0779 */
 #if BIND_Sqlite3PcacheMethods2_xInit_FIELD_WRITER
-/* set_xInit
- *
- * Parameters:
- * - value: int (*)(void *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xInit(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -166,7 +139,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xInit(mrb_state* mrb, mrb_value self) {
 
   native_self->xInit = native_xInit;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -175,12 +147,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xInit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xShutdown_reader */
-/* sha: de7a34cca7b67ac8754c26c4d99b304bbad4864e6c871aa09b2f2b6037c8ab7c */
+/* sha: 0ca697c750a7063cb9351476d336369ee95997b7ecfb8c5d9e34b29b70906f34 */
 #if BIND_Sqlite3PcacheMethods2_xShutdown_FIELD_READER
-/* get_xShutdown
- *
- * Return Type: void (*)(void *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xShutdown(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -195,13 +163,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xShutdown(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xShutdown_writer */
-/* sha: d6e6a42cd0779e89f8356b9a2f03c407b2c10bcac91850a9d627ec081f0e1043 */
+/* sha: c53d318061f5e33f90bfcd61df48c3ebda92f3534d6cb6afbcdf2516cb2fec2e */
 #if BIND_Sqlite3PcacheMethods2_xShutdown_FIELD_WRITER
-/* set_xShutdown
- *
- * Parameters:
- * - value: void (*)(void *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xShutdown(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -216,7 +179,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xShutdown(mrb_state* mrb, mrb_value self) {
 
   native_self->xShutdown = native_xShutdown;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -225,12 +187,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xShutdown(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xCreate_reader */
-/* sha: 3c37859229544e9436b3d88fcd1007958a1d135998d4bab5f9474635180a7e41 */
+/* sha: 2a6823e6536a29dad97b229e90c1270f17836e55d1534e0245911a12e0248c21 */
 #if BIND_Sqlite3PcacheMethods2_xCreate_FIELD_READER
-/* get_xCreate
- *
- * Return Type: sqlite3_pcache *(*)(int, int, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xCreate(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -245,13 +203,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xCreate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xCreate_writer */
-/* sha: ba1f4eb69d4e5fc1a9d22d16af04367565072b5b12746fff663baf713b096d2f */
+/* sha: 86a4ba52601f92f5ad476101e26ce70cdd6172356acc62a5d960922bf1c23f8c */
 #if BIND_Sqlite3PcacheMethods2_xCreate_FIELD_WRITER
-/* set_xCreate
- *
- * Parameters:
- * - value: sqlite3_pcache *(*)(int, int, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xCreate(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -266,7 +219,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xCreate(mrb_state* mrb, mrb_value self) {
 
   native_self->xCreate = native_xCreate;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -275,12 +227,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xCreate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xCachesize_reader */
-/* sha: 86ff6e51a6a277a9b371d56246f742e5640877daa1cba62871ace24434af7d82 */
+/* sha: cc1238b2a9208f14fea721eb93983047946695329af19a3da9743630e462c445 */
 #if BIND_Sqlite3PcacheMethods2_xCachesize_FIELD_READER
-/* get_xCachesize
- *
- * Return Type: void (*)(sqlite3_pcache *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xCachesize(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -295,13 +243,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xCachesize(mrb_state* mrb, mrb_value self) 
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xCachesize_writer */
-/* sha: 4d99fe4426959197f5306f18db169b9b943407e3a7afe1e68f1838d167930d94 */
+/* sha: 64fc1e7ea44575c57b25a71c6c4902dc9ce1030f73d850ec87638d8d22d98b67 */
 #if BIND_Sqlite3PcacheMethods2_xCachesize_FIELD_WRITER
-/* set_xCachesize
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xCachesize(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -316,7 +259,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xCachesize(mrb_state* mrb, mrb_value self) 
 
   native_self->xCachesize = native_xCachesize;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -325,12 +267,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xCachesize(mrb_state* mrb, mrb_value self) 
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xPagecount_reader */
-/* sha: 502dba74f10b68aa6e4bd50c83a2737333f6097cc948dc3f1c54e40defa68d3c */
+/* sha: 4e6432d1afecadbfdf121960095e4cc0f7460b56121a27e642dc39496e716a46 */
 #if BIND_Sqlite3PcacheMethods2_xPagecount_FIELD_READER
-/* get_xPagecount
- *
- * Return Type: int (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xPagecount(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -345,13 +283,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xPagecount(mrb_state* mrb, mrb_value self) 
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xPagecount_writer */
-/* sha: 57eaa9b3fbc9e9542c7966ec50482c720f760b802ee582cee5cffcd0dd90ee42 */
+/* sha: fee9d8cdf28c8e6f2d3a06c0a70c328ea714d03b3c229002282f3106ad2bfa1f */
 #if BIND_Sqlite3PcacheMethods2_xPagecount_FIELD_WRITER
-/* set_xPagecount
- *
- * Parameters:
- * - value: int (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xPagecount(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -366,7 +299,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xPagecount(mrb_state* mrb, mrb_value self) 
 
   native_self->xPagecount = native_xPagecount;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -375,12 +307,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xPagecount(mrb_state* mrb, mrb_value self) 
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xFetch_reader */
-/* sha: 57ed3ac78c42b8afc855d0093f0c6b4b291a121031fa475517154d379d69d289 */
+/* sha: 1b82ffa99199b6af66a8bb93d0a29d699ac44bf359f5212e2af4911057f3c279 */
 #if BIND_Sqlite3PcacheMethods2_xFetch_FIELD_READER
-/* get_xFetch
- *
- * Return Type: sqlite3_pcache_page *(*)(sqlite3_pcache *, unsigned int, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xFetch(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -395,13 +323,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xFetch(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xFetch_writer */
-/* sha: 910b66cd69095b1b30fea5163895b5d00d3432754728316adc00bdd2504a03e3 */
+/* sha: 8e228f788d9fa1c7b2335cebd150a2cdf3fd4ef2236a92ba8c17a7091b485d81 */
 #if BIND_Sqlite3PcacheMethods2_xFetch_FIELD_WRITER
-/* set_xFetch
- *
- * Parameters:
- * - value: sqlite3_pcache_page *(*)(sqlite3_pcache *, unsigned int, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xFetch(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -416,7 +339,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xFetch(mrb_state* mrb, mrb_value self) {
 
   native_self->xFetch = native_xFetch;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -425,12 +347,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xFetch(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xUnpin_reader */
-/* sha: 8163ded7dbcfd080dfbb4edc7616907b9a472a8448f0ad5ac93e01aea82056d5 */
+/* sha: 11e7f88f59c60346aaea1939a70b8aca9bbeb423ad3d1c9d26366d00d74e5a50 */
 #if BIND_Sqlite3PcacheMethods2_xUnpin_FIELD_READER
-/* get_xUnpin
- *
- * Return Type: void (*)(sqlite3_pcache *, sqlite3_pcache_page *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xUnpin(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -445,13 +363,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xUnpin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xUnpin_writer */
-/* sha: c8fe5bc77b4586cf1372e6046f9693a20b4092a8c8d9a2ba3482617b7830900f */
+/* sha: 16ec7efc368c0f0225a8f0d6099c4d4e6c5b5614232087de708e6cb18a620649 */
 #if BIND_Sqlite3PcacheMethods2_xUnpin_FIELD_WRITER
-/* set_xUnpin
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *, sqlite3_pcache_page *, int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xUnpin(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -466,7 +379,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xUnpin(mrb_state* mrb, mrb_value self) {
 
   native_self->xUnpin = native_xUnpin;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -475,12 +387,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xUnpin(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xRekey_reader */
-/* sha: 8e1924fdb68d9fdd871c282eee6a0e478f7cd9a2df2ac15bd4ae8a2ca3b7d719 */
+/* sha: a4ad57358692e35d7e420060c60aa4d62de40998cba7ddd9c803330d3c7b87b9 */
 #if BIND_Sqlite3PcacheMethods2_xRekey_FIELD_READER
-/* get_xRekey
- *
- * Return Type: void (*)(sqlite3_pcache *, sqlite3_pcache_page *, unsigned int, unsigned int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xRekey(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -495,13 +403,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xRekey(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xRekey_writer */
-/* sha: 1ee549525d8998604e7850a2625414716f2acaee98a3d3f2ec449dee7618e7c3 */
+/* sha: 8a3ce2c2def37462df1873d49312a64fb9d390baa3841b768a28ce4e03d341db */
 #if BIND_Sqlite3PcacheMethods2_xRekey_FIELD_WRITER
-/* set_xRekey
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *, sqlite3_pcache_page *, unsigned int, unsigned int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xRekey(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -516,7 +419,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xRekey(mrb_state* mrb, mrb_value self) {
 
   native_self->xRekey = native_xRekey;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -525,12 +427,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xRekey(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xTruncate_reader */
-/* sha: dfb8b9a053c2d8b5352b0288bc8a900a0a656309632cd3804f23e92f5a0820ad */
+/* sha: 7f0bac18534c3628821b3c54af44d37562fdbda29c23b6b5a29b41b9b9593a6b */
 #if BIND_Sqlite3PcacheMethods2_xTruncate_FIELD_READER
-/* get_xTruncate
- *
- * Return Type: void (*)(sqlite3_pcache *, unsigned int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xTruncate(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -545,13 +443,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xTruncate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xTruncate_writer */
-/* sha: cbe089d876aceb85808751dc6a3025aa8a9a67376f6bff9f99b77457f352530a */
+/* sha: 3864ec08ac1d3ee2f7283aade045a0a67c0d2b02604d426f9891eb99000fd6ba */
 #if BIND_Sqlite3PcacheMethods2_xTruncate_FIELD_WRITER
-/* set_xTruncate
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *, unsigned int)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xTruncate(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -566,7 +459,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xTruncate(mrb_state* mrb, mrb_value self) {
 
   native_self->xTruncate = native_xTruncate;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -575,12 +467,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xTruncate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xDestroy_reader */
-/* sha: adb1b035b341deeb6044c4ced90dd9cf0c189ed1c50701e01c7028db6e9dc3a4 */
+/* sha: 7bfdfdf1e17bcb8e78349db41e26a9a1c2d4c28ae6e4e4fc210a29fd8720e06e */
 #if BIND_Sqlite3PcacheMethods2_xDestroy_FIELD_READER
-/* get_xDestroy
- *
- * Return Type: void (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xDestroy(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -595,13 +483,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xDestroy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xDestroy_writer */
-/* sha: 297723078495937e8f17e1b6485d99b0e641aa96553c699bce3f8e910ff4004b */
+/* sha: 1714f767a4b61d35f71db86fb933641fb0cd2fe05f080e9db2fb8b936d8cdf87 */
 #if BIND_Sqlite3PcacheMethods2_xDestroy_FIELD_WRITER
-/* set_xDestroy
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xDestroy(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -616,7 +499,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xDestroy(mrb_state* mrb, mrb_value self) {
 
   native_self->xDestroy = native_xDestroy;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -625,12 +507,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xDestroy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xShrink_reader */
-/* sha: 8ea39a41e0d27be9c740b77cc618c32b87c9dc3961b57ee9e991dbb8048db81e */
+/* sha: db94a2f8a10eb6f36e04f80fba5294da9bed427a66dc09fb250c49a81956a7c9 */
 #if BIND_Sqlite3PcacheMethods2_xShrink_FIELD_READER
-/* get_xShrink
- *
- * Return Type: void (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_get_xShrink(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -645,13 +523,8 @@ mrb_SQLite_Sqlite3PcacheMethods2_get_xShrink(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::xShrink_writer */
-/* sha: 74bdd3c16076a6f2def8525f7edede4923dd068193de2316d7fb7d075b7af5fd */
+/* sha: 7ce54f286e888e1ab8a9d8a1ac3855fef1cb552ae46c17e8cf1efe85696fe1b1 */
 #if BIND_Sqlite3PcacheMethods2_xShrink_FIELD_WRITER
-/* set_xShrink
- *
- * Parameters:
- * - value: void (*)(sqlite3_pcache *)
- */
 mrb_value
 mrb_SQLite_Sqlite3PcacheMethods2_set_xShrink(mrb_state* mrb, mrb_value self) {
   sqlite3_pcache_methods2 * native_self = mruby_unbox_sqlite3_pcache_methods2(self);
@@ -666,7 +539,6 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xShrink(mrb_state* mrb, mrb_value self) {
 
   native_self->xShrink = native_xShrink;
   
-  /* Hacky way to return whatever was passed in. Mirrors typical assignment semantics. */
   mrb_value value_as_mrb_value;
   mrb_get_args(mrb, "o", &value_as_mrb_value);
   return value_as_mrb_value;
@@ -676,12 +548,13 @@ mrb_SQLite_Sqlite3PcacheMethods2_set_xShrink(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3PcacheMethods2_init(mrb_state* mrb) {
-/* MRUBY_BINDING: Sqlite3PcacheMethods2::class_init_header */
-/* sha: ad8337ceaefe095e6123163db0ca9028098ef3cf11dd77e31138363633f0fdd6 */
-  /* Don't double-init. */
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
+
+/* MRUBY_BINDING: pre_class_definition */
+/* sha: user_defined */
+
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: Sqlite3PcacheMethods2::class_definition */
@@ -792,20 +665,8 @@ void mrb_SQLite_Sqlite3PcacheMethods2_init(mrb_state* mrb) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: Sqlite3PcacheMethods2::pre_instance_method_definitions */
-/* sha: user_defined */
 
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3PcacheMethods2::instance_method_definitions */
-/* sha: bc1a7bf41f8f5b2f90434b58331667565e72c2b8794e7f56884099f7767fa42c */
-  /*
-   * Member Functions
-   */
-  /* None */
-/* MRUBY_BINDING_END */
-
-/* MRUBY_BINDING: Sqlite3PcacheMethods2::class_init_footer */
+/* MRUBY_BINDING: Sqlite3PcacheMethods2::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
