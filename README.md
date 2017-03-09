@@ -24,7 +24,7 @@ What's in the Box?
 - High level, object oriented bindings in the `SQLite3` module.
   + Modeled after the [sqlite3](https://github.com/sparklemotion/sqlite3-ruby/) gem for MRI,
     so you can use [their documentation](http://www.rubydoc.info/gems/sqlite3/frames) for this mrbgem.
-  + Any derivation from sqlite3's behavior should be considered a bug, unless
+  + Any deviation from sqlite3's behavior should be considered a bug, unless
     it's a bug in sqlite3 to begin with, or they have deprecated the behavior.
   + Note that the `Backup` class and `Pragmas` module have not yet been ported,
     and `Database` is still missing a few methods found in sqlite3.
